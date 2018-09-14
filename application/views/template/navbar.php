@@ -26,7 +26,7 @@
             </li>
             <!-- Authentication Links -->
             
-            <?php if($this->session->userdata('level')!=0):?>
+            <?php if(null !== $this->session->userdata('level')):?>
             
             <li class="nav-item dropdown hidden-md-down">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

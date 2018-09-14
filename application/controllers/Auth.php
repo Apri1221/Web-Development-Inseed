@@ -37,7 +37,8 @@ class Auth extends CI_Controller {
         // if ($count_emails > 0) {
         //     this->load->view('daftar');
         // }else {
-            $data = $this->model->Insert('user', $data);    
+            $data = $this->model->Insert('user', $data);
+            redirect('dashboard'); 
         // }
 	}
 
@@ -62,17 +63,6 @@ class Auth extends CI_Controller {
             );
             $this->session->set_userdata($sesdata);
             // access login for admin
-            if($level === '1'){
-                 redirect('dashboard');
-
-            // // access login for staff
-             }elseif($level === '2'){
-                 redirect('page/staff');
-
-            // // access login for author
-             }else{
-                 redirect('page/author');
-             }
         } else {
             $this->load->view('masuk');
         }
