@@ -40,12 +40,12 @@
               <form action="<?php echo base_url()."index.php/auth/register"; ?>" method="POST" class="col-md-12 col-sm-12 col-xs-12" style="float: left;">
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="firstname">Nama depan</label>
-                  <input type="text" id="firstnane" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
+                  <input type="text" id="firstname" name="firstname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="lastname">Nama belakang</label>
-                  <input type="text" id="laststname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
+                  <input type="text" id="lastname" name="lastname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-group">
@@ -53,23 +53,23 @@
                   <input type="date" class="form-control" name="birthday" min="1980-01-01" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
                 </div>
                 <label class="form-control-placeholder-1" for="JK">Jenis Kelamin</label>
-                <select class="form-control" id="JenisKelamin">
+                <select class="form-control" id="JenisKelamin" name="JenisKelamin">
                   <option value="Pria">Pria</option>
                   <option value="Wanita">Wanita</option>
                 </select>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">Nama akun</label>
-                  <input type="text" id="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
+                  <input type="text" id="account" name="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">Email</label>
-                  <input type="email" id="email" class="form-control" pattern="[^ @]*@[^ @]*.[a-zA-Z]{2,}" required
+                  <input type="email" id="email" name="email" class="form-control" pattern="[^ @]*@[^ @]*.[a-zA-Z]{2,}" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">Password</label>
-                  <input type="password" id="pw1" class="form-control" required minlength="8"
+                  <input type="password" id="pw1" name="pw1" class="form-control" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                   
                 </div>
@@ -95,7 +95,7 @@
                 </script>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">No. Handphone</label>
-                  <input type="tel" id="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
+                  <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
                   oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">
                   
                 </div>

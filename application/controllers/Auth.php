@@ -38,6 +38,7 @@ class Auth extends CI_Controller {
         //     this->load->view('daftar');
         // }else {
             $data = $this->model->Insert('user', $data);
+            cek_login($username, $password);
             redirect('dashboard'); 
         // }
 	}
@@ -62,6 +63,7 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
+            $this->load->view('dashboard');
             // access login for admin
         } else {
             $this->load->view('masuk');
@@ -71,7 +73,7 @@ class Auth extends CI_Controller {
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('masuk');
+        $this->load->view('masuk');
     }
 }
 ?>
