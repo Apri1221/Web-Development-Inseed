@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    font-family: 'Montserrat';  
+}
+
+/* Animasi */
+
+.cd-auto-hide-header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  /* Force Hardware Acceleration */
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+.cd-auto-hide-header::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.cd-auto-hide-header.is-hidden {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+@media only screen and (min-width: 1024px) {
+  .cd-auto-hide-header {
+  }
+}
+
+.cd-auto-hide-header .logo,
+.cd-auto-hide-header .nav-trigger {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.cd-auto-hide-header .logo {
+  left: 5%;
+}
+.cd-auto-hide-header .logo a, .cd-auto-hide-header .logo img {
+  display: block;
+}
+
+.cd-auto-hide-header .nav-trigger {
+  /* vertically align its content */
+  display: table;
+  height: 100%;
+  padding: 0 1em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #25283D;
+  font-weight: bold;
+  right: 0;
+  border-left: 1px solid #f2f2f2;
+}
+.cd-auto-hide-header .nav-trigger span {
+  /* vertically align inside parent element */
+  display: table-cell;
+  vertical-align: middle;
+}
+.cd-auto-hide-header .nav-trigger em, .cd-auto-hide-header .nav-trigger em::after, .cd-auto-hide-header .nav-trigger em::before {
+  /* this is the menu icon */
+  display: block;
+  position: relative;
+  height: 2px;
+  width: 22px;
+  background-color: #25283D;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.cd-auto-hide-header .nav-trigger em {
+  /* this is the menu central line */
+  margin: 6px auto 14px;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+.cd-auto-hide-header .nav-trigger em::before, .cd-auto-hide-header .nav-trigger em::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+.cd-auto-hide-header .nav-trigger em::before {
+  /* this is the menu icon top line */
+  -webkit-transform: translateY(-6px);
+      -ms-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+.cd-auto-hide-header .nav-trigger em::after {
+  /* this is the menu icon bottom line */
+  -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+          transform: translateY(6px);
+}
+@media only screen and (min-width: 1024px) {
+  .cd-auto-hide-header .nav-trigger {
+    display: none;
+  }
+}
+
+.cd-auto-hide-header.nav-open .nav-trigger em {
+  /* transform menu icon into a 'X' icon */
+  background-color: rgba(255, 255, 255, 0);
+}
+.cd-auto-hide-header.nav-open .nav-trigger em::before {
+  /* rotate top line */
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.cd-auto-hide-header.nav-open .nav-trigger em::after {
+  /* rotate bottom line */
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.cd-primary-nav {
+  display: inline-block;
+  float: right;
+  height: 100%;
+  padding-right: 5%;
+}
+.cd-primary-nav > ul {
+  position: absolute;
+  z-index: 2;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: none;
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.2);
+}
+.cd-primary-nav > ul a {
+  /* target primary-nav links */
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 5%;
+  color: #25283D;
+  font-size: 1.8rem;
+  border-top: 1px solid #f2f2f2;
+}
+.cd-primary-nav > ul a:hover, .cd-primary-nav > ul a.active {
+  color: #8F3985;
+}
+@media only screen and (min-width: 1024px) {
+  .cd-primary-nav {
+    /* vertically align its content */
+    display: table;
+  }
+  .cd-primary-nav > ul {
+    /* vertically align inside parent element */
+    display: table-cell;
+    vertical-align: middle;
+    /* reset mobile style */
+    position: relative;
+    width: auto;
+    top: 0;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .cd-primary-nav > ul::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .cd-primary-nav > ul li {
+    display: inline-block;
+    float: left;
+    margin-right: 1.5em;
+  }
+  .cd-primary-nav > ul li:last-of-type {
+    margin-right: 0;
+  }
+  .cd-primary-nav > ul a {
+    /* reset mobile style */
+    height: auto;
+    line-height: normal;
+    padding: 0;
+    border: none;
+  }
+}
+
+.nav-open .cd-primary-nav ul,
+.cd-primary-nav ul:target {
+  /* 
+    show primary nav - mobile only 
+    :target is used to show navigation on no-js devices
+  */
+  display: block;
+}
+@media only screen and (min-width: 1024px) {
+  .nav-open .cd-primary-nav ul,
+  .cd-primary-nav ul:target {
+    display: table-cell;
+  }
+}
+
+/* akhir animasi navbar */
+
+
+
+/*navbar*/
+
+.navbar{
+    position: sticky;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 4px 5px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/*----------------LOGIN PAGE BOSQ--------------*/
+
+#cardLogin{
+  opacity: 0.9; border-radius: 20px;
+}
+
+#cardLogin h2,#cardLogin input{
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#cardLogin #daftarNow{
+  border-top: 1px solid black; 
+  width:65%;
+   margin-left: 18%; 
+   padding-top: 10px;
+  margin-bottom: 5%;
+}
+
+#cardLogin button{
+  width: 50%;
+  margin-left: 35%;
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1100px){
+  #cardLogin h2,input{
+  margin-bottom: 5%;
+}
+
+#cardLogin button{
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+#cardLogin input{
+  margin-left: 0%;
+}
+
+}
+
+.formRow--input {
+  position: relative;
+  height: 5%;
+  padding: 15px 20px 11px;
+  width: 100%;
+  outline: none;
+  border: solid 1px #95989a;
+  border-radius: 4px;
+  color: #2c3235;
+  letter-spacing: .2px;
+  font-weight: 400;
+  font-size: 16px;
+  resize: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+@media screen and (min-width: 600px){
+  #cardLogin input{
+    margin-left: 10%;
+  }
+}
+/* -----------ABOUT US BOSQ---------- */
+/* Pendahuluan page about us */
+#pendahuluan{
+    text-align: center;
+    background: url("../assets/image/petani/petani2_background.jpg") no-repeat;
+    background-size: cover;
+    padding: 20px;
+    color: #fff;
+  }
+  #pendahuluan img {
+      width: 400px;
+      height: auto;
+      margin: 10%;
+    }
+  #pendahuluan p{
+   margin-top: 2%;
+   padding: 0% 10% 2% 10%;
+   font-size: 20px;
+   text-align: justify;
+   line-height: 2;
+  }
+  .pendahuluan-title {
+    color: #12A8BB;
+  }
+  @media screen and (max-width: 1100px) {
+    #pendahuluan p {
+      font-size: 16px;
+    }
+    #pendahuluan img {
+      width: 50%;
+      height: auto;
+    }
+    .pendahuluan-title {
+      font-size: 24px;
+    }
+  }
+
+   /*----Fitur About Us----*/
+  #fitur p{
+    font-size: 18px;
+    text-align: justify; 
+    line-height: 2;
+  }
+  .cyan-background {
+    background: #317e85;
+    padding: 30px !important;
+  }
+  .white-background {
+    background: #fff;
+    padding: 30px !important;
+  }
+  .fitur-right-side {
+    float: right !important;
+  }
+  .fitur-left-side {
+    float: left !important;
+  }
+  .fitur-img {
+    width: 250px;
+    height: 250px;
+  }
+  .text-fitur-white {
+    color: #fff;
+  }
+  .text-fitur-cyan {
+    color: #12A8BB;
+  }
+  .text-fitur-title {
+    margin: 10px 0 20px 0;
+  }
+  @media screen and (max-width: 1100px) {
+    .fitur-img {
+      width: 200px;
+      height: 200px;
+    }
+    .text-fitur-title {
+      font-size: 24px;
+    }
+    .text-fitur-content {
+      font-size: 18px;
+    }
+  }
+
+  /* ---------FOOOTERRRRR---------- */
+#contact-us {
+   background-color: #032b2f;
+    background-size: cover;
+    color: #fff;
+    padding: 20px;
+}
+.logo_footer h6{
+  margin-left: 5%;
+}
+#contact-us b{
+  margin-right: 15px;
+}
+#contact-us h4{
+  border-bottom: 2px solid white;  padding-bottom: 5px; margin-bottom: 6%;
+}
+.socmed-icon {
+    margin: 10px 20px;
+    font-size: 30px !important;
+}
+@media screen and (max-width: 1100px) {
+  #contact-us h4{
+    padding-bottom: 25px;
+  }
+    .logo_footer{
+      text-align: center;
+      margin-bottom: 10%;
+    }
+    .logo_footer h6{
+      margin-left:0%;
+    }
+    .contact{
+      text-align: center;
+      margin-bottom: 10%;
+    }
+    .socialmedia{
+      text-align: center;
+      margin-bottom: 10%;
+      
+    }
+}
+
+/* ---------ARTICLE BOSQ---------*/
+
+#carouselArticle img{
+  width: 100%;
+  max-height: 400px;
+}
+
+#carouselArticle .caption{
+color: white; text-align: center; margin-top: 4%;
+}
+
+.boxHeadline{
+  padding: 2%; background-color: black; margin-left: 4%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topArticle{
+  padding: 2em; border-radius: 20px; margin-left: 2%; text-align: center;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topArticle h2{
+  border-bottom: 1px solid grey;
+  width: 75%;
+  text-align: center;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+.topArticle .berita{
+  margin-bottom: 8%;
+}
+
+.berita img {
+  max-width: 150px; max-height: 160px;
+}
+.berita .judul{
+  margin-left: 6%; margin-top: 8%;
+}
+
+.berita h6{
+  font-weight: bold;
+}
+
+.JudulSectionArtikel{
+   float: left;
+}
+
+.artikelTerbaru{
+    max-height: 300px !important;
+    width: 250px;
+}
+
+.separator-multi-item {
+  float: left;
+  width: 100%; 
+  border-width: 3px;
+  padding: 0 !important;
+}
+
+.judulArtikel{
+  margin: 5% 0;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.barisArtikelAtas{
+margin: 5% 0;
+}
+
+.judul{
+  text-align: center; 
+  margin-top: 10%;  
+}
+
+
+@media screen and (max-width: 1100px) {
+  
+  .judul{ 
+  margin-top: 20%;  
+  }
+
+  .barisArtikelAtas{
+    margin-left: 8%;
+  }
+
+  #carouselArticle .caption{
+color: white; text-align: center; margin-top: 4%; 
+  }
+
+  .boxHeadline{
+    margin-bottom: 10%;
+  }
+
+  .topArticle{
+    margin-left:5%;
+  }
+
+  .berita img{
+    max-width: 250px; 
+    
+  }
+  .berita h6{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 575px){
+  .barisArtikelAtas{
+    margin-left: 0%;
+  }
+  .boxHeadline{
+    margin-left: 2%;
+  }
+  .topArticle{
+    margin-left: 2%;
+  }
+  .articleSliding{
+    margin-left: 1%;
+
+  }
+}
+
+
+/* ---------DAFTAR BOSQ---------*/
+.headSignUp {
+  background-color: #167c85;
+  height: 50%;
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+#abu {
+  background-color: #eeeeee;
+}
+
+#cardDaftar input,#cardDaftar select{
+  margin-left: 0%;
+  margin-bottom: 8%;
+}
+
+.form-control::-webkit-input-placeholder{
+  color: white;
+}
+
+
+/*-----------PEMBAYARAN BOSQ-------*/
+
+.header{
+  background-color: #167c85;
+  height: 25%;
+  color: white;
+  text-align: left;
+  padding: 2%;
+}
+.kontenPembayaran{
+  margin: 2% 0;
+
+
+}
+.kontenPembayaran h3, .kontenPembayaran input, .kontenPembayaran select{
+  margin:2% 0;
+}
+
+.cardPembayaran{
+  border-radius: 25px; border:2px solid grey;
+  padding-bottom: 2%;
+}
+
+.kontenDetail{
+  margin-top: 2%;
+}
+
+.kontenDetail h5{
+  border-bottom: 1px solid grey; margin-bottom: 5%; padding-bottom: 3%; 
+}
+
+.kontenDetail h6{
+  margin-top: 3%;
+}
+
+.kontenDetail img{
+  max-height: 150px; width: auto; margin-left: 3%;
+}
+
+@media screen and (max-width: 1100px){
+  .kontenDetail img{
+    max-height: 110px;
+  }
+  .cardPembayaran{
+    margin-bottom: 10%;
+  }
+  }
+
+/*  KERANJANG BOSQQ*/
+
+.indikatorKeranjang{
+  margin-top: 5%; margin-left: 3%; margin-right: 3%; margin-bottom: 1%;
+}
+
+.kontenIndikatorKeranjang{
+   margin-right: 2%; margin-bottom: 2%; background-color: #658a29; color: white;
+}
+
+.strukturKeranjang{
+   margin-left: 3%; margin-right: 3%; margin-bottom: 1%; border: 1px solid grey;
+}
+
+.keranjangTengah{
+  margin-right: 2%; margin-bottom: 2%;
+}
+
+.keranjangTengahPenjual{
+  padding: 1% 0; margin-bottom: 2%; border-bottom: 1px solid grey; background-color: #317e85;
+}
+
+.namaPenjualKeranjang{
+  margin-left: 2%; color: white; margin-top: 1%;
+}
+
+.fotoProdukKeranjang{
+  max-width: 150px; height: auto;
+}
+
+@media screen and (max-width: 575px){
+  .strukturKeranjang{
+    text-align: center;
+    margin-top: 5%;
+  }
+  .indikatorKeranjang{
+    display: none;
+  }
+}
+
+.kontenKeranjangTengah{
+  margin-top: 3%; 
+}
+
+.keranjangBawah{
+  margin: 3%;
+}
+
+.pengirimanProdukKeranjang{
+  border: 1px solid grey; border-radius: 5px; padding: 2%; margin-right: 2%;
+}
+
+@media screen and (max-width: 575px){
+  .pengirimanProdukKeranjang{
+    margin-right: 0%;
+    margin-bottom: 3%;
+  }
+
+  .buttonBuatPesananKeranjang{
+    margin-left: 25%;
+  }
+}
+
+.ringkasanPesananKeranjang{
+  border: 1px solid grey; border-radius: 5px; padding: 2%;
+}
+
+.totalHargaKeranjang{
+  margin-left: 8%; color: #167c85;
+}
+
+.buttonBuatPesananKeranjang{
+  padding: 2% 10%; border-radius: 10px; background-color: green; color: white; 
+}
