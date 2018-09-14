@@ -1,0 +1,53 @@
+<section id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('asset/assets/image/logo.png');?>" style="  padding: 0 20px 0 20px;
+          height: 75px;
+        width: 250px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+          <ul class="text-uppercase navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<?php echo base_url(); ?>">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=base_url()?>index.php/invest">SEAWEED INVEST</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=base_url()?>index.php/mart">SEAWEED MART</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=base_url()?>index.php/article">SEAWEED ARTICLE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=base_url()?>index.php/welcome/about_us">TENTANG KAMI</a>
+            </li>
+            <!-- Authentication Links -->
+            
+            <?php if($this->session->userdata('level')!=0):?>
+            
+            <li class="nav-item dropdown hidden-md-down">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php $username = $this->session->userdata('username');
+                $sesdata['username']=$username; 
+                echo $username ?></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Dashboard</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="<?=base_url()?>index.php/auth/logout">Keluar</a>
+                </div>
+            </li>
+
+            <?php else:?>
+            
+            <li class="nav-item">
+              <a id="masukdulu" class="nav-link" href="<?=base_url()?>index.php/auth/login">MASUK</a>
+            </li>
+            
+            <?php endif;?>          
+        </ul>
+      </div>
+    </nav>
+  </section>
