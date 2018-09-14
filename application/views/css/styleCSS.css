@@ -149,60 +149,60 @@ font-size: 32px;
   padding-bottom: 5%;
 }
 header.masthead h1{
-	font-size:2rem}
+  font-size:2rem}
 header.masthead p{
-	font-weight:300}
+  font-weight:300}
 .section-heading {
-	margin-top:0
+  margin-top:0
 }
 
 header.masthead{
 
-	background-position:center center;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover}
+  background-position:center center;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover}
 header.masthead h1{
-	font-size:2rem}
+  font-size:2rem}
 header.masthead p{
-	font-weight:300}
-	@media (min-width:768px){
-	
-	header.masthead p{
-		font-size:1.15rem}}
+  font-weight:300}
+  @media (min-width:768px){
+  
+  header.masthead p{
+    font-size:1.15rem}}
 @media (min-width:992px){
-	header.masthead{
-		height:50vh;
-		min-height:550px;
-		padding-top:0;
-		padding-bottom:0}
-		header.masthead h1{
-	font-size:4rem}}
+  header.masthead{
+    height:50vh;
+    min-height:550px;
+    padding-top:0;
+    padding-bottom:0}
+    header.masthead h1{
+  font-size:4rem}}
 .service-box{
-	max-width:400px}
+  max-width:400px}
 .text-primary{
-		color:#317e85!important
-	}
-	.btn{
-		font-weight:700;
-		text-transform:uppercase;
-		border-radius:300px;
-	}
+    color:#317e85!important
+  }
+  .btn{
+    font-weight:700;
+    text-transform:uppercase;
+    border-radius:300px;
+  }
 
-		
+    
 /*fix here*/
 a:hover {
-	color:#317e85
+  color:#317e85
 }
 .bg-primary {
-	background-color:#317e85!important
+  background-color:#317e85!important
 }
 .bg-dark {
-	background-color:#212529!important
+  background-color:#212529!important
 }
 .text-faded {
-	color:rgba(255,255,255,.7)
+  color:rgba(255,255,255,.7)
 }
 
 /*----------------LOGIN PAGE BOSQ--------------*/
@@ -475,19 +475,19 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-	.barisArtikelAtas{
-		margin-left: 0%;
-	}
-	.boxHeadline{
-		margin-left: 2%;
-	}
-	.topArticle{
-		margin-left: 2%;
-	}
-	.articleSliding{
-		margin-left: 1%;
+  .barisArtikelAtas{
+    margin-left: 0%;
+  }
+  .boxHeadline{
+    margin-left: 2%;
+  }
+  .topArticle{
+    margin-left: 2%;
+  }
+  .articleSliding{
+    margin-left: 1%;
 
-	}
+  }
 }
 
 
@@ -587,13 +587,13 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-	.strukturKeranjang{
-		text-align: center;
-		margin-top: 5%;
-	}
-	.indikatorKeranjang{
-		display: none;
-	}
+  .strukturKeranjang{
+    text-align: center;
+    margin-top: 5%;
+  }
+  .indikatorKeranjang{
+    display: none;
+  }
 }
 
 .kontenKeranjangTengah{
@@ -609,14 +609,14 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-	.pengirimanProdukKeranjang{
-		margin-right: 0%;
-		margin-bottom: 3%;
-	}
+  .pengirimanProdukKeranjang{
+    margin-right: 0%;
+    margin-bottom: 3%;
+  }
 
-	.buttonBuatPesananKeranjang{
-		margin-left: 25%;
-	}
+  .buttonBuatPesananKeranjang{
+    margin-left: 25%;
+  }
 }
 
 .ringkasanPesananKeranjang{

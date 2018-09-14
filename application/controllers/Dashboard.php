@@ -10,19 +10,52 @@ class Dashboard extends CI_Controller {
         $this->load->model('admin');
     }
 
-	public function index()
+	
+	public function index() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
+
+	public function artikel() {
+		if ($this->session->userdata('level')==='1'){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
+
+	public function mart() {
+		if ($this->session->userdata('level') ==='1' || $this->session->userdata('level') === '2'){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
+
+	public function proyek() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
+
+	public function cairkan() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
+
+	public function detail()
 	{
-		if($this->admin->logged_id())
-		{
-
-			$this->load->view("dashboard");			
-
-		}else{
-
-			//jika session belum terdaftar, maka redirect ke halaman login
-			redirect("masuk");
-
-		}
+		$this->load->helper('url');
+		$this->load->model('investasi');
+		$this->load->view('detailProduk');
 	}
 
 	
