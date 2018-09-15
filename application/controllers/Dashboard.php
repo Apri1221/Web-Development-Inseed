@@ -11,13 +11,13 @@ class Dashboard extends CI_Controller {
     }
 
 	
-	// public function index() {
-	// 	if ($this->session->userdata('level')!==0){
- //            $this->load->view("dashboard");
- //        } else {
- //            $this->load->view('masuk');
- //        }
-	// }
+	public function index() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard");
+        } else {
+            $this->load->view('masuk');
+        }
+	}
 
 	public function artikel() {
 		if ($this->session->userdata('level')==='1'){
