@@ -10,8 +10,8 @@ class Article extends CI_Controller {
 	public function detail()
 	{
 		$this->load->helper('url');
-		$this->load->model('investasi');
-		$this->load->view('detailProduk');
+		$this->load->model('artikel');
+		$this->load->view('detailArticle');
 	}
 }
 ?>

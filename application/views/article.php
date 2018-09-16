@@ -1,32 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('asset/css/jcarousel.responsive.js');?>"></script>
-    <title>inseed.id - Selamat Datang</title>
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
-    <script type="text/javascript">
-    $(window).load(function() {
-    $("#loading").fadeOut("slow");
-    });
-    </script>
+    
+    <?php include_once("template/header.php"); ?>
+    <title>inseed.id - Seaweed Article</title>
+
   </head>
   <body>
     <div id="loading"></div>
@@ -45,20 +23,24 @@
               </ol>
               <div class="carousel-inner" id="carouselArticle" >
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="assets/image/petani/petani1.jpg" alt="First slide">
-                  
-                  <h5 class="caption">Kisah Petani Bone memulai Budidaya Rumput Laut</h5>
-                  
-                  
+                  <a href="<?=base_url()?>index.php/article/detail"> 
+                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" alt="First slide">
+                    <h5 class="caption">Kisah Petani Bone memulai Budidaya Rumput Laut</h5>
+                  </a>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="assets/image/petani/petani2.jpg" alt="Second slide">
-                  <h5 class="caption">Ditemukan rumput laut langka menghebohkan netizen</h5>
+                  <a href="<?=base_url()?>index.php/article/detail"> 
+                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani2.jpg'); ?>" alt="Second slide">
+                    <h5 class="caption">Ditemukan rumput laut langka menghebohkan netizen</h5>
+                  </a>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="assets/image/petani/petani3.jpg" alt="Third slide">
-                  <h5 class="caption">Bapak ini menemukan harta karun isinya rumput laut</h5>
+                  <a href="<?=base_url()?>index.php/article/detail"> 
+                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani3.jpg'); ?>" alt="Third slide">
+                    <h5 class="caption">Bapak ini menemukan harta karun isinya rumput laut</h5>
+                  </a>
                 </div>
+
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -76,7 +58,7 @@
               
               <div class="row berita">
                 <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
-                  <img src="assets/image/produk/produk1.jpg" >
+                  <img src="<?php echo base_url('asset/assets/image/produk/produk1.jpg'); ?>" >
                 </div>
                 <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6> Harga Rumput Laut Melonjak!</h6>
@@ -84,7 +66,7 @@
               </div>
               <div class="row berita">
                 <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
-                  <img src="assets/image/produk/produk1.jpg" >
+                  <img src="<?php echo base_url('asset/assets/image/produk/produk1.jpg'); ?>" >
                 </div>
                 <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6> Harga Rumput Laut Melonjak!</h6>
@@ -92,7 +74,7 @@
               </div>
               <div class="row berita">
                 <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
-                  <img src="assets/image/produk/produk1.jpg" >
+                  <img src="<?php echo base_url('asset/assets/image/produk/produk1.jpg'); ?>" >
                 </div>
                 <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6> Harga Rumput Laut Melonjak!</h6>
@@ -114,33 +96,33 @@
             <div class="jcarousel">
               <ul style="padding-top: 4%;">
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">10 resep budidaya rumput laut</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">Makanan Rumput Laut Enaa</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
                 
                 <li>
-                  <img class="artikelTerbaru" src="assets/image/produk/produk2.jpg" alt="Image 1">
+                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </ul>

@@ -1,28 +1,9 @@
 <html>
   <head>
-    <link rel="icon" href="assets/image/icon/icon.png">
+    
+    <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styleCSS.css">
-    <link rel="stylesheet" href="css/jcarousel.responsive.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="js/jcarousel.responsive.js"></script>
-    <script src="js/jquery.jcarousel.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(window).load(function() {
-    $("#loading").fadeOut("slow");
-    });
-    </script>
-    <style type="text/css">
-    .menuDashboard li:hover{
-    background-color: #2890ff;
-    }
-    </style>
+    
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
