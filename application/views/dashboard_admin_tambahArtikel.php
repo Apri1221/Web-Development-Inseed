@@ -57,14 +57,12 @@
                 <div class="col-md-8" style="margin-left: 15%;">
                   <form action="#" method="POST" id="formArtikel">
                     
-                    <h6>Judul Artikel:
+                    <h6>Judul Artikel:</h6>
                     <input type="text" name="judulArtikel" class="form-control">
-                    </h6>
-                
+                    
                     <br>
-                    <h6>Isi Artikel:
+                    <h6>Isi Artikel:</h6>
                     <textarea name="isiArtikel" form="formArtikel" class="form-control"></textarea>
-                    </h6>
                     <br>
                     
                     <div class="upload-btn-wrapper">
