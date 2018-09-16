@@ -10,7 +10,7 @@
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
     
-    <section id="fiturKami" style="padding: 4% 0; height: 100%; ">
+   <section id="fiturKami" style="padding: 4% 0; height: 100%; ">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 text-center" id="featur">
@@ -23,18 +23,42 @@
       </div>
       <div class="container">
         <div class="row">
-          <img class="col-lg-12 col-md-12 col-sm-12 d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" alt="First slide">
+          <img class="col-lg-12 col-md-12 col-sm-12 d-block w-100" src="assets/image/petani/petani1.jpg">
         </div>
         <br>
         <div class="row">
-          <p class="col-lg-12 col-md-12 col-sm-12">Caption disini, waduh ini lumayan kompleks juga ternyata, tapi kita tetap kuat, harus kuat hadapi semua ini, okokkokokokokokokokok begitu lah ayam berkokok, tapi kita pantang menyerah</p>
+          <p class="col-lg-12 col-md-12 col-sm-12" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
+            <hr class="my-4">
+            <div class="card">
+              <div class="card-body row">
+               <div class="col-md-3">
+                 <img src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" style="max-width: 80px; height: auto;">
+               </div>
+               <div class="col-md-9" style="text-align: justify;">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor incididunt ut labore et dolore magna aliqua. .</p>
+                   <footer class="blockquote-footer">Julian</footer>
+               </div>
+              
+             </div>
+             
+               
+            </div>
+          </div>
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0px 15% 0px">
+          <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
             <hr class="my-4">
             <form action="#" method="POST" id="formArtikel">
               
-              <h6>Isi Komentar:</h6>
+              <h6>Berikan Komentar anda:</h6>
               <textarea name="isiArtikel" form="formArtikel" class="form-control"></textarea>
               <br>
               
@@ -47,6 +71,7 @@
             </form>
           </div>
           
+
         </div>
       </div>
     </section>
