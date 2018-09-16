@@ -250,6 +250,28 @@ a:hover {
     margin-left: 10%;
   }
 }
+
+/*--------------DAFTAR SEBAGAI ----------*/
+
+#signup_as a {
+  padding: 2% 5%;
+  border-radius: 10px;
+  background-color: #23bab5;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500px;
+  border:2px solid #23bab5;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.5);
+}
+
+#signup_as a:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   transition-duration: 0.5s;
+   color: white;
+   text-decoration: none;
+}
 /* -----------ABOUT US BOSQ---------- */
 /* Pendahuluan page about us */
 #pendahuluan{
