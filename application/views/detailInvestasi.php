@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <?php include_once("template/header.php"); ?>
+    <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
     <title>inseed.id - Seaweed Invest</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
+    <script src="<?php echo base_url('asset/css/jcarousel.responsive.js');?>"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('asset/css/jquery.jcarousel.min.js');?>"></script>
+    <script src="js/jquery.jcarousel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   </head>
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->
@@ -42,7 +51,10 @@
             </ul>
           </div>
           <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">
-            <h2>Proyek Rumput Laut Sidoarjo</h2>
+		  <?php
+		  foreach($detail as $a) { 
+		?>
+            <h2><?php echo $a->namaProyek ?></h2>
             <h5>Harga:<span > Rp 100.000</span></h5>
             <h5>Stok Produk:<span > 10 pcs</span></h5>
             <h6>Deskripsi:</h6>
@@ -54,7 +66,7 @@
                 <select class="custom-select" id="colors">
                   <option value="200 gram">200 Gram</option>
                   <option value="400 gram">400 Gram</option>
-                  
+             
                 </select>
               </div>
               <div class="form-group">
@@ -88,8 +100,8 @@
           </div>
         </div>
         
+		<?php } ?>
       </div>
-    </div>
   </section>
   <?php include_once("template/footer.php"); ?> 
   <script>
