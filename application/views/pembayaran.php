@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <?php include_once("template/header.php"); ?>
     <title>inseed.id - Pembayaran</title>
-  
+    <?php include_once("template/header.php"); ?>
   </head>
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->

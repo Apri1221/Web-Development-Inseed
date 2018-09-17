@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-    <?php include_once("template/header.php"); ?>
+    <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
     <title>inseed.id - Seaweed Invest</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
+    <script src="<?php echo base_url('asset/css/jcarousel.responsive.js');?>"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('asset/css/jquery.jcarousel.min.js');?>"></script>
+    <script src="js/jquery.jcarousel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   </head>
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->
@@ -19,162 +28,49 @@
         <hr>
         <div class="btn-group filterProyek" role="group" style="margin: 2% 0;">
           <button type="button" class="btn disabled" style="opacity: 1;">Sortir Proyek Berdasarkan:</button>
-          <button type="button" class="btn btn-info active" ><i class="fas fa-percentage"></i>Ekspektasi Keuntungan</button>
+          <button type="button" class="btn btn-info active" href="<?php echo base_url('invest/sortir/untung');?>"><i class="fas fa-percentage"></i>Ekspektasi Keuntungan</button>
           <button type="button" class="btn btn-info"><i class="far fa-calendar-alt"></i>Waktu Proyek</button>
           <button type="button" class="btn btn-info"><i class="fas fa-money-bill-alt"></i>Progress Pendanaan</button>
         </div>
       </div>
       <div class="row">
+	 <?php 
+		$no = $this->uri->segment('3') + 1;
+		foreach($proyek as $a){ 
+		?>
         <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
           <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
             <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
+              <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
+              <p class="card-text ">Expektasi Keuntungan : <span> <?php echo $a->ekspUntung ?> %</span></p>
+              <p class="card-text ">Lama Proyek : <span><?php echo $a->lamaProyek?> Hari</span></p>
+              <p class="card-text ">Penanggung Jawab : <span><?php echo $a->penanggungJawab?></span></p>
+              <p class="card-text ">Lokasi : <span><?php echo $a->lokasi?></span></p>
               <div class="bagianDanaInvest" style="">
                 <div class="progress" style="margin-bottom: 8%;">
                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
                 </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="<?=base_url()?>index.php/invest/detail" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
+                <p class="card-text ">Dana Terkumpul : <span >Rp <?php echo $a->danaTerkumpul?></span></p>
+                <p class="card-text ">Sisa Waktu : <span ><?php echo $a->sisaWaktu?> Hari</span></p>
+                <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
-            <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
-                </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="#" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
-            <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
-                </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="#" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
-            <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
-                </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="#" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
-            <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
-                </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="#" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
-            <img class="card-img-top fotoProduk" src="assets/image/petani/petani1.jpg" alt="Card image cap">
-            <div class="card-body cardInvest">
-              <h5 class="card-title " style="font-weight: bold; ">Proyek Sumenep</h5>
-              <p class="card-text ">Expektasi Keuntungan : <span>15%</span></p>
-              <p class="card-text ">Lama Proyek : <span>60 Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span>Pak Tedjo Hadi</span></p>
-              <p class="card-text ">Lokasi : <span>Sumenep, Jawa Timur</span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
-                </div>
-                <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
-                <a href="#" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+		<?php } ?>
+		</div>		
       <div class="paginationProduk">
         <nav>
           <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
+            
+<?php 
+echo $this->pagination->create_links();?>
+	</li>
+          
+		  </ul>
         </nav>
       </div>
     </div>
-    
   </section>
   <?php include_once("template/footer.php"); ?> 
 </body>
