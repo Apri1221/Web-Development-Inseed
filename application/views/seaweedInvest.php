@@ -36,7 +36,7 @@
       <div class="row">
 	 <?php 
 		$no = $this->uri->segment('3') + 1;
-		foreach($proyek as $a){ 
+		foreach($proyek as $a){
 		?>
         <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
           <div class="card cardProduk">

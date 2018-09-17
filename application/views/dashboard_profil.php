@@ -47,6 +47,7 @@
             
           </ul>
         </div>
+        
         <div class="col-md-9">
           <div class="card">
             <div class="card-header" style="background-color: white;">
@@ -56,7 +57,9 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
-                  <img src="assets/image/boy.png" class="profilePictureDashboard">
+                  <img src="
+                  
+                  <?php echo base_url ('asset/assets/image/boy.png'); ?>" class="profilePictureDashboard">
                   
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">
@@ -81,7 +84,7 @@
                     <br>
                     <h6>No. Telepon:
                     <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
-                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">
+                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')" value="<?php echo $result->noHP ?>">
                     
                     </h6>
                     <br>

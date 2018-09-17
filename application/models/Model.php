@@ -25,5 +25,13 @@ class Model extends CI_Model{
 			$this->db->where($where);
 			$this->db->update($table,$data);
 	}	
+	public function cekuser($username){
+		$data = array();
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('namaAkun',$username);
+        $query = $this->db->get();
+        return $query->row();
+    }
 }
 ?>

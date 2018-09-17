@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         //load model admin
-        $this->load->model('autentikasi_model');
+        $this->load->model('Model');
     }
 
 	
@@ -19,7 +19,8 @@ class Dashboard extends CI_Controller {
             }
             else
                 $username = $this->session->userdata('username');
-                $this->load->view("dashboard_profil");   
+                $data['result'] = $this->Model->cekuser($username);
+                $this->load->view("dashboard_profil",$data);   
         } else {
             $this->load->view('masuk');
         }
