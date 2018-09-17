@@ -20,11 +20,11 @@
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
             <li class="list-group-item judulMenuDashboard" style="background-color: green;">USER DASHBOARD</li>
-            <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item "><i class="fas fa-user" ></i>Profilku</li> </a>
-            <a href="dashboard_user_cairkan.php"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-            <a href="dashboard_user_pesanan.php"> <li class="list-group-item active"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
-            <a href="dashboard_user_investasi.php"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-          </ul>
+            <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
+            </ul>
         </div>
         <div class="col-md-9">
           <div class="card">

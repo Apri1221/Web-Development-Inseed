@@ -6,6 +6,7 @@ class Dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
         //load model admin
         $this->load->model('autentikasi_model');
     }
@@ -46,12 +47,28 @@ class Dashboard extends CI_Controller {
 
 	public function cairkan() {
 		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard");
+            $this->load->view("dashboard_user_cairkan");
         } else {
             $this->load->view('masuk');
         }
 	}
 
+    public function pesanan() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_user_pesanan");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
+    
+    public function investasi() {
+		if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_user_investasi");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
+    
 	public function detail()
 	{
 		$this->load->helper('url');
