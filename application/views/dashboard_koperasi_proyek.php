@@ -10,7 +10,7 @@
 
     <?php include_once("template/navbar.php"); ?>
 
-    <section id="headerDashboard">
+    <section id="">
       <div class="col-md-12">
         
       </div>
@@ -20,29 +20,31 @@
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
             <!-- User -->
-            <li class="list-group-item judulMenuDashboard" style="background-color: #167c85;">KOPERASI</li>
-            <div id="sidebarUser" style="display: none;">
-              <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
-              <a href="dashboard_user_cairkan.php"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-              <a href="dashboard_user_pesanan.php"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
-              <a href="dashboard_user_investasi.php"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-            </div>
-            <!-- Admin-->
-            <div id="sidebarAdmin" style="display: none;">
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item "><i class="fas fa-user"></i>Kelola Pengguna</li></a>
-              <a href=""> <li class="list-group-item"><i class="fas fa-newspaper" ></i>Seaweed Article</li></a>
-              <a href=""> <li class="list-group-item "><i class="fas fa-shopping-cart" ></i>Seaweed Mart</li></a>
-              <a href=""> <li class="list-group-item active"><i class="fas fa-dollar-sign" ></i>Seaweed Invest</li></a>
-            </div>
-            <!-- koperasi -->
-            <div id="sidebarKoperasi" >
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
-            </div>
-            
-            <!-- UMKM -->
-            <div id="sidebarUMKM" style="display: none;">
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item "><i class="fa fa-box-open"></i>Kelola Produk</li></a>
-            </div>
+            <li class="list-group-item judulMenuDashboard" 
+            <?php if($this->session->userdata('level') === '0'):?>
+                style="background-color: green;">USER DASHBOARD</li>
+                <div id="sidebarUser">
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item active"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
+                </div>      
+            <?php elseif($this->session->userdata('level') === '2'):?>
+                style="background-color: #167c85;">KOPERASI DASHBOARD</li>
+                <!-- koperasi -->
+                <div id="sidebarKoperasi">
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek'); ?>"> <li class="list-group-item active"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
+                </div>
+            <?php elseif($this->session->userdata('level') === '3'):?>
+                style="background-color: blue;">UMKM DASHBOARD</li>
+                <!-- UMKM -->
+                <div id="sidebarUMKM">
+                  <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href=""> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
+                </div>
+            <?php endif;?>
             
           </ul>
         </div>

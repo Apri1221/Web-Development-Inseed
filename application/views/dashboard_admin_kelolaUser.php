@@ -10,7 +10,6 @@
     
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
-
     <section id="headerDashboard">
       <div class="col-md-12">
         
@@ -20,29 +19,14 @@
       <div class="row">
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
-            <!-- User -->
             <li class="list-group-item judulMenuDashboard" style="background-color: black;">ADMINISTRATOR</li>
-            <div id="sidebarUser" style="display: none;">
-              <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
-              <a href="dashboard_user_cairkan.php"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-              <a href="dashboard_user_pesanan.php"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
-              <a href="dashboard_user_investasi.php"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-            </div>
             <!-- Admin-->
             <div id="sidebarAdmin" >
               <a href=""> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
-              <a href=""> <li class="list-group-item"><i class="fas fa-newspaper" ></i>Seaweed Article</li></a>
-              <a href=""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Seaweed Mart</li></a>
-              <a href=""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Seaweed Invest</li></a>
-            </div>
-            <!-- koperasi -->
-            <div id="sidebarKoperasi" style="display: none;">
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
-            </div>
-            
-            <!-- UMKM -->
-            <div id="sidebarUMKM" style="display: none;">
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/kelolaUser');?>"> <li class="list-group-item"><i class="fas fa-newspaper" ></i>Buat Article</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/kelolaArticle');?>""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Kelola Article</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/kelolaProduk');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Produk</li></a>
             </div>
             
           </ul>
@@ -100,8 +84,6 @@
                     </table>
                   </div>
                 </div>
-                
-                
               </div>
             </div>
           </div>

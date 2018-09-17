@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller {
 	public function index() {
         if (null !== $this->session->userdata('level')){
             if ($this->session->userdata('level') === '1'){
-                $this->load->view("dashboard_kelolaUser");
+                $this->load->view("dashboard_admin_kelolaUser");
             }
             else
                 $username = $this->session->userdata('username');
@@ -76,6 +76,16 @@ class Dashboard extends CI_Controller {
 		$this->load->view('detailProduk');
 	}
 
+    public function kelolaUser() {
+        $this->load->helper('url');
+        $this->load->view('dashboard_admin_kelolaUser');   
+    }
+
+    public function kelolaProyek() {
+        $this->load->helper('url');
+        $this->load->view('dashboard_koperasi_proyek');   
+    }
 	
+
 
 }

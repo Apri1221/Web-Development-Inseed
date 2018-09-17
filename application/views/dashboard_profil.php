@@ -28,22 +28,13 @@
                   <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
                 </div>      
-            <?php elseif($this->session->userdata('level') === '1'):?>
-                style="background-color: grey;">ADMIN DASHBOARD</li>
-                <!-- Admin-->
-                <div id="sidebarAdmin">
-                  <a href=""> <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user active"></i>Kelola Pengguna</li></a>
-                  <a href=""> <li class="list-group-item"><i class="fas fa-newspaper" ></i>Seaweed Article</li></a>
-                  <a href=""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Seaweed Mart</li></a>
-                  <a href=""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Seaweed Invest</li></a>
-                </div>
             <?php elseif($this->session->userdata('level') === '2'):?>
-                style="background-color: grey;">KOPERASI DASHBOARD</li>
+                style="background-color: #167c85;">KOPERASI DASHBOARD</li>
                 <!-- koperasi -->
                 <div id="sidebarKoperasi">
-                  <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
-                  <a href="dashboard_user_cairkan.php"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-                  <a href=""> <li class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek'); ?>"> <li class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
                 </div>
             <?php elseif($this->session->userdata('level') === '3'):?>
                 style="background-color: blue;">UMKM DASHBOARD</li>
@@ -53,7 +44,6 @@
                   <a href=""> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
                 </div>
             <?php endif;?>
-            
             
           </ul>
         </div>
@@ -79,7 +69,7 @@
                   <div class="col-md-7 text-left editProfile">
                     <h6>Nama:
                     <input type="text" id="account" name="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15"
-                    oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('username'); ?>" readonly="readonly">
+                    oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('username'); ?>">
                     
                     </h6>
                     <br>
@@ -91,13 +81,13 @@
                     <br>
                     <h6>No. Telepon:
                     <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
-                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('noHP'); ?>">
+                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">
                     
                     </h6>
                     <br>
 
                     <h6>Password:
-                    <input type="password" id="pw1" name="pw1" class="form-control" required minlength="8"
+                    <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                     
                     </h6>
