@@ -251,6 +251,14 @@ a:hover {
   }
 }
 
+
+
+/*--------FORM JUAL----------*/
+
+#formJual{
+  margin: 3% 8%; border:2px solid #aaaaaa; border-radius: 20px; padding: 2%;
+}
+
 /*--------------DAFTAR SEBAGAI ----------*/
 
 #signup_as a {
