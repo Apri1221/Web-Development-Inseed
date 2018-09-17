@@ -12,6 +12,14 @@ class Autentikasi_model extends CI_Model
         return $this->session->userdata('user_in');
     }
 
+    function validates($username){
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('namaAkun',$username);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
 	//fungsi check login
 	function validate($email,$password){
         $this->db->select('*');

@@ -7,8 +7,7 @@ class Model extends CI_Model{
 	}
 
 	public function Insert($table,$data){
-	    $res = $this->db->insert($table, $data);
-	    return $res; 
+	    $this->db->insert($table, $data);
 	}
 
 	public function cek_pass($data){
@@ -22,10 +21,6 @@ class Model extends CI_Model{
 		return $this->db->get_where($table,$where);
 	}
 	 
-		function hapus($where,$table){
-		$this->db->where($where);
-		$this->db->delete($table);
-	}
 	public function update_data($where,$data,$table){
 			$this->db->where($where);
 			$this->db->update($table,$data);

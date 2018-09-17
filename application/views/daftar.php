@@ -57,7 +57,7 @@
                   
                 </div>
                 <div class="form-group">
-                  <label class="form-control-placeholder-1" for="account">Ulangi Password</label>
+                  <label class="form-control-placeholder-1" for="account">Konfirmasi Password</label>
                   <input type="password" id="pw2" class="form-control" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                   

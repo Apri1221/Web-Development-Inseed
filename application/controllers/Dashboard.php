@@ -7,24 +7,25 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
         //load model admin
-        $this->load->model('admin');
+        $this->load->model('autentikasi_model');
     }
 
 	
 	public function index() {
-		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard");
+        if (null !== $this->session->userdata('level')){
+            if ($this->session->userdata('level') === '1'){
+                $this->load->view("dashboard_kelolaUser");
+            }
+            else
+                $username = $this->session->userdata('username');
+                $this->load->view("dashboard_profil");   
         } else {
             $this->load->view('masuk');
         }
 	}
 
 	public function artikel() {
-		if ($this->session->userdata('level')==='1'){
-            $this->load->view("dashboard");
-        } else {
-            $this->load->view('masuk');
-        }
+		
 	}
 
 	public function mart() {

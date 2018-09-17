@@ -14,9 +14,10 @@ class Auth extends CI_Controller {
 
 	public function daftar() {
 		$this->load->helper('url');
-		$this->load->view('daftar');
+    	$this->load->view('daftar');
 	}
-	public function register() {
+	
+    public function register() {
 		$options = ['cost' => 5];
 		$this->load->model('model');
 		$username = $this->input->post('account');    
@@ -32,16 +33,67 @@ class Auth extends CI_Controller {
 		'password' => $enc_password,
 		'jk' => $this->input->post('JenisKelamin')
          );
-        // Ini untuk ngecek email yang dikirim udah ada atau belum
-        // $count_emails = $this->Autentikasi_model->countPublicUsersWithEmail($this->input->post('email'));
-        // if ($count_emails > 0) {
-        //     this->load->view('daftar');
-        // }else {
-            $data = $this->model->Insert('user', $data);
-            cek_login($username, $password);
-            redirect('dashboard'); 
+        
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->Autentikasi_model->validates($username);
+        if(count($validate) === 0){
+            $this->model->Insert('user', $data);
+            $val = $this->Autentikasi_model->validates($username);
+            $name  = $val[0]['namaAkun'];
+            $email = $val[0]['email'];
+            $level = $val[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'email'     => $email,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/dashboard');
+            // access login for admin
+        }
+        else{
+            redirect('/daftar');
+        }
         // }
 	}
+
+    public function update() {
+        $this->load->model('model');
+        $username = $this->input->post('account');    
+        $username1 = $this->input->post('username1');    
+        $password = $this->input->post('pw1');
+        $enc_password = md5($password);
+        $data = array(
+        'namaAkun' => $this->input->post('account'),
+        'noHP' => $this->input->post('phone'),
+        'email' => $this->input->post('email'),
+        'password' => $enc_password,
+        );
+        
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->Autentikasi_model->validates($username);
+        if(count($validate) === 0){
+            $this->model->update_data($username1, $data, 'user');
+            $val = $this->Autentikasi_model->validates($username);
+            $name  = $val[0]['namaAkun'];
+            $email = $val[0]['email'];
+            $level = $val[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'email'     => $email,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/dashboard');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard');
+        }
+        // }
+    }
 
 	public function login(){
 		$this->load->view('masuk');
@@ -63,7 +115,7 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
-            $this->load->view('dashboard');
+            redirect('/dashboard');
             // access login for admin
         } else {
             $this->load->view('masuk');
@@ -73,7 +125,7 @@ class Auth extends CI_Controller {
     public function logout()
     {
         $this->session->sess_destroy();
-        $this->load->view('masuk');
+        redirect('auth/login');
     }
 }
 ?>

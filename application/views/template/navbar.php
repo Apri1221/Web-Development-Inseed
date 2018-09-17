@@ -34,7 +34,7 @@
                 $sesdata['username']=$username; 
                 echo $username ?></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Dashboard</a>
+                  <a class="dropdown-item" href="<?=base_url()?>index.php/dashboard">Dashboard</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/auth/logout">Keluar</a>
                 </div>
