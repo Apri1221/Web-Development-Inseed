@@ -18,7 +18,27 @@ body {
     text-align: center;
 
 }
+.cartku {
+	border: 5px;
+	padding: 10px;
+}
+.pagination {
+    display: inline-block;
+}
 
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 /* home */
 
 .shiny-btn {
@@ -149,60 +169,60 @@ font-size: 32px;
   padding-bottom: 5%;
 }
 header.masthead h1{
-  font-size:2rem}
+	font-size:2rem}
 header.masthead p{
-  font-weight:300}
+	font-weight:300}
 .section-heading {
-  margin-top:0
+	margin-top:0
 }
 
 header.masthead{
 
-  background-position:center center;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size:cover}
+	background-position:center center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover}
 header.masthead h1{
-  font-size:2rem}
+	font-size:2rem}
 header.masthead p{
-  font-weight:300}
-  @media (min-width:768px){
-  
-  header.masthead p{
-    font-size:1.15rem}}
+	font-weight:300}
+	@media (min-width:768px){
+	
+	header.masthead p{
+		font-size:1.15rem}}
 @media (min-width:992px){
-  header.masthead{
-    height:50vh;
-    min-height:550px;
-    padding-top:0;
-    padding-bottom:0}
-    header.masthead h1{
-  font-size:4rem}}
+	header.masthead{
+		height:50vh;
+		min-height:550px;
+		padding-top:0;
+		padding-bottom:0}
+		header.masthead h1{
+	font-size:4rem}}
 .service-box{
-  max-width:400px}
+	max-width:400px}
 .text-primary{
-    color:#317e85!important
-  }
-  .btn{
-    font-weight:700;
-    text-transform:uppercase;
-    border-radius:300px;
-  }
+		color:#317e85!important
+	}
+	.btn{
+		font-weight:700;
+		text-transform:uppercase;
+		border-radius:300px;
+	}
 
-    
+		
 /*fix here*/
 a:hover {
-  color:#317e85
+	color:#317e85
 }
 .bg-primary {
-  background-color:#317e85!important
+	background-color:#317e85!important
 }
 .bg-dark {
-  background-color:#212529!important
+	background-color:#212529!important
 }
 .text-faded {
-  color:rgba(255,255,255,.7)
+	color:rgba(255,255,255,.7)
 }
 
 /*----------------LOGIN PAGE BOSQ--------------*/
@@ -249,36 +269,6 @@ a:hover {
   #cardLogin input{
     margin-left: 10%;
   }
-}
-
-
-
-/*--------FORM JUAL----------*/
-
-#formJual{
-  margin: 3% 8%; border:2px solid #aaaaaa; border-radius: 20px; padding: 2%;
-}
-
-/*--------------DAFTAR SEBAGAI ----------*/
-
-#signup_as a {
-  padding: 2% 5%;
-  border-radius: 10px;
-  background-color: #23bab5;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 500px;
-  border:2px solid #23bab5;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.5);
-}
-
-#signup_as a:hover {
-   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-   transition-duration: 0.5s;
-   color: white;
-   text-decoration: none;
 }
 /* -----------ABOUT US BOSQ---------- */
 /* Pendahuluan page about us */
@@ -505,19 +495,19 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-  .barisArtikelAtas{
-    margin-left: 0%;
-  }
-  .boxHeadline{
-    margin-left: 2%;
-  }
-  .topArticle{
-    margin-left: 2%;
-  }
-  .articleSliding{
-    margin-left: 1%;
+	.barisArtikelAtas{
+		margin-left: 0%;
+	}
+	.boxHeadline{
+		margin-left: 2%;
+	}
+	.topArticle{
+		margin-left: 2%;
+	}
+	.articleSliding{
+		margin-left: 1%;
 
-  }
+	}
 }
 
 
@@ -617,13 +607,13 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-  .strukturKeranjang{
-    text-align: center;
-    margin-top: 5%;
-  }
-  .indikatorKeranjang{
-    display: none;
-  }
+	.strukturKeranjang{
+		text-align: center;
+		margin-top: 5%;
+	}
+	.indikatorKeranjang{
+		display: none;
+	}
 }
 
 .kontenKeranjangTengah{
@@ -639,14 +629,14 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 @media screen and (max-width: 575px){
-  .pengirimanProdukKeranjang{
-    margin-right: 0%;
-    margin-bottom: 3%;
-  }
+	.pengirimanProdukKeranjang{
+		margin-right: 0%;
+		margin-bottom: 3%;
+	}
 
-  .buttonBuatPesananKeranjang{
-    margin-left: 25%;
-  }
+	.buttonBuatPesananKeranjang{
+		margin-left: 25%;
+	}
 }
 
 .ringkasanPesananKeranjang{

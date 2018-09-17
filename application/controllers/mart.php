@@ -1,17 +1,38 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Mart extends CI_Controller {
+	function __construct(){
+		parent::__construct();		
+		$this->load->model('market');
+        $this->load->helper('url');
+		$this->load->library('pagination');
+	}
+	
+	function lihatDetail($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
+	
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->model('investasi');
-		$this->load->view('seaweedMart');
+    $this->load->database();
+		$jumlah_data = $this->market->jumlah_data();
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'index.php/mart/index';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 6;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);		
+		$data['produk'] = $this->market->data($config['per_page'],$from);
+		$this->load->view('seaweedMart',$data);
 	}
-	public function detail()
+	public function detail($id)
 	{
-		$this->load->helper('url');
-		$this->load->model('investasi');
-		$this->load->view('detailProduk');
-	}
+	$where = array('idProduk' => $id);
+	$data['detail'] = $this->market->lihatDetail($where,'produk')->result();
+	$this->load->view('detailProduk',$data);
+	}	
+public function bayar ($id){
+	$this->load->view('pembayaran');
+}
 }
 ?>
