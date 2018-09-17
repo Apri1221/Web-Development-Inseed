@@ -79,19 +79,19 @@
                   <div class="col-md-7 text-left editProfile">
                     <h6>Nama:
                     <input type="text" id="account" name="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15"
-                    oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')" placeholder="Nama Anda">
+                    oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('username'); ?>" readonly="readonly">
                     
                     </h6>
                     <br>
                     <h6>Email:
                     <input type="email" id="email" name="email" class="form-control" pattern="[^ @]*@[^ @]*.[a-zA-Z]{2,}"
-                    oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')" placeholder="EmailAnda@email.com">
+                    oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('email'); ?>">
                     
                     </h6>
                     <br>
                     <h6>No. Telepon:
                     <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
-                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')" placeholder="Nomor Telepon/HP Anda">
+                    oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('noHP'); ?>">
                     
                     </h6>
                     <br>
