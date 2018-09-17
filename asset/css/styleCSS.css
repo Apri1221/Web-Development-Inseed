@@ -245,12 +245,13 @@ a:hover {
 }
 
 }
+
+
 @media screen and (min-width: 600px){
   #cardLogin input{
     margin-left: 10%;
   }
 }
-
 
 
 /*--------FORM JUAL----------*/
@@ -259,7 +260,7 @@ a:hover {
   margin: 3% 8%; border:2px solid #aaaaaa; border-radius: 20px; padding: 2%;
 }
 
-/*--------------DAFTAR SEBAGAI ----------*/
+/*--------------DAFTAR SEBAGAI --------------*/
 
 #signup_as a {
   padding: 2% 5%;
@@ -873,14 +874,14 @@ margin-right: 2%;
 
 @media screen and (max-width: 768px){
  .slideshowProduk{
-  height: 190px;
+  height: 400px;
 
 }
 }
 
 @media screen and (max-width: 425px){
  .slideshowProduk{
-  height: 250px;
+  height: 100px;
 }
 }
   .preview-thumbnail.nav-tabs {
@@ -908,18 +909,13 @@ margin-right: 2%;
   width: 85%;
   margin-left: 8% !important;
 }
-.descProdukDetail h5{
-  text-align: center;
-}
 }
 
-@media screen and (width: 768px){
-.descSeller{
-  margin-left: 15% !important;
+@media screen and (max-width: 768px){
+.descSeller,.descProdukDetail{
+  margin-left: 10% !important;
 }
-.descProdukDetail h5{
-  text-align: center;
-}
+
 }
 .descProdukDetail h5{
 margin-top: 8%;
