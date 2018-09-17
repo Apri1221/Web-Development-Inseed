@@ -59,7 +59,14 @@
                 <div class="col-md-5" style="text-align: center;">
                   <img src="
                   
-                  <?php echo base_url ('asset/assets/image/boy.png'); ?>" class="profilePictureDashboard">
+                  <?php 
+                  $jk = $result->jk;
+                  if($jk == 'Pria'){
+                      echo base_url ('asset/assets/image/boy.png');
+                  } else {
+                      echo base_url ('asset/assets/image/girl.png');
+                  }
+                  ?>" class="profilePictureDashboard">
                   
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">
