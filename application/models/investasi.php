@@ -38,7 +38,18 @@ class Investasi extends CI_Model
 	}
 	function sortby ($based){
 		if ($based === 'untung') {
-			$base = '
-		$SQL="select * from proyek order by 
+			$base = 'ekspUntung';
+		}
+		else if ($based === 'waktu') {
+			$base = 'lamaProyek';
+		}
+		else if ($based === 'progress') {
+			$base = 'minimalDana';
+		}
+		$SQL="select * from proyek order by $base ASC";
+		return $this->db->query($SQL);
+	}
+		
 }
+
 ?>
