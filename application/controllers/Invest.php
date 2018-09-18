@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include('src/SimpleImage.php');
-$img = new claviska\SimpleImage();
+
 class Invest extends CI_Controller {
 	function __construct(){
 		parent::__construct();		

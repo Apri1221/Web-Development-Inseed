@@ -1,7 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include('src/SimpleImage.php');
-$img = new claviska\SimpleImage();
 class Cart extends CI_Controller{
 	
 	function __construct(){
