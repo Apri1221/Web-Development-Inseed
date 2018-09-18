@@ -71,7 +71,7 @@
                 
                 <div class="col-md-7 text-left editProfile">
                   <h6>Jumlah Penarikan Dana (Minimal Rp 50.000)</h6>
-                  <input type="text" name="nominal" class="form-control" placeholder="Nominal jangan lebih dari <?php echo $result->saldo; ?>">
+                  <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>">
                   <br>
                   <h6>Pilih Bank</h6>
                   <select class="form-control" id="jenisBank">

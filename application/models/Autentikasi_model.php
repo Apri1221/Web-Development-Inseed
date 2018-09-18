@@ -21,10 +21,10 @@ class Autentikasi_model extends CI_Model
     }
 
 	//fungsi check login
-	function validate($email,$password){
+	function validate($username,$password){
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->where('namaAkun',$email);
+        $this->db->where('namaAkun',$username);
         $this->db->where('password',$password);
         $query = $this->db->get();
         return $query->result_array();

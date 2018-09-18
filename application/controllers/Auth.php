@@ -118,6 +118,18 @@ class Auth extends CI_Controller {
         $this->load->model('model');
         $username = $this->session->userdata('level');
         $nominal = $this->input->post('nominal');
+        $noRek = $this->input->post('norek');
+        $password = $this->input->post('pw1');
+        $enc_password = md5($password);
+        $validate = $this->Autentikasi_model->validate($username, $enc_password);
+        if(count($validate) === 0){
+            $data = array(
+                'nominal' => $nominal,
+                'tglTarik' => $tglTarik,
+                'noRek' => $noRek
+            );
+
+            $this->model->update_data($username, $data, 'user');
         
     }
 
