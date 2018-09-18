@@ -59,7 +59,7 @@
             <h5>Mulai dari:<span > Rp 15.000</span></h5>
             <h5>Lokasi Proyek: <span > <?php echo $row->lokasi;?></span></h5>
               <h5>Ekspektasi Profit: <span > <?php echo $row->ekspUntung;?>%</span></h5>
-               <h5>Waktu pengerjaan proyek: <br> <span> 1 Oktober 2018 - 1 November 2018</span></h5>
+               <h5>Waktu pengerjaan proyek: <br> <span> <?php echo $row->startProjek;?> - 1 November 2018</span></h5>
                 <h6>Deskripsi:</h6>
                   <p>Proyek ini merupakan proyek pengadaan rumput laut dari para petani rumput laut yang ada di <?php echo $row->lokasi;?>
          </p>
