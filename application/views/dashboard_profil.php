@@ -98,7 +98,7 @@
                   
 
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
-                    <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">
+                    <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
                       <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
@@ -106,36 +106,31 @@
                   </div>
                   
                   <div class="col-md-7 text-left editProfile">
-                    <h6>Nama:
+                    <h6>Nama</h6>
                     <input type="text" id="account" name="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15"
                     oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('username'); ?>">
                     
-                    </h6>
                     <br>
-                    <h6>Email:
+                    <h6>Email</h6>
                     <input type="email" id="email" name="email" class="form-control" pattern="[^ @]*@[^ @]*.[a-zA-Z]{2,}"
                     oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')" value="<?php echo $this->session->userdata('email'); ?>">
                     
-                    </h6>
                     <br>
-                    <h6>No. Telepon:
+                    <h6>No. Telepon</h6>
                     <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
                     oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')" value="<?php echo $result->noHP ?>">
                     
-                    </h6>
                     <br>
 
-                    <h6>Password:
+                    <h6>Password</h6>
                     <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                     
-                    </h6>
                     <br>
-                    <h6>Konfirmasi Password:
+                    <h6>Konfirmasi Password</h6>
                     <input type="password" id="pw2" class="form-control" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                     
-                    </h6>
                     <script type="text/javascript">
                     window.onload = function () {
                     document.getElementById("pw1").onchange = validatePassword;

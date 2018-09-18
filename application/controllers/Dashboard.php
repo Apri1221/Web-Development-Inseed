@@ -51,7 +51,9 @@ class Dashboard extends CI_Controller {
 
 	public function cairkan() {
 		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard_user_cairkan");
+            $username = $this->session->userdata('username');
+            $data['result'] = $this->Model->cekuser($username);
+            $this->load->view("dashboard_user_cairkan", $data);
         } else {
             $this->load->view('masuk');
         }

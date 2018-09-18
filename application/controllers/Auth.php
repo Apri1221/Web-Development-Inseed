@@ -114,6 +114,13 @@ class Auth extends CI_Controller {
         // }
     }
 
+    public function cairkan(){
+        $this->load->model('model');
+        $username = $this->session->userdata('level');
+        $nominal = $this->input->post('nominal');
+        
+    }
+
 	public function login(){
 		$this->load->view('masuk');
 	}
