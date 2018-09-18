@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller {
             else
                 $username = $this->session->userdata('username');
                 $data['result'] = $this->Model->cekuser($username);
-                $this->load->view("dashboard_profil",$data);   
+                $this->load->view("dashboard_profil",$data); 
         } else {
             $this->load->view('masuk');
         }

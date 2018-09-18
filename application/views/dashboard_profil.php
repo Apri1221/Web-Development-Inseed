@@ -72,7 +72,7 @@
                   } else if($jk == 'Wanita') {
                       echo base_url ('asset/assets/image/girl.png');
                   }
-                  ?>"
+                  ?>" class="profilePictureDashboard">
                   <?php elseif($result->foto === '1'):?>
                     <?php
                       try {
@@ -81,7 +81,7 @@
 
                         // Manipulate it
                         $image
-                          ->fromFile("<?php echo base_url('asset/assets/image/member/$result->namaAkun.jpg');?>")              // load parrot.jpg
+                          ->fromFile("<?php echo base_url('asset/assets/image/member/'.$result->namaAkun.'.jpg');?>")              // load parrot.jpg
                           ->autoOrient()                        // adjust orientation based on exif data
                           ->bestFit(200, 400)                   // proportinoally resize to fit inside a 250x400 box
                           ->flip('x')                           // flip horizontally
@@ -95,7 +95,7 @@
                     ?>
                   <?php endif;?>
 
-                  class="profilePictureDashboard">
+                  
 
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">

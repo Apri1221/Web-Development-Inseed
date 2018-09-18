@@ -25,6 +25,7 @@ class Model extends CI_Model{
 			$this->db->where('namaAkun', $where);
 			$this->db->update($table, $data);
 	}	
+	
 	public function cekuser($username){
 		$data = array();
         $this->db->select('*');
