@@ -26,9 +26,12 @@ class Investasi extends CI_Model
 		return $danaTerkumpul;
 	}
 	function lihatDana($id) {
-	$SQL = "SELECT danaTerkumpul from proyek where 'idProyek' = $id";
-	return $this->db->query($SQL);
-	}
+        $this->db->select('danaTerkumpul');
+        $this->db->from('proyek');
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);	
