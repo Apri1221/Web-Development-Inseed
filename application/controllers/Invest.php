@@ -56,5 +56,11 @@ class Invest extends CI_Controller {
 		$data['proyek'] = $this->investasi->sortby($where,'proyek');
 		$this->load->view('seaweedInvest',$data);
 	}
+	public function bayar($id)
+	{
+		$where = array('idProyek' => $id);
+		$data['detail'] = $this->investasi->lihatDetail($where,'proyek')->result();
+		$this->load->view('pembayaran');
+	}
 }
 ?>

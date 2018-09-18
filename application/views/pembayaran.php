@@ -31,12 +31,15 @@
           <div class="col-xl-4 col-md-4 proyekPembayaran">
             <div class="card cardPembayaran" style=" text-align: center;">
               <div class="col-xl-12 col-md-12 kontenDetail">
+			  <?php 
+		foreach($detail as $row){
+		?>
                 <h5>DETAIL PROYEK</h5>
                 <img src="assets/image/petani/petani1.jpg" >
-                <h6 style="font-weight: bold;">Proyek Sumenep</h6>
-                <h6>Ekpektasi Keuntungan: <b>15%</b></h6>
-                <h6>Penanggung Jawab: <b>Pak Tedjo</b></h6>
-                <h6>Lokasi Proyek:<b> Sidoarjo, Jawa Timur</b></h6>
+                <h6 style="font-weight: bold;"><?php echo $row->namaProyek;?></h6>
+                <h6>Ekpektasi Keuntungan: <b><?php echo $row->ekspUntung;?> %</b></h6>
+                <h6>Penanggung Jawab: <b><?php echo $row->penanggungJawab;?></b></h6>
+                <h6>Lokasi Proyek:<b> <?php echo $row->lokasi;?></b></h6>
               </div>
             </div>
           </div>

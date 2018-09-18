@@ -71,7 +71,7 @@
             <p class="card-text ">Dana Terkumpul :<span >Rp <?php echo $row->danaTerkumpul;?></span></p>
                     <p class="card-text ">Sisa Waktu :<span ><?php echo $row->sisaWaktu;?> hari</span></p>
                     <div class="text-center">
-                      <a href="#" class="btn btn-success buttonProdukInvest">Danai Proyek</a>
+                      <a href="<?php echo base_url();?>index.php/invest/bayar/<?php echo $row->idProyek;?>" class="btn btn-success buttonProdukInvest">Danai Proyek</a>
                     </div>
                     
           
