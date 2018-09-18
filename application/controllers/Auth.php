@@ -64,21 +64,24 @@ class Auth extends CI_Controller {
 
     public function update() {
         $this->load->model('model');
+
         $username = $this->input->post('account');    
         $username1 = $this->input->post('username1');    
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
-        $data = array(
-        'namaAkun' => $this->input->post('account'),
-        'noHP' => $this->input->post('phone'),
-        'email' => $this->input->post('email'),
-        'password' => $enc_password,
-        );
-        
         
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
+
+            $data = array(
+                'namaAkun' => $this->input->post('account'),
+                'noHP' => $this->input->post('phone'),
+                'email' => $this->input->post('email'),
+                'password' => $enc_password,
+                'foto' => '1'
+            );
+
             $this->model->update_data($username1, $data, 'user');
             
             // manajemen file

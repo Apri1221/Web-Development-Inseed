@@ -69,7 +69,7 @@
                   $jk = $result->jk;
                   if($jk == 'Pria'){
                       echo base_url ('asset/assets/image/boy.png');
-                  } else if($jk == 'Perempuan') {
+                  } else if($jk == 'Wanita') {
                       echo base_url ('asset/assets/image/girl.png');
                   }
                   ?>"
@@ -77,7 +77,7 @@
                     <?php
                       try {
                         // Create a new SimpleImage object
-                        $image = new \SimpleImage();
+                        $image = new calviska\SimpleImage();
 
                         // Manipulate it
                         $image
