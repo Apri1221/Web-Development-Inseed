@@ -1,13 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-include('src/SimpleImage.php');
-$img = new claviska\SimpleImage();
+
 class Dashboard extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
         $this->load->helper('url');
+        //load library form validasi
+        $this->load->library('form_validation');
+        $this->load->library('session');
         //load model admin
         $this->load->model('Model');
     }

@@ -1,7 +1,11 @@
 <html>
   <head>
     
-    <?php include_once("template/header.php"); ?>
+    <?php 
+      include_once("template/header.php"); 
+      require('src/SimpleImage.php');
+    ?>
+
     <title>inseed.id - Dashboard</title>
     
   </head>
@@ -57,17 +61,42 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
+                  
+                  <?php if($result->foto === '0'): ?>
                   <img src="
                   
                   <?php 
                   $jk = $result->jk;
                   if($jk == 'Pria'){
                       echo base_url ('asset/assets/image/boy.png');
-                  } else {
+                  } else if($jk == 'Perempuan') {
                       echo base_url ('asset/assets/image/girl.png');
                   }
-                  ?>" class="profilePictureDashboard">
-                  
+                  ?>"
+                  <?php elseif($result->foto === '1'):?>
+                    <?php
+                      try {
+                        // Create a new SimpleImage object
+                        $image = new \SimpleImage();
+
+                        // Manipulate it
+                        $image
+                          ->fromFile("<?php echo base_url('asset/assets/image/member/$result->namaAkun.jpg');?>")              // load parrot.jpg
+                          ->autoOrient()                        // adjust orientation based on exif data
+                          ->bestFit(200, 400)                   // proportinoally resize to fit inside a 250x400 box
+                          ->flip('x')                           // flip horizontally
+                          ->overlay("<?php echo base_url('asset/assets/image/member/logo.png');?>", 'bottom right') // add a watermark image
+                          ->toScreen();                         // output to the screen
+
+                      } catch(Exception $err) {
+                        // Handle errors
+                        echo $err->getMessage();
+                      }
+                    ?>
+                  <?php endif;?>
+
+                  class="profilePictureDashboard">
+
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">
                     <div class="upload-btn-wrapper">

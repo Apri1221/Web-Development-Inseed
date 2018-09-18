@@ -75,23 +75,9 @@ class Auth extends CI_Controller {
         'password' => $enc_password,
         );
         
+        
         // ngecek apakah udah ada username yang sama
-        $validate = $this->Autentikasi_model->validates($username);
-        if(count($validate) === 0){
-            $this->model->update_data($username1, $data, 'user');
-            $val = $this->Autentikasi_model->validates($username);
-            $name  = $val[0]['namaAkun'];
-            $email = $val[0]['email'];
-            $level = $val[0]['user_level'];
-            $sesdata = array(
-                'username'  => $name,
-                'email'     => $email,
-                'level'     => $level,
-                'logged_in' => TRUE
-            );
-            $this->session->set_userdata($sesdata);
-            redirect('/dashboard');
-            // access login for admin
+        
         }
         else{
             redirect('/dashboard');

@@ -1,9 +1,16 @@
 <?php
+<<<<<<< HEAD
 
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+>>>>>>> 7050acda84bf9444cfcacf1cb4dfa0e4f62abbc0
 class Cart extends CI_Controller{
 	
 	function __construct(){
 		parent::__construct();
+        //load library form validasi
+        $this->load->library('form_validation');
+        $this->load->library('session');
 		$this->load->model('cart_model');
 	}
 
