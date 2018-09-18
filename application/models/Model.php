@@ -22,8 +22,8 @@ class Model extends CI_Model{
 	}
 	 
 	public function update_data($where,$data,$table){
-			$this->db->where($where);
-			$this->db->update($table,$data);
+			$this->db->where('namaAkun', $where);
+			$this->db->update($table, $data);
 	}	
 	public function cekuser($username){
 		$data = array();
