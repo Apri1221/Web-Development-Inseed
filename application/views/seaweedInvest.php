@@ -24,14 +24,8 @@
     </div>
     <div class="container-fluid">
       <div class="judulSeaweedMart">
-        <h2>Cari proyek yang ingin anda modali sekarang!</h2>
-        <hr>
-        <div class="btn-group filterProyek" role="group" style="margin: 2% 0;">
-          <button type="button" class="btn disabled" style="opacity: 1;">Sortir Proyek Berdasarkan:</button>
-          <button type="button" class="btn btn-info active" href="<?php echo base_url('invest/sortir/untung');?>"><i class="fas fa-percentage"></i>Ekspektasi Keuntungan</button>
-          <button type="button" class="btn btn-info" href="<?php echo base_url('invest/sortir/waktu');?>"><i class="far fa-calendar-alt"></i>Waktu Proyek</button>
-          <button type="button" class="btn btn-info" href="<?php echo base_url('invest/sortir/progress');?>"><i class="fas fa-money-bill-alt"></i>Progress Pendanaan</button>
-        </div>
+        <h2>Temukan proyek yang ingin anda modali sekarang!</h2>
+        <hr><br><br>
       </div>
       <div class="row">
 	 <?php 
@@ -48,9 +42,10 @@
               <p class="card-text ">Lokasi : <span><?php echo $a->lokasi?></span></p>
               <div class="bagianDanaInvest" style="">
                 <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $a->progress?> %;"><?php echo $a->progress?> %</div>
                 </div>
                 <p class="card-text ">Dana Terkumpul : <span >Rp <?php echo $a->danaTerkumpul?></span></p>
+                <p class="card-text ">Dana yang Dibutuhkan : <span >Rp <?php echo $a->minimalDana?></span></p>
                 <p class="card-text ">Sisa Waktu : <span ><?php echo $a->sisaWaktu?> Hari</span></p>
                 <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
               </div>
@@ -59,14 +54,13 @@
         </div>
 		<?php } ?>
 		</div>		
-      <div class="paginationProduk">
+      <div class="col-xl-5 col-md-5 col-sm-5 col-xs-12">
+</div>
+		<div class="col-xl-6 col-md-5 col-sm-5 col-xs-12 paginationProduk">
         <nav>
           <ul class="pagination justify-content-center text-center">
-            
-<?php 
-echo $this->pagination->create_links();?>
-	</li>
-          
+		  <?php 
+		  echo $this->pagination->create_links();?>
 		  </ul>
         </nav>
       </div>

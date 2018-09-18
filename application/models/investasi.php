@@ -32,18 +32,29 @@ class Investasi extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+	function lihatTarget($id) {
+        $this->db->select('minimalDana');
+        $this->db->from('proyek');
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);	
 	}
+	function update_progress($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);	
+	}
 	function sortby ($based){
-		if ($based === 'untung') {
+		if ($based == 'untung') {
 			$base = 'ekspUntung';
 		}
-		else if ($based === 'waktu') {
+		else if ($based == 'waktu') {
 			$base = 'lamaProyek';
 		}
-		else if ($based === 'progress') {
+		else if ($based == 'progress') {
 			$base = 'minimalDana';
 		}
 		$SQL="select * from proyek order by $base ASC";

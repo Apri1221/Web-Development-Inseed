@@ -53,6 +53,7 @@ class Invest extends CI_Controller {
 	}
 	public function sortir($based)
 	{
+		
 		$data['proyek'] = $this->investasi->sortby($based,'proyek');
 		$this->load->view('seaweedInvest',$data);
 	}
@@ -73,8 +74,18 @@ class Invest extends CI_Controller {
 		$data = array (
 		'danaTerkumpul' => $danaSkrg
 		);
-	$this->investasi->update_data($where,$data,'proyek');
-	$this->load->view('thanks');
+		$this->investasi->update_data($where,$data,'proyek');
+		$cek2 = $this->investasi->lihatDana($id);
+		$danaSkrg2  = $cek2[0]['danaTerkumpul'];
+		$cekTarget = $this->investasi->lihatTarget($id);
+		$danaTarget  = $cekTarget[0]['minimalDana'];
+		$progress = $danaSkrg * 100 / $danaTarget;
+		$dataProgress = array (
+		'progress' => $progress
+		);
+		
+		$this->investasi->update_progress($where,$dataProgress,'proyek');
+		$this->load->view('thanks');
 		
 		
 }
