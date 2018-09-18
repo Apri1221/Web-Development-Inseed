@@ -63,7 +63,7 @@ class Cart extends CI_Controller{
 		echo $this->show_cart();
 	}
 	function bayar () {
-		$this->load->view('pembayaran');
+		$this->load->view('pembayaran_produk');
 	}
 	function cari() {
 		$search = $this->input->post('search');
