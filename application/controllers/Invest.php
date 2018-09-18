@@ -62,5 +62,23 @@ class Invest extends CI_Controller {
 		$data['bayar'] = $this->investasi->lihatDetail($where,'proyek')->result();
 		$this->load->view('pembayaran',$data);
 	}
+	public function tambah($id){
+		$nominal = $this->input->post('nominal');
+		$datta['dana'] = $this->investasi->lihatDana($id)->result();
+		foreach ($dana as $row) {
+			$danaSkrg = $row->danaTerkumpul;
+		}
+		$danaSkrg += $nominal;
+		$data = array(
+		'danaTerkumpul' => $danaSkrg
+		);
+		$where = array(
+		'idProyek' => $id
+	);
+	$this->investasi->update_data($where,$data,'proyek');
+	$this->load->view('about_us');
+		
+		
+}
 }
 ?>
