@@ -7,11 +7,9 @@ class Auth extends CI_Controller {
         parent::__construct();
         //load library form validasi
         $this->load->library('form_validation');
-        $this->load->helper('form');
         //load model admin
         $this->load->model('Autentikasi_model');
         $this->load->library('session');
-        $this-?load->database();
     }
 
 	public function daftar() {
@@ -79,48 +77,12 @@ class Auth extends CI_Controller {
         
         
         // ngecek apakah udah ada username yang sama
-        $validate = $this->Autentikasi_model->validates($username);
-        if(count($validate) === 0){
-            $this->model->update_data($username1, $data, 'user');
-            
-            // manajemen file
-            $config['upload_path']='./assets/image/member';
-            $config['allowed_types']='jpg|png|jpeg';
-            $config['max_size'] = '1024';
-            $config['file_name'] = $username.'.jpg';
-            $this->load->library('upload',$config);
-            $this->upload->do_upload('file_name');
-            $up_file_name=$this->upload->data();
-
-            // disini auto set session
-            $val = $this->Autentikasi_model->validates($username);
-            $name  = $val[0]['namaAkun'];
-            $email = $val[0]['email'];
-            $level = $val[0]['user_level'];
-            $sesdata = array(
-                'username'  => $name,
-                'email'     => $email,
-                'level'     => $level,
-                'logged_in' => TRUE
-            );
-            $this->session->set_userdata($sesdata);
-            redirect('/dashboard');
-            // access login for admin
+        
         }
         else{
             redirect('/dashboard');
         }
         // }
-    }
-
-    public function profil_upload(){
-        $config['upload_path']='./assets/image/member';
-        $config['allowed_types']='*';
-        $this->load->library('upload',$config);
-        $this->upload->do_upload('file_name');
-        $up_file_name=$this->upload->data();
-        $data = array('file_name' => $up_file_name['file_name'] );
-        $this->Model->FileUpload($data);
     }
 
 	public function login(){

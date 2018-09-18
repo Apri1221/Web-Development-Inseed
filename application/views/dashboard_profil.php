@@ -1,51 +1,52 @@
 <html>
   <head>
     
-        <?php
-        include_once("template/header.php");
-        require('src/SimpleImage.php');
-        ?>
-        <title>inseed.id - Dashboard</title>
+    <?php 
+      include_once("template/header.php"); 
+      require('src/SimpleImage.php');
+    ?>
+
+    <title>inseed.id - Dashboard</title>
+    
+  </head>
+  <body style="background-color:#F5F5F5">
+    <div id="loading"></div>
+    <!-- ISI NAVBAR DISINI YA!!!! -->
+    <?php include_once("template/navbar.php"); ?>
+    <section id="">
+      <div class="col-md-12">
         
-      </head>
-      <body style="background-color:#F5F5F5">
-        <div id="loading"></div>
-        <!-- ISI NAVBAR DISINI YA!!!! -->
-        <?php include_once("template/navbar.php"); ?>
-        <section id="">
-          <div class="col-md-12">
-            
-          </div>
-        </section>
-        <div class="container" style="margin-top: 80px; margin-bottom: 80px;">
-          <div class="row">
-            <div class="col-md-3" >
-              <ul class="list-group menuDashboard" >
-                <!-- User -->
-                <li class="list-group-item judulMenuDashboard"
-                  <?php if($this->session->userdata('level') === '0'):?>
+      </div>
+    </section>
+    <div class="container" style="margin-top: 80px; margin-bottom: 80px;">
+      <div class="row">
+        <div class="col-md-3" >
+          <ul class="list-group menuDashboard" >
+            <!-- User -->
+            <li class="list-group-item judulMenuDashboard" 
+            <?php if($this->session->userdata('level') === '0'):?>
                 style="background-color: green;">USER DASHBOARD</li>
                 <div id="sidebarUser">
                   <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item <?php if($this->uri->segment(1)=="Dashboard" || $this->uri->segment(1)=="dashboard"){echo " active";}?>"><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
+                </div>      
+            <?php elseif($this->session->userdata('level') === '2'):?>
+                style="background-color: #167c85;">KOPERASI DASHBOARD</li>
+                <!-- koperasi -->
+                <div id="sidebarKoperasi">
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek'); ?>"> <li class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
                 </div>
-                <?php elseif($this->session->userdata('level') === '2'):?>
-              style="background-color: #167c85;">KOPERASI DASHBOARD</li>
-              <!-- koperasi -->
-              <div id="sidebarKoperasi">
-                <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
-                <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-                <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek'); ?>"> <li class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
-              </div>
-              <?php elseif($this->session->userdata('level') === '3'):?>
-            style="background-color: blue;">UMKM DASHBOARD</li>
-            <!-- UMKM -->
-            <div id="sidebarUMKM">
-              <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
-              <a href=""> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
-            </div>
+            <?php elseif($this->session->userdata('level') === '3'):?>
+                style="background-color: blue;">UMKM DASHBOARD</li>
+                <!-- UMKM -->
+                <div id="sidebarUMKM">
+                  <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href=""> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
+                </div>
             <?php endif;?>
             
           </ul>
@@ -64,46 +65,46 @@
                   <?php if($result->foto === '0'): ?>
                   <img src="
                   
-                  <?php
+                  <?php 
                   $jk = $result->jk;
                   if($jk == 'Pria'){
-                    echo base_url ('asset/assets/image/boy.png');
+                      echo base_url ('asset/assets/image/boy.png');
                   } else if($jk == 'Perempuan') {
-                    echo base_url ('asset/assets/image/girl.png');
+                      echo base_url ('asset/assets/image/girl.png');
                   }
                   ?>"
                   <?php elseif($result->foto === '1'):?>
-                  
-                  <?php
-                  try {
-                  // Create a new SimpleImage object
-                  $image = new \SimpleImage();
-                  // Manipulate it
-                  $image
-                  ->fromFile("<?php echo base_url('asset/assets/image/member/'.$result->namaAkun;.'.jpg');?>")              // load parrot.jpg
-                  ->autoOrient()                        // adjust orientation based on exif data
-                  ->bestFit(200, 400)                   // proportinoally resize to fit inside a 250x400 box
-                  ->flip('x')                           // flip horizontally
-                  ->overlay("<?php echo base_url('asset/assets/image/member/logo.png');?>", 'bottom right') // add a watermark image
-                  ->toScreen();                         // output to the screen
-                  } catch(Exception $err) {
-                  // Handle errors
-                  echo $err->getMessage();
-                  }
-                  ?>
+                    <?php
+                      try {
+                        // Create a new SimpleImage object
+                        $image = new \SimpleImage();
 
+                        // Manipulate it
+                        $image
+                          ->fromFile("<?php echo base_url('asset/assets/image/member/$result->namaAkun.jpg');?>")              // load parrot.jpg
+                          ->autoOrient()                        // adjust orientation based on exif data
+                          ->bestFit(200, 400)                   // proportinoally resize to fit inside a 250x400 box
+                          ->flip('x')                           // flip horizontally
+                          ->overlay("<?php echo base_url('asset/assets/image/member/logo.png');?>", 'bottom right') // add a watermark image
+                          ->toScreen();                         // output to the screen
+
+                      } catch(Exception $err) {
+                        // Handle errors
+                        echo $err->getMessage();
+                      }
+                    ?>
                   <?php endif;?>
 
                   class="profilePictureDashboard">
 
-                  <form action="<?=base_url()?>index.php/auth/update" enctype="multipart/form-data" method="POST">
-                    <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
+                  <form action="<?=base_url()?>index.php/auth/update" method="POST">
+                    <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>" name="id_i">
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
                       <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
                     </div>
-                </div>
-                
+                  </div>
+                  
                   <div class="col-md-7 text-left editProfile">
                     <h6>Nama:
                     <input type="text" id="account" name="account" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15"
@@ -123,15 +124,16 @@
                     
                     </h6>
                     <br>
+
                     <h6>Password:
                     <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" required minlength="8"
-                    oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
+                  oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                     
                     </h6>
                     <br>
                     <h6>Konfirmasi Password:
                     <input type="password" id="pw2" class="form-control" required minlength="8"
-                    oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
+                  oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
                     
                     </h6>
                     <script type="text/javascript">
