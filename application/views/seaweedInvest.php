@@ -61,7 +61,7 @@
 		</div>		
       <div class="paginationProduk">
         <nav>
-          <ul class="pagination justify-content-center">
+          <ul class="pagination justify-content-center text-center">
             
 <?php 
 echo $this->pagination->create_links();?>
