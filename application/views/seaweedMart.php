@@ -36,13 +36,13 @@
       
 <div class="container"><br/>
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-8 boxProduk">
 			<h4>Produk</h4>
 			<div class="row">
 			<?php foreach ($data as $row) { ?>
 				<div class="col-md-6 cartku">
 					<div class="thumbnail">
-						<div class="caption" style="font-size:12px";>
+						<div class="boxProduk">
 							<h4><?php echo $row->namaProduk;?></h4>
 							<div class="row">
 								<div class="col-md-7">
