@@ -20,6 +20,18 @@ class Investasi extends CI_Model
 	}
 	function jumlah_data(){
 		return $this->db->get('proyek')->num_rows();
-	} 
+	}
+	function totalDana($danaTerkumpul, $nominal){
+		$danaTerkumpul += $nominal;
+		return $danaTerkumpul;
+	}
+	function lihatDana($id) {
+	$SQL = "SELECT danaTerkumpul from proyek where 'idProyek' = $id";
+	return $this->db->query($SQL);
+	}
+	function update_data($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);	
+}
 }
 ?>
