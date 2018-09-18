@@ -27,8 +27,7 @@
               <option value="BCA">BCA 291829301xxx</option>
             </select>
 			 
-            <p style="text-align: justify;">Pastikan data anda dan nomor rekening tujuan yang anda pilih sudah benar. Jika sudah melakukan transaksi, maka projek akan langsung masuk dashboard anda.<br>
-              Untuk mengecek dashboard anda, silahkan klik <a href="#">Di sini</a> </p>
+            <p style="text-align: justify;">Pastikan data anda dan nomor rekening tujuan yang anda pilih sudah benar.</p>
               <button type="submit" class="btn btn-outline-success" style="padding: 2% 10%; margin: 2% 0">KONFIRMASI</button>
             </form>
           </div>

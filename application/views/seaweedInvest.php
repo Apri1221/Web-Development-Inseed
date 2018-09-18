@@ -29,8 +29,8 @@
         <div class="btn-group filterProyek" role="group" style="margin: 2% 0;">
           <button type="button" class="btn disabled" style="opacity: 1;">Sortir Proyek Berdasarkan:</button>
           <button type="button" class="btn btn-info active" href="<?php echo base_url('invest/sortir/untung');?>"><i class="fas fa-percentage"></i>Ekspektasi Keuntungan</button>
-          <button type="button" class="btn btn-info"><i class="far fa-calendar-alt"></i>Waktu Proyek</button>
-          <button type="button" class="btn btn-info"><i class="fas fa-money-bill-alt"></i>Progress Pendanaan</button>
+          <button type="button" class="btn btn-info" href="<?php echo base_url('invest/sortir/waktu');?>"><i class="far fa-calendar-alt"></i>Waktu Proyek</button>
+          <button type="button" class="btn btn-info" href="<?php echo base_url('invest/sortir/progress');?>"><i class="fas fa-money-bill-alt"></i>Progress Pendanaan</button>
         </div>
       </div>
       <div class="row">

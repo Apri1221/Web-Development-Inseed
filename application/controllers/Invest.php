@@ -54,7 +54,7 @@ class Invest extends CI_Controller {
 	public function sortir($based)
 	{
 		$where = array('idProyek' => $id);
-		$data['proyek'] = $this->investasi->sortby($where,'proyek');
+		$data['proyek'] = $this->investasi->sortby($where,$based,'proyek');
 		$this->load->view('seaweedInvest',$data);
 	}
 	public function bayar($id)
