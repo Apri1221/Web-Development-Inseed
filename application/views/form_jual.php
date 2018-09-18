@@ -90,6 +90,10 @@
 		</button>
 
 	</div>
+</div>
+</form>
+</div>
+</div>
 </section>
 
     <?php include_once("template/footer.php"); ?>
