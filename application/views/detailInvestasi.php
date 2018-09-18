@@ -52,22 +52,24 @@
 <<<<<<< HEAD
         </div>
         <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">
-          <h2>Proyek Rumput Laut Sidoarjo</h2>
+		<?php 
+		foreach($detail as $row){
+		?>
+          <h2><?php echo $row->namaProyek;?></h2>
             <h5>Mulai dari:<span > Rp 15.000</span></h5>
-            <h5>Lokasi Proyek: <span > Kabupaten Sidoarjo,Jawa Timur</span></h5>
-              <h5>Ekspektasi Profit: <span > 5%</span></h5>
+            <h5>Lokasi Proyek: <span > <?php echo $row->lokasi;?></span></h5>
+              <h5>Ekspektasi Profit: <span > <?php echo $row->ekspUntung;?>%</span></h5>
                <h5>Waktu pengerjaan proyek: <br> <span> 1 Oktober 2018 - 1 November 2018</span></h5>
                 <h6>Deskripsi:</h6>
-                  <p>Proyek ini merupakan proyek pengadaan rumput laut dari para petani rumput laut yang ada di sidoarjo
+                  <p>Proyek ini merupakan proyek pengadaan rumput laut dari para petani rumput laut yang ada di <?php echo $row->lokasi;?>
          </p>
             
             <div class="progress" style="margin-bottom: 8%;">
               <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
 
             </div>
-            <p class="card-text ">Dana Terkumpul :<span >Rp 25.932.150</span></p>
-                <p class="card-text ">Target Dana:<span >Rp 30.000.000</span></p>
-                    <p class="card-text ">Sisa Waktu :<span >10 Hari</span></p>
+            <p class="card-text ">Dana Terkumpul :<span >Rp <?php echo $row->danaTerkumpul;?></span></p>
+                    <p class="card-text ">Sisa Waktu :<span ><?php echo $row->sisaWaktu;?> hari</span></p>
                     <div class="text-center">
                       <a href="#" class="btn btn-success buttonProdukInvest">Danai Proyek</a>
                     </div>
@@ -75,76 +77,22 @@
           
      </div>
          <div class="col-lg-3 col-md-8 col-sm-10 descSeller" >
-        <h2 style="color: green;">Proyek Oleh:</h2><br>
+        <h2 style="color: green;">Penanggung jawab:</h2><br>
         <img src="assets/image/user.png"><br><br>
-        <h4>Koperasi Sidoarjo</h4>
+        <h4><?php echo $row->penanggungJawab;?></h4>
         <span class="fas fa-star"><span class="fas fa-star" ><span class="fas fa-star"><span class="fas fa-star"></span></span></span></span>
-        <p style="margin-top: 2%;">Tahun Bergabung: 2018</p>
-        <p>Lokasi Koperasi: Sidoarjo, Jawa Timur</p>
+        <p>Lokasi: <?php echo $row->lokasi;?></p>
       </div>
       </div>
-    
+    <?php 
+		}
+		?>
     </div>
   </div>
 </section>
 
 =======
-          </div>
-          <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">
-		  <?php
-		  foreach($detail as $a) { 
-		?>
-            <h2><?php echo $a->namaProyek ?></h2>
-            <h5>Harga:<span > Rp 100.000</span></h5>
-            <h5>Stok Produk:<span > 10 pcs</span></h5>
-            <h6>Deskripsi:</h6>
-            <p>Produk ini merupakan produk rumput laut pilihan yang disediakan terbaik untuk anda
-            </p>
-            <form method="get" action="cart.html">
-              <div class="form-group">
-                <label for="colors">Variasi:</label>
-                <select class="custom-select" id="colors">
-                  <option value="200 gram">200 Gram</option>
-                  <option value="400 gram">400 Gram</option>
-             
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Kuantitas: </label>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                    <i class="fa fa-minus"></i>
-                    </button>
-                  </div>
-                  <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1" style="text-align: center;">
-                  <div class="input-group-append">
-                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                    <i class="fa fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
-                <i class="fa fa-shopping-cart"></i> Beli Sekarang
-              </a>
-            </form>
-          </div>
-          <div class="col-lg-3 col-md-8 col-sm-10 descSeller" >
-            <h2 style="color: green;">Produk Oleh:</h2><br>
-            <img src="assets/image/girl.png"><br><br>
-            <h4>Bu Marji</h4>
-            <span class="fas fa-star"><span class="fas fa-star" ><span class="fas fa-star"><span class="fas fa-star"></span></span></span></span>
-            <p style="margin-top: 2%;">Tahun Bergabung: 2018</p>
-            <p>Lokasi Penjual: Sidoarjo, Jawa Timur</p>
-          </div>
-        </div>
-        
-		<?php } ?>
-      </div>
-  </section>
->>>>>>> 246b9cfd86e6f43a3ae57d6b1cb9cd652cd86353
-  <?php include_once("template/footer.php"); ?> 
+     <?php include_once("template/footer.php"); ?> 
   
 </body>
 </html>

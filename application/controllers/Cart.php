@@ -64,7 +64,7 @@ class Cart extends CI_Controller{
 	}
 	function cari() {
 		$search = $this->input->post('search');
-		$result['data'] = $this->cart_model->search($search);
+		$result['data'] = $this->cart_model->search($search)->result();
 		$this->load->view('seaweedMart',$result);
 	}
 }

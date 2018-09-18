@@ -47,7 +47,7 @@ class Invest extends CI_Controller {
 	public function detail($id)
 	{
 		$where = array('idProyek' => $id);
-		$data['detail'] = $this->investasi->lihatDetail($where,'proyek');
+		$data['detail'] = $this->investasi->lihatDetail($where,'proyek')->result();
 		$this->load->view('detailInvestasi',$data);
 	}
 	public function sortir($based)
