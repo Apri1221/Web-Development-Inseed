@@ -4,6 +4,9 @@ class Cart extends CI_Controller{
 	
 	function __construct(){
 		parent::__construct();
+        //load library form validasi
+        $this->load->library('form_validation');
+        $this->load->library('session');
 		$this->load->model('cart_model');
 	}
 
