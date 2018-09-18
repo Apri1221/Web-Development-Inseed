@@ -36,6 +36,9 @@ class Investasi extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table,$data);	
 	}
-	function sortby ($where,$based,$table){
+	function sortby ($based){
+		if ($based === 'untung') {
+			$base = '
+		$SQL="select * from proyek order by 
 }
 ?>
