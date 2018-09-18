@@ -116,21 +116,28 @@ class Auth extends CI_Controller {
 
     public function cairkan(){
         $this->load->model('model');
-        $username = $this->session->userdata('level');
+        $username = $this->session->userdata('username');
+        $nominalAwal = $this->input->post('nominalAwal');
         $nominal = $this->input->post('nominal');
+        $saldo = $nominalAwal - $nominal; 
         $noRek = $this->input->post('norek');
+        date_default_timezone_set('Asia/Jakarta');
+        $tglTarik = date("d-m-Y h:ia");
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
         $validate = $this->Autentikasi_model->validate($username, $enc_password);
         if(count($validate) === 0){
             $data = array(
-                'nominal' => $nominal,
+                'saldo' => $saldo,
                 'tglTarik' => $tglTarik,
                 'noRek' => $noRek
             );
 
             $this->model->update_data($username, $data, 'user');
-        
+            redirect('/dashboard/cairkan');
+        }else{
+            redirect('/dashboard');
+        }
     }
 
 	public function login(){

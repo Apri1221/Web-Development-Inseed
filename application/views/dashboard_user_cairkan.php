@@ -54,10 +54,14 @@
               <h6> Cairkan dana hasil investasi ke rekening anda</h6>
             </div>
             <div class="card-body ">
+
               <form action="<?=base_url()?>index.php/auth/cairkan" method="POST">
+
+              <input type="hidden" name="nominalAwal" value="<?php echo $result->saldo; ?>">
+              
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
-                  <h5 style="margin-top: 20%;">Saldo Anda: <span>Rp. <?php echo $result->saldo; ?></span></h5>
+                  <h5 style="margin-top: 20%;">Saldo Anda: <span>Rp <?php echo $result->saldo; ?>,-</span></h5>
                   <?php if($result->saldo == '0'): ?>
                     <p>Waduh kamu butuh pemasukan, kami akan bantu!</p>
                     <br>
@@ -71,7 +75,7 @@
                 
                 <div class="col-md-7 text-left editProfile">
                   <h6>Jumlah Penarikan Dana (Minimal Rp 50.000)</h6>
-                  <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>">
+                  <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>" max="<?php echo $result->saldo; ?>" min="50000">
                   <br>
                   <h6>Pilih Bank</h6>
                   <select class="form-control" id="jenisBank">
@@ -111,8 +115,12 @@
                     }
                     </script>
                     <br>
-
-                  <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Proses</button>
+                  
+                  <button type="submit" class="btn btn-outline-primary" 
+                  <?php if((int)$result->saldo < '50000'): ?>
+                  disabled 
+                  <?php endif;?>
+                  style="width: 25%; margin-left: 25%;">Proses</button>
                   
                 </form>
               </div>
