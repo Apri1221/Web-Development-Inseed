@@ -36,6 +36,7 @@
       
 <div class="container"><br/>
 	<div class="row">
+	
 	<?php foreach ($data as $row) { ?>
 	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
 					<div class="thumbnail">
@@ -54,7 +55,8 @@
 					
 			<?php }?>
 			</div>
-			<div class="col-xl-4 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
+			<div clas
+			<div class="col-xl-6 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart justify-content-center">
 			<h4>Shopping Cart</h4>
 			<table class="table table-striped">
 				<thead>

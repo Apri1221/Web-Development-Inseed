@@ -35,7 +35,7 @@
             </div>
             <div style="text-align: center;">
               <a href="#"><h6>Lupa Password?</h6></a>
-              <h6 id="daftarNow" style=""><a href="<?=base_url()?>index.php/welcome/daftar">Buat akun</a></h6>
+              <h6 id="daftarNow" style=""><a href="<?=base_url()?>index.php/auth/daftar">Buat akun</a></h6>
             </div>
           </div>
         </div>

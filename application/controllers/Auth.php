@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
 
 	public function daftar() {
 		$this->load->helper('url');
-    	$this->load->view('daftar');
+    	$this->load->view('login_as');
 	}
 	
     public function register() {
