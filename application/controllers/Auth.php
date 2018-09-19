@@ -122,7 +122,7 @@ class Auth extends CI_Controller {
         $saldo = $nominalAwal - $nominal; 
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
-
+        $date = $this->input->post('tglTarik');
         $validate = $this->Autentikasi_model->validate($username, $enc_password);
         if(count($validate) >= 0){
             $data = array(

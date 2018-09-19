@@ -58,6 +58,11 @@
               <form action="<?=base_url()?>index.php/auth/cairkan" method="POST">
 
               <input type="hidden" name="nominalAwal" value="<?php echo $result->saldo; ?>">
+              <input type="hidden" name="tglTarik" value="
+              <?php 
+                  date_default_timezone_set('Asia/Jakarta');
+                  $date = date("Y-m-d");  
+                  echo $date; ?>">
               
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
@@ -77,7 +82,7 @@
                   <h6>Jumlah Penarikan Dana (Minimal Rp 50.000)</h6>
                   <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>" max="<?php echo $result->saldo; ?>" min="50000">
                   <br>
-                  
+
                   <h6>Pilih Bank</h6>
                   <select class="form-control" id="jenisBank">
                     <option value="Mandiri">Mandiri</option>

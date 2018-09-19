@@ -79,12 +79,7 @@
                  
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
-                    <input type="hidden" name="tglTarik" value="
-                    <?php 
-                        date_default_timezone_set('Asia/Jakarta');
-                        $date = date("d-m-Y h:ia");  
-                        echo $date; ?>">
-                        
+    
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
                       <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
