@@ -36,13 +36,9 @@
       
 <div class="container"><br/>
 	<div class="row">
-		<div class="col-md-8 boxProduk">
-			<h4>Produk</h4>
-			<div class="row">
-			<?php foreach ($data as $row) { ?>
-				<div class="col-md-6 cartku">
+	<?php foreach ($data as $row) { ?>
+	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
 					<div class="thumbnail">
-						<div class="boxProduk">
 							<h4><?php echo $row->namaProduk;?></h4>
 							<div class="row">
 								<div class="col-md-7">
@@ -55,13 +51,10 @@
 							<button class="add_cart btn btn-success btn-block" data-idProduk="<?php echo $row->idProduk;?>" data-namaProduk="<?php echo $row->namaProduk;?>" data-hargaProduk="<?php echo $row->hargaProduk;?>">Add To Cart</button>
 						</div>
 					</div>
-				</div>
+					
 			<?php }?>
-				
 			</div>
-
-		</div>
-		<div class="col-md-4">
+			<div class="col-xl-4 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
 			<h4>Shopping Cart</h4>
 			<table class="table table-striped">
 				<thead>
