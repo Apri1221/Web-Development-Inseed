@@ -77,6 +77,7 @@
                   <h6>Jumlah Penarikan Dana (Minimal Rp 50.000)</h6>
                   <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>" max="<?php echo $result->saldo; ?>" min="50000">
                   <br>
+                  
                   <h6>Pilih Bank</h6>
                   <select class="form-control" id="jenisBank">
                     <option value="Mandiri">Mandiri</option>

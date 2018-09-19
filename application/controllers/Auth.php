@@ -79,7 +79,7 @@ class Auth extends CI_Controller {
                 'noHP' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'password' => $enc_password,
-                'foto' => '1'
+                'foto' => '0'
             );
 
             $this->model->update_data($username1, $data, 'user');
@@ -120,22 +120,20 @@ class Auth extends CI_Controller {
         $nominalAwal = $this->input->post('nominalAwal');
         $nominal = $this->input->post('nominal');
         $saldo = $nominalAwal - $nominal; 
-        $noRek = $this->input->post('norek');
-        date_default_timezone_set('Asia/Jakarta');
-        $tglTarik = date("d-m-Y h:ia");
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
+
         $validate = $this->Autentikasi_model->validate($username, $enc_password);
-        if(count($validate) === 0){
+        if(count($validate) >= 0){
             $data = array(
+                'noRek' => $this->input->post('norek'),
+                'tglTarik' => $date,
                 'saldo' => $saldo,
-                'tglTarik' => $tglTarik,
-                'noRek' => $noRek
             );
 
             $this->model->update_data($username, $data, 'user');
             redirect('/dashboard/cairkan');
-        }else{
+        } else{
             redirect('/dashboard');
         }
     }

@@ -73,32 +73,18 @@
                       echo base_url ('asset/assets/image/girl.png');
                   }
                   ?>" class="profilePictureDashboard">
-                  <?php elseif($result->foto === '1'):?>
-                    <?php
-                      try {
-                        // Create a new SimpleImage object
-                        $image = new calviska\SimpleImage();
-
-                        // Manipulate it
-                        $image
-                          ->fromFile("<?php echo base_url('asset/assets/image/member/'.$result->namaAkun.'.jpg');?>")              // load parrot.jpg
-                          ->autoOrient()                        // adjust orientation based on exif data
-                          ->bestFit(200, 400)                   // proportinoally resize to fit inside a 250x400 box
-                          ->flip('x')                           // flip horizontally
-                          ->overlay("<?php echo base_url('asset/assets/image/member/logo.png');?>", 'bottom right') // add a watermark image
-                          ->toScreen();                         // output to the screen
-
-                      } catch(Exception $err) {
-                        // Handle errors
-                        echo $err->getMessage();
-                      }
-                    ?>
+                 
                   <?php endif;?>
 
-                  
-
+                 
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
+                    <input type="hidden" name="tglTarik" value="
+                    <?php 
+                        date_default_timezone_set('Asia/Jakarta');
+                        $date = date("d-m-Y h:ia");  
+                        echo $date; ?>">
+                        
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
                       <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
