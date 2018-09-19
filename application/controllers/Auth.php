@@ -10,6 +10,7 @@ class Auth extends CI_Controller {
         //load model admin
         $this->load->model('Autentikasi_model');
         $this->load->library('session');
+		
     }
 
 	public function daftar() {
@@ -17,7 +18,16 @@ class Auth extends CI_Controller {
     	$this->load->view('login_as');
 	}
 	
-    public function register() {
+	public function asUser() {
+		$this->load->helper('url');
+    	$this->load->view('daftar');
+	}
+	public function asSeller() {
+		$this->load->helper('url');
+    	$this->load->view('daftar');
+	}
+	
+    public function register($user_level) {
 		$options = ['cost' => 5];
 		$this->load->model('model');
 		$username = $this->input->post('account');    
@@ -31,7 +41,8 @@ class Auth extends CI_Controller {
 		'noHP' => $this->input->post('phone'),
 		'email' => $this->input->post('email'),
 		'password' => $enc_password,
-		'jk' => $this->input->post('JenisKelamin')
+		'jk' => $this->input->post('JenisKelamin'),
+		'user_level' =>$user_level
          );
         
         // ngecek apakah udah ada username yang sama

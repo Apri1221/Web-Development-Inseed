@@ -20,7 +20,7 @@
         <div class="col-xl-8 col-md-8 col-sm-12 col-xs-12 card cardPembayaran"  >
           <form id="konfirm" method="POST" action="<?=base_url()?>index.php/invest/tambah/<?php echo $row->idProyek;?>">
             <h3>Masukkan Nominal Investasi Yang Anda Inginkan.</h3>
-            <input style="width: 35%;" type="number" name="nominal" min="15000" placeholder="   CONTOH: 15.000">
+            <input style="width: 35%;" type="number" name="nominal" min="15000" placeholder="   CONTOH: 15.000" required>
             <h3>Pilih Nomor Rekening Bank Tujuan</h3>
             <select class="form-control" id="rekening">
               <option value="BRI">BRI 1113-xxxx-xxxx-xxxx</option>

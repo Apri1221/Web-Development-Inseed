@@ -20,7 +20,7 @@
           <div class ="card" id="cardDaftar">
             <div class="card-body" id="abu">
               <h5 style="text-align: center;">Hai, masukkan data pada kolom tersedia!</h5><br>
-              <form action="<?php echo base_url()."index.php/auth/register"; ?>" method="POST" class="col-md-12 col-sm-12 col-xs-12" style="float: left;">
+              <form action="<?php echo base_url()."index.php/auth/register"?>" method="POST" class="col-md-12 col-sm-12 col-xs-12" style="float: left;">
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="firstname">Nama depan</label>
                   <input type="text" id="firstname" name="firstname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required

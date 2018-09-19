@@ -18,10 +18,10 @@
         <h1>Hai, selamat datang di inseed.id !</h1>
         <h3 style="margin-bottom: 12%;">Silahkan Mendaftarkan diri anda secara gratis</h3>
 		<img src="<?php echo base_url('asset/assets/image/pengguna.png');?>" style="width:100px;margin-left:10px"></img>
-		 <a href="daftar.php" >Daftar sebagai pengguna</a>
+		 <a href="<?php echo base_url()."index.php/auth/asUser"; ?>">Daftar sebagai pengguna</a>
         <br><br><br>
 		<img src="<?php echo base_url('asset/assets/image/seller.svg');?>" style="width:100px;"></img>
-          <a href="daftar.php">Daftar sebagai penjual</a>
+          <a href="<?php echo base_url()."index.php/auth/asSeller"; ?>">Daftar sebagai penjual</a>
         </div>
         </div>
         
