@@ -26,14 +26,21 @@ class Mart extends CI_Controller {
 		$data['produk'] = $this->market->data($config['per_page'],$from);
 		$this->load->view('seaweedMart',$data);
 	}
+
 	public function detail($id)
 	{
-	$where = array('idProduk' => $id);
-	$data['detail'] = $this->market->lihatDetail($where,'produk')->result();
-	$this->load->view('detailProduk',$data);
+		$where = array('idProduk' => $id);
+		$data['detail'] = $this->market->lihatDetail($where,'produk')->result();
+		$this->load->view('detailProduk',$data);
 	}	
-public function bayar ($id){
-	$this->load->view('pembayaran');
-}
+
+	public function bayar ($id){
+		$this->load->view('pembayaran');
+	}
+
+	public function getProdukPenjual ($username){
+		$this->load->model('model');
+        $username = $this->session->userdata('username');
+	}
 }
 ?>
