@@ -15,7 +15,7 @@ class Mart extends CI_Controller {
 	
 	public function index()
 	{
-    $this->load->database();
+    	$this->load->database();
 		$jumlah_data = $this->market->jumlah_data();
 		$this->load->library('pagination');
 		$config['base_url'] = base_url().'index.php/mart/index';
@@ -38,9 +38,5 @@ class Mart extends CI_Controller {
 		$this->load->view('pembayaran');
 	}
 
-	public function getProdukPenjual ($username){
-		$this->load->model('model');
-        $username = $this->session->userdata('username');
-	}
 }
 ?>

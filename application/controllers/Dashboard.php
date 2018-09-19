@@ -61,7 +61,10 @@ class Dashboard extends CI_Controller {
 
     public function pesanan() {
 		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard_user_pesanan");
+            $this->load->model('market');
+            $username = $this->session->userdata('username');
+            $data['detail'] = $this->market->getJualan($username);
+            $this->load->view("dashboard_user_pesanan", $data);
         } else {
             $this->load->view('masuk');
         }
