@@ -65,7 +65,7 @@
          </p>
             
             <div class="progress" style="margin-bottom: 8%;">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $row->progress?> %;"><?php echo $row->progress?> %</div>
 
             </div>
             <p class="card-text ">Dana Terkumpul :<span >Rp <?php echo $row->danaTerkumpul;?></span></p>
@@ -78,7 +78,7 @@
      </div>
          <div class="col-lg-3 col-md-8 col-sm-10 descSeller" >
         <h2 style="color: green;">Penanggung jawab:</h2><br>
-        <img src="assets/image/user.png"><br><br>
+        <img src="<?php echo base_url('asset/assets/image/uc.png');?>"><br><br>
         <h4><?php echo $row->penanggungJawab;?></h4>
         <span class="fas fa-star"><span class="fas fa-star" ><span class="fas fa-star"><span class="fas fa-star"></span></span></span></span>
         <p>Lokasi: <?php echo $row->lokasi;?></p>

@@ -39,7 +39,7 @@
 		<div class="col-md-8 boxProduk">
 			<h4>Produk</h4>
 			<div class="row">
-			<?php foreach ($produk as $row) { ?>
+			<?php foreach ($cari as $row) { ?>
 				<div class="col-md-6 cartku">
 					<div class="thumbnail">
 						<div class="boxProduk">

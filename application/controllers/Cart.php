@@ -67,8 +67,8 @@ class Cart extends CI_Controller{
 	}
 	function cari() {
 		$keyword    =   $this->input->post('search');
-        $data['produk']    =   $this->cart_model->search($keyword);
-        $this->load->view('cariMart',$data);
+		$data['cari'] = $this->cart_model->search($keyword)->result();
+		$this->load->view('cariMart',$data);
 	}
 }
 ?>
