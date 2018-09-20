@@ -14,24 +14,28 @@
     </div>
     <div class="container-fluid" style="margin-top: 5%">
       <div class="row kontenPembayaran">
-	          <div class="col-xl-4 col-md-8 col-sm-12 col-xs-12">
-			  <img src="<?php echo base_url('asset/assets/image/done.png');?>" style="width: 50%; margin-left:25%"</img></div>
-        <div class="col-xl-6 col-md-8 col-sm-12 col-xs-12"  >
+	          <div class="col-xl-4 col-md-8 col-sm-12 col-xs-12" style="text-align: center;">
+			  <img src="<?php echo base_url('asset/assets/image/done.png');?>" style="width: 40%;margin-bottom: 10%;">
+      </div>
+        <div class="col-xl-8 col-md-12 col-sm-12 col-xs-12"  >
 		  <div class="alert alert-success">
             <h4>Terima kasih! <br>Anda telah melakukan pembelian produk kami <br></h4>
 			 </div>
-            <div class="col-md-8">
 			<div class="row">
-			<div class="col-md-4">
-			<img src="<?php echo base_url('asset/assets/image/bank.jpg');?>" style="width:150px; height:auto;">
+			<div class="col-md-2" style="text-align: center;">
+			<img src="<?php echo base_url('asset/assets/image/bank.jpg');?>" style="width: 100%; height:auto;">
 			
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-6" style="margin-top: 3%;">
 			
 			<h5> Harap membayar ke rekening 8038-8391-xxxx A/N inseed CIMB NIAGA<br>Maksimal <b> 3 hari </b>  	 setelah pemesanan</h5>
 			</div>
+
+      <div class="col-md-4" style="text-align: center; margin-top: 5%;">
+        <a style="padding: 2% 15%;"  href="<?php echo base_url();?>index.php/""  class="btn btn-success" >Home</a>
+      </div>
 			</div>
-			</div>
+		
 
              
           </div>
