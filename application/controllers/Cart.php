@@ -5,7 +5,7 @@ class Cart extends CI_Controller{
 	function __construct(){
 		parent::__construct();
         //load library form validasi
-        $this->load->library(array('cart','form_validation','pagination','session'));
+       $this->load->library(array('cart','form_validation','pagination','session')); 
         $this->load->helper(array('form','url','text'));
 		$this->load->model('cart_model');
 	}
@@ -17,8 +17,9 @@ class Cart extends CI_Controller{
 	
 	public function add_to_cart($id)
 	{
-		$jum = $this->input->post('quantity');
-		$product = $this->cart_model->find($id);
+		$this->load->library('cart');
+		$jum = $this->input->get("jum");
+		$product = $this->cart_model->find($id); 
 		$data = array(
 					   'id'      => $product->idProduk,
 					   'qty'     => $jum,
@@ -30,7 +31,9 @@ class Cart extends CI_Controller{
 	}
 
 	public function show_cart(){
-		$this->load->view('cart');
+		$items= $this->cart->contents();
+		$this->load->view('cart',$items);
+
 	}
 	public function update_cart(){
 	

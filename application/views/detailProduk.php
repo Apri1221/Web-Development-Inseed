@@ -48,7 +48,7 @@
                     <i class="fa fa-minus"></i>
                     </button>
                   </div>
-                  <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1" style="text-align: center;">
+                  <input type="text" class="form-control"  id="quantity" name="jum" min="1" max="100" value="1" style="text-align: center;">
                   <div class="input-group-append">
                     <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
                     <i class="fa fa-plus"></i>
@@ -59,7 +59,7 @@
               <a href="<?=base_url()?>index.php/mart/bayar/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
                 <i class="fas fa-money-bill-alt"></i> Beli Sekarang
               </a>
-			  <a href="<?=base_url()?>index.php/cart/add_to_cart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+			  <input type="submit" value="Tambah ke Cart" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
                 <i class="fa fa-shopping-cart"></i> Tambah ke cart
               </a>
             </form>
