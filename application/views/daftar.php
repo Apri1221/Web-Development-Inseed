@@ -11,8 +11,21 @@
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
     <section id="signup Page" >
-      <div class="headSignUp">
-        <h1>YUK GABUNG KITA SEKARANG!</h1>
+      <div 
+      <?php if ($user_level == '3'):?>
+           class="headSignUpOrange">
+         <?php else: ?>
+           class="headSignUp">
+         <?php endif; ?>
+      <h1>
+          <?php 
+             if ($user_level == '3'){
+               echo "Kamu sebagai UMKM, silahkan isi data diri disini";
+             } else {
+               echo "Hai, masukkan data pada kolom tersedia!";
+             }
+          ?>
+        </h1>
         <h5>Daftarkan akun anda secara gratis!</h5>
       </div>
       <div class = "container">
@@ -22,6 +35,8 @@
               <h5 style="text-align: center;">Hai, masukkan data pada kolom tersedia!</h5><br>
               <form action="<?php echo base_url()."index.php/auth/register"?>" method="POST" class="col-md-12 col-sm-12 col-xs-12" style="float: left;">
                 <div class="form-group">
+
+                  <input type="hidden" name="user_level" value="$user_level">
                   <label class="form-control-placeholder-1" for="firstname">Nama depan</label>
                   <input type="text" id="firstname" name="firstname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')">

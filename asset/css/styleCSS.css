@@ -547,6 +547,15 @@ color: white; text-align: center; margin-top: 4%;
   text-align: center;
   padding: 7%;
 }
+
+.headSignUpOrange {
+  background-color: #ffff4d;
+  height: 50%;
+  color: black;
+  text-align: center;
+  padding: 7%;
+}
+
 #abu {
   background-color: #eeeeee;
 }

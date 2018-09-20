@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
         //load library form validasi
@@ -10,38 +10,41 @@ class Auth extends CI_Controller {
         //load model admin
         $this->load->model('Autentikasi_model');
         $this->load->library('session');
-		
+        
     }
 
-	public function daftar() {
-		$this->load->helper('url');
-    	$this->load->view('login_as');
-	}
-	
-	public function asUser() {
-		$this->load->helper('url');
-    	$this->load->view('daftar');
-	}
-	public function asSeller() {
-		$this->load->helper('url');
-    	$this->load->view('daftar');
-	}
-	
+    public function daftar() {
+        $this->load->helper('url');
+        $this->load->view('login_as');
+    }
+    
+    public function asUser() {
+        $this->load->helper('url');
+        $data['user_level'] = '0';
+        $this->load->view('daftar',$data);
+    }
+    public function asSeller() {
+        $this->load->helper('url');
+        $data['user_level'] = '3';
+        $this->load->view('daftar',$data);
+    }
+    
     public function register() {
-		$options = ['cost' => 5];
-		$this->load->model('model');
-		$username = $this->input->post('account');    
-		$password = $this->input->post('pw1');
-		$enc_password = md5($password);
-		$data = array(
+        $options = ['cost' => 5];
+        $this->load->model('model');
+        $username = $this->input->post('account');    
+        $password = $this->input->post('pw1');
+        $enc_password = md5($password);
+        $data = array(
         'namaDepan' => $this->input->post('firstname'),
         'namaBelakang' => $this->input->post('lastname'),
-		'namaAkun' => $this->input->post('account'),
+        'namaAkun' => $this->input->post('account'),
         'tanggalLahir' => $this->input->post('birthday'),
-		'noHP' => $this->input->post('phone'),
-		'email' => $this->input->post('email'),
-		'password' => $enc_password,
-		'jk' => $this->input->post('JenisKelamin')
+        'noHP' => $this->input->post('phone'),
+        'email' => $this->input->post('email'),
+        'user_level' => $this->input->post('user_level'),
+        'password' => $enc_password,
+        'jk' => $this->input->post('JenisKelamin')
          );
         
         // ngecek apakah udah ada username yang sama
@@ -70,7 +73,7 @@ class Auth extends CI_Controller {
             redirect('/auth/thanks_daftar');
         }
         // }
-	}
+    }
 
     public function update() {
         $this->load->model('model');
@@ -123,9 +126,9 @@ class Auth extends CI_Controller {
         }
         // }
     }
-	function thanks_daftar(){
-		$this->load->view('thanks_daftar');
-	}
+    function thanks_daftar(){
+        $this->load->view('thanks_daftar');
+    }
 
     public function cairkan(){
         $this->load->model('model');
@@ -147,7 +150,7 @@ class Auth extends CI_Controller {
             $this->model->update_data($username, $data, 'user');
             $sesdata = array(
                 'noRek'  => $this->input->post('norek'),
-                'tglTarik'     => $date,
+                'tglTarik' => $date,
                 'bank'     => $this->input->post('bank'),
                 'nominal' => $nominal,
                 'saldo' => $saldo,
@@ -159,14 +162,14 @@ class Auth extends CI_Controller {
         }
     }
 
-	public function login(){
-		$this->load->view('masuk');
-	}
+    public function login(){
+        $this->load->view('masuk');
+    }
 
-	public function cek_login(){
-		$username = $this->input->post("username");
+    public function cek_login(){
+        $username = $this->input->post("username");
         $password = md5($this->input->post("password"));
-		        
+                
         $validate = $this->Autentikasi_model->validate($username,$password);
         if(count($validate) > 0){
             $name  = $validate[0]['namaAkun'];
@@ -184,7 +187,7 @@ class Auth extends CI_Controller {
         } else {
             $this->load->view('masuk');
         }
-	}
+    }
 
     public function logout()
     {
@@ -194,4 +197,3 @@ class Auth extends CI_Controller {
     }
 }
 ?>
-	
