@@ -145,6 +145,14 @@ class Auth extends CI_Controller {
             );
 
             $this->model->update_data($username, $data, 'user');
+            $sesdata = array(
+                'noRek'  => $this->input->post('norek'),
+                'tglTarik'     => $date,
+                'bank'     => $this->input->post('bank'),
+                'nominal' => $nominal,
+                'saldo' => $saldo,
+            );
+            $this->session->set_userdata($sesdata);
             redirect('/dashboard/cairkan');
         } else{
             redirect('/dashboard');

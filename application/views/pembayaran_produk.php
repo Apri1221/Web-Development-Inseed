@@ -40,9 +40,12 @@
       <label class="control-label col-md-4" for="deskripsi">Pilih Bank</label>
         <div class="col-md-12">
         <select class="form-control" id="sel1" placeholder="Kategori">
+		
+        <option>CIMB NIAGA</option>
         <option>Mandiri</option>
         <option>BCA</option>
-        <option>NIAGA</option>
+        <option>BRI</option>
+        <option>BNI</option>
       </select>
       </div>
   </div>
@@ -57,6 +60,30 @@
     <h2>Pengiriman</h2>
    <br>
    <div class="form-group">
+      <label class="control-label col-md-4" for="produk">Alamat Pengiriman</label>
+	  
+
+      <div class="col-md-12">
+        <textarea class="form-control"> </textarea>
+      </div>
+    </div>
+	
+	<div class="form-group">
+	<label class="control-label col-md-4" for="produk">Pilih Propinsi</label> 
+<div class="col-md-12">	
+		<select class="form-control" id="provinsi" placeholder="Jasa Pengiriman">
+		
+        <option>Jawa Timur</option>
+        <option>Jawa Barat</option>
+		<option>Jawa Tengah</option>
+        <option>DKI Jakarta</option>
+		 <option>DI Yogyakarta</option>
+        <option>Banten</option>
+		</select>
+		</div>
+		</div>
+	
+	<div class="form-group">
       <label class="control-label col-md-4" for="produk">Pilih Jasa Pengiriman</label>
       <div class="col-md-12">
         <select class="form-control" id="sel1" placeholder="Jasa Pengiriman">
@@ -82,10 +109,7 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-md-12">
-        <button type="button" class="btn btn-primary">
-        Bayar Sekarang
-    </button>
-
+<a href="<?php echo base_url();?>index.php/mart/thanks" class="btn btn-primary">Bayar Sekarang</a>
   </div>
 </div>
 </form>

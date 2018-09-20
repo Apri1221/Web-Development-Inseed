@@ -37,10 +37,8 @@
 <div class="container"><br/>
 	<div class="row">
 	
-	<?php foreach ($data as $row) { ?>
-
-					
-					<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
+	<?php foreach ($produk as $row) { ?>
+	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
     <div class="card cardProduk" style="height: 500px;">
   <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
   <div class="card-body" style="text-align: center;">
@@ -49,7 +47,7 @@
          <p class="card-text "><i class="fas fa-box-open"></i>Stok : <span ><?php echo $row->stok; ?> pcs</span></p>
     <p class="card-text "><i class="fas fa-money-bill-alt" ></i><span>Rp <?php echo $row->hargaProduk; ?></span></p>
 
-    <a href="#" class="btn btn-success buttonProdukInvest"><i class="fas fa-shopping-cart"></i> Lihat Detail</a>
+    <a href="<?php echo base_url();?>index.php/mart/detail/<?php echo $row->idProduk; ?>" class="btn btn-success buttonProdukInvest"><i class="fas fa-shopping-cart"></i> Lihat Detail</a>
   </div>
 </div>
   </div>

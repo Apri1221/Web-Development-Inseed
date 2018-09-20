@@ -13,12 +13,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('asset/js/jcarousel.responsive.js');?>"></script>
     <script src="<?php echo base_url('asset/js/jquery.jcarousel.min.js');?>"></script>
+<<<<<<< HEAD
+=======
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(window).load(function() {
-    $("#loading").fadeOut("slow");
-    });
-    </script>
+>>>>>>> 4203930719a985f754aefafcb7c2dba1339c2435
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -31,4 +30,8 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
+<<<<<<< HEAD
 
+=======
+    <!--End of Tawk.to Script-->
+>>>>>>> 4203930719a985f754aefafcb7c2dba1339c2435

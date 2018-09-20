@@ -16,7 +16,7 @@
               <a class="nav-link" href="<?=base_url()?>index.php/invest">SEAWEED INVEST</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?=base_url()?>index.php/cart">SEAWEED MART</a>
+              <a class="nav-link" href="<?=base_url()?>index.php/mart">SEAWEED MART</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?=base_url()?>index.php/article">SEAWEED ARTICLE</a>

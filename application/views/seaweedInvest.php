@@ -33,8 +33,10 @@
 		foreach($proyek as $a){
 		?>
         <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk" style="padding: 5%; height:680px;">
+          <div class="card cardProduk" style=" height:900px;">
             <div class="card-body cardInvest">
+			<img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
+			<div style="padding: 5%;">
               <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
               <p class="card-text ">Expektasi Keuntungan :<br> <span> <?php echo $a->ekspUntung ?> %</span></p>
               <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
@@ -48,6 +50,7 @@
                 <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
                 <p class="card-text ">Sisa Waktu : <br><span ><?php echo $a->sisaWaktu?> Hari</span></p>
                 <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
+				</div>
               </div>
             </div>
           </div>

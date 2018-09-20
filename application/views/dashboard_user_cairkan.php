@@ -84,7 +84,7 @@
                   <br>
 
                   <h6>Pilih Bank</h6>
-                  <select class="form-control" id="jenisBank">
+                  <select class="form-control" id="jenisBank" name="bank">
                     <option value="Mandiri">Mandiri</option>
                     <option value="BRI">BRI</option>
                     <option value="BNI">BNI</option>
@@ -126,8 +126,12 @@
                   <?php if((int)$result->saldo < '50000'): ?>
                   disabled 
                   <?php endif;?>
-                  style="width: 25%; margin-left: 25%;">Proses</button>
+                  style="width: 25%; margin-left: 10%;">Proses</button>
                   
+                  <?php if(null !== $this->session->userdata('bank')): ?>
+                  <a type="submit" class="btn btn-outline-primary" target="_blank" href="<?php echo base_url ('index.php/Laporan/');?>">Cetak Invoice</a>
+                  <?php endif;?>
+
                 </form>
               </div>
             </div>
