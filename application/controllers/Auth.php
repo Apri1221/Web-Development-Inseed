@@ -31,7 +31,7 @@ class Auth extends CI_Controller {
 
     public function asKoperasi() {
         $this->load->helper('url');
-        $data['user_level'] = '3';
+        $data['user_level'] = '2';
         $this->load->view('daftar',$data);
     }
     
