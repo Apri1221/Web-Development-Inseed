@@ -35,6 +35,7 @@
                 echo $username ?></a>
                 <div class="dropdown-menu dropdown-menu-right" style="background-color: #fcfffe;" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="<?=base_url()?>index.php/dashboard">Dashboard</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/cart/show_cart">Cart</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/auth/logout">Keluar</a>

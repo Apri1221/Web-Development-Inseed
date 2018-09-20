@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <?php include_once("template/header.php"); ?>
     <link rel="icon" href="assets/image/icon/icon.png">
     <title>inseed.id - Keranjang</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'asset/css/bootstrap.css'?>">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
-    <script src="<?php echo base_url('asset/css/jcarousel.responsive.js');?>"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('asset/css/jquery.jcarousel.min.js');?>"></script>
-    <script src="js/jquery.jcarousel.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  </head>
+</head>
   <body>
-    <div id="loading"></div>
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
     <section id="Keranjang">
@@ -57,7 +44,7 @@
           </div>
         </div>
         <div class="row keranjangBawah">
-          <div class="col-xl-8 col-md-5 col-sm-5 col-xs-5 ringkasanPesananKeranjang" >
+          <div class="col-xl-4 col-md-4 col-sm-4 col-xs-4 ringkasanPesananKeranjang" >
 		   <h4>Ringkasan Pesanan</h4>
             <h6>Subtotal (3 item): <span class="subtotalKeranjang">Rp 100.000</span></h6>
             <h6 class="biayaPengirimanKeranjang">Biaya Pengiriman: <span>Rp 5.000</span></h6>

@@ -92,7 +92,7 @@ class Dashboard extends CI_Controller {
 
     public function kelolaProyek() {
         $this->load->helper('url');
-        $this->load->view('dashboard_koperasi_proyek');   
+        $this->load->view('dashboard_koperasi');   
     }
 	
     public function produk() {
