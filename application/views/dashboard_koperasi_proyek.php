@@ -48,6 +48,7 @@
             
           </ul>
         </div>
+        <?php  ?>
         <div class="col-md-9">
           <div class="card">
             <div class="card-header" style="background-color: white;">
@@ -57,7 +58,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-4 editProyekDashboard" style="text-align: center;">
-                  <img src="assets/image/petani/petani1.jpg">
+                  <img src=<?php echo 'data:image/jpeg;base64,'.base64_encode( $result->foto ); ?>">
                   
                   <form action="#" method="POST">
                     <br>
