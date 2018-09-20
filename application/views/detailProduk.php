@@ -39,7 +39,7 @@
             <h6>Deskripsi:</h6>
             <p><?php echo $a->detail?>
             </p>
-            <form method="get" action="cart.html">
+            <form method="get" action="<?=base_url()?>index.php/cart/add_to_cart/<?php echo $a->idProduk?>">
               <div class="form-group">
                 <label>Kuantitas: </label>
                 <div class="input-group mb-3">
@@ -59,7 +59,7 @@
               <a href="<?=base_url()?>index.php/mart/bayar/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
                 <i class="fas fa-money-bill-alt"></i> Beli Sekarang
               </a>
-			  <a href="<?=base_url()?>index.php/mart/addCart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+			  <a href="<?=base_url()?>index.php/cart/add_to_cart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
                 <i class="fa fa-shopping-cart"></i> Tambah ke cart
               </a>
             </form>

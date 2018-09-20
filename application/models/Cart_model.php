@@ -9,4 +9,15 @@ class Cart_model extends CI_Model{
 	$SQL = "SELECT * FROM `produk` WHERE `namaProduk` like '%$keyword%'";
 	return $this->db->query($SQL);
 	}
+	public function find($id){
+		//Query mencari record berdasarkan ID-nya
+		$hasil = $this->db->where('idProduk', $id)
+						  ->limit(1)
+						  ->get('produk');
+		if($hasil->num_rows() > 0){
+			return $hasil->row();
+		} else {
+			return array();
+		}
+	}	
 }
