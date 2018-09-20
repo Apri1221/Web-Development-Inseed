@@ -896,8 +896,9 @@ margin-right: 2%;
 
 .slideshowProduk img{
   height: auto;
-  width: 50%;
+  width: 80%;
   text-align: center;
+  margin-bottom: 10%;
   border-radius: 20px;
 }
 .slideshowProduk{
@@ -907,9 +908,6 @@ margin-right: 2%;
 .slideshowProduk h2{
    color: green;
 }
-
-
-
 
 .descProdukDetail{
   margin:2%; text-align: justify; padding: 2%;  border-radius: 25px; border:3px solid #12a8bb;

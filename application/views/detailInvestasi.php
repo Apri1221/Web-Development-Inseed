@@ -19,47 +19,31 @@
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
    <section id="detailProduk">
-  
+    <?php 
+    foreach($detail as $row){
+    ?>
   <div class="container-fluid" style="margin:3% 0">
     <div class="row" >
-      <div class="col-lg-4 col-md-5 col-sm-11" style=" margin: 2%; ">
-   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner slideshowProduk">
-    <div class="carousel-item active tab-pane" id="pic-1">
-      <img class="d-block w-100" src="assets/image/produk/produk1.jpg" alt="First slide" id="pic-1">
-    </div>
-    <div class="carousel-item tab-pane" id="pic-2">
-      <img class="d-block w-100" src="assets/image/produk/produk2.jpg" alt="Second slide" id="pic-2">
-    </div>
-    <div class="carousel-item tab-pane" id="pic-3">
-      <img class="d-block w-100" src="assets/image/produk/produk3.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-  <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="assets/image/produk/produk1.jpg" /></a></li>
-              <li><a data-target="#pic-2" data-toggle="tab"><img src="assets/image/produk/produk2.jpg" /></a></li>
-              <li><a data-target="#pic-3" data-toggle="tab"><img src="assets/image/produk/produk3.jpg" /></a></li>
-            </ul>
-<<<<<<< HEAD
-        </div>
+    <div class="col-lg-4 col-md-5 col-sm-11 slideshowProduk" style=" margin: 2%; ">
+            <div class="text-center">
+              <h2>Foto Proyek:</h2>
+            </div>
+            
+                <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
+               
+          </div>
         <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">
-		<?php 
-		foreach($detail as $row){
-		?>
+	
           <h2><?php echo $row->namaProyek;?></h2>
             <h5>Mulai dari:<span > Rp 15.000</span></h5>
             <h5>Lokasi Proyek: <span > <?php echo $row->lokasi;?></span></h5>
               <h5>Ekspektasi Profit: <span > <?php echo $row->ekspUntung;?>%</span></h5>
-               <h5>Waktu pengerjaan proyek: <br> <span> <?php echo $row->startProjek;?> - 1 November 2018</span></h5>
+               <h5>Waktu pengerjaan proyek: <br> 
+
+                <span> <?php echo $row->startProjek;?> - <?php echo $row->endProjek; ?></span>
+
+
+              </h5>
                 <h6>Deskripsi:</h6>
                   <p>Proyek ini merupakan proyek pengadaan rumput laut dari para petani rumput laut yang ada di <?php echo $row->lokasi;?>
          </p>
@@ -68,8 +52,8 @@
               <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $row->progress?> %;"><?php echo $row->progress?> %</div>
 
             </div>
-            <p class="card-text ">Dana Terkumpul :<span >Rp <?php echo $row->danaTerkumpul;?></span></p>
-                    <p class="card-text ">Sisa Waktu :<span ><?php echo $row->sisaWaktu;?> hari</span></p>
+            <p class="card-text ">Dana Terkumpul : <span >Rp <?php echo $row->danaTerkumpul;?></span></p>
+                    <p class="card-text ">Sisa Waktu : <span ><?php echo $row->sisaWaktu;?> hari</span></p>
                     <div class="text-center">
                       <a href="<?php echo base_url();?>index.php/invest/bayar/<?php echo $row->idProyek;?>" class="btn btn-success buttonProdukInvest">Danai Proyek</a>
                     </div>
