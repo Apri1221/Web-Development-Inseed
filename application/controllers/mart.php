@@ -38,10 +38,26 @@ class Mart extends CI_Controller {
 		$this->load->view('pembayaran_produk');
 	}
 	public function thanks ($id){
-		$id = 
-		$items= $this->cart->contents();
-		$rowid = $items->rowid;
-		$this->load->view('thanks_purchase');
+		$this->load->model('cart_model');
+		$product = $this->cart_model->find($id); 
+		$username = $this->session->userdata('username');
+		$jum = 
+		$data = array(
+					   'namaPembeli'     => $username,
+					   'namaPenjual'   => $product->idPenjual,
+					   'idProduk'    => $product->idProduk,
+					   'jumlah' => $this->cart->total_items(),
+					   'total' => $this->cart->total(),
+					   'alamatTujuan' => $this->input->post("alamat"),
+					   'tglTrans' => '2018-10-09',
+					   'catatan' => "hello"
+					);
+		$this->market->insert('transaksi',$data);
+		echo '<pre>';
+		print_r($data);
+		echo '</pre>';
+		
+		/* $this->load->view('thanks_purchase'); */
 	}
 
 	public function addCart($id){

@@ -26,7 +26,8 @@
          <h2 style="text-align: center;">Form Pembayaran Produk</h2>
          <hr class="col-md-4">
   <br>
-  <form class="form-horizontal" action="xxxx">
+  <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php foreach ($this->cart->contents() as $items) : ?>
+	<?php echo $items['id'] ?> <?php endforeach ?>">
     <div class="form-group">
       <label class="control-label col-md-4" for="produk">Metode Pembayaran</label>
       <div class="col-md-12">
@@ -64,7 +65,7 @@
 	  
 
       <div class="col-md-12">
-        <textarea class="form-control"> </textarea>
+        <textarea name="alamat" class="form-control"> </textarea>
       </div>
     </div>
 	
@@ -110,7 +111,7 @@
     <div class="form-group">        
       <div class="col-sm-offset-2 col-md-12">
 <a href="<?php echo base_url();?>index.php/mart/thanks/<?php foreach ($this->cart->contents() as $items) : ?>
-	<?php echo $items['rowid'] ?> <?php endforeach ?>" class="btn btn-primary">Bayar Sekarang</a>
+	<?php echo $items['id'] ?> <?php endforeach ?>" class="btn btn-primary">Bayar Sekarang</a>
   </div>
 </div>
 </form>

@@ -6,7 +6,9 @@ class Market extends CI_Model
     {
         parent::__construct();
     }
-	
+	public function Insert($table,$data){
+	    $this->db->insert($table, $data);
+	}
 	public function tampil_data($limit=NULL,$offset=NULL) {
 		if($limit != NULL){
         $this->db->limit($limit,$offset);
