@@ -35,8 +35,14 @@ class Cart extends CI_Controller{
 		$this->load->view('cart',$items);
 
 	}
-	public function update_cart(){
-	
+	public function update_cart($id){
+		$data = array(
+		'rowid' => $id,
+		'qty' => 0
+		);
+		$this->cart->update($data);
+		$this->show_cart();
+
 	}
 	public function clear_cart()
 	{

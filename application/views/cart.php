@@ -46,12 +46,19 @@
         <div class="row keranjangBawah">
           <div class="col-xl-4 col-md-4 col-sm-4 col-xs-4 ringkasanPesananKeranjang" >
 		   <h4>Ringkasan Pesanan</h4>
-            <h6>Subtotal (3 item): <span class="subtotalKeranjang">Rp 100.000</span></h6>
-            <h6 class="biayaPengirimanKeranjang">Biaya Pengiriman: <span>Rp 5.000</span></h6>
+            <h6>Jumlah barang : <span class="subtotalKeranjang"><?php echo $this->cart->total_items();?> item</span></h6>
             <h4>Total: <span class="totalHargaKeranjang">Rp <?php echo $this->cart->total(); ?></span></h6>
-            
+			<?php 
+					foreach ($this->cart->contents() as $items) : 
+			?>
+            <a href="<?=base_url()?>index.php/mart/bayar/<?php echo $items['id']?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+               <i class="fas fa-money-bill-alt"></i> Beli Sekarang
+              </a>  
+			<?php endforeach; ?>
           </div>
         </div>
       </div>
     </section>
     <?php include_once("template/footer.php"); ?> 
+	</body>
+	</html>
