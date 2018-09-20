@@ -57,42 +57,5 @@
 </section>
 
   <?php include_once("template/footer.php"); ?> 
-<script type="text/javascript" src="<?php echo base_url().'asset/js/jquery-2.2.3.min.js'?>"></script>
-<script type="text/javascript" src="<?php echo base_url().'asset/js/bootstrap.js'?>"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.add_cart').click(function(){
-			var idProduk    = $(this).data("idproduk");
-			var namaProduk  = $(this).data("namaproduk");
-			var hargaProduk = $(this).data("hargaproduk");
-			var quantity     = $('#' + idProduk).val();
-			$.ajax({
-				url : "<?php echo base_url();?>index.php/cart/add_to_cart",
-				method : "POST",
-				data : {idProduk: idProduk, namaProduk: namaProduk, hargaProduk: hargaProduk, quantity: quantity},
-				success: function(data){
-					$('#detail_cart').html(data);
-				}
-			});
-		});
-
-		// Load shopping cart
-		$('#detail_cart').load("<?php echo base_url();?>index.php/cart/load_cart");
-
-		//Hapus Item Cart
-		$(document).on('click','.hapus_cart',function(){
-			var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
-			$.ajax({
-				url : "<?php echo base_url();?>index.php/cart/hapus_cart",
-				method : "POST",
-				data : {row_id : row_id},
-				success :function(data){
-					$('#detail_cart').html(data);
-				}
-			});
-		});
-	});
-</script>
-
 </body>
 </html>
