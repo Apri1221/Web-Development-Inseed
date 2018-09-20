@@ -70,5 +70,11 @@ class Cart extends CI_Controller{
 		$data['cari'] = $this->cart_model->search($keyword)->result();
 		$this->load->view('cariMart',$data);
 	}
+	public function detail($id)
+	{
+		$where = array('idProduk' => $id);
+		$data['detail'] = $this->cart_model->lihatDetail($where,'produk')->result();
+		$this->load->view('detailProduk',$data);
+	} 
 }
 ?>

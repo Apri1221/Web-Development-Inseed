@@ -76,8 +76,11 @@
                   </div>
                 </div>
               </div>
-              <a href="<?=base_url()?>index.php/mart/addCart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
-                <i class="fa fa-shopping-cart"></i> Beli Sekarang
+              <a href="<?=base_url()?>index.php/mart/bayar/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+                <i class="fas fa-money-bill-alt"></i> Beli Sekarang
+              </a>
+			  <a href="<?=base_url()?>index.php/mart/addCart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+                <i class="fa fa-shopping-cart"></i> Tambah ke cart
               </a>
             </form>
             <?php } ?>
@@ -87,7 +90,7 @@
             foreach ($detail as $a) {
             ?>
             <h2 style="color: green;">Produk Oleh:</h2><br>
-            <img src="assets/image/girl.png"><br><br>
+            <img src="<?php echo base_url('asset/assets/image/seller.svg');?>"><br><br>
             <h4><?php echo $a->idPenjual?></h4>
             <span class="fas fa-star"><span class="fas fa-star" ><span class="fas fa-star"><span class="fas fa-star"></span></span></span></span>
             <?php } ?>

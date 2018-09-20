@@ -82,10 +82,7 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-md-12">
-        <button type="button" class="btn btn-primary">
-        Bayar Sekarang
-    </button>
-
+<a href="<?php echo base_url();?>index.php/mart/thanks" class="btn btn-primary">Bayar Sekarang</a>
   </div>
 </div>
 </form>
