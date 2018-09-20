@@ -53,11 +53,9 @@
           </div>
         </div>
 		<?php } ?>
-		</div>		
-      <div class="col-xl-5 col-md-5 col-sm-5 col-xs-12">
-</div>
-		<div class="col-xl-6 col-md-5 col-sm-5 col-xs-12 paginationProduk">
+		</div>
         <nav>
+		<div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk">
           <ul class="pagination justify-content-center text-center">
 		  <?php 
 		  echo $this->pagination->create_links();?>

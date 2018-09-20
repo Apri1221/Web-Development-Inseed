@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
     	$this->load->view('daftar');
 	}
 	
-    public function register($user_level) {
+    public function register() {
 		$options = ['cost' => 5];
 		$this->load->model('model');
 		$username = $this->input->post('account');    
@@ -41,8 +41,7 @@ class Auth extends CI_Controller {
 		'noHP' => $this->input->post('phone'),
 		'email' => $this->input->post('email'),
 		'password' => $enc_password,
-		'jk' => $this->input->post('JenisKelamin'),
-		'user_level' =>$user_level
+		'jk' => $this->input->post('JenisKelamin')
          );
         
         // ngecek apakah udah ada username yang sama
@@ -64,11 +63,11 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
-            redirect('/dashboard');
+            redirect('/auth/thanks_daftar');
             // access login for admin
         }
         else{
-            redirect('/daftar');
+            redirect('/auth/thanks_daftar');
         }
         // }
 	}
@@ -124,6 +123,9 @@ class Auth extends CI_Controller {
         }
         // }
     }
+	function thanks_daftar(){
+		$this->load->view('thanks_daftar');
+	}
 
     public function cairkan(){
         $this->load->model('model');
