@@ -34,10 +34,13 @@ class Mart extends CI_Controller {
 		$this->load->view('detailProduk',$data);
 	}	
 
-	public function bayar ($id){
+	public function bayar (){
 		$this->load->view('pembayaran_produk');
 	}
-	public function thanks (){
+	public function thanks ($id){
+		$id = 
+		$items= $this->cart->contents();
+		$rowid = $items->rowid;
 		$this->load->view('thanks_purchase');
 	}
 

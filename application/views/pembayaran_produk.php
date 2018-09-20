@@ -109,7 +109,8 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-md-12">
-<a href="<?php echo base_url();?>index.php/mart/thanks" class="btn btn-primary">Bayar Sekarang</a>
+<a href="<?php echo base_url();?>index.php/mart/thanks/<?php foreach ($this->cart->contents() as $items) : ?>
+	<?php echo $items['rowid'] ?> <?php endforeach ?>" class="btn btn-primary">Bayar Sekarang</a>
   </div>
 </div>
 </form>
@@ -122,7 +123,7 @@
    <h3> Detail Pembelian</h3>
   </div>
   <div class="card-body descProdukDetail" style="border:0;">
-    <h5 class="card-title">Sub Total (<?php echo $this->cart->total_items(); ?> Items) :  <span>Rp <?php echo $this->cart->total(); ?></span></h5>
+  <h5 class="card-title">Sub Total (<?php echo $this->cart->total_items(); ?> Items) :  <span>Rp <?php echo $this->cart->total(); ?></span></h5>
     <h5 class="card-title">Biaya Pengiriman:  <span>Rp 5.000</span></h5>
     <h5 class="card-title">Total: <span>Rp <?echo Rp 55.000</span></h5>
   </div>
