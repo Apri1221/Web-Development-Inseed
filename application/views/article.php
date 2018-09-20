@@ -12,7 +12,9 @@
     <?php include_once("template/navbar.php"); ?>
     <section id="headline">
       <div class="container-fluid">
-        <h2 style="text-align: center; margin-top: 2%;">SEAWEED ARTICLES</h2>
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 header text-center">
+          <h2>Seaweed <b>Artikel</b></h2>
+        </div>
         <div class="row barisArtikelAtas" >
           <div class="col-xl-7 col-md-10 col-sm-12 col-xs-12 boxHeadline" >
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
