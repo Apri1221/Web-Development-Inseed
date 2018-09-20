@@ -20,7 +20,7 @@
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
             <!-- User -->
-            <li class="list-group-item judulMenuDashboard" style="background-color: #12a8bb;">UMKM</li>
+            <li class="list-group-item judulMenuDashboard" style="background-color: #12a8bb;">DASHBOARD UMKM</li>
             <div id="sidebarUser" style="display: none;">
               <a href="dashboard.php" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
               <a href="dashboard_user_cairkan.php"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
@@ -41,7 +41,8 @@
             
             <!-- UMKM -->
             <div id="sidebarUMKM"   >
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item active"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
+               <a href=""> <li style="margin-top: 10%;" class="list-group-item"><i class="fa fa-plus"></i>Tambah Produk</li></a>
+              <a href=""> <li  class="list-group-item active"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
             </div>
             
           </ul>

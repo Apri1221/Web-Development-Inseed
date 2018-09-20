@@ -13,9 +13,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('asset/js/jcarousel.responsive.js');?>"></script>
     <script src="<?php echo base_url('asset/js/jquery.jcarousel.min.js');?>"></script>
-<<<<<<< HEAD
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-=======
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
     $(window).load(function() {
@@ -34,5 +31,4 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
->>>>>>> 700152eaf6413c170466c27dfffa2b93a382edd2
+

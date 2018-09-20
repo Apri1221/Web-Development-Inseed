@@ -95,6 +95,21 @@ class Dashboard extends CI_Controller {
         $this->load->view('dashboard_koperasi_proyek');   
     }
 	
+    public function produk() {
+        if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_UMKM_editProduk");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
+
+    public function tambahProduk() {
+        if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_UMKM_tambahProduk");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
 
 
 }

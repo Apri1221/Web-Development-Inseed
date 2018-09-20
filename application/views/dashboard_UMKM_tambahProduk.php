@@ -40,7 +40,7 @@
             </div>
             
             <!-- UMKM -->
-            <div id="sidebarUMKM">
+           <div id="sidebarUMKM">
                   <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item "><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/tambahProduk');?>"> <li class="list-group-item active"><i class="fa fa-plus"></i>Tambah Produk</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item "><i class="fa fa-box-open"></i>Kelola Produk</li></a>
@@ -51,13 +51,13 @@
         <div class="col-md-9">
           <div class="card">
             <div class="card-header" style="background-color: white;">
-              <h4 style="font-weight: bold;"> Edit Produk</h4>
+              <h4 style="font-weight: bold;"> Tambah Produk</h4>
               
             </div>
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-4 editProdukUMKM" style="text-align: center;">
-                  <img src="assets/image/produk/produk1.jpg">
+                  
                   
                   <form action="#" method="POST">
                     <br>
@@ -88,9 +88,10 @@
                       
                       </h6>
                     </div>
+                   
+                    <br>
                     
-                    
-                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
+                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Tambah</button>
                     
                   </form>
                 </div>
