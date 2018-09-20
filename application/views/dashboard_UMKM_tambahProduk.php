@@ -19,6 +19,7 @@
       <div class="row">
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
+            <li class="list-group-item judulMenuDashboard" style="background-color: #12a8bb;">UMKM DASHBOARD</li>
             <!-- UMKM -->
            <div id="sidebarUMKM">
             <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item "><i class="fas fa-user" ></i>Profilku</li> </a>
