@@ -18,10 +18,9 @@
 			  <img src="<?php echo base_url('asset/assets/image/done.png');?>" style="width: 50%; margin-left:25%"</img></div>
         <div class="col-xl-8 col-md-8 col-sm-12 col-xs-12"  >
 		  <div class="alert alert-success">
-            <h4>Data tersimpan! <br>Terima kasih sudah melakukan investasi pada proyek kami <br></h4>
+            <h4>Data tersimpan! <br>Terima kasih sudah melakukan pendaftaran akun di inseed.id<br></h4>
 			 </div>
-            <p style="text-align: justify;">Jika sudah melakukan transaksi, maka projek akan langsung masuk dashboard anda.<br>
-              Untuk mengecek dashboard anda, silahkan klik <a href="<?=base_url()?>index.php/dashboard/investasi/">Di sini</a><br><br><br> </p>
+            <p style="text-align: justify;">Cek email anda dan klik pada link yang kami berikan untuk melakukan <a href="<?=base_url()?>index.php/dashboard/investasi/">Di sini</a><br><br><br> </p>
               </form>
           </div>
         </div>

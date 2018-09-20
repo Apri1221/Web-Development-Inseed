@@ -33,20 +33,20 @@
 		foreach($proyek as $a){
 		?>
         <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk">
+          <div class="card cardProduk" style="padding: 5%; height:250px;">
             <div class="card-body cardInvest">
               <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
-              <p class="card-text ">Expektasi Keuntungan : <span> <?php echo $a->ekspUntung ?> %</span></p>
-              <p class="card-text ">Lama Proyek : <span><?php echo $a->lamaProyek?> Hari</span></p>
-              <p class="card-text ">Penanggung Jawab : <span><?php echo $a->penanggungJawab?></span></p>
-              <p class="card-text ">Lokasi : <span><?php echo $a->lokasi?></span></p>
+              <p class="card-text ">Expektasi Keuntungan :<br> <span> <?php echo $a->ekspUntung ?> %</span></p>
+              <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
+              <p class="card-text ">Penanggung Jawab :<br> <span><?php echo $a->penanggungJawab?></span></p>
+              <p class="card-text ">Lokasi : <br><span><?php echo $a->lokasi?></span></p>
               <div class="bagianDanaInvest" style="">
                 <div class="progress" style="margin-bottom: 8%;">
                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $a->progress?> %;"><?php echo $a->progress?> %</div>
                 </div>
-                <p class="card-text ">Dana Terkumpul : <span >Rp <?php echo $a->danaTerkumpul?></span></p>
-                <p class="card-text ">Dana yang Dibutuhkan : <span >Rp <?php echo $a->minimalDana?></span></p>
-                <p class="card-text ">Sisa Waktu : <span ><?php echo $a->sisaWaktu?> Hari</span></p>
+                <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul?></span></p>
+                <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
+                <p class="card-text ">Sisa Waktu : <br><span ><?php echo $a->sisaWaktu?> Hari</span></p>
                 <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
               </div>
             </div>
