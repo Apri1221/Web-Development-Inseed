@@ -97,7 +97,7 @@ class Dashboard extends CI_Controller {
 	
     public function produk() {
         if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard_UMKM_editProduk");
+            $this->load->view("dashboard_UMKM");
         } else {
             $this->load->view('masuk');
         }
@@ -111,5 +111,20 @@ class Dashboard extends CI_Controller {
         }
     }
 
+    public function editProduk() {
+        if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_UMKM_editProduk");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
+
+    public function hapusProduk() {
+        if ($this->session->userdata('level')!==0){
+            $this->load->view("dashboard_UMKM");
+        } else {
+            $this->load->view('masuk');
+        }
+    }
 
 }

@@ -33,7 +33,7 @@
                 <?php $username = $this->session->userdata('username');
                 $sesdata['username']=$username; 
                 echo $username ?></a>
-                <div class="dropdown-menu dropdown-menu-right" style="background-color: #e6ffe6;" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu dropdown-menu-right" style="background-color: #fcfffe;" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="<?=base_url()?>index.php/dashboard">Dashboard</a>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/cart">Cart</a>
                   <div class="dropdown-divider"></div>
