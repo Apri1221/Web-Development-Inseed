@@ -193,14 +193,14 @@
           <div class="service-box mt-5 mx-auto">
             <img style="width: 40%" src="<?php echo base_url('asset/assets/image/boy.png');?>"></img>
             <h3 class="mb-3">YOAN SUTRISNO</h3>
-            <p class="text-muted mb-0"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
+            <p class="text-muted mb-0"><i>Dengan menggunakan inseed.id, omset penjualan saya semakin bertambah.<br> Terima kasih inseed!</i></p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 text-center" >
           <div class="service-box mt-5 mx-auto">
             <img src="<?php echo base_url('asset/assets/image/girl.png');?>" style="width: 40%"></img>
             <h3 class="mb-3">AVI WIJAYA</h3>
-            <p class="text-muted mb-0"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
+            <p class="text-muted mb-0"><i>Dengan inseed, saya bisa mencari produk-produk olahan rumput laut yang awalnya tidak bisa saya temukan dengan mudah</i></p>
           </div>
         </div>
         <div class="container text-center" style=" margin-top: 5%;">

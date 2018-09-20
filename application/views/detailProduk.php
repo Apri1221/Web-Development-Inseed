@@ -18,41 +18,21 @@
   <body>
     <?php include_once("template/navbar.php"); ?>
     <section id="detailProduk">
-      
-      <div class="container-fluid" style="margin:3% 0">
-        <div class="row" >
-          <div class="col-lg-4 col-md-5 col-sm-11" style=" margin: 2%; ">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner slideshowProduk">
-                <div class="carousel-item active tab-pane" id="pic-1">
-                  <img class="d-block w-100" src="assets/image/produk/produk1.jpg" alt="First slide" id="pic-1">
-                </div>
-                <div class="carousel-item tab-pane" id="pic-2">
-                  <img class="d-block w-100" src="assets/image/produk/produk2.jpg" alt="Second slide" id="pic-2">
-                </div>
-                <div class="carousel-item tab-pane" id="pic-3">
-                  <img class="d-block w-100" src="assets/image/produk/produk3.jpg" alt="Third slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-            <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="assets/image/produk/produk1.jpg" /></a></li>
-              <li><a data-target="#pic-2" data-toggle="tab"><img src="assets/image/produk/produk2.jpg" /></a></li>
-              <li><a data-target="#pic-3" data-toggle="tab"><img src="assets/image/produk/produk3.jpg" /></a></li>
-            </ul>
-          </div>
-          <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">
-            <?php
+      <?php
             foreach ($detail as $a) {
             ?>
+      <div class="container-fluid" style="margin:3% 0">
+        <div class="row" >
+          <div class="col-lg-4 col-md-5 col-sm-11 slideshowProduk" style=" margin: 2%; ">
+            <div class="text-center">
+              <h2>Foto Produk:</h2>
+            </div>
+            
+                <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
+               
+          </div>
+          <div class=" col-lg-3 col-md-5 col-sm-11 descProdukDetail">
+            
             <h2><?php echo $a->namaProduk?></h2>
             <h5>Harga:<span > Rp <?php echo $a->hargaProduk?></span></h5>
             <h5>Stok Produk:<span > <?php echo $a->stok?> pcs</span></h5>
@@ -85,7 +65,7 @@
             </form>
             <?php } ?>
           </div>
-          <div class="col-lg-3 col-md-8 col-sm-10 descSeller" >
+          <div class="col-lg-3 col-md-8 col-sm-11 descSeller" >
             <?php
             foreach ($detail as $a) {
             ?>

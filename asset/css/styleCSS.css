@@ -885,37 +885,21 @@ margin-right: 2%;
 
 /* ----------- DETAIL PRODUCT BOSQ-------- */
 
+.slideshowProduk img{
+  height: auto;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
 .slideshowProduk{
-  height: 300px;
+  margin: 2%; text-align: center; padding: 2%; height: 50%; border:3px solid #12a8bb; border-radius: 25px;
+}
+
+.slideshowProduk h2{
+   color: green;
 }
 
 
-@media screen and (max-width: 768px){
- .slideshowProduk{
-  height: 190px;
-
-}
-}
-
-@media screen and (max-width: 425px){
- .slideshowProduk{
-  height: 250px;
-}
-}
-  .preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
 
 
 .descProdukDetail{
@@ -923,7 +907,7 @@ margin-right: 2%;
 }
 
 @media screen and (max-width: 425px){
-  .descProdukDetail, .descSeller{
+  .descProdukDetail, .descSeller, .slideshowProduk{
   width: 85%;
   margin-left: 8% !important;
 }
@@ -932,10 +916,7 @@ margin-right: 2%;
 }
 }
 
-@media screen and (width: 768px){
-.descSeller{
-  margin-left: 15% !important;
-}
+@media screen and (max-width: 768px){
 .descProdukDetail h5{
   text-align: center;
 }

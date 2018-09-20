@@ -1,4 +1,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/styleCSS.css');?>">
@@ -13,10 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('asset/js/jcarousel.responsive.js');?>"></script>
     <script src="<?php echo base_url('asset/js/jquery.jcarousel.min.js');?>"></script>
-<<<<<<< HEAD
-=======
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
->>>>>>> 4203930719a985f754aefafcb7c2dba1339c2435
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -30,8 +28,4 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-<<<<<<< HEAD
 
-=======
-    <!--End of Tawk.to Script-->
->>>>>>> 4203930719a985f754aefafcb7c2dba1339c2435
