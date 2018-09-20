@@ -1,4 +1,8 @@
+
+
 <section id="contact-us">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="container">
       <div class="row">
         <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12 logo_footer">

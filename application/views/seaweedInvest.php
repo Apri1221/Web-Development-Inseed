@@ -33,7 +33,7 @@
 		foreach($proyek as $a){
 		?>
         <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk" style="padding: 5%; height:250px;">
+          <div class="card cardProduk" style="padding: 5%; height:680px;">
             <div class="card-body cardInvest">
               <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
               <p class="card-text ">Expektasi Keuntungan :<br> <span> <?php echo $a->ekspUntung ?> %</span></p>
@@ -55,8 +55,8 @@
 		<?php } ?>
 		</div>
         <nav>
-		<div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk">
-          <ul class="pagination justify-content-center text-center">
+		<div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk text-center">
+          <ul class="pagination justify-content-center">
 		  <?php 
 		  echo $this->pagination->create_links();?>
 		  </ul>

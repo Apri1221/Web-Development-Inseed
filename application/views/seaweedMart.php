@@ -29,7 +29,7 @@
         <hr>
       </div>
       <form class="form-wrapper" action="<?php echo base_url();?>index.php/cart/cari">
-        <input type="text" name="search" placeholder="Cari Produk" required>
+        <input type="text" name="search" id="search" placeholder="Cari Produk" required>
         <input type="submit" value="Cari" id="submit">
       </form>
       
@@ -38,43 +38,22 @@
 	<div class="row">
 	
 	<?php foreach ($data as $row) { ?>
-	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-					<div class="thumbnail">
-							<h4><?php echo $row->namaProduk;?></h4>
-							<div class="row">
-								<div class="col-md-7">
-									<h4><?php echo 'Rp '.number_format($row->hargaProduk);?></h4>
-								</div>
-								<div class="col-md-5">
-									<input type="number" name="quantity" id="<?php echo $row->idProduk;?>" value="1" class="quantity form-control">
-								</div>
-							</div>
-							<button class="add_cart btn btn-success btn-block" data-idProduk="<?php echo $row->idProduk;?>" data-namaProduk="<?php echo $row->namaProduk;?>" data-hargaProduk="<?php echo $row->hargaProduk;?>">Add To Cart</button>
-						</div>
-					</div>
-					
-			<?php }?>
-			</div>
-			<div clas
-			<div class="col-xl-6 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart justify-content-center">
-			<h4>Shopping Cart</h4>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Produk</th>
-						<th>Harga</th>
-						<th>Qty</th>
-						<th>Subtotal</th>
-						<th>Aksi</th>
-					</tr>
-				</thead>
-				<tbody id="detail_cart">
-				</tbody>
 
-			</table>
-		<a class="add_cart btn btn-success btn-block" href="<?php echo base_url();?>index.php/cart/bayar" style="color:white;">Lanjut Bayar</a>
-						
-		</div>
+					
+					<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
+    <div class="card cardProduk" style="height: 500px;">
+  <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
+  <div class="card-body" style="text-align: center;">
+    <h5 class="card-title judulProduk"><?php echo $row->namaProduk; ?></h5>
+        <p class="card-text "><i class="fas fa-store" ></i><span ><?php echo $row->idPenjual; ?></span></p>
+         <p class="card-text "><i class="fas fa-box-open"></i>Stok : <span ><?php echo $row->stok; ?> pcs</span></p>
+    <p class="card-text "><i class="fas fa-money-bill-alt" ></i><span>Rp <?php echo $row->hargaProduk; ?></span></p>
+
+    <a href="#" class="btn btn-success buttonProdukInvest"><i class="fas fa-shopping-cart"></i> Lihat Detail</a>
+  </div>
+</div>
+  </div>
+			<?php }?>
 	</div>
 </div>
 </section>
