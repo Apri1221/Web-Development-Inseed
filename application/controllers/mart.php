@@ -41,5 +41,9 @@ class Mart extends CI_Controller {
 		$this->load->view('thanks_purchase');
 	}
 
+	public function addCart($id){
+		$this->load->view('cart');
+	}
+
 }
 ?>
