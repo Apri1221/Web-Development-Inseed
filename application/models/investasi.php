@@ -60,6 +60,9 @@ class Investasi extends CI_Model
 		$SQL="select * from proyek order by $base ASC";
 		return $this->db->query($SQL);
 	}
+	function update_investor ($data,$table){
+		$this->db->insert($table,$data);	
+	}
 		
 }
 

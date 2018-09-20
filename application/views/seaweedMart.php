@@ -37,7 +37,7 @@
 <div class="container"><br/>
 	<div class="row">
 	
-	<?php foreach ($data as $row) { ?>
+	<?php foreach ($produk as $row) { ?>
 	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
     <div class="card cardProduk" style="height: 500px;">
   <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
