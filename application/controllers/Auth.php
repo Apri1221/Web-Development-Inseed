@@ -28,6 +28,12 @@ class Auth extends CI_Controller {
         $data['user_level'] = '3';
         $this->load->view('daftar',$data);
     }
+
+    public function asKoperasi() {
+        $this->load->helper('url');
+        $data['user_level'] = '3';
+        $this->load->view('daftar',$data);
+    }
     
     public function register() {
         $options = ['cost' => 5];
