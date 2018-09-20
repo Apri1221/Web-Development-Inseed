@@ -47,17 +47,8 @@ class Investasi extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table,$data);	
 	}
-	function sortby ($based){
-		if ($based == 'untung') {
-			$base = 'ekspUntung';
-		}
-		else if ($based == 'waktu') {
-			$base = 'lamaProyek';
-		}
-		else if ($based == 'progress') {
-			$base = 'minimalDana';
-		}
-		$SQL="select * from proyek order by $base ASC";
+	function detail ($id){
+		$SQL="select A.IDPROYEK, A.NAMAPROYEK, a.lokasi, B.NOMINALINVEST FROM PROYEK A, INVESTOR B WHERE A.idProyek = B.idProyek AND B.namaAkun LIKE '$id'";
 		return $this->db->query($SQL);
 	}
 	function update_investor ($data,$table){

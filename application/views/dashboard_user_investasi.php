@@ -42,7 +42,7 @@
                       <table class="table table-striped">
                         <thead>
                           <tr class="headerKeranjang">
-                            <th scope="col"> Foto Proyek</th>
+                            <th scope="col"> No.</th>
                             <th scope="col" style="width: 20%;">Nama Proyek</th>
                             <th scope="col" class="text-left">Lokasi</th>
                             <th scope="col" style="width: 25%;" class="text-left">Nominal Investasi</th>
@@ -50,31 +50,20 @@
                           </tr>
                         </thead>
                         <tbody>
+						<?php $i = 0;
+						foreach $proyek as $a :
+						$i++;
+						?>
                           <tr class="produkKeranjang">
-                            <td><img src="assets/image/petani/petani1.jpg"/> </td>
-                            <td>Rumput laut X</td>
+                            <td><?php echo $i?> </td>
+                            <td><?php echo $namaProyek</td>
                             
-                            <td>Sidoarjo</td>
-                            <td class="text-left">Rp 40.000</td>
+                            <td><?php echo $lokasi</td>
+                            <td class="text-left">Rp <?php echo $nominalInvest?></td>
                             <td class="text-left"><a href="" class="btn btn-sm btn-primary"><i class="far fa-eye"></i></a></td>
                           </tr>
-                          <tr class="produkKeranjang">
-                            <td><img src="assets/image/petani/petani2.jpg"/> </td>
-                            <td>Rumput laut X</td>
-                            
-                            <td>Malang</td>
-                            <td class="text-left">Rp 35.000</td>
-                            <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-eye"></i> </a> </td>
-                          </tr>
-                          <tr class="produkKeranjang">
-                            <td><img src="assets/image/petani/petani3.jpg" /> </td>
-                            <td>Rumput laut Z</td>
-                            
-                            <td>Surabaya</td>
-                            <td class="text-left">Rp 35.000</td>
-                            <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-eye"></i> </a> </td>
-                          </tr>
-                          
+							<?php endforeach; ?>
+						  
                         </tbody>
                       </table>
                     </div>
