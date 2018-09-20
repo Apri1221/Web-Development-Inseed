@@ -26,7 +26,7 @@ class Cart extends CI_Controller{
 					   'name'    => $product->namaProduk
 					);
 		$this->cart->insert($data);
-		redirect('/mart');
+		redirect('/cart/show_cart');
 	}
 
 	public function show_cart(){
