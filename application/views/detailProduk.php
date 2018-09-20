@@ -61,7 +61,6 @@
               </a>
 			  <input type="submit" value="Tambah ke Cart" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
               </input>
-
             </form>
             <?php } ?>
           </div>
