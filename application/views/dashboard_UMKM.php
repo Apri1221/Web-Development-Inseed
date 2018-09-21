@@ -51,37 +51,19 @@
                       </thead>
                       <tbody>
                         <tr class="produkKeranjang">
-                          <td>Rumput laut hangat</td>
-                          <td>Rp 50.000</td>
-                          
-                          <td>3</td>
+						<?php foreach ($produk as $row) : ?>
+                          <td><?php echo $row->namaProduk?></td>
+                          <td>Rp <?php echo $row->hargaProduk?></td>
+                          <td><?php echo $row->stok?></td>
                           <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk');?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
                           <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk');?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>Rumput laut dingin </td>
-                          <td>Rp 25.000</td>
-                          
-                          <td>2</td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>Rumput Laut Herbal </td>
-                          <td>Rp 35.000</td>
-                          
-                          <td>3</td>
-                          
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
                         
+						</tr>        
+<?php endforeach; ?>						
                       </tbody>
                     </table>
                   </div>
-                </div>
-                
-                
+                </div>        
               </div>
             </div>
           </div>
