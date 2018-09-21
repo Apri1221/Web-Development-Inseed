@@ -7,9 +7,7 @@
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
-
     <?php include_once("template/navbar.php"); ?>
-
     <section id="">
       <div class="col-md-12">
         
@@ -21,10 +19,10 @@
           <ul class="list-group menuDashboard" >
             <li class="list-group-item judulMenuDashboard" style="background-color: green;">USER DASHBOARD</li>
             <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item  <?php if($this->uri->segment(2)=="investasi"){echo " active";}?>"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-            </ul>
+            <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
+            <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
+            <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item  <?php if($this->uri->segment(2)=="investasi"){echo " active";}?>"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
+          </ul>
         </div>
         <div class="col-md-9">
           <div class="card">
@@ -50,10 +48,10 @@
                           </tr>
                         </thead>
                         <tbody>
-						<?php $i = 0;
-						foreach ($proyek as $a) :
-						$i++;
-						?>
+                          <?php $i = 0;
+                          foreach ($proyek as $a) :
+                          $i++;
+                          ?>
                           <tr class="produkKeranjang">
                             <td><?php echo $i?> </td>
                             <td><?php echo $a->namaProyek ?></td>
@@ -61,8 +59,8 @@
                             <td class="text-left">Rp <?php echo $a->nominalInvest?></td>
                             <td class="text-left"><a href="" class="btn btn-sm btn-primary"><i class="far fa-eye"></i></a></td>
                           </tr>
-							<?php endforeach; ?>
-						  
+                          <?php endforeach; ?>
+                          
                         </tbody>
                       </table>
                     </div>
