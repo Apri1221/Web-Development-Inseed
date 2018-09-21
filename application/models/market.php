@@ -38,5 +38,12 @@ class Market extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+	public function getBeli($username){
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->where('idPenjual',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 ?>

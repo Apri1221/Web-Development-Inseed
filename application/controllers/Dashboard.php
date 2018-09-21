@@ -56,7 +56,9 @@ class Dashboard extends CI_Controller {
             $this->load->model('market');
             $username = $this->session->userdata('username');
             $data['detail'] = $this->market->getJualan($username);
-            $this->load->view("dashboard_user_pesanan", $data);
+			
+			$items = $this->cart->contents();
+            $this->load->view("dashboard_user_pesanan", $data,$items);
         } else {
             $this->load->view('masuk');
         }
@@ -66,7 +68,6 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('level')!==0){
 			$this->load->model('investasi');
 			$username = $this->session->userdata('username');
-			$this->load->model('investasi');
 			$data['proyek'] = $this->investasi->detail($username)->result();
             $this->load->view('dashboard_user_investasi',$data);
         } else {

@@ -79,7 +79,7 @@
                     <table class="table table-striped">
                       <thead>
                         <tr class="headerKeranjang">
-                          <th scope="col"> Foto Produk</th>
+                          <th scope="col"> No</th>
                           <th scope="col" style="width: 25%;">Nama Produk</th>
                           
                           <th scope="col" class="text-left">Kuantitas</th>
@@ -88,25 +88,23 @@
                           <th scope="col" class="text-left">Hapus</th>
                         </tr>
                       </thead>
-                      <?php foreach ($detail as $var): ?>
+                      <?php 
+                    $i=0;
+                    foreach ($this->cart->contents() as $items) :
+                    $i++;
+                  ?>
                           <tr class="produkKeranjang">
 
                             <td>
-                              <?php if($var->foto === null): ?>
-                              <img src="
-                                <?php echo base_url ('asset/assets/image/Untitled-1.png'); ?>" class="profilePictureDashboard">"/> 
-                              <?php else:?>
-                                
-                              <?php endif;?>
+                              <?php echo $i;?>
                             </td>
-                            <td><?php echo $var->namaProduk; ?></td>
+                            <td><?php echo $items['name'] ?></td>
                             
-                            <td><?php echo $var->stok; ?> buah</td>
-                            <td class="text-left">Rp <?php echo $var->hargaProduk; ?></td>
-                            <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
+                            <td><?php echo $items['qty'] ?> buah</td>
+                            <td class="text-left">Rp <?php echo $items['price'] ?></td>
+                            <td class="text-left"><a href="<?=base_url()?>index.php/cart/update_cart/<?php echo $items['rowid'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
                           </tr>
                           <?php endforeach; ?>
-                          
                         </tbody>
                     </table>
                   </div>
