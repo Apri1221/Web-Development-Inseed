@@ -3,7 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 class Produk extends CI_Model{
 	function getId() {
-		$SQL = "SELECT COUNT(idProduk) FROM `produk`";
-		return $this->db->query($SQL);
+		return $this->db->get('proyek')->num_rows();
+	}
+	function insertProduk($table,$data) {
+		$res = $this->db->insert($table, $data);
+}
 }
 ?>

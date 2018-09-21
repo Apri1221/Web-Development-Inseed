@@ -189,18 +189,20 @@ class Dashboard extends CI_Controller {
     }
 	public function uploadProduk(){
 		$this->load->model('produk');
-		$id = $this->produk->getId()->result();
+		 $val = $this->produk->getId();
+		 $val++;
         $data = array(
-		'idProduk' => $id,
+		'idProduk' => $val,
 		'idPenjual' => $this->session->userdata('username'),
         'namaProduk' => $this->input->post('namaProduk'),
         'hargaProduk' => $this->input->post('hargaProduk'),
-        'stokProduk' => $this->input->post('stok'),
+        'stok' => $this->input->post('stokProduk'),
         'rating' => 0,
-        'detailProduk' => $this->input->post('detail'),
-        'berat' => 1,
-        'foto' => $this->input->post('foto')
+        'detail' => $this->input->post('detailProduk'),
+        'berat' => 1
          );
+		 $this->produk->insertProduk('produk', $data);
+		 
 	}
 
 }

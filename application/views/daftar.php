@@ -21,8 +21,9 @@
           <?php 
              if ($user_level == '3'){
                echo "Kamu sebagai UMKM, silahkan isi data diri disini";
-             } else if ($user_level == '5') {
-				 echo "Selamat datang pengurus koperasi, silakan isi data anda di sini"
+             } else if ($user_level == '2') {
+				 echo "Selamat datang pengurus koperasi, silakan isi data anda di sini";
+			 } else
 			 {
                echo "Hai, masukkan data pada kolom tersedia!";
              }
