@@ -40,7 +40,7 @@
                       <table class="table table-striped">
                         <thead>
                           <tr class="headerKeranjang">
-                            <th scope="col"> Foto Produk</th>
+                            <th scope="col"> No</th>
                             <th scope="col" style="width: 25%;">Nama Produk</th>
                             
                             <th scope="col" class="text-left">Stok</th>
@@ -50,16 +50,13 @@
                         </thead>
                         <tbody>
                           
-                          <?php foreach ($detail as $var): ?>
+                          <?php $i = 0;
+						  foreach ($detail as $var):
+						  $i++;						  ?>
                           <tr class="produkKeranjang">
 
-                            <td>
-                              <?php if($var->foto === null): ?>
-                              <img src="
-                                <?php echo base_url ('asset/assets/image/Untitled-1.png'); ?>" class="profilePictureDashboard">"/> 
-                              <?php else:?>
-                                
-                              <?php endif;?>
+                            <td>  
+                              <?php echo $i;?>
                             </td>
                             <td><?php echo $var->namaProduk; ?></td>
                             
