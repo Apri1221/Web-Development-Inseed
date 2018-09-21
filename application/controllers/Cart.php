@@ -31,10 +31,10 @@ class Cart extends CI_Controller{
 	}
 
 	public function show_cart(){
-		$items= $this->cart->contents();
+		$items = $this->cart->contents();
 		$this->load->view('cart',$items);
-
 	}
+	
 	public function update_cart($id){
 		$data = array(
 		'rowid' => $id,
