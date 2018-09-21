@@ -72,11 +72,7 @@ class Dashboard extends CI_Controller {
     
     public function investasi() {
 		if ($this->session->userdata('level')!==0){
-<<<<<<< HEAD
-			/*$this->load->model->('investasi'); */
-=======
 			$this->load->model('investasi');
->>>>>>> f88c8ba185afea692a60ed6fe370b48c46537584
 			$username = $this->session->userdata('username');
 			$this->load->model('investasi');
 			$data['proyek'] = $this->investasi->detail($username)->result();
