@@ -51,15 +51,15 @@
                         </thead>
                         <tbody>
 						<?php $i = 0;
-						foreach $proyek as $a :
+						foreach ($proyek as $a) :
 						$i++;
 						?>
                           <tr class="produkKeranjang">
                             <td><?php echo $i?> </td>
-                            <td><?php echo $namaProyek</td>
+                            <td><?php echo $a->namaProyek ?></td>
                             
-                            <td><?php echo $lokasi</td>
-                            <td class="text-left">Rp <?php echo $nominalInvest?></td>
+                            <td><?php echo $$a->lokasi ?></td>
+                            <td class="text-left">Rp <?php echo $a->nominalInvest?></td>
                             <td class="text-left"><a href="" class="btn btn-sm btn-primary"><i class="far fa-eye"></i></a></td>
                           </tr>
 							<?php endforeach; ?>
