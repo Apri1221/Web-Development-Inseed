@@ -70,7 +70,7 @@
             </div>
             <div class="text-center" style="margin-bottom: 5%;">
               <h5>Anda ingin berinvestasi lagi?</h5>
-              <a href="#" class="btn btn-primary">Klik Disini!</a>
+              <a href="<?=base_url()?>index.php/invest" class="btn btn-primary">Klik Disini!</a>
             </div>
           </div>
         </div>

@@ -125,7 +125,7 @@
             </div>
             <div class="text-center" style="margin-bottom: 5%;">
               <h5>Anda ingin berbelanja lagi?</h5>
-              <a href="#" class="btn btn-primary">Klik Disini!</a>
+              <a href="<?=base_url()?>index.php/mart" class="btn btn-primary">Klik Disini!</a>
             </div>
           </div>
         </div>
