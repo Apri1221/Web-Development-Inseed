@@ -36,8 +36,10 @@
       
 <div class="container"><br/>
 	<div class="row">
-	
-	<?php foreach ($produk as $row) { ?>
+	<?php 
+		$no = $this->uri->segment('3') + 1;
+		foreach($produk as $row){
+		?>
 	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
     <div class="card cardProduk" style="height: 500px;">
   <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
@@ -51,8 +53,16 @@
   </div>
 </div>
   </div>
-			<?php }?>
+	<?php }?>
 	</div>
+	<nav>
+		<div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk text-center">
+          <ul class="pagination justify-content-center">
+		  <?php 
+		  echo $this->pagination->create_links();?>
+		  </ul>
+        </nav>
+</div>
 </div>
 </section>
 
