@@ -39,7 +39,7 @@
                 <div class="col-md-4 editProdukUMKM" style="text-align: center;">
                   
                   
-                  <form action="#" method="POST">
+                  <form action="<?php echo base_url ('index.php/Dashboard/uploadProduk');?>" method="POST">
                     <br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
@@ -64,7 +64,7 @@
                       
                       </h6>
                       <h6>Detail Produk:
-                      <textarea form="" name="detailProduk" class="form-control"></textarea>
+                      <input type="text" name="detailProduk" class="form-control"></input>
                       
                       </h6>
                     </div>
