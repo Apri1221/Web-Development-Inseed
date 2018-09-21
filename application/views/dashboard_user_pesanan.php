@@ -61,7 +61,7 @@
                             <td><?php echo $var->namaProduk; ?></td>
                             
                             <td><?php echo $var->stok; ?> buah</td>
-                            <td class="text-left">Rp <?php echo $var->namaProduk; ?></td>
+                            <td class="text-left">Rp <?php echo $var->hargaProduk; ?></td>
                             <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </a></td>
                           </tr>
                           <?php endforeach; ?>
@@ -84,40 +84,30 @@
                           
                           <th scope="col" class="text-left">Kuantitas</th>
                           <th scope="col" style="width: 20%;" class="text-left">Harga</th>
-                          <th scope="col" class="text-left">Status</th>
+                          
                           <th scope="col" class="text-left">Hapus</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr class="produkKeranjang">
-                          <td><img src="assets/image/petani/petani1.jpg"/> </td>
-                          <td>Rumput laut X</td>
+                      <?php foreach ($detail as $var): ?>
+                          <tr class="produkKeranjang">
+
+                            <td>
+                              <?php if($var->foto === null): ?>
+                              <img src="
+                                <?php echo base_url ('asset/assets/image/Untitled-1.png'); ?>" class="profilePictureDashboard">"/> 
+                              <?php else:?>
+                                
+                              <?php endif;?>
+                            </td>
+                            <td><?php echo $var->namaProduk; ?></td>
+                            
+                            <td><?php echo $var->stok; ?> buah</td>
+                            <td class="text-left">Rp <?php echo $var->hargaProduk; ?></td>
+                            <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
+                          </tr>
+                          <?php endforeach; ?>
                           
-                          <td>1</td>
-                          <td class="text-left">Rp 40.000</td>
-                          <td class="text-left">Diterima</td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td><img src="assets/image/petani/petani2.jpg"/> </td>
-                          <td>Rumput laut X</td>
-                          
-                          <td>15</td>
-                          <td class="text-left">Rp 35.000</td>
-                          <td class="text-left">Diterima</td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td><img src="assets/image/petani/petani3.jpg" /> </td>
-                          <td>Rumput laut Z</td>
-                          
-                          <td>25</td>
-                          <td class="text-left">Rp 35.000</td>
-                          <td class="text-Left">Dalam Pengiriman</td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        
-                      </tbody>
+                        </tbody>
                     </table>
                   </div>
                 </div>
