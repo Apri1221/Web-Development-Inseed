@@ -66,7 +66,8 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('level')!==0){
 			$this->load->model('investasi');
 			$username = $this->session->userdata('username');
-			$data['proyek'] = $this->investasi->detail($username);
+			$this->load->model('investasi');
+			$data['proyek'] = $this->investasi->detail($username)->result();
             $this->load->view('dashboard_user_investasi',$data);
         } else {
             $this->load->view('masuk');
