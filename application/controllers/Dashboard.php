@@ -101,9 +101,9 @@ class Dashboard extends CI_Controller {
 
     public function editProyekKoperasi() {
         $this->load->helper('url');
-        $idProyek = $this->input->get('idProyek');
-        $data['result'] = $this->Model->getproyek($idProyek);
-        $this->load->view('dashboard_koperasi_proyek');   
+        $id = $this->uri->segment(3);
+        $data['result'] = $this->Model->getproyekbyId($id);
+        $this->load->view('dashboard_koperasi_editProyek', $data);   
     }
 
     public function tambahProyek() {
@@ -128,7 +128,7 @@ class Dashboard extends CI_Controller {
             // access login for admin
         }
         else{
-            redirect('/dashboard');
+            redirect('/dashboard/tambahProyekKoperasi');
         }
     }
 
@@ -152,17 +152,31 @@ class Dashboard extends CI_Controller {
             // access login for admin
         }
         else{
-            redirect('/dashboard');
+            redirect('/dashboard/editProyekKoperasi');
         }
     }
+
+    public function deleteProyek() {
+        $this->load->model('model');
+        $id = $this->uri->segment(3);
+        $this->model->deleteproyek($id);
+        $this->kelolaProyek();
+    }
+
 	
     public function produk() {
         if ($this->session->userdata('level')!==0){
+<<<<<<< HEAD
 			$this->load->model('produk');
 			$username = $this->session->userdata('username');
 			$where = array('idPenjual' => $username);
 			$data['produk'] = $this->produk->show($where,'produk')->result();
             $this->load->view("dashboard_UMKM",$data);
+=======
+            $username = $this->session->userdata('username');
+            $data['result'] = $this->Model->getproduk($username);
+            $this->load->view("dashboard_UMKM", $data);
+>>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
         } else {
             $this->load->view('masuk');
         }
@@ -177,19 +191,17 @@ class Dashboard extends CI_Controller {
     }
 
     public function editProduk() {
-        if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard_UMKM_editProduk");
-        } else {
-            $this->load->view('masuk');
-        }
+        $this->load->helper('url');
+        $id = $this->uri->segment(3);
+        $data['result'] = $this->Model->getprodukbyId($id);
+        $this->load->view('dashboard_UMKM_editProduk', $data);
     }
 
     public function hapusProduk() {
-        if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard_UMKM");
-        } else {
-            $this->load->view('masuk');
-        }
+        $this->load->model('model');
+        $id = $this->uri->segment(3);
+        $this->model->deleteproduk($id);
+        $this->kelolaProyek();
     }
 	public function uploadProduk(){
 		$this->load->model('produk');

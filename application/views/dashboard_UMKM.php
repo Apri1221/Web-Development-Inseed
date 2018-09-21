@@ -50,7 +50,9 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php foreach ($result as $var): ?>
                         <tr class="produkKeranjang">
+<<<<<<< HEAD
 						<?php foreach ($produk as $row) : ?>
                           <td><?php echo $row->namaProduk?></td>
                           <td>Rp <?php echo $row->hargaProduk?></td>
@@ -60,6 +62,16 @@
                         
 						</tr>        
 <?php endforeach; ?>						
+=======
+                          <td><?php echo $var->namaProduk; ?></td>
+                          <td>Rp <?php echo $var->hargaProduk; ?></td>
+                          
+                          <td><?php echo $var->stok; ?> buah</td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/'.$var->idProduk);?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk/'.$var->idProduk);?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                        </tr>
+                        <?php endforeach; ?>
+>>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
                       </tbody>
                     </table>
                   </div>
