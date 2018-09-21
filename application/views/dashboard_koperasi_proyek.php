@@ -58,7 +58,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-4 editProyekDashboard" style="text-align: center;">
-                  <img src=<?php echo 'data:image/jpeg;base64,'.base64_encode( $result->foto ); ?>">
+                  <img src="">
                   
                   <form action="#" method="POST">
                     <br>
@@ -68,7 +68,7 @@
                     </div>
                   </div>
                   
-                  <div class="col-md-8 text-left editProyekDashboard">
+                  <div class="col-md-8 col-sm-8 text-left editProyekDashboard">
                     <div class="row">
                       <h6>Nama Proyek:
                       <input type="text" name="namaProyek" class="form-control">

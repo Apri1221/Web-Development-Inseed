@@ -41,14 +41,6 @@ class Dashboard extends CI_Controller {
         }
 	}
 
-	public function proyek() {
-		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard");
-        } else {
-            $this->load->view('masuk');
-        }
-	}
-
 	public function cairkan() {
 		if ($this->session->userdata('level')!==0){
             $username = $this->session->userdata('username');
@@ -96,6 +88,11 @@ class Dashboard extends CI_Controller {
     public function kelolaProyek() {
         $this->load->helper('url');
         $this->load->view('dashboard_koperasi');   
+    }
+
+    public function tambahProyek() {
+        $this->load->helper('url');
+        $this->load->view('dashboard_koperasi_proyek');   
     }
 	
     public function produk() {

@@ -57,7 +57,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-12" style="text-align: left;">
-                  <a href="dashboard_admin_tambahArtikel.php" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Proyek</a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/tambahProyek'); ?>" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Proyek</a>
                   <div class="table-responsive" >
                     <table class="table table-striped">
                       <thead>
@@ -83,14 +83,10 @@
                             <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
                             <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                           </tr>
-                          
-                          
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  
-                  
                 </div>
               </div>
             </div>
