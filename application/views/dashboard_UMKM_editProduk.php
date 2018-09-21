@@ -51,8 +51,9 @@
                   
                   <div class="col-md-8 text-left editProdukUMKM">
                     <div class="row">
+					<?php foreach ($produk as $row) : ?>
                       <h6>Nama Produk:
-                      <input type="text" name="namaProduk" class="form-control" value="">
+                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $row?>">
                       </h6>
                       <h6>Harga:
                       <input type="text" name="hargaProduk" class="form-control" value="">
