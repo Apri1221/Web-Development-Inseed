@@ -9,7 +9,7 @@
 
     <?php include_once("template/navbar.php"); ?>
 
-    <section id="headerDashboard">
+    <section id="">
     <div id="loading"></div>
       <div class="col-md-12">
         
