@@ -57,9 +57,9 @@
                           <tr class="produkKeranjang">
                             <td><?php echo $i?> </td>
                             <td><?php echo $a->namaProyek ?></td>
-                            <td><?php echo $$a->lokasi ?></td>
+                            <td><?php echo $a->lokasi ?></td>
                             <td class="text-left">Rp <?php echo $a->nominalInvest?></td>
-                            <td class="text-left"><a href="" class="btn btn-sm btn-primary"><i class="far fa-eye"></i></a></td>
+                            <td class="text-left"><a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek;?>" class="btn btn-sm btn-primary"><i class="far fa-eye"></i></a></td>
                           </tr>
 							<?php endforeach; ?>
 						  
