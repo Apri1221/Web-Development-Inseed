@@ -69,7 +69,7 @@
               <div class="col-md-8 col-sm-8 text-left editProyekDashboard">
                 <div class="row">
                   <h6>Nama Proyek:
-                  <input type="text" name="namaProyek" class="form-control">
+                  <input type="text" name="namaProyek" class="form-control" value="<?php echo $result->namaProyek ?>">
                   </h6>
                   <h6>Kebutuhan Dana
                   <input type="text" name="kebutuhanDana" class="form-control">

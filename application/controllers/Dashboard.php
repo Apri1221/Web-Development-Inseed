@@ -98,6 +98,13 @@ class Dashboard extends CI_Controller {
         $this->load->view('dashboard_koperasi_proyek');   
     }
 
+    public function editProyekKoperasi() {
+        $this->load->helper('url');
+        $idProyek = $this->input->get('idProyek');
+        $data['result'] = $this->Model->getproyek($idProyek);
+        $this->load->view('dashboard_koperasi_proyek');   
+    }
+
     public function tambahProyek() {
         $this->load->helper('url');
         $this->load->model('model');
@@ -112,6 +119,30 @@ class Dashboard extends CI_Controller {
         'penanggungJawab' => $this->input->post('penanggungJawab'),
          );
         
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->Model->cekproyek($namaProyek);
+        if(count($validate) === 0){
+            $this->model->Insert('proyek', $data);
+            redirect('/dashboard/kelolaProyek');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard');
+        }
+    }
+
+    public function editProyek() {
+        $this->load->helper('url');
+        $this->load->model('model');
+        $username = $this->session->userdata('username');
+        $namaProyek = $this->input->post('namaProyek');
+        $data = array(
+        'namaProyek' => $this->input->post('namaProyek'),
+        'lokasi' => $this->input->post('lokasiProyek'),
+        'namaAkun' => $username,
+        'startProjek' => $this->input->post('awalProyek'),
+        'penanggungJawab' => $this->input->post('penanggungJawab'),
+         );
         // ngecek apakah udah ada username yang sama
         $validate = $this->Model->cekproyek($namaProyek);
         if(count($validate) === 0){

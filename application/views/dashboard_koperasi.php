@@ -81,7 +81,7 @@
                           <td><?php echo $var->startProjek; ?></td>
                           <td>1/01/2019</td>
                           <td>Rp <?php echo $var->danaTerkumpul; ?></td>
-                            <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
+                            <td class="text-left"><a class="btn btn-sm btn-primary" href="<?php echo base_url ('index.php/Dashboard/editProyekKoperasi'.$var->idProyek); ?>"> <i class="fas fa-edit"></i> </a> </td>
                             <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                           </tr>
                           <?php endforeach; ?>
