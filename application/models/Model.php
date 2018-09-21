@@ -34,5 +34,23 @@ class Model extends CI_Model{
         $query = $this->db->get();
         return $query->row();
     }
+
+    public function cekproyek($username){
+		$data = array();
+        $this->db->select('*');
+        $this->db->from('proyek');
+        $this->db->where('namaAkun',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getproyek($username){
+		$data = array();
+        $this->db->select('*');
+        $this->db->from('proyek');
+        $this->db->where('namaAkun',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 ?>

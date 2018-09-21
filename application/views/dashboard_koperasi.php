@@ -9,7 +9,7 @@
 
     <?php include_once("template/navbar.php"); ?>
 
-    <section id="headerDashboard">
+    <section id="">
     <div id="loading"></div>
       <div class="col-md-12">
         
@@ -57,7 +57,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-12" style="text-align: left;">
-                  <a href="dashboard_admin_tambahArtikel.php" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Proyek</a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/tambahProyekKoperasi'); ?>" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Proyek</a>
                   <div class="table-responsive" >
                     <table class="table table-striped">
                       <thead>
@@ -73,24 +73,22 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php foreach ($result as $var): ?>
                         <tr class="produkKeranjang">
-                          <td>0001</td>
-                          <td>Proyek Sumenep</td>
-                          <td>Sumenep</td>
-                          <td>31/12/18</td>
-                          <td>1/01/19</td>
-                          <td>Rp 25.000.000
-                            <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
+                          <td><?php echo $var->idProyek; ?></td>
+                          <td><?php echo $var->namaProyek; ?></td>
+                          <td><?php echo $var->lokasi; ?></td>
+                          <td><?php echo $var->startProjek; ?></td>
+                          <td>1/01/2019</td>
+                          <td>Rp <?php echo $var->danaTerkumpul; ?></td>
+                            <td class="text-left"><a class="btn btn-sm btn-primary" href="<?php echo base_url ('index.php/Dashboard/editProyekKoperasi'.$var->idProyek); ?>"> <i class="fas fa-edit"></i> </a> </td>
                             <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                           </tr>
-                          
-                          
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  
-                  
                 </div>
               </div>
             </div>

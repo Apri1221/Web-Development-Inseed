@@ -41,14 +41,6 @@ class Dashboard extends CI_Controller {
         }
 	}
 
-	public function proyek() {
-		if ($this->session->userdata('level')!==0){
-            $this->load->view("dashboard");
-        } else {
-            $this->load->view('masuk');
-        }
-	}
-
 	public function cairkan() {
 		if ($this->session->userdata('level')!==0){
             $username = $this->session->userdata('username');
@@ -96,7 +88,71 @@ class Dashboard extends CI_Controller {
 
     public function kelolaProyek() {
         $this->load->helper('url');
-        $this->load->view('dashboard_koperasi');   
+        $username = $this->session->userdata('username');
+        $data['result'] = $this->Model->cekproyek($username);
+        $this->load->view('dashboard_koperasi', $data);   
+    }
+
+    public function tambahProyekKoperasi() {
+        $this->load->helper('url');
+        $this->load->view('dashboard_koperasi_proyek');   
+    }
+
+    public function editProyekKoperasi() {
+        $this->load->helper('url');
+        $idProyek = $this->input->get('idProyek');
+        $data['result'] = $this->Model->getproyek($idProyek);
+        $this->load->view('dashboard_koperasi_proyek');   
+    }
+
+    public function tambahProyek() {
+        $this->load->helper('url');
+        $this->load->model('model');
+        $username = $this->session->userdata('username');
+        $namaProyek = $this->input->post('namaProyek');    
+        $kebutuhanDana = $this->input->post('kebutuhanDana');
+        $data = array(
+        'namaProyek' => $this->input->post('namaProyek'),
+        'lokasi' => $this->input->post('lokasiProyek'),
+        'namaAkun' => $username,
+        'startProjek' => $this->input->post('awalProyek'),
+        'penanggungJawab' => $this->input->post('penanggungJawab'),
+         );
+        
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->Model->cekproyek($namaProyek);
+        if(count($validate) === 0){
+            $this->model->Insert('proyek', $data);
+            redirect('/dashboard/kelolaProyek');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard');
+        }
+    }
+
+    public function editProyek() {
+        $this->load->helper('url');
+        $this->load->model('model');
+        $username = $this->session->userdata('username');
+        $namaProyek = $this->input->post('namaProyek');
+        $data = array(
+        'namaProyek' => $this->input->post('namaProyek'),
+        'lokasi' => $this->input->post('lokasiProyek'),
+        'namaAkun' => $username,
+        'startProjek' => $this->input->post('awalProyek'),
+        'penanggungJawab' => $this->input->post('penanggungJawab'),
+         );
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->Model->cekproyek($namaProyek);
+        if(count($validate) === 0){
+            $this->model->Insert('proyek', $data);
+            redirect('/dashboard/kelolaProyek');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard');
+        }
     }
 	
     public function produk() {
