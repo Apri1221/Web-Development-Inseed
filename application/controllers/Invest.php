@@ -59,9 +59,13 @@ class Invest extends CI_Controller {
 	}
 	public function bayar($id)
 	{
+		if ($this->session->userdata('username')!== NULL){
 		$where = array('idProyek' => $id);
 		$data['bayar'] = $this->investasi->lihatDetail($where,'proyek')->result();
 		$this->load->view('pembayaran',$data);
+		} else {
+            $this->load->view('masuk');
+        }
 	}
 	public function tambah($id){
 		$cek = $this->investasi->lihatDana($id);

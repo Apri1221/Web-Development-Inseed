@@ -98,9 +98,6 @@
                   </select>
                 </div>
               </div>
-              
-              
-              
               <div class="form-group">
                 <div class="col-sm-offset-2 col-md-12">
                   <button type="submit" href="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>/<?php echo $items['rowid'];?>" class="btn btn-primary">Bayar Sekarang</button>

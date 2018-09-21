@@ -59,7 +59,12 @@ class Mart extends CI_Controller {
 	}	
 
 	public function bayar (){
+		if ($this->session->userdata('username')!== NULL){
 		$this->load->view('pembayaran_produk');
+		}
+		else {
+            $this->load->view('masuk');
+        }		
 	}
 	public function thanks ($id,$rowid){
 		$this->load->model('cart_model');

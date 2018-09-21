@@ -40,7 +40,12 @@
               <h5>Ekspektasi Profit: <span > <?php echo $row->ekspUntung;?>%</span></h5>
                <h5>Waktu pengerjaan proyek: <br> 
 
-                <span> <?php echo $row->startProjek;?> - <?php echo $row->endProjek; ?></span>
+                <span> 
+				<?php 
+				echo date('d F Y', strtotime('$row->startProjek'));
+				?> - <?php 
+				echo date('d F Y', strtotime('<?php echo $row->endProjek;?> '));
+				?></span>
 
 
               </h5>

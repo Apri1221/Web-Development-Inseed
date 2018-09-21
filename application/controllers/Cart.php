@@ -17,6 +17,7 @@ class Cart extends CI_Controller{
 	
 	public function add_to_cart($id)
 	{
+		if ($this->session->userdata('username')!== NULL){
 		$this->load->library('cart');
 		$jum = $this->input->get("jum");
 		$product = $this->cart_model->find($id); 
@@ -28,6 +29,9 @@ class Cart extends CI_Controller{
 					);
 		$this->cart->insert($data);
 		redirect('/cart/show_cart');
+	}else {
+            $this->load->view('masuk');
+        }
 	}
 
 	public function show_cart(){
