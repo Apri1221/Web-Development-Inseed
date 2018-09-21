@@ -10,7 +10,7 @@
 
     <?php include_once("template/navbar.php"); ?>
 
-    <section id="headerDashboard">
+    <section id="">
       <div class="col-md-12">
         
       </div>
@@ -52,21 +52,21 @@
                   <div class="col-md-8 text-left editProdukUMKM">
                     <div class="row">
                       <h6>Nama Produk:
-                      <input type="text" name="namaProduk" class="form-control" value="">
+                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $result->namaProduk ?>">
                       </h6>
                       <h6>Harga:
-                      <input type="text" name="hargaProduk" class="form-control" value="">
+                      <input type="text" name="hargaProduk" class="form-control" value="<?php echo $result->hargaProduk ?>">
                       
                       </h6>
                     </div>
                     <div class="row">
                       
                       <h6>Stok:
-                      <input type="text" name="stokProduk" class="form-control" value="">
+                      <input type="text" name="stokProduk" class="form-control" value="<?php echo $result->stok ?>">
                       
                       </h6>
                       <h6>Detail Produk:
-                      <textarea form="" name="detailProduk" class="form-control" value=""></textarea>
+                      <textarea form="" name="detailProduk" class="form-control" value="<?php echo $result->detail ?>"></textarea>
                       
                       </h6>
                     </div>

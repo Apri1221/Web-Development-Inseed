@@ -27,7 +27,6 @@ class Model extends CI_Model{
 	}	
 	
 	public function cekuser($username){
-		$data = array();
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('namaAkun',$username);
@@ -36,7 +35,6 @@ class Model extends CI_Model{
     }
 
     public function cekproyek($username){
-		$data = array();
         $this->db->select('*');
         $this->db->from('proyek');
         $this->db->where('namaAkun',$username);
@@ -44,13 +42,39 @@ class Model extends CI_Model{
         return $query->result();
     }
 
-    public function getproyek($username){
-		$data = array();
+    public function getproyekbyId($id){
         $this->db->select('*');
         $this->db->from('proyek');
-        $this->db->where('namaAkun',$username);
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function deleteproyek($id){
+		$this->db->where('idProyek', $id);
+		$this->db->delete('proyek');
+	}
+
+
+	public function getproduk($username){
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->where('idPenjual',$username);
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function getprodukbyId($id){
+        $this->db->select('*');
+        $this->db->from('produk');
+        $this->db->where('idProduk',$id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function deleteproduk($id){
+		$this->db->where('idProyek', $id);
+		$this->db->delete('produk');
+	}
 }
 ?>

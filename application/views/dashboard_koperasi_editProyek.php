@@ -58,7 +58,7 @@
             <div class="col-md-4 editProyekDashboard" style="text-align: center;">
               <img src="">
               
-              <form action="<?php echo base_url ('index.php/Dashboard/tambahProyek'); ?>" method="POST">
+              <form action="<?php echo base_url ('index.php/Dashboard/updateProyek'); ?>" method="POST">
                 <br>
                 <div class="upload-btn-wrapper">
                   <button class="btn">Pilih gambar</button>
@@ -69,32 +69,32 @@
               <div class="col-md-8 col-sm-8 text-left editProyekDashboard">
                 <div class="row">
                   <h6>Nama Proyek:
-                  <input type="text" name="namaProyek" class="form-control">
+                  <input type="text" name="namaProyek" class="form-control" value="<?php echo $result->namaProyek ?>">
                   </h6>
                   <h6>Kebutuhan Dana
-                  <input type="text" name="kebutuhanDana" class="form-control">
+                  <input type="text" name="kebutuhanDana" class="form-control" value="<?php echo $result->minimalDana ?>">
                   
                   </h6>
                 </div>
                 <div class="row">
                   
                   <h6>Lokasi Proyek
-                  <input type="text" name="lokasiProyek" class="form-control">
+                  <input type="text" name="lokasiProyek" class="form-control" value="<?php echo $result->lokasi ?>">
                   
                   </h6>
                   <h6>Penanggung Jawab:
-                  <input type="text" name="penanggungJawab" class="form-control">
+                  <input type="text" name="penanggungJawab" class="form-control" value="<?php echo $result->penanggungJawab ?>">
                   
                   </h6>
                 </div>
                 <div class="row">
                   
                   <h6>Awal Proyek
-                  <input type="date" name="awalProyek" class="form-control">
+                  <input type="date" name="awalProyek" class="form-control" value="<?php echo $result->startProjek ?>">
                   
                   </h6>
                   <h6>Akhir Proyek
-                  <input type="date" name="akhirProyek" class="form-control">
+                  <input type="date" name="akhirProyek" class="form-control" >
                   
                   </h6>
                 </div>

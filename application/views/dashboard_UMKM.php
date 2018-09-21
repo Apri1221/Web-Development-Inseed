@@ -50,32 +50,16 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php foreach ($result as $var): ?>
                         <tr class="produkKeranjang">
-                          <td>Rumput laut hangat</td>
-                          <td>Rp 50.000</td>
+                          <td><?php echo $var->namaProduk; ?></td>
+                          <td>Rp <?php echo $var->hargaProduk; ?></td>
                           
-                          <td>3</td>
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk');?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk');?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                          <td><?php echo $var->stok; ?> buah</td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/'.$var->idProduk);?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk/'.$var->idProduk);?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
-                        <tr class="produkKeranjang">
-                          <td>Rumput laut dingin </td>
-                          <td>Rp 25.000</td>
-                          
-                          <td>2</td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>Rumput Laut Herbal </td>
-                          <td>Rp 35.000</td>
-                          
-                          <td>3</td>
-                          
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
                   </div>

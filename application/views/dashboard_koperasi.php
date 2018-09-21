@@ -63,11 +63,11 @@
                       <thead>
                         <tr class="headerKeranjang">
                           <th scope="col">ID</th>
-                          <th scope="col" class="text-center">Nama Proyek </th>
+                          <th scope="col" class="text-left">Nama Proyek </th>
                           <th scope="col" class="text-left">Lokasi Proyek</th>
                           <th scope="col" class="text-left">Tanggal Mulai</th>
                           <th scope="col" class="text-left">Tanggal Selesai</th>
-                          <th scope="col" class="text-left">Nominal Dana Sementara</th>
+                          <th scope="col" class="text-left">Dana Sementara</th>
                           <th scope="col" class="text-left">Edit</th>
                           <th scope="col" class="text-left">Hapus</th>
                         </tr>
@@ -81,9 +81,9 @@
                           <td><?php echo $var->startProjek; ?></td>
                           <td>1/01/2019</td>
                           <td>Rp <?php echo $var->danaTerkumpul; ?></td>
-                            <td class="text-left"><a class="btn btn-sm btn-primary" href="<?php echo base_url ('index.php/Dashboard/editProyekKoperasi'.$var->idProyek); ?>"> <i class="fas fa-edit"></i> </a> </td>
-                            <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                          </tr>
+                          <td class="text-left"><a class="btn btn-sm btn-primary" href="<?php echo base_url ('index.php/Dashboard/editProyekKoperasi/'.$var->idProyek); ?>"> <i class="fas fa-edit"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/deleteProyek/'.$var->idProyek); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                        </tr>
                           <?php endforeach; ?>
                         </tbody>
                       </table>
