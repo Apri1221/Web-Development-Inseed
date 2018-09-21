@@ -10,6 +10,7 @@ class Auth extends CI_Controller {
         //load model admin
         $this->load->model('Autentikasi_model');
         $this->load->library('session');
+		$this->load->library('cart');
         
     }
 
@@ -199,6 +200,7 @@ class Auth extends CI_Controller {
     {
         session_unset();
         $this->session->sess_destroy();
+		$this->cart->destroy();
         redirect('auth/login');
     }
 }

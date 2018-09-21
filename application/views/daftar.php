@@ -36,7 +36,7 @@
               <form action="<?php echo base_url()."index.php/auth/register"?>" method="POST" class="col-md-12 col-sm-12 col-xs-12" style="float: left;">
                 <div class="form-group">
 
-                  <input type="hidden" name="user_level" value="$user_level">
+                  <input type="hidden" name="user_level" value="<?php echo $user_level ?>">
                   <label class="form-control-placeholder-1" for="firstname">Nama depan</label>
                   <input type="text" id="firstname" name="firstname" class="form-control" pattern="^[A-Za-z0-9_]{1,15}$" maxlenght="15" required
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong atau mengandung spasi')" oninput="setCustomValidity('')">
