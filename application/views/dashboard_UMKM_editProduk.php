@@ -50,6 +50,7 @@
                   </div>
                   
                   <div class="col-md-8 text-left editProdukUMKM">
+<<<<<<< HEAD
                     <div class="row">
 					<?php foreach ($produk as $row) : ?>
                       <h6>Nama Produk:
@@ -58,29 +59,43 @@
 =======
                       <input type="text" name="namaProduk" class="form-control" value="<?php echo $result->namaProduk ?>">
 >>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
+=======
+                    
+                      <div class="col-md-12">
+                         <h6>Nama Produk:
+                      <input type="text" name="namaProduk" class="form-control"  value="<?php echo $result->namaProduk ?>" >
+>>>>>>> 7185fd772d82f4a3c4f29d892f66de393e681ec5
                       </h6>
+                      </div>
+                     
+                      
+                    
+                    <div class="col-md-12">
+                      
                       <h6>Harga:
                       <input type="text" name="hargaProduk" class="form-control" value="<?php echo $result->hargaProduk ?>">
                       
                       </h6>
                     </div>
-                    <div class="row">
-                      
+                    <div class="col-md-12">
                       <h6>Stok:
                       <input type="text" name="stokProduk" class="form-control" value="<?php echo $result->stok ?>">
                       
                       </h6>
+                    </div>
+                      
+                      <div class="col-md-12">
                       <h6>Detail Produk:
                       <textarea form="" name="detailProduk" class="form-control" value="<?php echo $result->detail ?>"></textarea>
                       
                       </h6>
                     </div>
-                    
+                    <br>       
                     
                     <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
                     
                   </form>
-                </div>
+                
               </div>
             </div>
           </div>

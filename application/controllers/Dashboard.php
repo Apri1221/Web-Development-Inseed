@@ -166,17 +166,14 @@ class Dashboard extends CI_Controller {
 	
     public function produk() {
         if ($this->session->userdata('level')!==0){
-<<<<<<< HEAD
 			$this->load->model('produk');
 			$username = $this->session->userdata('username');
 			$where = array('idPenjual' => $username);
 			$data['produk'] = $this->produk->show($where,'produk')->result();
             $this->load->view("dashboard_UMKM",$data);
-=======
             $username = $this->session->userdata('username');
             $data['result'] = $this->Model->getproduk($username);
             $this->load->view("dashboard_UMKM", $data);
->>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
         } else {
             $this->load->view('masuk');
         }

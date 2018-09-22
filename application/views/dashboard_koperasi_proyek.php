@@ -67,49 +67,62 @@
               </div>
               
               <div class="col-md-8 col-sm-8 text-left editProyekDashboard">
-                <div class="row">
+                <div class="col-md-12 col-sm-12">
                   <h6>Nama Proyek:
                   <input type="text" name="namaProyek" class="form-control">
                   </h6>
+                  
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  
                   <h6>Kebutuhan Dana
                   <input type="text" name="kebutuhanDana" class="form-control">
                   
                   </h6>
+                  
+                 
                 </div>
-                <div class="row">
+                <div class="col-md-12 col-sm-12">
                   
                   <h6>Lokasi Proyek
                   <input type="text" name="lokasiProyek" class="form-control">
                   
                   </h6>
-                  <h6>Penanggung Jawab:
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                   <h6>Penanggung Jawab:
                   <input type="text" name="penanggungJawab" class="form-control">
                   
                   </h6>
                 </div>
-                <div class="row">
-                  
+                <div class="col-md-12 col-sm-12">
                   <h6>Awal Proyek
                   <input type="date" name="awalProyek" class="form-control">
                   
                   </h6>
-                  <h6>Akhir Proyek
+                </div>
+                  <div class="col-md-12 col-sm-12">
+                    <h6>Akhir Proyek
                   <input type="date" name="akhirProyek" class="form-control">
                   
                   </h6>
-                </div>
+                  </div>
+                  
+                
                 <br>
                 
                 <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
                 
-              </form>
+              
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 </body>
 </html>
