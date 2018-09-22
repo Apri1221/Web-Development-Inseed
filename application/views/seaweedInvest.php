@@ -55,7 +55,14 @@
                     </div>
                     <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul?></span></p>
                     <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
-                    <p class="card-text ">Sisa Waktu : <br><span ><?php echo $a->sisaWaktu?> Hari</span></p>
+                    <p class="card-text ">Sisa Waktu : <br><span >
+                      <?php
+                      date_default_timezone_set('Asia/Jakarta');
+                      $dateSkrng = time(); 
+                      $dateEnd = strtotime($a->endProjek);
+                      $datediff = $dateEnd - $dateSkrng;
+                      echo round($datediff / (60 * 60 * 24)); ?> 
+                     Hari</span></p>
                     <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
                   </div>
                 </div>
