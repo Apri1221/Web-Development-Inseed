@@ -52,23 +52,8 @@ class Investasi extends CI_Model
 		$SQL="select A.idProyek, A.namaProyek, A.lokasi, B.nominalInvest FROM proyek A, investor B WHERE A.idProyek = B.idProyek AND B.namaAkun LIKE '$id'";
 		return $this->db->query($SQL);
 	}
-	function update_investor ($where, $data, $table){
-		if($this->db->get_where($table, $where) > 0 ){
-			$namaAkun = $data->namaAkun;
-			$nominalInvest = $data->nominalInvest;
-			$this->db->select('nominalInvest');
-			$this->db->from('investor');
-			$this->db->where('idProyek',$where);
-			$query = $this->db->get();
-			$array = array(
-				'idProyek' => $where,
-		        'namaAkun' => $namaAkun,
-				'nominalInvest' => ($nominalInvest + $query),
-			);
-			$this->db->update($table, $array);	
-		} else {
-			$this->db->insert($table, $data);
-		}
+	function update_investor ($data,$table){
+		$this->db->insert($table,$data);	
 	}
 		
 }
