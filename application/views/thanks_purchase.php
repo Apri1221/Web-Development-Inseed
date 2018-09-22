@@ -32,7 +32,7 @@
 			</div>
 
       <div class="col-md-4" style="text-align: center; margin-top: 5%;">
-        <a style="padding: 2% 15%;"  href="<?php echo base_url();?>index.php/""  class="btn btn-success" >Home</a>
+        <a type="submit" class="btn btn-outline-success" style="-webkit-appearance:none;" target="_blank" href="<?php echo base_url ('index.php/Laporan/produk');?>">Cetak Invoice Pembelian</a>
       </div>
 			</div>
 		

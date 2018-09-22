@@ -98,7 +98,7 @@ class Invest extends CI_Controller {
 		'nominalInvest' => $this->input->post('nominal')
 		);
 		$this->investasi->update_investor($dataInvestor,'investor');
-		$this->load->view('thanks');
+		$this->load->view('thanks',$id);
 		
 		
 }
