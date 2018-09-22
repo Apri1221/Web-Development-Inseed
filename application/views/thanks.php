@@ -19,7 +19,7 @@
       <div class="row kontenPembayaran">
 	          <div class="col-xl-4 col-md-8 col-sm-12 col-xs-12">
 			  <img src="<?php echo base_url('asset/assets/image/done.png');?>" style="width: 50%; margin-left:25%"</img></div>
-        <div class="col-xl-8 col-md-8 col-sm-12 col-xs-12"  >
+        <div class="col-xl-8 col-md-8 col-sm-10"  >
 		  <div class="alert alert-success">
             <h4>Data tersimpan! <br>Terima kasih sudah melakukan investasi pada proyek kami <br></h4>
 			 </div>

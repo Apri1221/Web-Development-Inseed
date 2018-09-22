@@ -95,7 +95,7 @@ class Invest extends CI_Controller {
         'namaAkun' => $username,
 		'nominalInvest' => $this->input->post('nominal')
 		);
-		$this->investasi->update_investor($dataInvestor,'investor');
+		$this->investasi->update_investor($id, $dataInvestor,'investor');
 
 		$this->load->view('thanks',$id);
 	}
