@@ -26,7 +26,6 @@
               <a href="<?php echo base_url ('index.php/Dashboard/tambahProduk');?>"> <li class="list-group-item "><i class="fa fa-plus"></i>Tambah Produk</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item active"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
             </div>
-
           </ul>
         </div>
         <div class="col-md-9">
@@ -50,39 +49,27 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($result as $var): ?>
+					  
+					  <?php foreach ($produk as $row) : ?>
                         <tr class="produkKeranjang">
-<<<<<<< HEAD
-						<?php foreach ($produk as $row) : ?>
+						
                           <td><?php echo $row->namaProduk?></td>
                           <td>Rp <?php echo $row->hargaProduk?></td>
                           <td><?php echo $row->stok?></td>
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/$');?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/');?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
                           <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk');?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         
 						</tr>        
 <?php endforeach; ?>						
-=======
-                          <td><?php echo $var->namaProduk; ?></td>
-                          <td>Rp <?php echo $var->hargaProduk; ?></td>
-                          
-                          <td><?php echo $var->stok; ?> buah</td>
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/'.$var->idProduk);?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk/'.$var->idProduk);?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <?php endforeach; ?>
->>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
                       </tbody>
                     </table>
                   </div>
-<<<<<<< HEAD
-                </div>        
-=======
+                </div>   
                 </div>
->>>>>>> ab361191d1e28d63fee97861650c3d9ab1373187
               </div>
             </div>
           </div>
         </div>
+		</div>
       </body>
     </html>
