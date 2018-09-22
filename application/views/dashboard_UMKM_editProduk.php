@@ -41,7 +41,8 @@
                 <div class="col-md-4 editProdukUMKM" style="text-align: center;">
                   <img src="assets/image/produk/produk1.jpg">
                   
-                  <form action="#" method="POST">
+					<?php foreach ($result as $row) : ?>
+                  <form action="<?php echo base_url()."index.php/dashboard/updateproduk/" . $row->idProduk?>" method="POST">
                     <br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Ganti gambar</button>
@@ -49,38 +50,28 @@
                     </div>
                   </div>
                   
-                  <div class="col-md-8 text-left editProdukUMKM">
+                  <div class="col-md-5 text-left editProdukUMKM">
                     <div class="row">
-					<?php foreach ($produk as $row) : ?>
-                      <h6>Nama Produk;
-                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $row?>">
-                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $result->namaProduk ?>">                    
-                    <div class="col-md-12">
-                      
-                      <h6>Harga:
-                      <input type="text" name="hargaProduk" class="form-control" value="<?php echo $result->hargaProduk ?>">
+                      <h6>Nama Produk<h6>
+                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $row->namaProduk?>">                    
+					  <h6>Harga:
+                      <input type="text" name="hargaProduk" class="form-control" value="<?php echo $row->hargaProduk ?>">
                       
                       </h6>
-                    </div>
-                    <div class="col-md-12">
                       <h6>Stok:
-                      <input type="text" name="stokProduk" class="form-control" value="<?php echo $result->stok ?>">
+                      <input type="text" name="stokProduk" class="form-control" value="<?php echo $row->stok ?>">
                       
                       </h6>
-                    </div>
-                      
-                      <div class="col-md-12">
                       <h6>Detail Produk:
-                      <textarea form="" name="detailProduk" class="form-control" value="<?php echo $result->detail ?>"></textarea>
+                      <input type="text" name="detailProduk" class="form-control" value="<?php echo $row->detail ?>"></textarea>
                       
                       </h6>
-                    </div>
                     <br>       
-                    
-                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
+					<br>
+                    <button type="submit" class="btn btn-outline-primary" style="width: 50%;">Simpan</button>
                     
                   </form>
-                
+                <?php endforeach; ?>
               </div>
             </div>
           </div>

@@ -56,52 +56,18 @@ class Model extends CI_Model{
         return $query->result();
     }
 
-     public function ambilProduk(){
-        $this->db->select('*');
-        $this->db->from('produk');
-         $query = $this->db->get();
-        return $query->result();
-    }
-
-    public function getproyekbyId($id){
-        $this->db->select('*');
-        $this->db->from('proyek');
-        $this->db->where('idProyek',$id);
-        $query = $this->db->get();
-        return $query->row();
-    }
 
     public function deleteproyek($id){
 		$this->db->where('idProyek', $id);
 		$this->db->delete('proyek');
 	}
-
-    public function deleteProduk($id){
-        $this->db->where('idProduk', $id);
-        $this->db->delete('produk');
-    }
-
     public function deleteUser($namaAkun){
         $this->db->where('namaAkun', $namaAkun);
         $this->db->delete('user');
     }
 
 
-	public function getproduk($username){
-        $this->db->select('*');
-        $this->db->from('produk');
-        $this->db->where('idPenjual',$username);
-        $query = $this->db->get();
-        return $query->result();
-    }
-
-    public function getprodukbyId($id){
-        $this->db->select('*');
-        $this->db->from('produk');
-        $this->db->where('idProduk',$id);
-        $query = $this->db->get();
-        return $query->row();
-    }
+	
 
 }
 ?>

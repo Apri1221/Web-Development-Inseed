@@ -60,7 +60,8 @@ class Dashboard extends CI_Controller {
         $this->adminKelolaProyek();
     }
     public function kelolaProduk(){
-        $data['result'] = $this->Model->ambilProduk();
+		$this->load->model('produk');
+        $data['result'] = $this->produk->ambilProduk();
         $this->load->view("dashboard_admin_mart",$data);
     }
 	
@@ -218,7 +219,7 @@ class Dashboard extends CI_Controller {
 			$data['produk'] = $this->produk->show($where,'produk')->result();
             $this->load->view("dashboard_UMKM",$data);
             $username = $this->session->userdata('username');
-            $data['result'] = $this->Model->getproduk($username);
+            $data['result'] = $this->produk->getprodukbyName($username);
             $this->load->view("dashboard_UMKM", $data);
         } else {
             $this->load->view('masuk');
@@ -233,18 +234,17 @@ class Dashboard extends CI_Controller {
         }
     }
 
-    public function editProduk() {
+    public function editProduk($id) {
         $this->load->helper('url');
-        $id = $this->uri->segment(3);
-        $data['result'] = $this->Model->getprodukbyId($id);
-        $this->load->view('dashboard_UMKM_editProduk', $data);
+		$this->load->model('produk');
+        $data['result'] = $this->produk->getprodukbyId($id)->result();
+        $this->load->view('dashboard_UMKM_editProduk',$data);
     }
 
-    public function hapusProduk() {
-        $this->load->model('model');
-        $id = $this->uri->segment(3);
-        $this->model->deleteproduk($id);
-        $this->kelolaProyek();
+    public function hapusProduk($id) {
+        $this->load->model('produk');
+        $this->produk->deleteproduk($id);
+        $this->produk();
     }
 	public function uploadProduk(){
 		$this->load->model('produk');
@@ -263,5 +263,20 @@ class Dashboard extends CI_Controller {
 		 $this->produk->insertProduk('produk', $data);
 		 
 	}
+	function updateproduk ($id) {
+		$data = array (
+		'namaProduk' => $this->input->post('namaProduk'),
+		'hargaProduk' => $this->input->post('hargaProduk'),
+		'stok' => $this->input->post('stok'),
+		'idProduk' => $this->input->post('idProduk'),
+		'detail' => $this->input->post('detail')
+		);
+		$this->load->model('produk');
+		$this->produk->update('produk',$id,$data);
+		$this->produk();
+		
+		
+	}
+		
 
 }
