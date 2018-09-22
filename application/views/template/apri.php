@@ -13,7 +13,7 @@ function getPersentase($iniaddress, $ekspUntung){
 
 	$forecast = json_decode(file_get_contents($api_url));
 
-	$suhuSekarang =round(($forecast->currently->temperature-32)*.5556);
+	// $suhuSekarang =round(($forecast->currently->temperature-32)*.5556);
 	$windSpeedSekarang = $forecast->currently->windSpeed;
 	$humiditySekarang = $forecast->currently->humidity;
 
