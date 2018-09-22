@@ -30,8 +30,6 @@ class Invest extends CI_Controller {
 	    $config['last_tag_open'] = '<li>';
 	    $config['last_tag_close'] = '</li>';
 
-
-
 	    $config['prev_link'] = '<i class="fa fa-long-arrow-left"></i>Previous Page';
 	    $config['prev_tag_open'] = '<li>';
 	    $config['prev_tag_close'] = '</li>';
@@ -99,8 +97,6 @@ class Invest extends CI_Controller {
 		);
 		$this->investasi->update_investor($dataInvestor,'investor');
 		$this->load->view('thanks');
-		
-		
-}
+	}
 }
 ?>

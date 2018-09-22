@@ -18,55 +18,64 @@
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
-  <section id="etalase">
-    <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 header text-center">
-      <h2>Seaweed <b>Invest</b></h2>
-    </div>
-    <div class="container-fluid">
-      <div class="judulSeaweedMart">
-        <h2>Temukan proyek yang ingin anda modali sekarang!</h2>
-        <hr><br><br>
+    <?php include("template/apri.php"); ?>
+    <section id="etalase">
+      <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 header text-center">
+        <h2>Seaweed <b>Invest</b></h2>
       </div>
-      <div class="row">
-	 <?php 
-		$no = $this->uri->segment('3') + 1;
-		foreach($proyek as $a){
-		?>
-        <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
-          <div class="card cardProduk" style=" height:900px;">
-            <div class="card-body cardInvest">
-			<img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
-			<div style="padding: 5%;">
-              <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
-              <p class="card-text ">Expektasi Keuntungan :<br> <span> <?php echo $a->ekspUntung ?> %</span></p>
-              <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
-              <p class="card-text ">Penanggung Jawab :<br> <span><?php echo $a->penanggungJawab?></span></p>
-              <p class="card-text ">Lokasi : <br><span><?php echo $a->lokasi?></span></p>
-              <div class="bagianDanaInvest" style="">
-                <div class="progress" style="margin-bottom: 8%;">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $a->progress?> %;"><?php echo $a->progress?> %</div>
+      <div class="container-fluid">
+        <div class="judulSeaweedMart">
+          <h2>Temukan proyek yang ingin anda modali sekarang!</h2>
+          <hr><br><br>
+        </div>
+        <div class="row">
+
+          <?php
+            $no = $this->uri->segment('3') + 1;
+            foreach($proyek as $a){
+          ?>
+
+          <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
+            <div class="card cardProduk" style=" height:900px;">
+              <div class="card-body cardInvest">
+                <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
+                <div style="padding: 5%;">
+                  <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
+                  
+                  <p class="card-text ">Expektasi Keuntungan :<br> <span style="font-weight: bold; font-size: 1.2rem;"> 
+                    <?php getPersentase($a->lokasi, $a->ekspUntung);
+                    ?> %
+                  </span></p>
+                  <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
+                  <p class="card-text ">Penanggung Jawab :<br> <span><?php echo $a->penanggungJawab?></span></p>
+                  <p class="card-text ">Lokasi : <br><span><?php echo $a->lokasi?></span></p>
+                  <div class="bagianDanaInvest" style="">
+                    <div class="progress" style="margin-bottom: 8%;">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $a->progress?> %;"><?php echo $a->progress?> %</div>
+                    </div>
+                    <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul?></span></p>
+                    <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
+                    <p class="card-text ">Sisa Waktu : <br><span ><?php echo $a->sisaWaktu?> Hari</span></p>
+                    <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
+                  </div>
                 </div>
-                <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul?></span></p>
-                <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
-                <p class="card-text ">Sisa Waktu : <br><span ><?php echo $a->sisaWaktu?> Hari</span></p>
-                <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
-				</div>
               </div>
             </div>
           </div>
+
+          <?php } ?>
+        
         </div>
-		<?php } ?>
-		</div>
         <nav>
-		<div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk text-center">
-          <ul class="pagination justify-content-center">
-		  <?php 
-		  echo $this->pagination->create_links();?>
-		  </ul>
-        </nav>
+          <div class="col-xl-12 col-md-5 col-sm-5 col-xs-12 paginationProduk text-center">
+            <ul class="pagination justify-content-center">
+              <?php
+              echo $this->pagination->create_links();?>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-  </section>
-  <?php include_once("template/footer.php"); ?> 
-</body>
+    </section>
+    <?php include_once("template/footer.php"); ?>
+  </body>
 </html>
