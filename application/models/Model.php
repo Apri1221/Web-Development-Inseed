@@ -34,11 +34,32 @@ class Model extends CI_Model{
         return $query->row();
     }
 
+    public function ambilDataUser(){
+        $this->db->select('*');
+        $this->db->from('user');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function cekproyek($username){
         $this->db->select('*');
         $this->db->from('proyek');
         $this->db->where('namaAkun',$username);
         $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function ambilProyek(){
+        $this->db->select('*');
+        $this->db->from('proyek');
+         $query = $this->db->get();
+        return $query->result();
+    }
+
+     public function ambilProduk(){
+        $this->db->select('*');
+        $this->db->from('produk');
+         $query = $this->db->get();
         return $query->result();
     }
 
@@ -54,6 +75,16 @@ class Model extends CI_Model{
 		$this->db->where('idProyek', $id);
 		$this->db->delete('proyek');
 	}
+
+    public function deleteProduk($id){
+        $this->db->where('idProduk', $id);
+        $this->db->delete('produk');
+    }
+
+    public function deleteUser($namaAkun){
+        $this->db->where('namaAkun', $namaAkun);
+        $this->db->delete('user');
+    }
 
 
 	public function getproduk($username){
@@ -72,9 +103,5 @@ class Model extends CI_Model{
         return $query->row();
     }
 
-    public function deleteproduk($id){
-		$this->db->where('idProyek', $id);
-		$this->db->delete('produk');
-	}
 }
 ?>

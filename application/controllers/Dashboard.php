@@ -14,25 +14,62 @@ class Dashboard extends CI_Controller {
         $this->load->model('Model');
     }
 
-	
-	public function index() {
-        if (null !== $this->session->userdata('level')){
-            if ($this->session->userdata('level') === '1'){
-                $this->load->view("dashboard_admin_kelolaUser");
+	public function index(){
+        if($this->session->userdata('level') !== null){
+            if($this->session->userdata('level') === '1'){
+                 $this->load->helper('url');
+        $data['result'] = $this->Model->ambilDataUser();
+        $this->load->view('dashboard_admin_kelolaUser', $data);  
             }
-            else
+            else{
                 $username = $this->session->userdata('username');
                 $data['result'] = $this->Model->cekuser($username);
-                $this->load->view("dashboard_profil",$data); 
-        } else {
+                $this->load->view("dashboard_profil",$data);
+             }
+        }
+        else{
             $this->load->view('masuk');
         }
-	}
+    }
 
-	public function artikel() {
-		
-	}
+    public function adminDeleteUser() {
+        $this->load->model('model');
+        $namaAkun = $this->uri->segment(3);
+        $this->model->deleteUser($namaAkun);
+        $this->index();
+    }
 
+    public function tambahArticle() {
+        $this->load->view("dashboard_admin_tambahArtikel");
+    }
+
+    public function kelolaArticle(){
+        $this->load->view("dashboard_admin_article");
+    }
+
+    public function adminkelolaProyek(){
+       $data['result'] = $this->Model->ambilProyek();
+        $this->load->view("dashboard_admin_invest",$data);
+
+    }
+
+    public function deleteProyekAdmin() {
+        $this->load->model('model');
+        $id = $this->uri->segment(3);
+        $this->model->deleteproyek($id);
+        $this->adminKelolaProyek();
+    }
+    public function kelolaProduk(){
+        $data['result'] = $this->Model->ambilProduk();
+        $this->load->view("dashboard_admin_mart",$data);
+    }
+	
+    public function adminDeleteProduk() {
+        $this->load->model('model');
+        $id = $this->uri->segment(3);
+        $this->model->deleteproduk($id);
+        $this->kelolaProduk();
+    }
 	public function mart() {
 		if ($this->session->userdata('level') ==='1' || $this->session->userdata('level') === '2'){
             $this->load->view("dashboard");
@@ -75,6 +112,14 @@ class Dashboard extends CI_Controller {
         }
     }
     
+    public function lihatUser() {
+        
+    }
+
+
+
+
+
 	public function detail()
 	{
 		$this->load->helper('url');
@@ -117,6 +162,7 @@ class Dashboard extends CI_Controller {
         'lokasi' => $this->input->post('lokasiProyek'),
         'namaAkun' => $username,
         'startProjek' => $this->input->post('awalProyek'),
+        'endProjek' => $this->input->post('akhirProyek'),
         'penanggungJawab' => $this->input->post('penanggungJawab'),
          );
         

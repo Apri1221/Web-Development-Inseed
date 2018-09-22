@@ -20,7 +20,7 @@
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
             <!-- Koperasi -->
-            <li class="list-group-item judulMenuDashboard" style="background-color: #12a8bb;">DASHBOARD UMKM</li>
+            <li class="list-group-item judulMenuDashboard" style="background-color: #12a8bb;">UMKM DASHBOARD</li>
             <div id="sidebarUMKM">
               <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item "><i class="fas fa-user" ></i>Profilku</li> </a>
               <a href="<?php echo base_url ('index.php/Dashboard/tambahProduk');?>"> <li class="list-group-item "><i class="fa fa-plus"></i>Tambah Produk</li></a>
@@ -75,7 +75,11 @@
                       </tbody>
                     </table>
                   </div>
+<<<<<<< HEAD
                 </div>        
+=======
+                </div>
+>>>>>>> ab361191d1e28d63fee97861650c3d9ab1373187
               </div>
             </div>
           </div>

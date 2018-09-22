@@ -22,10 +22,9 @@
             <li class="list-group-item judulMenuDashboard" style="background-color: black;">ADMINISTRATOR</li>
             <!-- Admin-->
             <div id="sidebarAdmin" >
-              <a href=""> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
-              <a href="<?php echo base_url ('index.php/Dashboard/kelolaUser');?>"> <li class="list-group-item"><i class="fas fa-newspaper" ></i>Buat Article</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaArticle');?>""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Kelola Article</li></a>
-              <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/adminkelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaProduk');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Produk</li></a>
             </div>
             
@@ -52,41 +51,27 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="produkKeranjang">
-                          <td>apri0498</td>
-                          <td>Apriyanto</td>
-                          
-                          <td>timothy@yahoo.co.id</td>
-                          <td class="text-left">0877781477</td>
-                          
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>tj_julian </td>
-                          <td>Timothy</td>
-                          
-                          <td>julian@ymail.com</td>
-                          <td class="text-left">081828238</td>
-                          
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>tj_julian98 </td>
-                          <td>Julian</td>
-                          
-                          <td>inseed.id@ub.ac.id</td>
-                          <td class="text-left">0828182828</td>
-                          
-                          <td class="text-left"><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        </tr>
                         
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                         <?php foreach ($result as $var):?>
+                        <tr class="produkKeranjang">
+                          <td><?php echo $var->namaAkun ?> </td>
+                          <td><?php echo $var->namaBelakang; ?></td>
+                          
+                          <td><?php echo $var->email; ?></td>
+                          <td class="text-left"><?php echo $var->noHP;  ?></td>
+                          
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/adminDeleteUser/'.$var->namaAkun); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                        </tr>
+                        <?php endforeach; ?>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
       </body>
     </html>
