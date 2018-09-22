@@ -261,10 +261,12 @@ class Dashboard extends CI_Controller {
         'berat' => 1
          );
 		 $this->produk->insertProduk('produk', $data);
+		 $this->produk();
 		 
 	}
 	function updateproduk ($id) {
 		$data = array (
+		'idProduk' => $id,
 		'namaProduk' => $this->input->post('namaProduk'),
 		'hargaProduk' => $this->input->post('hargaProduk'),
 		'stok' => $this->input->post('stok'),

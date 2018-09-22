@@ -69,7 +69,7 @@
                       
                       <div class="col-md-12">
                       <h6>Detail Produk:
-                      <textarea form="" name="detailProduk" class="form-control"></textarea>
+                      <input type="text" name="detailProduk" class="form-control"></input>
                       
                       </h6>
                     </div>
