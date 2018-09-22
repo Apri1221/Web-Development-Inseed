@@ -50,10 +50,21 @@
                   </div>
                   
                   <div class="col-md-8 text-left editProdukUMKM">
+<<<<<<< HEAD
+                    <div class="row">
+					<?php foreach ($produk as $row) : ?>
+                      <h6>Nama Produk:
+<<<<<<< HEAD
+                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $row?>">
+=======
+                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $result->namaProduk ?>">
+>>>>>>> 2718b0e86d4a66086a15517839a4dd098d00450a
+=======
                     
                       <div class="col-md-12">
                          <h6>Nama Produk:
                       <input type="text" name="namaProduk" class="form-control"  value="<?php echo $result->namaProduk ?>" >
+>>>>>>> 7185fd772d82f4a3c4f29d892f66de393e681ec5
                       </h6>
                       </div>
                      

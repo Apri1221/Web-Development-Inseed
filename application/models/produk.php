@@ -7,6 +7,9 @@ class Produk extends CI_Model{
 	}
 	function insertProduk($table,$data) {
 		$res = $this->db->insert($table, $data);
-}
+		}
+	function show($where,$table){		
+	return $this->db->get_where($table,$where);
+	}
 }
 ?>
