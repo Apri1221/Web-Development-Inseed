@@ -50,8 +50,6 @@ function getPersentase($iniaddress, $ekspUntung){
 	// } else { //ekstrem
 	// 	$c = 0.05;
 	// }
-	
-
 	echo ($poin)*$ekspUntung + $ekspUntung;
 
 }
@@ -59,6 +57,7 @@ function getPersentase($iniaddress, $ekspUntung){
 	{
 		$ch = curl_init();
 		$timeout = 5;
+		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch,CURLOPT_URL,$url);
