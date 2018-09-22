@@ -117,6 +117,7 @@ class Dashboard extends CI_Controller {
         'lokasi' => $this->input->post('lokasiProyek'),
         'namaAkun' => $username,
         'startProjek' => $this->input->post('awalProyek'),
+        'endProjek' => $this->input->post('akhirProyek'),
         'penanggungJawab' => $this->input->post('penanggungJawab'),
          );
         

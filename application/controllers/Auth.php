@@ -99,7 +99,7 @@ class Auth extends CI_Controller {
                 'noHP' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'password' => $enc_password,
-                'foto' => '0'
+                'foto' => $this->input->post('profilePicture')
             );
 
             $this->model->update_data($username1, $data, 'user');

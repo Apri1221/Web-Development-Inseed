@@ -7,7 +7,18 @@
     ?>
 
     <title>inseed.id - Dashboard</title>
-    
+    <script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('profilePicture');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
@@ -63,19 +74,10 @@
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
                   
-                  <?php if($result->foto === '0'): ?>
-                  <img src="
-                  
-                  <?php 
-                  $jk = $result->jk;
-                  if($jk == 'Pria'){
-                      echo base_url ('asset/assets/image/boy.png');
-                  } else if($jk == 'Wanita') {
-                      echo base_url ('asset/assets/image/girl.png');
-                  }
-                  ?>" class="profilePictureDashboard">
+                
+                  <img id="profilePicture" src="$result->foto" class="profilePictureDashboard">
                  
-                  <?php endif;?>
+             
 
                  
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
@@ -83,7 +85,7 @@
     
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
-                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
+                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)">
                     </div>
                   </div>
                   
