@@ -74,12 +74,21 @@ function preview_image(event)
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
                   
-                
-                  <img id="profilePicture" src="$result->foto" class="profilePictureDashboard">
-                 
+                  <img id="profilePicture" 
+                  <?php if($result->foto === '0'): ?>
+                    src="
+                    <?php 
+                      $jk = $result->jk;
+                      if($jk == 'Pria'){
+                        echo base_url ('asset/assets/image/boy.png');
+                      } else if($jk == 'Wanita') {
+                        echo base_url ('asset/assets/image/girl.png');
+                      }
+                    ?>" class="profilePictureDashboard">
+                    <?php else: ?>
+                  src="$result->foto" class="profilePictureDashboard">
+                  <?php endif; ?>
              
-
-                 
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
     

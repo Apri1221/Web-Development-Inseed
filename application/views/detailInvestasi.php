@@ -53,7 +53,7 @@
             </p>
             
             <div class="progress" style="margin-bottom: 8%;">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $row->progress ?>%;"><?php echo $row->progress?> %</div>
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ($row->danaTerkumpul / $row->minimalDana)*100 ?>%;"><?php echo round((($row->danaTerkumpul / $row->minimalDana)*100),2) ?> % </div>
             </div>
             <p class="card-text ">Dana Terkumpul : <span >Rp <?php echo $row->danaTerkumpul;?></span></p>
             <p class="card-text ">Sisa Waktu : <span >
