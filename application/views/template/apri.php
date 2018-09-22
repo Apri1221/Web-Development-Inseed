@@ -15,7 +15,7 @@ function getPersentase($iniaddress, $ekspUntung){
 
 	$suhuSekarang =round(($forecast->currently->temperature-32)*.5556);
 	$windSpeedSekarang = $forecast->currently->windSpeed;
-	$humiditySekarang = $forecast->currently->humidity*100;
+	$humiditySekarang = $forecast->currently->humidity;
 
 	$i = 1;
 	foreach ($forecast->daily->data as $hari) {
@@ -24,34 +24,32 @@ function getPersentase($iniaddress, $ekspUntung){
 	}
 	$prediksiRerataSuhu = round($rataSuhu/$i);
 
-	$a = 0;
-	$b = 0;
-	$c = 0;
+	$poin = ($prediksiRerataSuhu/100) + $humiditySekarang + ($windSpeedSekarang/100);
 
-	if ($suhuSekarang >= $prediksiRerataSuhu) {
-		$a = 0.1; //bobot utk a
-	} else if($suhuSekarang < $prediksiRerataSuhu) {
-		$a = 0.05;
-	}
+	// if ($suhuSekarang >= $prediksiRerataSuhu) {
+	// 	$a = 0.1; //bobot utk a
+	// } else if($suhuSekarang < $prediksiRerataSuhu) {
+	// 	$a = 0.05;
+	// }
 
-	if($humiditySekarang > 70 && $humiditySekarang < 80){ //normal
-		$b = 0.2; //bobot utk b
-	}
-	elseif ($humiditySekarang > 55 && $humiditySekarang < 70){ //lembab
-		$b = 0.11;
-	}
-	elseif($humiditySekarang > 80 && $humiditySekarang <90){ //kering
-		$b = 0.1;
-	}
+	// if($humiditySekarang > 70 && $humiditySekarang < 80){ //normal
+	// 	$b = 0.2; //bobot utk b
+	// }
+	// elseif ($humiditySekarang > 55 && $humiditySekarang < 70){ //lembab
+	// 	$b = 0.11;
+	// }
+	// elseif($humiditySekarang > 80 && $humiditySekarang <90){ //kering
+	// 	$b = 0.1;
+	// }
 
-	if($prediksiRerataSuhu > 29 && $prediksiRerataSuhu < 33){ //suhu normal
-		$c = 0.2;
-	} else { //ekstrem
-		$c = 0.05;
-	}
+	// if($prediksiRerataSuhu > 29 && $prediksiRerataSuhu < 33){ //suhu normal
+	// 	$c = 0.2;
+	// } else { //ekstrem
+	// 	$c = 0.05;
+	// }
 	
 
-	echo ($a+$b+$c)*$ekspUntung + $ekspUntung;
+	echo ($poin)*$ekspUntung + $ekspUntung;
 
 }
 
