@@ -4,14 +4,17 @@
 
 function getPersentase($iniaddress, $ekspUntung){
 	$address = str_replace(' ', '_', $iniaddress);
-	$request = file_get_contents("https://geocoder.api.here.com/6.2/geocode.json?app_id=OneotH8KDVpzsQ6idOYO&app_code=8ZhEYCtmaZONREaoBANv7Q&searchtext=" . $address);
+
+	$ch = curl_init();
+	$request = get_data("https://geocoder.api.here.com/6.2/geocode.json?app_id=OneotH8KDVpzsQ6idOYO&app_code=8ZhEYCtmaZONREaoBANv7Q&searchtext=" . $address);
+
 	$json = json_decode($request, true);
 	$lat = $json['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']['Latitude'];
 	$long = $json['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']['Longitude'];
 
 	$api_url = "https://api.darksky.net/forecast/f3fd12f78f6bd803626ae2435333f902/$lat,$long";
 
-	$forecast = json_decode(file_get_contents($api_url));
+	$forecast = json_decode(get_data($api_url));
 
 	// $suhuSekarang =round(($forecast->currently->temperature-32)*.5556);
 	$windSpeedSekarang = $forecast->currently->windSpeed;
@@ -52,5 +55,16 @@ function getPersentase($iniaddress, $ekspUntung){
 	echo ($poin)*$ekspUntung + $ekspUntung;
 
 }
+	function get_data($url)
+	{
+		$ch = curl_init();
+		$timeout = 5;
+		curl_setopt($ch,CURLOPT_URL,$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data;
+	}
 
 ?>
