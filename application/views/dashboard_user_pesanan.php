@@ -84,7 +84,7 @@
                           
                           <th scope="col" class="text-left">Kuantitas</th>
                           <th scope="col" style="width: 20%;" class="text-left">Harga</th>
-                          
+                          <th scope="col"  class="text-left">Status</th>
                           <th scope="col" class="text-left">Hapus</th>
                         </tr>
                       </thead>
@@ -101,6 +101,7 @@
                             <td><?php echo $items['name'] ?></td>
                             
                             <td><?php echo $items['qty'] ?> buah</td>
+                            <td class="text-left">Rp <?php echo $items['price'] ?></td>
                             <td class="text-left">Rp <?php echo $items['price'] ?></td>
                             <td class="text-left"><a href="<?=base_url()?>index.php/cart/update_cart/<?php echo $items['rowid'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
                           </tr>

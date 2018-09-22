@@ -50,32 +50,41 @@
                   </div>
                   
                   <div class="col-md-8 text-left editProdukUMKM">
-                    <div class="row">
-                      <h6>Nama Produk:
-                      <input type="text" name="namaProduk" class="form-control" value="<?php echo $result->namaProduk ?>">
+                    
+                      <div class="col-md-12">
+                         <h6>Nama Produk:
+                      <input type="text" name="namaProduk" class="form-control"  value="<?php echo $result->namaProduk ?>" >
                       </h6>
+                      </div>
+                     
+                      
+                    
+                    <div class="col-md-12">
+                      
                       <h6>Harga:
                       <input type="text" name="hargaProduk" class="form-control" value="<?php echo $result->hargaProduk ?>">
                       
                       </h6>
                     </div>
-                    <div class="row">
-                      
+                    <div class="col-md-12">
                       <h6>Stok:
                       <input type="text" name="stokProduk" class="form-control" value="<?php echo $result->stok ?>">
                       
                       </h6>
+                    </div>
+                      
+                      <div class="col-md-12">
                       <h6>Detail Produk:
                       <textarea form="" name="detailProduk" class="form-control" value="<?php echo $result->detail ?>"></textarea>
                       
                       </h6>
                     </div>
-                    
+                    <br>       
                     
                     <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
                     
                   </form>
-                </div>
+                
               </div>
             </div>
           </div>
