@@ -47,32 +47,36 @@
                     </div>
                   </div>
                   
-                  <div class="col-md-8 text-left editProdukUMKM">
-                    <div class="row">
-                      <h6>Nama Produk:
-                      <input type="text" name="namaProduk" class="form-control">
+                     <div class="col-md-8 text-left editProdukUMKM">
+                    
+                      <div class="col-md-12">
+                         <h6>Nama Produk:
+                      <input type="text" name="namaProduk" class="form-control"  >
                       </h6>
+                      </div>
+                    <div class="col-md-12">
                       <h6>Harga:
-                      <input type="text" name="hargaProduk" class="form-control">
+                      <input type="text" name="hargaProduk" class="form-control" >
                       
                       </h6>
                     </div>
-                    <div class="row">
-                      
+                    <div class="col-md-12">
                       <h6>Stok:
-                      <input type="text" name="stokProduk" class="form-control">
-                      
-                      </h6>
-                      <h6>Detail Produk:
-                      <input type="text" name="detailProduk" class="form-control"></input>
+                      <input type="text" name="stokProduk" class="form-control" >
                       
                       </h6>
                     </div>
-                   
-                    <br>
+                      
+                      <div class="col-md-12">
+                      <h6>Detail Produk:
+                      <textarea form="" name="detailProduk" class="form-control"></textarea>
+                      
+                      </h6>
+                    </div>
+                    <br>       
                     
-                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Tambah</button>
-                    
+                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -81,6 +85,6 @@
         </div>
       </div>
     </div>
-  </div>
+               
 </body>
 </html>

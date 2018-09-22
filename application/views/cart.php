@@ -36,7 +36,7 @@
                     
                     <td class="text-center"><?php echo $i ?></td>
                     <td><?php echo $items['name'] ?></td>
-                    <td><input class="form-control" type="text" value="<?php echo $items['qty'] ?>" /></td>
+                    <td class="text-left"><?php echo $items['qty']; ?> item</td>
                     <td class="text-center">Rp <?php echo $items['price'] ?></td>
                     <td class="text-center"><a href="<?=base_url()?>index.php/cart/update_cart/<?php echo $items['rowid'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                     <?php endforeach; ?>

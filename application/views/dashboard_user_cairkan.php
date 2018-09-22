@@ -129,7 +129,7 @@
                   style="width: 25%; margin-left: 10%;">Proses</button>
                   
                   <?php if(null !== $this->session->userdata('bank')): ?>
-                  <a type="submit" class="btn btn-outline-primary" target="_blank" href="<?php echo base_url ('index.php/Laporan/');?>">Cetak Invoice</a>
+                  <a type="submit" class="btn btn-outline-success" style="-webkit-appearance:none;" target="_blank" href="<?php echo base_url ('index.php/Laporan/');?>">Cetak Invoice</a>
                   <?php endif;?>
 
                 </form>

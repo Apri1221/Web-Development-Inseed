@@ -32,6 +32,7 @@ class Investasi extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
 	function lihatTarget($id) {
         $this->db->select('minimalDana');
         $this->db->from('proyek');
