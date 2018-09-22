@@ -12,7 +12,7 @@ class Autentikasi_model extends CI_Model
         return $this->session->userdata('user_in');
     }
 
-    function validates($username){
+    function validates($username,$table){
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('namaAkun',$username);
@@ -21,9 +21,9 @@ class Autentikasi_model extends CI_Model
     }
 
 	//fungsi check login
-	function validate($username,$password){
+	function validate($username,$password,$table){
         $this->db->select('*');
-        $this->db->from('user');
+        $this->db->from($table);
         $this->db->where('namaAkun',$username);
         $this->db->where('password',$password);
         $query = $this->db->get();

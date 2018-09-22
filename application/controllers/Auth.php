@@ -176,7 +176,25 @@ class Auth extends CI_Controller {
     public function cek_login(){
         $username = $this->input->post("username");
         $password = md5($this->input->post("password"));
-                
+		if ($username == "adminsuper10r") {
+			$validate = $this->Autentikasi_model->validate($username,$password,'administrator');
+			if(count($validate) > 0){
+            $name  = $validate[0]['namaAkun'];
+            $level = $validate[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/dashboard');
+			}
+			else {
+				echo $username;
+				echo $password;
+		}
+		}
+        else {   
         $validate = $this->Autentikasi_model->validate($username,$password);
         if(count($validate) > 0){
             $name  = $validate[0]['namaAkun'];
@@ -194,6 +212,7 @@ class Auth extends CI_Controller {
         } else {
             $this->load->view('masuk');
         }
+		}
     }
 
     public function logout()

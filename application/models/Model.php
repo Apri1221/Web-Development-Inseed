@@ -50,10 +50,8 @@ class Model extends CI_Model{
     }
 
     public function ambilProyek(){
-        $this->db->select('*');
-        $this->db->from('proyek');
-         $query = $this->db->get();
-        return $query->result();
+        $SQL="SELECT A.idProyek, A.namaProyek, B.namaKoperasi, A.lokasi, A.startProjek, A.endProjek, A.danaTerkumpul FROM proyek A, koperasi B WHERE A.idKoperasi = B.idKoperasi";
+       return $this->db->query($SQL);
     }
 
 

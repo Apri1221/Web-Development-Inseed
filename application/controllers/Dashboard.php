@@ -48,14 +48,13 @@ class Dashboard extends CI_Controller {
     }
 
     public function adminkelolaProyek(){
-       $data['result'] = $this->Model->ambilProyek();
+       $data['result'] = $this->Model->ambilProyek()->result();
         $this->load->view("dashboard_admin_invest",$data);
 
     }
 
     public function deleteProyekAdmin() {
         $this->load->model('model');
-        $id = $this->uri->segment(3);
         $this->model->deleteproyek($id);
         $this->adminKelolaProyek();
     }
