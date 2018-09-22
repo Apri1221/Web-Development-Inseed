@@ -51,10 +51,12 @@
                   <p class="card-text ">Lokasi : <br><span><?php echo $a->lokasi?></span></p>
                   <div class="bagianDanaInvest" style="">
                     <div class="progress" style="margin-bottom: 8%;">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $a->progress?>%;"><?php echo $a->progress?> %</div>
+                      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 
+                      /* INI UNTUK DESAIN PROGRESS BAR YANG DINAMIS*/
+                      <?php echo ($a->danaTerkumpul / $a->minimalDana)*100 ?>%;"><?php echo round((($a->danaTerkumpul / $a->minimalDana)*100),2) ?> % </div>
                     </div>
-                    <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul?></span></p>
-                    <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana?></span></p>
+                    <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul ?></span></p>
+                    <p class="card-text ">Dana yang Dibutuhkan : <br><span >Rp <?php echo $a->minimalDana ?></span></p>
                     <p class="card-text ">Sisa Waktu : <br><span >
                       <?php
                       date_default_timezone_set('Asia/Jakarta');
