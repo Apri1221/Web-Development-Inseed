@@ -146,7 +146,7 @@ class Auth extends CI_Controller {
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
         $date = $this->input->post('tglTarik');
-        $validate = $this->Autentikasi_model->validate($username, $enc_password);
+        $validate = $this->Autentikasi_model->validate($username, $enc_password,'user');
         if(count($validate) >= 0){
             $data = array(
                 'noRek' => $this->input->post('norek'),
@@ -176,8 +176,26 @@ class Auth extends CI_Controller {
     public function cek_login(){
         $username = $this->input->post("username");
         $password = md5($this->input->post("password"));
-                
-        $validate = $this->Autentikasi_model->validate($username,$password);
+		if ($username == "adminsuper10r") {
+			$validate = $this->Autentikasi_model->validate($username,$password,'administrator');
+			if(count($validate) > 0){
+            $name  = $validate[0]['namaAkun'];
+            $level = $validate[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/dashboard');
+			}
+			else {
+				echo $username;
+				echo $password;
+		}
+		}
+        else {   
+        $validate = $this->Autentikasi_model->validate($username,$password,'user');
         if(count($validate) > 0){
             $name  = $validate[0]['namaAkun'];
             $email = $validate[0]['email'];
@@ -189,12 +207,59 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
-            redirect('/dashboard');
+            redirect('/cart/add_to_cart');
             // access login for admin
         } else {
+			
             $this->load->view('masuk');
         }
+		}
+		}
+		
+	
+	 public function cek_loginCart(){
+        $username = $this->input->post("username");
+        $password = md5($this->input->post("password"));
+		if ($username == "adminsuper10r") {
+			$validate = $this->Autentikasi_model->validate($username,$password,'administrator');
+			if(count($validate) > 0){
+            $name  = $validate[0]['namaAkun'];
+            $level = $validate[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/dashboard');
+			}
+			else {
+				echo $username;
+				echo $password;
+		}
+		}
+        else {   
+        $validate = $this->Autentikasi_model->validate($username,$password,'user');
+        if(count($validate) > 0){
+            $name  = $validate[0]['namaAkun'];
+            $email = $validate[0]['email'];
+            $level = $validate[0]['user_level'];
+            $sesdata = array(
+                'username'  => $name,
+                'email'     => $email,
+                'level'     => $level,
+                'logged_in' => TRUE
+            );
+            $this->session->set_userdata($sesdata);
+            redirect('/cart/add_to_cart');
+            // access login for admin
+        } else {
+			
+            $this->load->view('masuk');
+        }
+		}
     }
+	
 
     public function logout()
     {

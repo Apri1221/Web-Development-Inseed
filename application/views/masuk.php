@@ -21,7 +21,7 @@
             <div class="card-body">
               <h2 style="text-align: center;">Masuk Ke inseed.id</h2>
               <?php if(isset($error)) { echo $error; }; ?>
-              <form action="<?php echo base_url()."index.php/auth/cek_login"; ?>" method="POST" class="col-md-10 col-sm-10 col-xs-10" style="float: left;">
+              <form action="<?php echo base_url()."index.php/auth/cek_login/"; ?>" method="POST" class="col-md-10 col-sm-10 col-xs-10" style="float: left;">
                 <div class="form-group">
                   <input type="text" class="form-control" name="username" placeholder="Masukkan Username Anda" autofocus>
                   <?php echo form_error('username'); ?>
