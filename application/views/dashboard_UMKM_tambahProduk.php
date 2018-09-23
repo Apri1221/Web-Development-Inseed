@@ -3,7 +3,18 @@
     
     <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
-    
+       <script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('profilePicture');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
@@ -40,10 +51,11 @@
                   
                   
                   <form action="<?php echo base_url ('index.php/Dashboard/uploadProduk');?>" method="POST">
-                    <br>
+                  <img id="profilePicture"  class="profilePictureDashboard">
+                    <br><br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
-                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
+                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)">
                     </div>
                   </div>
                   

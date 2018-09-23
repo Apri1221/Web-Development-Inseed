@@ -3,7 +3,18 @@
     
     <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
-    
+       <script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('profilePicture');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
@@ -46,7 +57,9 @@
         
       </ul>
     </div>
-    <?php  ?>
+    <?php foreach ($result as $row ) {
+      # code...
+    } ?>
     <div class="col-md-9">
       <div class="card">
         <div class="card-header" style="background-color: white;">
@@ -59,42 +72,51 @@
               <img src="">
               
               <form action="<?php echo base_url ('index.php/Dashboard/updateProyek'); ?>" method="POST">
-                <br>
+                 <img id="profilePicture" 
+                  src="$result->foto" class="profilePictureDashboard">
+                <br><br>
                 <div class="upload-btn-wrapper">
-                  <button class="btn">Pilih gambar</button>
-                  <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
+                  <button class="btn">Ganti gambar</button>
+                  <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)">
                 </div>
               </div>
               
               <div class="col-md-8 col-sm-8 text-left editProyekDashboard">
-                <div class="row">
+                <div class="col-md-12 col-sm-12">
                   <h6>Nama Proyek:
-                  <input type="text" name="namaProyek" class="form-control" value="<?php echo $result->namaProyek ?>">
+                  <input type="text" name="namaProyek" class="form-control" value="<?php echo $row->namaProyek ?>">
                   </h6>
+                </div>
+                <div class="col-md-12 col-sm-12">
                   <h6>Kebutuhan Dana
-                  <input type="text" name="kebutuhanDana" class="form-control" value="<?php echo $result->minimalDana ?>">
+                  <input type="text" name="kebutuhanDana" class="form-control" value="<?php echo $row->minimalDana ?>">
                   
                   </h6>
                 </div>
-                <div class="row">
+                <div class="col-md-12 col-sm-12">
                   
                   <h6>Lokasi Proyek
-                  <input type="text" name="lokasiProyek" class="form-control" value="<?php echo $result->lokasi ?>">
-                  
-                  </h6>
-                  <h6>Penanggung Jawab:
-                  <input type="text" name="penanggungJawab" class="form-control" value="<?php echo $result->penanggungJawab ?>">
+                  <input type="text" name="lokasiProyek" class="form-control" value="<?php echo $row->lokasi ?>">
                   
                   </h6>
                 </div>
-                <div class="row">
-                  
-                  <h6>Awal Proyek
-                  <input type="date" name="awalProyek" class="form-control" value="<?php echo $result->startProjek ?>">
+                <div class="col-md-12 col-sm-12">
+                   <h6>Penanggung Jawab:
+                  <input type="text" name="penanggungJawab" class="form-control" value="<?php echo $row->penanggungJawab ?>">
                   
                   </h6>
+                </div>
+                 
+                <div class="col-md-12 col-sm-12">
+                  
+                  <h6>Awal Proyek
+                  <input type="date" name="awalProyek" class="form-control" value="<?php echo $row->startProjek ?>">
+                  
+                  </h6>
+                </div>
+                <div class="col-md-12 col-sm-12">
                   <h6>Akhir Proyek
-                  <input type="date" name="akhirProyek" class="form-control" >
+                  <input type="date" name="akhirProyek" class="form-control" value="<?php echo $row->endProjek?>" >
                   
                   </h6>
                 </div>

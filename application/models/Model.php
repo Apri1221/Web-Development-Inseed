@@ -49,6 +49,14 @@ class Model extends CI_Model{
         return $query->result();
     }
 
+    public function getproyekbyId($id){
+        $this->db->select('*');
+        $this->db->from('proyek');
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function ambilProyek(){
         $SQL="SELECT A.idProyek, A.namaProyek, B.namaKoperasi, A.lokasi, A.startProjek, A.endProjek, A.danaTerkumpul FROM proyek A, koperasi B WHERE A.idKoperasi = B.idKoperasi";
        return $this->db->query($SQL);
@@ -59,6 +67,7 @@ class Model extends CI_Model{
 		$this->db->where('idProyek', $id);
 		$this->db->delete('proyek');
 	}
+    
     public function deleteUser($namaAkun){
         $this->db->where('namaAkun', $namaAkun);
         $this->db->delete('user');

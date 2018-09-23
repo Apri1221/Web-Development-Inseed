@@ -57,11 +57,11 @@
                   echo $date; ?>" class = "form-control">
 
                     <h6>Judul Artikel:</h6>
-                    <input type="text" name="judulArtikel" class="form-control">
+                    <input type="text" name="judulArtikel" value="<?php echo $result->judulArtikel; ?>" class="form-control">
                     
                     <br>
                     <h6>Isi Artikel:</h6>
-                    <textarea name="isiArtikel" form="formArtikel" class="form-control"></textarea>
+                    <textarea name="isiArtikel" form="formArtikel" value="<?php echo $result->isiArtikel; ?>" class="form-control"></textarea>
                     <br>
                     <img id="profilePicture"  class="profilePictureDashboard">
                     <br>

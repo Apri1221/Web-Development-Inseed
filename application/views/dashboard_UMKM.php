@@ -7,9 +7,7 @@
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
-
     <?php include_once("template/navbar.php"); ?>
-
     <section id="">
       <div class="col-md-12">
         
@@ -49,27 +47,27 @@
                         </tr>
                       </thead>
                       <tbody>
-					  
-					  <?php foreach ($produk as $row) : ?>
+                        
+                        <?php foreach ($produk as $row) : ?>
                         <tr class="produkKeranjang">
-						
+                          
                           <td><?php echo $row->namaProduk?></td>
                           <td>Rp <?php echo $row->hargaProduk?></td>
                           <td><?php echo $row->stok?></td>
                           <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editProduk/') . $row->idProduk;?>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> </a> </td>
                           <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusProduk/') . $row->idProduk;?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                        
-						</tr>        
-<?php endforeach; ?>						
+                          
+                        </tr>
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
                   </div>
-                </div>   
                 </div>
               </div>
             </div>
           </div>
         </div>
-		</div>
-      </body>
-    </html>
+      </div>
+    </div>
+  </body>
+</html>
