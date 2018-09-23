@@ -43,7 +43,7 @@
                   <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
                   
                   <p class="card-text ">Expektasi Keuntungan :<br> <span style="font-weight: bold; font-size: 1.2rem;"> 
-                    <?php getPersentase($a->lokasi, $a->ekspUntung);
+                    <?php echo $a->ekspUntung;
                     ?> %
                   </span></p>
                   <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
@@ -52,7 +52,7 @@
                   <div class="bagianDanaInvest" style="">
                     <div class="progress" style="margin-bottom: 8%;">
                       <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 
-                     
+                      /* INI UNTUK DESAIN PROGRESS BAR YANG DINAMIS*/
                       <?php echo ($a->danaTerkumpul / $a->minimalDana)*100 ?>%;"><?php echo round((($a->danaTerkumpul / $a->minimalDana)*100),0) ?> % </div>
                     </div>
                     <p class="card-text ">Dana Terkumpul :<br> <span >Rp <?php echo $a->danaTerkumpul ?></span></p>
