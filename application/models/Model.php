@@ -49,6 +49,14 @@ class Model extends CI_Model{
         return $query->result();
     }
 
+    public function getproyekbyId($id){
+        $this->db->select('*');
+        $this->db->from('proyek');
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function ambilProyek(){
         $this->db->select('*');
         $this->db->from('proyek');

@@ -40,7 +40,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-12" style="text-align: left;">
-                  <a href="dashboard_admin_tambahArtikel.php" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Artikel</a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/tambahArticle'); ?>" class="btn btn-primary" style="margin-bottom: 5%;">Tambah Artikel</a>
                   <div class="table-responsive"  style="max-height: 250px;">
                     <table class="table table-striped">
                       <thead>
