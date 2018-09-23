@@ -62,11 +62,8 @@
                         <tr class="produkKeranjang">
                           <td><?php echo $var->idProyek; ?></td>
                           <td><?php echo $var->namaProyek; ?></td>
-<<<<<<< HEAD
                           <td><?php echo $var->namaKoperasi; ?></td>
-=======
-                          <td><?php echo $var->penanggungJawab; ?></td>
->>>>>>> 5927c4110d53d71dc57a852b4768ba92d3aae21d
+<!--                           <td><?php echo $var->penanggungJawab; ?></td> -->
                           <td><?php echo $var->lokasi; ?></td>
                           <td><?php echo $var->startProjek; ?></td>
                           <td><?php echo $var->endProjek;  ?></td>
