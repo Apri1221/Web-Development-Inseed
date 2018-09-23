@@ -18,7 +18,7 @@
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
-    <?php include("template/apri.php"); ?>
+    <?php include_once("template/apri.php"); ?>
     <section id="detailProduk">
       <?php
       foreach($detail as $row){
