@@ -50,7 +50,7 @@ function getPersentase($iniaddress, $ekspUntung){
 	// } else { //ekstrem
 	// 	$c = 0.05;
 	// }
-	echo ($poin)*$ekspUntung + $ekspUntung;
+	echo round((($poin)*$ekspUntung + $ekspUntung),1);
 
 }
 	function get_data($url)
