@@ -28,7 +28,7 @@
         <h2>Cari produk rumput laut  yang kamu inginkan</h2>
         <hr>
       </div>
-      <form class="form-wrapper" action="<?php echo base_url();?>index.php/cart/cari" method="get">
+      <form class="form-wrapper" action="<?php echo base_url();?>index.php/cart/cari">
         <input type="text" name="search" id="search" placeholder="Cari Produk" required>
         <input type="submit" value="Cari" id="submit">
       </form>
@@ -38,7 +38,7 @@
 	<div class="row">
 	<?php 
 		$no = $this->uri->segment('3') + 1;
-		foreach($cari as $row){
+		foreach($produk as $row){
 		?>
 	<div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
     <div class="card cardProduk" style="height: 500px;">

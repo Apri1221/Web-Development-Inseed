@@ -6,7 +6,7 @@ class Cart_model extends CI_Model{
 		return $hasil->result();
 	}
 	function search($keyword) {
-	$SQL = "SELECT * FROM `produk` WHERE `namaProduk` like '%$keyword%'";
+	$SQL = "SELECT * FROM produk WHERE namaProduk like '%$keyword%'";
 	return $this->db->query($SQL);
 	}
 	public function find($id){
