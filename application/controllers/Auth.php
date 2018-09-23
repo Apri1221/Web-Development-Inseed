@@ -207,7 +207,7 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
-            redirect('/cart/add_to_cart');
+            redirect('/dashboard');
             // access login for admin
         } else {
 			

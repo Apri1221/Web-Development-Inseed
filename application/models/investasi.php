@@ -32,6 +32,13 @@ class Investasi extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+	function lihatNominal($id) {
+        $this->db->select('nominalInvest');
+        $this->db->from('investor');
+        $this->db->where('idProyek',$id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
 	function lihatTarget($id) {
         $this->db->select('minimalDana');
@@ -55,6 +62,18 @@ class Investasi extends CI_Model
 	function update_investor ($data,$table){
 		$this->db->insert($table,$data);	
 	}
+	function update_investasinya ($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);	
+	}
+	function cekInvest($idProyek,$username,$table){
+        $this->db->select('*');
+        $this->db->from($table);
+        $this->db->where('idProyek',$idProyek);
+        $this->db->where('namaAkun',$username);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 		
 }
 

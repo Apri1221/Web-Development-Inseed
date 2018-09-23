@@ -66,6 +66,9 @@ class Invest extends CI_Controller {
         }
 	}
 	public function tambah($id){
+		$this->load->model('investasi');
+		$validate = $this->investasi->cekInvest($id,$username,'investor');
+        if(count($validate) === 0){
 		$cek = $this->investasi->lihatDana($id);
 		$danaSkrg  = $cek[0]['danaTerkumpul'];
 		$nominal = $this->input->post('nominal');
@@ -98,6 +101,42 @@ class Invest extends CI_Controller {
 		$this->investasi->update_investor($dataInvestor,'investor');
 
 		$this->load->view('thanks',$id);
+		}
+		else {
+			$cek = $this->investasi->lihatDana($id);
+			$danaSkrg  = $cek[0]['danaTerkumpul'];
+			$cekDana = $this->investasi->lihatNominal($id);
+			$danaInvestor  = $cekDana[0]['nominalInvest'];
+			$nominal = $this->input->post('nominal');
+			$danaSkrg += $nominal;
+			$danaInvestor += $nominal;
+			$where = array(
+			'idProyek' => $id
+			);
+			$data = array (
+			'danaTerkumpul' => $danaSkrg
+			);
+			$dataInvestor = array (
+			'nominalInvest' => $danaInvestor
+			);
+			$this->investasi->update_data($where,$data,'proyek');
+			$cek2 = $this->investasi->lihatDana($id);
+			$danaSkrg2  = $cek2[0]['danaTerkumpul'];
+			$cekTarget = $this->investasi->lihatTarget($id);
+			$danaTarget  = $cekTarget[0]['minimalDana'];
+			$progress = $danaSkrg * 100 / $danaTarget;
+			$dataProgress = array (
+			'progress' => $progress
+			);
+			$this->investasi->update_progress($where,$dataProgress,'proyek');		
+			$username = $this->session->userdata('username');
+			$danaSkrg  = $cek[0]['danaTerkumpul'];
+			$dataInvestor = array(
+			'nominalInvest' => $this->input->post('nominal')
+			);
+			$this->investasi->update_investasinya($where,$dataInvestor,'investor');
+			$this->load->view('thanks',$id);
+			}
+			}
 	}
-}
 ?>
