@@ -136,9 +136,6 @@ class Invest extends CI_Controller {
 			$this->investasi->update_progress($where,$dataProgress,'proyek');		
 			$username = $this->session->userdata('username');
 			$danaSkrg  = $cek[0]['danaTerkumpul'];
-			$dataInvestor = array(
-			'nominalInvest' => $this->input->post('nominal')
-			);
 			$this->investasi->update_investasinya($where2,$dataInvestor,'investor');
 			$this->load->view('thanks',$id);
 			}
