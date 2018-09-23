@@ -11,7 +11,7 @@
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
 
-    <section id="headerDashboard">
+    <section id="">
       <div class="col-md-12">
         
       </div>
@@ -49,33 +49,21 @@
                           <th scope="col" class="text-center">Judul </th>
                           <th scope="col" class="text-left">Tanggal Terbit</th>
                           <th scope="col" class="text-left">Edit</th>
+                          <th scope="col" class="text-left">Hapus</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php $i = 0;
+                        foreach ($result as $var):
+                        $i++; ?>
                         <tr class="produkKeranjang">
-                          <td>0001</td>
-                          <td>Ditemukan tambak rumput laut di sidoarjo</td>
-                          
-                          <td>31/12/18</td>
-                          
-                          <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
+                          <td><?php echo $i;?></td>
+                          <td class="text-center"><?php echo $var->judulArtikel; ?></td>
+                          <td class="text-left"><?php echo date("d-m-20y",strtotime($var->tglArtikel)); ?></td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/editArtikel/'). $var->idArtikel;?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/hapusArtikel/'). $var->idArtikel;?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
-                        <tr class="produkKeranjang">
-                          <td>0002</td>
-                          <td>Manfaat Rumput Laut</td>
-                          
-                          <td>31/12/18</td>
-                          
-                          <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
-                        </tr>
-                        <tr class="produkKeranjang">
-                          <td>0003</td>
-                          <td>Sumber rumput laut alami</td>
-                          
-                          <td>31/12/18</td>
-                          
-                          <td class="text-left"><button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </button> </td>
-                        </tr>
+                        <?php endforeach; ?>
                         
                       </tbody>
                     </table>

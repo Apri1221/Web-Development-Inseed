@@ -69,6 +69,7 @@ class Model extends CI_Model{
 		$this->db->where('idProyek', $id);
 		$this->db->delete('proyek');
 	}
+    
     public function deleteUser($namaAkun){
         $this->db->where('namaAkun', $namaAkun);
         $this->db->delete('user');

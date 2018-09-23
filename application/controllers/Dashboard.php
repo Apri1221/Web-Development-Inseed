@@ -43,8 +43,48 @@ class Dashboard extends CI_Controller {
         $this->load->view("dashboard_admin_tambahArtikel");
     }
 
+    public function editArtikel() {
+        $this->load->model('artikel');
+        $id = $this->uri->segment(3);
+        $data['result'] = $this->artikel->cekartikelById($id);
+        $this->load->view("dashboard_admin_editArtikel", $data);
+    }
+
+    public function tambahArticleDB() {
+        $this->load->helper('url');
+        $this->load->model('artikel');
+        $username = $this->session->userdata('username');
+        $data = array(
+            'judulArtikel' => $this->input->post('judulArtikel'),
+            'isiArtikel' => $this->input->post('isiArtikel'),
+            'penulisArtikel' => $username,
+            'tglArtikel' => $this->input->post('tglArtikel'),
+            'fotoArtikel' => '', //ini untuk upload foto artikel
+         );
+        
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->artikel->cekartikel($this->input->post('judulArtikel'));
+        if(count($validate) === 0){
+            $this->artikel->Insert('artikel', $data);
+            redirect('/dashboard/kelolaArticle');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard/tambahArticle');
+        }
+    }
+
+    public function hapusArtikel() {
+        $this->load->model('artikel');
+        $id = $this->uri->segment(3);
+        $this->artikel->deleteArtikel($id);
+        $this->kelolaArticle();
+    }
+
     public function kelolaArticle(){
-        $this->load->view("dashboard_admin_article");
+        $this->load->model('artikel');
+        $data['result'] = $this->artikel->select();
+        $this->load->view("dashboard_admin_article", $data);
     }
 
 
@@ -60,6 +100,7 @@ class Dashboard extends CI_Controller {
         $this->model->deleteproyek($id);
         $this->adminKelolaProyek();
     }
+
     public function kelolaProduk(){
 		$this->load->model('produk');
         $data['result'] = $this->produk->ambilProduk();
@@ -160,13 +201,13 @@ class Dashboard extends CI_Controller {
         $namaProyek = $this->input->post('namaProyek');    
         $kebutuhanDana = $this->input->post('kebutuhanDana');
         $data = array(
-        'namaProyek' => $this->input->post('namaProyek'),
-        'lokasi' => $this->input->post('lokasiProyek'),
-        'minimalDana' => $kebutuhanDana,
-        'namaAkun' => $username,
-        'startProjek' => $this->input->post('awalProyek'),
-        'endProjek' => $this->input->post('akhirProyek'),
-        'penanggungJawab' => $this->input->post('penanggungJawab'),
+            'namaProyek' => $this->input->post('namaProyek'),
+            'lokasi' => $this->input->post('lokasiProyek'),
+            'minimalDana' => $kebutuhanDana,
+            'namaAkun' => $username,
+            'startProjek' => $this->input->post('awalProyek'),
+            'endProjek' => $this->input->post('akhirProyek'),
+            'penanggungJawab' => $this->input->post('penanggungJawab'),
          );
         
         // ngecek apakah udah ada username yang sama
@@ -245,6 +286,7 @@ class Dashboard extends CI_Controller {
         $this->produk->deleteproduk($id);
         $this->produk();
     }
+
 	public function uploadProduk(){
 		$this->load->model('produk');
 		 $val = $this->produk->getId();
@@ -263,6 +305,7 @@ class Dashboard extends CI_Controller {
 		 $this->produk();
 		 
 	}
+
 	function updateproduk ($id) {
 		$data = array (
 		'idProduk' => $id,

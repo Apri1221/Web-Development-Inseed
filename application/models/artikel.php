@@ -6,13 +6,37 @@ class Artikel extends CI_Model
     {
         parent::__construct();
     }
-	function select() {
+
+	public function select() {
         $this->db->select('*');
-        $this->db->from('project');
-        $this->db->where('namaAkun',$email);
-        $this->db->where('password',$password);
+        $this->db->from('artikel');
         $query = $this->db->get();
-        return $query->result_array();
+        return $query->result();
+    }
+
+    public function cekartikel($judulArtikel){
+        $this->db->select('*');
+        $this->db->from('artikel');
+        $this->db->where('judulArtikel',$judulArtikel);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function cekartikelById($idArtikel){
+        $this->db->select('*');
+        $this->db->from('artikel');
+        $this->db->where('idArtikel',$idArtikel);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function Insert($table,$data){
+        $this->db->insert($table, $data);
+    }
+
+    public function deleteArtikel($id){
+        $this->db->where('idArtikel', $id);
+        $this->db->delete('artikel');
     }
 }
 ?>
