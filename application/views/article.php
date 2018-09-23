@@ -118,16 +118,7 @@
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
-                <li>
-                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
-                  <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
-                  <a href="#" class="btn btn-primary">Lihat Detail</a>
-                </li>
                 
-                <li>
-                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
-                  <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
-                  <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </ul>
               </div>
             </div>
