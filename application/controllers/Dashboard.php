@@ -47,6 +47,7 @@ class Dashboard extends CI_Controller {
         $this->load->view("dashboard_admin_article");
     }
 
+
     public function adminkelolaProyek(){
        $data['result'] = $this->Model->ambilProyek();
         $this->load->view("dashboard_admin_invest",$data);
@@ -161,6 +162,7 @@ class Dashboard extends CI_Controller {
         $data = array(
         'namaProyek' => $this->input->post('namaProyek'),
         'lokasi' => $this->input->post('lokasiProyek'),
+        'minimalDana' => $kebutuhanDana,
         'namaAkun' => $username,
         'startProjek' => $this->input->post('awalProyek'),
         'endProjek' => $this->input->post('akhirProyek'),

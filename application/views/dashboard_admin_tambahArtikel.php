@@ -3,7 +3,18 @@
     
     <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
-    
+       <script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('profilePicture');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
   </head>
   <body style="background-color:#F5F5F5">
     <div id="loading"></div>
@@ -22,7 +33,7 @@
             <li class="list-group-item judulMenuDashboard" style="background-color: black;">ADMINISTRATOR</li>
             <!-- Admin-->
             <div id="sidebarAdmin" >
-              <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaArticle');?>""> <li class="list-group-item active"><i class="fas fa-shopping-cart" ></i>Kelola Article</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/adminkelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaProduk');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Produk</li></a>
@@ -48,10 +59,12 @@
                     <h6>Isi Artikel:</h6>
                     <textarea name="isiArtikel" form="formArtikel" class="form-control"></textarea>
                     <br>
-                    
+                     <img id="profilePicture"  class="profilePictureDashboard">
+                     <br>
+                     <br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar artikel</button>
-                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png">
+                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)">
                     </div>
                     <br>
                     <br>
