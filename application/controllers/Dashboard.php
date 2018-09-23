@@ -74,6 +74,31 @@ class Dashboard extends CI_Controller {
         }
     }
 
+    public function updateArticleDB() {
+        $this->load->helper('url');
+        $this->load->model('artikel');
+        $idArtikel = $this->uri->segment(3);
+        $username = $this->session->userdata('username');
+        $data = array(
+            'judulArtikel' => $this->input->post('judulArtikel'),
+            'isiArtikel' => $this->input->post('isiArtikel'),
+            'penulisArtikel' => $username,
+            'tglArtikel' => $this->input->post('tglArtikel'),
+            'fotoArtikel' => '', //ini untuk upload foto artikel
+         );
+        
+        // ngecek apakah udah ada username yang sama
+        $validate = $this->artikel->cekartikel($this->input->post('judulArtikel'));
+        if(count($validate) === 0){
+            $this->artikel->Update($idArtikel ,$data, 'artikel');
+            redirect('/dashboard/kelolaArticle');
+            // access login for admin
+        }
+        else{
+            redirect('/dashboard/editArtikel');
+        }
+    }
+
     public function hapusArtikel() {
         $this->load->model('artikel');
         $id = $this->uri->segment(3);

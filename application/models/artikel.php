@@ -34,6 +34,11 @@ class Artikel extends CI_Model
         $this->db->insert($table, $data);
     }
 
+    public function Update($where,$data,$table){
+        $this->db->where('idArtikel', $where);
+        $this->db->update($table, $data);
+    }
+
     public function deleteArtikel($id){
         $this->db->where('idArtikel', $id);
         $this->db->delete('artikel');
