@@ -67,6 +67,7 @@ class Invest extends CI_Controller {
 	}
 	public function tambah($id){
 		$this->load->model('investasi');
+		$username = $this->session->userdata('username');
 		$validate = $this->investasi->cekInvest($id,$username,'investor');
         if(count($validate) === 0){
 		$cek = $this->investasi->lihatDana($id);
@@ -105,7 +106,11 @@ class Invest extends CI_Controller {
 		else {
 			$cek = $this->investasi->lihatDana($id);
 			$danaSkrg  = $cek[0]['danaTerkumpul'];
-			$cekDana = $this->investasi->lihatNominal($id);
+			$where2 = array(
+			'idProyek' => $id,
+			'namaAkun' => $username
+			);
+			$cekDana = $this->investasi->lihatNominal($id,$where2);
 			$danaInvestor  = $cekDana[0]['nominalInvest'];
 			$nominal = $this->input->post('nominal');
 			$danaSkrg += $nominal;
@@ -134,7 +139,7 @@ class Invest extends CI_Controller {
 			$dataInvestor = array(
 			'nominalInvest' => $this->input->post('nominal')
 			);
-			$this->investasi->update_investasinya($where,$dataInvestor,'investor');
+			$this->investasi->update_investasinya($where2,$dataInvestor,'investor');
 			$this->load->view('thanks',$id);
 			}
 			}
