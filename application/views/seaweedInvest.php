@@ -43,7 +43,7 @@
                   <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
                   
                   <p class="card-text ">Expektasi Keuntungan :<br> <span style="font-weight: bold; font-size: 1.2rem;"> 
-                    <?php echo $a->ekspUntung;
+                    <?php getpersentase($a->lokasi, $a->ekspUntung);
                     ?> %
                   </span></p>
                   <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>

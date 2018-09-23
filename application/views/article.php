@@ -25,16 +25,22 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
               <div class="carousel-inner" id="carouselArticle" >
-                
-                
-                <div class="carousel-item active">
-                  <a href="<?=base_url()?>index.php/article/detail"> 
-                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" alt="First slide">
-                    <h5 class="caption">Jenis dan Manfaat Rumput Laut di Indonesia</h5>
+                <?php $i = 0;
+                $active = 'active';
+                foreach ($result as $var):
+                if ($i != 0) {
+                  $active = '';
+                }
+                $i++; ?>
+                <div class="carousel-item <?php echo $active; ?>">
+                  <a href="<?=base_url()?>index.php/article/detail/<?php echo $var->idArtikel; ?>"> 
+                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" alt="<?php echo $i; ?>">
+                    <h5 class="caption"><?php echo $var->judulArtikel; ?></h5>
                   </a>
                 </div>
-                
-                
+              <?php endforeach; ?>
+
+
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

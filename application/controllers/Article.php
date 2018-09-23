@@ -13,13 +13,16 @@ class Article extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->model('artikel');
-		$this->load->view('article');
+		$data['result'] = $this->artikel->select();
+		$this->load->view('article', $data);
 	}
 	public function detail()
 	{
 		$this->load->helper('url');
 		$this->load->model('artikel');
-		$this->load->view('detailArticle');
+		$id = $this->uri->segment(3);
+		$data['result'] = $this->artikel->cekartikelById($id);
+		$this->load->view('detailArticle', $data);
 	}
 }
 ?>
