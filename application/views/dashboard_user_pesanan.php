@@ -32,6 +32,8 @@
             </div>
             <div class="card-body ">
               <div class="row">
+
+                <?php if($this->session->userdata('level') === '3'):?>
                 <div class="col-md-12 text-center" style="text-align: center;">
                   <h4>Produk yang saya jual:</h4>
                   <hr style="border-bottom: 2px solid #12a8bb; margin-bottom: 5%; width: 20%;">
@@ -50,9 +52,9 @@
                         </thead>
                         <tbody>
                           
-                          <?php $i = 0;
-						  foreach ($detail as $var):
-						  $i++;						  ?>
+                        <?php $i = 0;
+          						  foreach ($detail as $var):
+          						  $i++; ?>
                           <tr class="produkKeranjang">
 
                             <td>  
@@ -71,8 +73,9 @@
                     </div>
                   </div>
                 </div>
+                <?php endif;?>
                 
-                <div class="col-md-12" style="text-align: center; margin-top: 5%;">
+                <div class="col-md-12" style="text-align: center; margin-top: 2%;">
                   <h4>Produk yang saya beli:</h4>
                   <hr style="border-bottom: 2px solid #12a8bb; margin-bottom: 5%; width: 20%;">
                   <div class="table-responsive">

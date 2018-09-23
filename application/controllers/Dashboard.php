@@ -220,9 +220,6 @@ class Dashboard extends CI_Controller {
 			$where = array('idPenjual' => $username);
 			$data['produk'] = $this->produk->show($where,'produk')->result();
             $this->load->view("dashboard_UMKM",$data);
-            $username = $this->session->userdata('username');
-            $data['result'] = $this->produk->getprodukbyName($username);
-            $this->load->view("dashboard_UMKM", $data);
         } else {
             $this->load->view('masuk');
         }

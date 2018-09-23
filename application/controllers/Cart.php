@@ -19,14 +19,14 @@ class Cart extends CI_Controller{
 	{
 		if ($this->session->userdata('username')!== NULL){
 		$this->load->library('cart');
-		$jum = $this->input->get("jum");
+		$jum = $this->input->get("quant[2]");
 		$product = $this->cart_model->find($id); 
 		$data = array(
-					   'id'      => $product->idProduk,
-					   'qty'     => $jum,
-					   'price'   => $product->hargaProduk,
-					   'name'    => $product->namaProduk
-					);
+			   'id'      => $product->idProduk,
+			   'qty'     => $jum,
+			   'price'   => $product->hargaProduk,
+			   'name'    => $product->namaProduk
+			);
 		$this->cart->insert($data);
 		redirect('/cart/show_cart');
 	}else {

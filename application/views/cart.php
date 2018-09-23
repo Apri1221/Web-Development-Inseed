@@ -52,9 +52,12 @@
             <h4>Ringkasan Pesanan</h4>
             <h6>Jumlah barang : <span class="subtotalKeranjang"><?php echo $this->cart->total_items();?> item</span></h6>
             <h4>Total: <span class="totalHargaKeranjang">Rp <?php echo $this->cart->total(); ?></span></h6>
-            <a href="<?=base_url()?>index.php/mart/bayar" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
-              <i class="fas fa-money-bill-alt"></i> Beli Sekarang
-            </a>
+            <button href="<?=base_url()?>index.php/mart/bayar" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;"
+              <?php if( $i == 0): ?>
+                  disabled
+              <?php endif;?>
+              ><i class="fas fa-money-bill-alt"></i> Beli Sekarang
+            </button>
           </div>
         </div>
 		

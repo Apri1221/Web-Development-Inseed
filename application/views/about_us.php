@@ -12,7 +12,7 @@
   <section id="pendahuluan">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-12 col-xs-12" >
+        <div class="col-lg-12 col-md-12 col-sm-12" >
           <img src="<?php echo base_url('asset/assets/image/logo.png');?>">
           <h2>Invest Seaweed in Indonesia</h2>
           <p>inseed.id merupakan website yang mewadahi masyarakat untuk ikut berkontribusi pada budidaya rumput laut di Indonesia melalui cara investasi. Dengan ini, masyarakat secara tidak langsung ikut meningkatkan kesejahteraan para petani rumput laut dengan memberikan bantuan berupa modal sehingga petani dapat memiliki kekuatan tawar menawar yang tinggi di pasar.  </p>
@@ -24,7 +24,7 @@
   <section id="fitur">
     <div class="container-fluid">
       <div class="row cyan-background">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12" style="margin-left: 5%">
           <div class="col-lg-4 col-sm-12 fitur-right-side">
             <img src="<?php echo base_url('asset/assets/image/invest.png');?>" class="fitur-img">
           </div>
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="row white-background">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="col-lg-4 col-sm-12 fitur-left-side">
             <img src="<?php echo base_url('asset/assets/image/mart.png');?>" class="fitur-img">
           </div>
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="row cyan-background">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12" style="margin-left: 5%">
           <div class="col-lg-4 col-sm-12 fitur-right-side">
             <img src="<?php echo base_url('asset/assets/image/icon/article.png');?>" class="fitur-img">
           </div>
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="row white-background">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="col-lg-4 col-sm-12 fitur-left-side">
             <img src="<?php echo base_url('asset/assets/image/user.png');?>" class="fitur-img">
           </div>
