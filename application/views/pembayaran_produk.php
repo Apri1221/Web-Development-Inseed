@@ -25,11 +25,11 @@
             <h2 style="text-align: center;">Form Pembayaran Produk</h2>
             <hr class="col-md-4">
             <br>
-			<?php
-                    foreach ($this->cart->contents() as $items) :
-              ?>
+            <?php
+            foreach ($this->cart->contents() as $items) :
+            ?>
             <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>/<?php echo $items['rowid'];?>">
-			 <?php endforeach ?>
+              <?php endforeach ?>
               <div class="form-group">
                 <label class="control-label col-md-4" for="produk">Metode Pembayaran</label>
                 <div class="col-md-12">

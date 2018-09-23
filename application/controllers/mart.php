@@ -69,18 +69,20 @@ class Mart extends CI_Controller {
 		$product = $this->cart_model->cariBayar($id); 
 		$username = $this->session->userdata('username');
 		$data = array(
-					'idTransaksi' => $rowid,
-					   'namaPembeli'     => $username,
-					   'namaPenjual'   => $product->idPenjual,
-					   'idProduk'    => $product->idProduk,
-					   'jumlah' => $this->cart->total_items(),
-					   'total' => $this->cart->total(),
-					   'alamatTujuan' => $this->input->post('alamat'),
-					   'status' => 0,
-					   'tglTrans' => '2018-10-09',
-					   'catatan' => "hello"
-					);
+			'idTransaksi' => $rowid,
+			   'namaPembeli'     => $username,
+			   'namaPenjual'   => $product->idPenjual,
+			   'idProduk'    => $product->idProduk,
+			   'jumlah' => $this->cart->total_items(),
+			   'total' => $this->cart->total(),
+			   'alamatTujuan' => $this->input->post('alamat'),
+			   'status' => 0,
+			   'tglTrans' => '2018-10-09',
+			   'catatan' => "hello"
+			);
+
 		$this->market->insert('transaksi',$data);
+		$this->cart->destroy();
 		$this->load->view('thanks_purchase');
 	}
 
