@@ -87,8 +87,18 @@ function preview_image(event)
                 </div>
                 <div class="col-md-12 col-sm-12">
                   
-                  <h6>Kebutuhan Dana
+                  <h6>Kebutuhan Dana (Dalam Rupiah)
                   <input type="text" name="kebutuhanDana" class="form-control">
+                  
+                  </h6>
+                  
+                 
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                  
+                  <h6>Ekspektasi Keuntungan (Dalam persen)
+                  <input type="text" name="ekspektasi" class="form-control">
                   
                   </h6>
                   
@@ -96,14 +106,14 @@ function preview_image(event)
                 </div>
                 <div class="col-md-12 col-sm-12">
                   
-                  <h6>Lokasi Proyek
+                  <h6>Lokasi Proyek (Kota Proyek)
                   <input type="text" name="lokasiProyek" class="form-control">
                   
                   </h6>
                 </div>
 
                 <div class="col-md-12 col-sm-12">
-                   <h6>Penanggung Jawab:
+                   <h6>Nama Penanggung Jawab
                   <input type="text" name="penanggungJawab" class="form-control">
                   
                   </h6>

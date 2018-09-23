@@ -61,7 +61,7 @@
                     
                     <br>
                     <h6>Isi Artikel:</h6>
-                    <textarea name="isiArtikel" form="formArtikel" value="<?php echo $result->isiArtikel; ?>" class="form-control"></textarea>
+                    <textarea name="isiArtikel" form="formArtikel" class="form-control"><?php echo $result->isiArtikel; ?></textarea>
                     <br>
                     <img id="profilePicture"  class="profilePictureDashboard">
                     <br>
@@ -76,13 +76,11 @@
                     
                   </form>
                 </div>
-                
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 </html>

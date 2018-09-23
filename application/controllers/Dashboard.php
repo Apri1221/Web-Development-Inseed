@@ -200,9 +200,11 @@ class Dashboard extends CI_Controller {
         $username = $this->session->userdata('username');
         $namaProyek = $this->input->post('namaProyek');    
         $kebutuhanDana = $this->input->post('kebutuhanDana');
+        $ekspektasiKeuntungan = $this->input->post('ekspektasi');
         $data = array(
             'namaProyek' => $this->input->post('namaProyek'),
             'lokasi' => $this->input->post('lokasiProyek'),
+            'ekspUntung' => $ekspektasiKeuntungan,
             'minimalDana' => $kebutuhanDana,
             'namaAkun' => $username,
             'startProjek' => $this->input->post('awalProyek'),
