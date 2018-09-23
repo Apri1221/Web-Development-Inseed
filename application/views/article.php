@@ -25,25 +25,16 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
               <div class="carousel-inner" id="carouselArticle" >
+                
+                
                 <div class="carousel-item active">
                   <a href="<?=base_url()?>index.php/article/detail"> 
                     <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>" alt="First slide">
                     <h5 class="caption">Jenis dan Manfaat Rumput Laut di Indonesia</h5>
                   </a>
                 </div>
-                <div class="carousel-item">
-                  <a href="<?=base_url()?>index.php/article/detail"> 
-                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani2.jpg'); ?>" alt="Second slide">
-                    <h5 class="caption">Ditemukan rumput laut langka menghebohkan netizen</h5>
-                  </a>
-                </div>
-                <div class="carousel-item">
-                  <a href="<?=base_url()?>index.php/article/detail"> 
-                    <img class="d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani3.jpg'); ?>" alt="Third slide">
-                    <h5 class="caption">Bapak ini menemukan harta karun isinya rumput laut</h5>
-                  </a>
-                </div>
-
+                
+                
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -118,16 +109,7 @@
                   <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
                   <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </li>
-                <li>
-                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
-                  <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
-                  <a href="#" class="btn btn-primary">Lihat Detail</a>
-                </li>
                 
-                <li>
-                  <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/produk/produk2.jpg'); ?>" alt="Image 1">
-                  <h5 class="judulArtikel">Rumput laut ditemukan di teluk Malang</h5>
-                  <a href="#" class="btn btn-primary">Lihat Detail</a>
                 </ul>
               </div>
             </div>

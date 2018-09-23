@@ -49,7 +49,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-8" style="margin-left: 15%;">
-                  <form action="<?php echo base_url ('index.php/Dashboard/tambahArticleDB');?>" 
+                  <form action="<?php echo base_url ('index.php/Dashboard/updateArticleDB/'). $result->idArtikel;?>" 
                     method="POST" id="formArtikel">
                     <input type="hidden" name="tglArtikel" value="<?php 
                   date_default_timezone_set('Asia/Jakarta');
