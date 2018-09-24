@@ -30,7 +30,7 @@
               <h2>Foto Proyek:</h2>
             </div>
             
-            <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>">
+            <img src="<?php echo base_url('asset/assets/image/petani/') . $row->foto;?>">
             
           </div>
           <div class=" col-lg-3 col-md-5 col-sm-10 descProdukDetail">

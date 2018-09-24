@@ -42,7 +42,19 @@ class Auth extends CI_Controller {
         $username = $this->input->post('account');    
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
-        $data = array(
+        $user_level = $this->input->post('user_level');
+        if($this->input->post('user_level') == 2) {
+			$data = array(
+        'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
+        'idKoperasi' => $this->input->post('account'),
+		'passKoperasi' => $enc_password,
+        'noHP' => $this->input->post('phone'),
+        'email' => $this->input->post('email'),
+        'user_level' => $this->input->post('user_level'),
+         );
+            $this->model->Insert('koperasi', $data);
+		}
+		$data = array(
         'namaDepan' => $this->input->post('firstname'),
         'namaBelakang' => $this->input->post('lastname'),
         'namaAkun' => $this->input->post('account'),
@@ -53,26 +65,10 @@ class Auth extends CI_Controller {
         'password' => $enc_password,
         'jk' => $this->input->post('JenisKelamin')
          );
-        if($this->input->post('user_level') == 0) {
-			$user = 'user';
-		} else if ($this->input->post('user_level') == 2) {
-			$user = 'koperasi';
-			$data = array(
-        'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
-        'idKoperasi' => $this->input->post('account'),
-		'passKoperasi' => $enc_password,
-        'noHP' => $this->input->post('phone'),
-        'email' => $this->input->post('email'),
-        'user_level' => $this->input->post('user_level'),
-        
-         );
-		} else if ($this->input->post('user_level') == 3) {
-			$user = 'user';	
-		}
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
-            $this->model->Insert($user, $data);
+            $this->model->Insert('user', $data);
             $val = $this->Autentikasi_model->validates($username);
             $fullname = $val[0]['namaDepan']+" "+$val[0]['namaBelakang'];
             $name  = $val[0]['namaAkun'];
