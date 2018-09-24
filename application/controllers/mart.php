@@ -86,7 +86,6 @@ class Mart extends CI_Controller {
 			   'total' => $this->cart->total(),
 			   'alamatTujuan' => $this->input->post('alamat'),
 			   'status' => 0,
-			   'tglTrans' => $this->cart_model->curdate()->result(),
 			   'catatan' => "hello"
 			);
 		$this->market->insert('transaksi',$data);
@@ -107,7 +106,6 @@ class Mart extends CI_Controller {
 			$data = array (
 			'jumlah' => $jumBeli,
 			'total' => $totalBeli,
-			'tglTrans' => $this->cart_model->curdate()->result()
 			);
 			$this->cart_model->updateTrans($where,$data);
 		}		
