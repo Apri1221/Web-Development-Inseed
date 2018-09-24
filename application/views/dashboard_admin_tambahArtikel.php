@@ -1,6 +1,6 @@
 <html>
   <head>
-    
+    <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
     <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
     <script type='text/javascript'>
@@ -75,6 +75,9 @@
                     <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 40%;">Simpan</button>
                     
                   </form>
+                  <script>
+                    CKEDITOR.replace( 'isiArtikel' );
+                  </script>
                 </div>
                 
               </div>
