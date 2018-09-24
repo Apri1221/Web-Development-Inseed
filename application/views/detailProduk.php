@@ -45,15 +45,7 @@
                   </div>
                 </div>
               </div>
-              <?php
-                foreach ($detail as $a) :
-              ?>
-              <a href="<?=base_url()?>index.php/cart/add_to_cart/<?php echo $a->idProduk?>" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
-                
-                <i class="fas fa-money-bill-alt"></i> Beli Sekarang
-              </a>
-              <?php endforeach; ?>
-              <input type="submit" value="Tambah ke Cart" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
+              <input type="submit" value="Beli Sekarang" name="beli" class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;">
               </input>
             </form>
             <?php } ?>
