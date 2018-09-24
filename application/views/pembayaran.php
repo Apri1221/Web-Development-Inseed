@@ -37,7 +37,7 @@
               <div class="col-xl-12 col-md-12 kontenDetail">
                 
                 <h5>DETAIL PROYEK</h5>
-                <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>" >
+                <img src="<?php echo base_url('asset/assets/image/petani/') . $row->foto;?>" >
                 <h6 style="font-weight: bold;"><?php echo $row->namaProyek;?></h6>
                 <h6>Ekpektasi Keuntungan: <b><?php echo $row->ekspUntung;?> % - <?php getpersentase($row->lokasi, $row->ekspUntung); ?> %</b></h6>
                 <h6>Penanggung Jawab: <b><?php echo $row->penanggungJawab;?></b></h6>
