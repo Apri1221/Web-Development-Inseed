@@ -25,7 +25,7 @@
               <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaArticle');?>""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Kelola Article</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/adminkelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
-              <a href="<?php echo base_url ('index.php/Dashboard/adminKomplain'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Laporkan Komplain</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/adminKomplain'); ?>"> <li class="list-group-item"><i class="glyphicon glyphicon-search"></i>Laporkan Komplain</li></a>
             </div>
             
           </ul>
