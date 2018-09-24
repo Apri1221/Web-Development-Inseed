@@ -86,5 +86,13 @@ class Model extends CI_Model{
         $this->db->delete('komplain');
     }
 
+    public function transaksi($idTransaksi) {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('idTransaksi', $idTransaksi);
+        $query = $this->db->get();
+        return $query->result();
+    }   
+
 }
 ?>

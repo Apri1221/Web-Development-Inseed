@@ -58,7 +58,7 @@ class Mart extends CI_Controller {
 
 	public function bayar (){
 		if ($this->session->userdata('username')!== NULL){
-		$this->load->view('pembayaran_produk');
+			$this->load->view('pembayaran_produk');
 		}
 		else {
 			$this->load->library('user_agent');
@@ -111,9 +111,9 @@ class Mart extends CI_Controller {
 			$this->cart_model->updateTrans($where,$data);
 			$this->cart_model->curdate($where);
 		
-		}		
+		}
 		$this->cart->destroy();
-		$this->load->view('thanks_purchase');
+		$this->load->view('thanks_purchase', $where);
 	}
 
 	public function addCart($id){

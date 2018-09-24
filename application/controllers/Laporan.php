@@ -32,7 +32,7 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(130, 5, 'Jl. MT. Haryono',0,0);
 		$pdf->Cell(59, 5, '',0,1);
 
-		$pdf->Cell(113, 5, 'Malang, Indonesia, 65145',0,0);
+		$pdf->Cell(130, 5, 'Malang, Indonesia, 65145',0,0);
 		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
@@ -112,12 +112,13 @@ class Laporan extends CI_Controller {
 	}
 
 	public function produk() {
+		$id = $this->uri->segment(3);
+		$this->load->model('model');
+		$data = $this->model->transaksi($id);
+		date_default_timezone_set('Asia/Jakarta');
+        $tglTarik = date("d-m-Y");  
+		
 		$username = $this->session->userdata('username');
-		$bank = $this->session->userdata('bank');
-		$nominal = $this->session->userdata('nominal');
-		$tglTarik = $this->session->userdata('tglTarik');
-		$noRek = $this->session->userdata('noRek');
-		$saldo = $this->session->userdata('saldo');
 
 		$pdf = new FPDF('p','mm','A4');
 
@@ -133,7 +134,7 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(130, 5, 'Jl. MT. Haryono',0,0);
 		$pdf->Cell(59, 5, '',0,1);
 
-		$pdf->Cell(113, 5, 'Malang, Indonesia, 65145',0,0);
+		$pdf->Cell(130, 5, 'Malang, Indonesia, 65145',0,0);
 		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
@@ -145,15 +146,19 @@ class Laporan extends CI_Controller {
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(20,6,'BANK',1,0);
-        $pdf->Cell(55,6,'Nomor Rekening',1,0);
-        $pdf->Cell(37,6,'Jumlah Penarikan',1,0);
-        $pdf->Cell(35,6,'Sisa Saldo',1,1);
+        $pdf->Cell(35,6,'idTransaksi',1,0);
+        $pdf->Cell(40,6,'Nama Penjual',1,0);
+        $pdf->Cell(40,6,'Alamat Tujuan',1,0);
+        $pdf->Cell(25,6,'Tgl Trsksi',1,0);
+        $pdf->Cell(30,6,'Total',1,0);
         $pdf->SetFont('Arial','',10);
-        $pdf->Cell(20,6,"$bank",1,0);
-        $pdf->Cell(55,6,"$noRek",1,0);
-        $pdf->Cell(37,6,"$nominal",1,0);
-        $pdf->Cell(35,6,"$saldo",1,1);
+        foreach ($data as $row){
+	        $pdf->Cell(35,6,"$row->id",1,0);
+	        $pdf->Cell(40,6,"$row->namaPenjual",1,0);
+	        $pdf->Cell(40,6,"$row->alamatTujuan",1,0);
+	        $pdf->Cell(20,6,"$row->tglTransaksi",1,0);
+	        $pdf->Cell(30,6,"$row->total",1,0);
+	    }
         // $mahasiswa = $this->db->get('mahasiswa')->result();
         // foreach ($mahasiswa as $row){
         //     $pdf->Cell(20,6,$row->nim,1,0);
