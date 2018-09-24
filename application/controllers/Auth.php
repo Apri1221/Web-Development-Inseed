@@ -53,11 +53,25 @@ class Auth extends CI_Controller {
         'password' => $enc_password,
         'jk' => $this->input->post('JenisKelamin')
          );
-        
+        if($this->input->post('user_level') == 0) {
+			$user = 'user';
+		} else if ($this->input->post('user_level') == 2) {
+			$user = 'koperasi';
+			$data = array(
+        'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
+        'namaAkun' => $this->input->post('account'),
+        'noHP' => $this->input->post('phone'),
+        'email' => $this->input->post('email'),
+        'user_level' => $this->input->post('user_level'),
+        'passKoperasi' => $enc_password
+         );
+		} else if ($this->input->post('user_level') == 1) {
+			$user = 'user';	
+		}
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
-            $this->model->Insert('user', $data);
+            $this->model->Insert($user, $data);
             $val = $this->Autentikasi_model->validates($username);
             $fullname = $val[0]['namaDepan']+" "+$val[0]['namaBelakang'];
             $name  = $val[0]['namaAkun'];
