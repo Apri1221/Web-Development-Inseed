@@ -20,7 +20,7 @@
             <div class="alert alert-success">
               <h4>Data tersimpan! <br>Terima kasih sudah melakukan pendaftaran akun di inseed.id<br></h4>
             </div>
-            <p style="text-align: justify;">Cek email anda dan klik pada link yang kami berikan untuk melakukan <a href="<?=base_url()?>index.php/dashboard/index/">Di sini</a><br><br><br> </p>
+            <p style="text-align: justify;">Cek email anda dan klik pada link yang kami berikan untuk melakukan verifikasi akun anda.<br><br><br> </p>
           </form>
         </div>
       </div>
