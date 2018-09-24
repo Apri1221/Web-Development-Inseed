@@ -194,7 +194,7 @@ class Dashboard extends CI_Controller {
             $data['detail'] = $this->market->getJualan($username);
 			
 			$items = $this->cart->contents();
-            $this->load->view("dashboard_user_pesanan", $data,$items);
+            $this->load->view("dashboard_UMKM_pesanan", $data,$items);
         } else {
             $this->load->view('masuk');
         }
