@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
-    <title>inseed.id - Seaweed Invest</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
-    <script src="<?php echo base_url('asset/css/jcarousel.responsive.js');?>"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('asset/css/jquery.jcarousel.min.js');?>"></script>
-    <script src="js/jquery.jcarousel.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <title>inseed.id - Seaweed Mart</title>
+    <?php include_once("template/header.php"); ?>
   </head>
   <body>
     <?php include_once("template/navbar.php"); ?>

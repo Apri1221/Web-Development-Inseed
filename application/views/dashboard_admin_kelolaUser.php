@@ -10,7 +10,7 @@
     
     <!-- ISI NAVBAR DISINI YA!!!! -->
     <?php include_once("template/navbar.php"); ?>
-    <section id="headerDashboard">
+    <section id="">
       <div class="col-md-12">
         
       </div>

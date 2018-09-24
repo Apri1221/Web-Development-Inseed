@@ -4,6 +4,7 @@
     <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
     <?php include_once("template/header.php"); ?>
     <title>inseed.id - Dashboard</title>
+    
     <script type='text/javascript'>
     function preview_image(event)
     {
