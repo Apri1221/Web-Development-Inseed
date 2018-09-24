@@ -108,26 +108,37 @@ class Auth extends CI_Controller {
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
-
+			$this->load->library('upload');
+        $this->load->helper('url');
+		$config['upload_path'] = './asset/assets/image/user/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['profilePicture']['name'])){
+            if ($this->upload->do_upload('profilePicture')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./asset/assets/image/user/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= FALSE;
+                $config['quality']= '50%';
+                $config['width']= 600;
+                $config['height']= 400;
+                $config['new_image']= './asset/assets/image/user/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $gambar=$gbr['file_name'];
+		}}
             $data = array(
                 'namaAkun' => $this->input->post('account'),
                 'noHP' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'password' => $enc_password,
-                'foto' => '0'
+                'foto' => $gambar
             );
-
             $this->model->update_data($username1, $data, 'user');
-            
-            // manajemen file
-            $config['upload_path']='./assets/image/member';
-            $config['allowed_types']='jpg|png|jpeg';
-            $config['max_size'] = '1024';
-            $config['file_name'] = $username.'.jpg';
-            $this->load->library('upload',$config);
-            $this->upload->do_upload('file_name');
-            $up_file_name=$this->upload->data();
-
             // disini auto set session
             $val = $this->Autentikasi_model->validates($username);
             $name  = $val[0]['namaAkun'];
