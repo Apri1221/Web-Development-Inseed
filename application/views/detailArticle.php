@@ -35,7 +35,19 @@
           <div class="card">
             <div class="card-body row">
               <div class="col-md-3">
-                <img src='<?php echo base_url("asset/assets/image/member/($var->namaAkun).jpg"); ?>' style="max-width: 80px; height: auto;">
+                <img <?php if($result->foto === null || $result->foto == '' || $result->foto == 0): ?>
+                    src="
+                    <?php 
+                      $jk = $result->jk;
+                      if($jk == 'Pria'){
+                        echo base_url ('asset/assets/image/boy.png');
+                      } else if($jk == 'Wanita') {
+                        echo base_url ('asset/assets/image/girl.png');
+                      }
+                    ?>" 
+                    <?php else: ?>
+                    src="<?php echo base_url('asset/assets/image/user/') . $result->foto;?>" 
+                  <?php endif; ?> style="max-width: 80px; height: auto;">
               </div>
               <div class="col-md-9" style="text-align: justify;">
                 <p><?php echo $var->isiKomentar ?></p>
