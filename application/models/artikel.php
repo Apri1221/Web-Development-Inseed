@@ -47,9 +47,9 @@ class Artikel extends CI_Model
     public function getKomentarById($idArtikel){
         $this->db->select('*');
         $this->db->from('komentar');
-        $this->db->where('idArtikel',$idArtikel);
+        $this->db->join('user', 'user.namaAkun = komentar.namaAkun', 'inner');
         $query = $this->db->get();
-        return $query->row();
+        return $query->result();
     }
 }
 ?>

@@ -31,25 +31,25 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
           <hr class="my-4">
+          <?php foreach ($result2 as $var):?>
           <div class="card">
             <div class="card-body row">
               <div class="col-md-3">
-                <img src="<?php echo base_url('asset/assets/image/jul.jpg'); ?>" style="max-width: 80px; height: auto;">
+                <img src="<?php echo $var->foto; ?>" style="max-width: 80px; height: auto;">
               </div>
               <div class="col-md-9" style="text-align: justify;">
-                <p><?php echo $result->isiKomentar; ?></p>
-              <footer class="blockquote-footer"><?php echo $result->namaAkun; ?></footer>
+                <p><?php echo $var->isiKomentar ?></p>
+              <footer class="blockquote-footer"><?php echo $var->namaAkun ?> , <?php echo date("d-m-20y",strtotime($var->tglKomentar)); ?></footer>
             </div>
-            
           </div>
-          
-          
         </div>
+        <br>
+        <?php endforeach; ?>
       </div>
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
           <hr class="my-4">
-          <form action="#" method="POST" id="formArtikel">
+          <form action="<?=base_url()?>index.php/article/tambahKomentar/<?php echo $var->idArtikel; ?>" method="POST" id="formArtikel">
             <input type="hidden" name="namaAkun" value="<?php echo $this->session->userdata('username'); ?>">
             <input type="hidden" name="tglKomentar" value="
               <?php 
