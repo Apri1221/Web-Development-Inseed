@@ -29,25 +29,24 @@
       <div class="row">
         <div class="col-md-3" >
           <ul class="list-group menuDashboard" >
-
             <li class="list-group-item judulMenuDashboard" 
             <?php if($this->session->userdata('level') === '0'):?>
                 style="background-color: green;">USER DASHBOARD</li>
                 <div id="sidebarUser">
-                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item <?php if($this->uri->segment(2)=="Dashboard" || $this->uri->segment(2)=="dashboard"){echo " active";}?>"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item <?php if($this->uri->segment(2)=="pesanan"){echo " active";}?>"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item <?php if($this->uri->segment(2)=="Komplain" || $this->uri->segment(2)=="komplain"){echo " active";}?>"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
                 </div>      
             <?php elseif($this->session->userdata('level') === '2'):?>
                 style="background-color: #167c85;">KOPERASI DASHBOARD</li>
                 <!-- koperasi -->
                 <div id="sidebarKoperasi">
-                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/kelolaProyek'); ?>"> <li class="list-group-item"><i class="fas fa-project-diagram"></i>Kelola Proyek</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item <?php if($this->uri->segment(2)=="Komplain" || $this->uri->segment(2)=="komplain"){echo " active";}?>"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
                 </div>
             <?php elseif($this->session->userdata('level') === '3'):?>
                 style="background-color: #12a8bb;">UMKM DASHBOARD</li>
@@ -55,8 +54,9 @@
                 <div id="sidebarUMKM">
                   <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/tambahProduk');?>"> <li class="list-group-item"><i class="fa fa-plus"></i>Tambah Produk</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Produk</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item <?php if($this->uri->segment(2)=="Komplain" || $this->uri->segment(2)=="komplain"){echo " active";}?>"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Produk</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item"><i class="fa fa-box-open"></i>Kelola Pesanan</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item active"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
                 </div>
             <?php endif;?>
             
