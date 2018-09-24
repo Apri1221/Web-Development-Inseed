@@ -41,11 +41,10 @@ class Dashboard extends CI_Controller {
         $this->load->model('artikel');
         $username = $this->session->userdata('username');
         $data = array(
-            'judulKomplain' => $this->input->post('judulArtikel'),
-            'isiKomplain' => $this->input->post('isiArtikel'),
+            'judulKomplain' => $this->input->post('judulKomplain'),
+            'isiKomplain' => $this->input->post('isiKomplain'),
             'namaAkun' => $username,
             'tglKomplain' => $this->input->post('tglKomplain'),
-            'fotoArtikel' => '', //ini untuk upload foto artikel
          );
         // ngecek apakah udah ada username yang sama
         $this->artikel->Insert('komplain', $data);
