@@ -73,8 +73,17 @@ class Model extends CI_Model{
         $this->db->delete('user');
     }
 
-
+    public function select() {
+        $this->db->select('*');
+        $this->db->from('komplain');
+        $query = $this->db->get();
+        return $query->result();
+    }    
 	
+    public function deleteKomplain($idKomplain){
+        $this->db->where('idKomplain', $idKomplain);
+        $this->db->delete('komplain');
+    }
 
 }
 ?>
