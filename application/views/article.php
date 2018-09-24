@@ -57,26 +57,26 @@
             <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12" >
               
               <div class="row berita">
-                <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xl-5 col-md-12 col-sm-12 col-xs-12">
                   <img src="<?php echo base_url('asset/assets/image/produk/produk1.jpg'); ?>" >
                 </div>
-                <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
+                <div class="col-xl-6 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6> Harga Rumput Laut Melonjak!</h6>
                 </div>
               </div>
               <div class="row berita">
-                <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xl-5 col-md-12 col-sm-12 col-xs-12">
                   <img src="<?php echo base_url('asset/assets/image/petani/petani2.jpg'); ?>" >
                 </div>
-                <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
+                <div class="col-xl-6 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6> Rumput laut demi Indonesia</h6>
                 </div>
               </div>
               <div class="row berita">
-                <div class="col-xl-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-xl-5 col-md-12 col-sm-12 col-xs-12">
                   <img src="<?php echo base_url('asset/assets/image/produk/produk3.jpg'); ?>" >
                 </div>
-                <div class="col-xl-7 col-md-11 col-sm-12 col-xs-12 judul" >
+                <div class="col-xl-6 col-md-11 col-sm-12 col-xs-12 judul" >
                   <h6>Rumput Laut Sebagai Bahan Bakar Nabati Masa depan</h6>
                 </div>
               </div>

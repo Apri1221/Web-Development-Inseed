@@ -441,7 +441,7 @@ color: white; text-align: center; margin-top: 4%;
 }
 
 .topArticle{
-  padding: 25px; border:1px black; border-radius: 25px; margin-left: 2%; text-align: center;
+  padding: 25px; border:1px black; border-radius: 25px; margin-left: 2%; text-align: justify;
   box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
