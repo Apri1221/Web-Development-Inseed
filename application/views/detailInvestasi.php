@@ -44,6 +44,7 @@
             <h5>Waktu pengerjaan proyek: <br>
             <span>
               <?php
+              date_default_timezone_set('Asia/Jakarta');
               echo date("d-m-20y",strtotime($row->startProjek)). "  ~  " .date("d-m-20y",strtotime($row->endProjek));
               ?>
             </span>
@@ -62,7 +63,7 @@
               date_default_timezone_set('Asia/Jakarta');
               $dateSkrng = time(); 
               $dateEnd = strtotime($row->endProjek);
-              $datediff = $dateEnd - $dateSkrng;
+              $datediff = $dateStart - $dateSkrng;
               echo round($datediff / (60 * 60 * 24)); ?> 
 
             hari</span></p>

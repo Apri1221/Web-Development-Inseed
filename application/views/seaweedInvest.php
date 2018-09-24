@@ -46,7 +46,12 @@
                     <?php getpersentase($a->lokasi, $a->ekspUntung);
                     ?> %
                   </span></p>
-                  <p class="card-text ">Lama Proyek : <br> <span><?php echo $a->lamaProyek?> Hari</span></p>
+                  <p class="card-text ">Lama Proyek : <br> <span><?php
+                  date_default_timezone_set('Asia/Jakarta');
+                  $dateStart = strtotime($a->startProjek); 
+                  $dateEnd = strtotime($a->endProjek);
+                  $datediff = $dateEnd - $dateStart;
+                  echo round($datediff / (60 * 60 * 24)); ?>  Hari</span></p>
                   <p class="card-text ">Penanggung Jawab :<br> <span><?php echo $a->penanggungJawab?></span></p>
                   <p class="card-text ">Lokasi : <br><span><?php echo $a->lokasi?></span></p>
                   <div class="bagianDanaInvest" style="">
@@ -62,7 +67,7 @@
                       date_default_timezone_set('Asia/Jakarta');
                       $dateSkrng = time(); 
                       $dateEnd = strtotime($a->endProjek);
-                      $datediff = $dateEnd - $dateSkrng;
+                      $datediff = $dateStart - $dateSkrng;
                       echo round($datediff / (60 * 60 * 24)); ?> 
                      Hari</span></p>
                     <a href="<?=base_url()?>index.php/invest/detail/<?php echo $a->idProyek?>" class="btn btn-info buttonProdukInvest">Lihat Proyek</a>
