@@ -18,7 +18,7 @@
               <h2>Foto Produk:</h2>
             </div>
             
-            <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
+            <img src="<?php echo base_url('asset/assets/image/produk/') . $a->foto;?>">
             
           </div>
           <div class=" col-lg-3 col-md-5 col-sm-11 descProdukDetail">

@@ -77,7 +77,6 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
-                  
                   <img id="profilePicture" 
                   <?php if($result->foto === null): ?>
                     src="
@@ -90,11 +89,11 @@
                       }
                     ?>" 
                     <?php else: ?>
-                    src="$result->foto" 
+                    src="<?php echo base_url('asset/assets/image/user/') . $result->foto;?>" 
                   <?php endif; ?>
                     class="profilePictureDashboard">
-             
-                  <form action="<?=base_url()?>index.php/auth/update" method="POST">
+
+                  <form action="<?=base_url()?>index.php/auth/update/" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
     
                     <div class="upload-btn-wrapper">

@@ -42,7 +42,19 @@ class Auth extends CI_Controller {
         $username = $this->input->post('account');    
         $password = $this->input->post('pw1');
         $enc_password = md5($password);
-        $data = array(
+        $user_level = $this->input->post('user_level');
+        if($this->input->post('user_level') == 2) {
+			$data = array(
+        'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
+        'idKoperasi' => $this->input->post('account'),
+		'passKoperasi' => $enc_password,
+        'noHP' => $this->input->post('phone'),
+        'email' => $this->input->post('email'),
+        'user_level' => $this->input->post('user_level'),
+         );
+            $this->model->Insert('koperasi', $data);
+		}
+		$data = array(
         'namaDepan' => $this->input->post('firstname'),
         'namaBelakang' => $this->input->post('lastname'),
         'namaAkun' => $this->input->post('account'),
@@ -53,26 +65,10 @@ class Auth extends CI_Controller {
         'password' => $enc_password,
         'jk' => $this->input->post('JenisKelamin')
          );
-        if($this->input->post('user_level') == 0) {
-			$user = 'user';
-		} else if ($this->input->post('user_level') == 2) {
-			$user = 'koperasi';
-			$data = array(
-        'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
-        'idKoperasi' => $this->input->post('account'),
-		'passKoperasi' => $enc_password,
-        'noHP' => $this->input->post('phone'),
-        'email' => $this->input->post('email'),
-        'user_level' => $this->input->post('user_level'),
-        
-         );
-		} else if ($this->input->post('user_level') == 3) {
-			$user = 'user';	
-		}
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
-            $this->model->Insert($user, $data);
+            $this->model->Insert('user', $data);
             $val = $this->Autentikasi_model->validates($username);
             $fullname = $val[0]['namaDepan']+" "+$val[0]['namaBelakang'];
             $name  = $val[0]['namaAkun'];
@@ -108,26 +104,37 @@ class Auth extends CI_Controller {
         // ngecek apakah udah ada username yang sama
         $validate = $this->Autentikasi_model->validates($username);
         if(count($validate) === 0){
-
+			$this->load->library('upload');
+        $this->load->helper('url');
+		$config['upload_path'] = './asset/assets/image/user/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['profilePicture']['name'])){
+            if ($this->upload->do_upload('profilePicture')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./asset/assets/image/user/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= FALSE;
+                $config['quality']= '50%';
+                $config['width']= 600;
+                $config['height']= 400;
+                $config['new_image']= './asset/assets/image/user/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $gambar=$gbr['file_name'];
+		}}
             $data = array(
                 'namaAkun' => $this->input->post('account'),
                 'noHP' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'password' => $enc_password,
-                'foto' => '0'
+                'foto' => $gambar
             );
-
             $this->model->update_data($username1, $data, 'user');
-            
-            // manajemen file
-            $config['upload_path']='./assets/image/member';
-            $config['allowed_types']='jpg|png|jpeg';
-            $config['max_size'] = '1024';
-            $config['file_name'] = $username.'.jpg';
-            $this->load->library('upload',$config);
-            $this->upload->do_upload('file_name');
-            $up_file_name=$this->upload->data();
-
             // disini auto set session
             $val = $this->Autentikasi_model->validates($username);
             $name  = $val[0]['namaAkun'];
