@@ -78,7 +78,7 @@
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
                   <img id="profilePicture" 
-                  <?php if($result->foto === null): ?>
+                  <?php if($result->foto === null || $result->foto == '' || $result->foto == 0): ?>
                     src="
                     <?php 
                       $jk = $result->jk;
