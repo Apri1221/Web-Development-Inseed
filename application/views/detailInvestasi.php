@@ -62,7 +62,7 @@
               <?php
               date_default_timezone_set('Asia/Jakarta');
               $dateSkrng = time(); 
-              $dateEnd = strtotime($row->endProjek);
+              $dateStart = strtotime($row->startProjek);
               $datediff = $dateStart - $dateSkrng;
               echo round($datediff / (60 * 60 * 24)); ?> 
 
