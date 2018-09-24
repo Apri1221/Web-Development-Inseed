@@ -207,7 +207,15 @@ class Auth extends CI_Controller {
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
+            $this->load->library('user_agent');
+            // if (null === $this->agent->is_referral())
+            // {
+            if(null !== $this->agent->referrer()){
+                header("location:".$this->agent->referrer());
+            }else
             redirect('/dashboard');
+            // }
+            // redirect('/dashboard');
             // access login for admin
         } else {
 			

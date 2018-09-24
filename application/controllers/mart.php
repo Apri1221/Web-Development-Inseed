@@ -61,7 +61,9 @@ class Mart extends CI_Controller {
 		$this->load->view('pembayaran_produk');
 		}
 		else {
-            $this->load->view('masuk');
+			$this->load->library('user_agent');
+			$this->agent->referrer();
+            redirect('/auth/login');
         }		
 	}
 	public function thanks ($id,$rowid){

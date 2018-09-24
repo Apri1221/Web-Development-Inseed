@@ -28,7 +28,7 @@
               </select>
               
               <p style="text-align: justify;">Pastikan data anda dan nomor rekening tujuan yang anda pilih sudah benar.</p>
-              <button type="submit" class="btn btn-outline-success" style="padding: 2% 10%; margin: 2% 0">KONFIRMASI</button>
+              <button type="submit" class="btn btn-outline-success" style="padding: 1% 8%; margin: 2% 0">KONFIRMASI</button>
             </form>
           </div>
           <div class="col-xl-4 col-md-4 proyekPembayaran">

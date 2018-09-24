@@ -47,6 +47,8 @@ class Invest extends CI_Controller {
 	{
 		$where = array('idProyek' => $id);
 		$data['detail'] = $this->investasi->lihatDetail($where,'proyek')->result();
+		$this->load->library('user_agent');
+		$this->agent->referrer();
 		$this->load->view('detailInvestasi',$data);
 	}
 	public function sortir($based)
