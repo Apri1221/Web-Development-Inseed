@@ -62,3 +62,4 @@ function curdate() {
 	return $this->db->query($SQL);
 
 }
+}
