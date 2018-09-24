@@ -35,7 +35,7 @@
           <div class="card">
             <div class="card-body row">
               <div class="col-md-3">
-                <img src="<?php echo $var->foto; ?>" style="max-width: 80px; height: auto;">
+                <img src='<?php echo base_url("asset/assets/image/member/($var->namaAkun).jpg"); ?>' style="max-width: 80px; height: auto;">
               </div>
               <div class="col-md-9" style="text-align: justify;">
                 <p><?php echo $var->isiKomentar ?></p>
@@ -57,7 +57,7 @@
                   $date = date("Y-m-d");  
                   echo $date; ?>">
             <h6>Berikan Komentar anda:</h6>
-            <textarea name="isiKomentar" form="formArtikel" class="form-control"></textarea>
+            <textarea name="isiKomentar" form="formArtikel" placeholder="Bijaklah berkomentar, soalnya ga boleh dihapus loo" class="form-control"></textarea>
             <br>
             
             <div class="upload-btn-wrapper">
