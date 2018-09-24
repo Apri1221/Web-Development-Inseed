@@ -57,9 +57,9 @@ class Cart_model extends CI_Model{
 		$this->db->where($where);
 		$this->db->update('transaksi',$data);	
 	}
-function curdate() {
-	$SQL="SELECT CURRENT_TIMESTAMP";
-	return $this->db->query($SQL);
-
+	function curdate($where) {
+		$this->db->where($where);
+		$this->db->set('tglTrans', date('Y-m-d H:i:s'));
+		$this->db->update('transaksi');
 }
 }

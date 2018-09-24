@@ -89,6 +89,7 @@ class Mart extends CI_Controller {
 			   'catatan' => "hello"
 			);
 		$this->market->insert('transaksi',$data);
+		$this->cart_model->curdate($where);
 		}
 		else {
 			$where = array (
@@ -108,6 +109,8 @@ class Mart extends CI_Controller {
 			'total' => $totalBeli,
 			);
 			$this->cart_model->updateTrans($where,$data);
+			$this->cart_model->curdate($where);
+		
 		}		
 		$this->cart->destroy();
 		$this->load->view('thanks_purchase');
