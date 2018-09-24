@@ -61,7 +61,7 @@ class Dashboard extends CI_Controller {
         $this->load->model('model');
         $idKomplain = $this->uri->segment(3);
         $this->model->deleteKomplain($idKomplain);
-        $this->index();
+        redirect('/dashboard/adminKomplain');
     }
 
     public function adminDeleteUser() {
