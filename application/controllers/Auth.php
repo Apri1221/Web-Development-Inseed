@@ -66,7 +66,7 @@ class Auth extends CI_Controller {
         'user_level' => $this->input->post('user_level'),
         
          );
-		} else if ($this->input->post('user_level') == 1) {
+		} else if ($this->input->post('user_level') == 3) {
 			$user = 'user';	
 		}
         // ngecek apakah udah ada username yang sama

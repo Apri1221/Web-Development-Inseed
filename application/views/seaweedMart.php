@@ -42,7 +42,7 @@
             ?>
             <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
               <div class="card cardProduk" style="height: 500px;">
-                <a href="<?php echo base_url();?>index.php/mart/detail/<?php echo $row->idProduk; ?>"><img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>"></a>
+                <a href="<?php echo base_url();?>index.php/mart/detail/<?php echo $row->idProduk; ?>"><img class="card-img-top fotoProduk" src="<?php echo base_url('asset/assets/image/produk/') . $row->foto;?>"></a>
                 <div class="card-body" style="text-align: center;">
                   <h5 class="card-title judulProduk"><?php echo $row->namaProduk; ?></h5>
                   <p class="card-text "><i class="fas fa-store" ></i><span ><?php echo $row->idPenjual; ?></span></p>

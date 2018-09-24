@@ -41,10 +41,11 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col-md-4 editProdukUMKM" style="text-align: center;">
-                  <img src="assets/image/produk/produk1.jpg">
+				<?php foreach ($result as $row) : ?>
+                  <img src="<?php echo base_url('asset/assets/image/produk/') . $row->foto;?>">
                   
-					<?php foreach ($result as $row) : ?>
-                  <form action="<?php echo base_url()."index.php/dashboard/updateproduk/" . $row->idProduk?>" method="POST">
+					
+                  <form action="<?php echo base_url()."index.php/dashboard/updateproduk/" . $row->idProduk?>" method="POST" enctype="multipart/form-data">
                     <br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Ganti gambar</button>

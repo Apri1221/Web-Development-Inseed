@@ -372,6 +372,30 @@ class Dashboard extends CI_Controller {
 
 	public function uploadProduk(){
 		$this->load->model('produk');
+		$this->load->library('upload');
+        $this->load->helper('url');
+		$config['upload_path'] = './asset/assets/image/produk/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['profilePicture']['name'])){
+ 
+            if ($this->upload->do_upload('profilePicture')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./asset/assets/image/produk/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= FALSE;
+                $config['quality']= '50%';
+                $config['width']= 600;
+                $config['height']= 400;
+                $config['new_image']= './asset/assets/image/produk/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $gambar=$gbr['file_name'];
+		}}
 		 $val = $this->produk->getId();
 		 $val++;
         $data = array(
@@ -382,7 +406,8 @@ class Dashboard extends CI_Controller {
         'stok' => $this->input->post('stokProduk'),
         'rating' => 0,
         'detail' => $this->input->post('detailProduk'),
-        'berat' => 1
+        'berat' => 1,
+		'foto' => $gambar
          );
 		 $this->produk->insertProduk('produk', $data);
 		 $this->produk();
@@ -390,13 +415,37 @@ class Dashboard extends CI_Controller {
 	}
 
 	function updateproduk ($id) {
+		$this->load->library('upload');
+        $this->load->helper('url');
+		$config['upload_path'] = './asset/assets/image/produk/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['profilePicture']['name'])){
+            if ($this->upload->do_upload('profilePicture')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./asset/assets/image/produk/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= FALSE;
+                $config['quality']= '50%';
+                $config['width']= 600;
+                $config['height']= 400;
+                $config['new_image']= './asset/assets/image/produk/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $gambar=$gbr['file_name'];
+		}}
 		$data = array (
 		'idProduk' => $id,
 		'namaProduk' => $this->input->post('namaProduk'),
 		'hargaProduk' => $this->input->post('hargaProduk'),
 		'stok' => $this->input->post('stok'),
 		'idProduk' => $this->input->post('idProduk'),
-		'detail' => $this->input->post('detail')
+		'detail' => $this->input->post('detail'),
+		'foto' => $gambar
 		);
 		$this->load->model('produk');
 		$this->produk->update('produk',$id,$data);
