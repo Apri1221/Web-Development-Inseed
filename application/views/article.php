@@ -93,7 +93,7 @@
             <a href="#" class="jcarousel-control-next">&rsaquo;</a>
             <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
             <hr class="col-lg-12 col-xs-12 separator-multi-item">
-            <div class="jcarousel">
+            <div class="jcarousel"  style="margin-bottom: 10%;">
               <ul style="padding-top: 4%;">
                 <li>
                   <img class="artikelTerbaru" src="<?php echo base_url('asset/assets/image/rumput-laut.jpg'); ?>" alt="Image 1">
