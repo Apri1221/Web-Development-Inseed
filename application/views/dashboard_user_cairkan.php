@@ -69,7 +69,7 @@
               <div class="row">
                 <div class="col-md-5" style="text-align: center;">
                   <h5 style="margin-top: 20%;">Saldo Anda: <span>Rp <?php echo $result->saldo; ?>,-</span></h5>
-                  <?php if($result->saldo == '0'): ?>
+                  <?php if($result->saldo <= 100000): ?>
                     <p>Waduh kamu butuh pemasukan, kami akan bantu!</p>
                     <br>
                     <a href="<?php echo base_url ('index.php/Invest'); ?>" class="shiny-btn" >Klik Disini</a>

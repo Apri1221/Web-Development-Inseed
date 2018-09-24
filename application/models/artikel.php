@@ -43,5 +43,13 @@ class Artikel extends CI_Model
         $this->db->where('idArtikel', $id);
         $this->db->delete('artikel');
     }
+
+    public function getKomentarById($idArtikel){
+        $this->db->select('*');
+        $this->db->from('komentar');
+        $this->db->where('idArtikel',$idArtikel);
+        $query = $this->db->get();
+        return $query->row();
+    }
 }
 ?>
