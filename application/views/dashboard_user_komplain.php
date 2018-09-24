@@ -37,7 +37,7 @@
                   <a href="<?php echo base_url ('index.php/Dashboard/cairkan'); ?>"> <li class="list-group-item"><i class="fas fa-money-bill"></i>Cairkan Dana</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item <?php if($this->uri->segment(2)=="pesanan"){echo " active";}?>"><i class="fas fa-file-invoice" ></i>Kelola Pesanan</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/investasi');?>"> <li class="list-group-item"><i class="far fa-file-alt" ></i>Kelola Investasi</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item active"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
                 </div>      
             <?php elseif($this->session->userdata('level') === '2'):?>
                 style="background-color: #167c85;">KOPERASI DASHBOARD</li>
@@ -82,7 +82,7 @@
                     <input type="text" name="judulKomplain" class="form-control">
                     
                     <br>
-                    <h6>Isi Artikel:</h6>
+                    <h6>Isi Komplain:</h6>
                     <textarea name="isiKomplain" form="formArtikel" class="form-control"></textarea>
                     <br>
                     <br>
