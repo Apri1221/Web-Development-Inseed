@@ -17,9 +17,9 @@ class Dashboard extends CI_Controller {
 	public function index(){
         if($this->session->userdata('level') !== null){
             if($this->session->userdata('level') === '1'){
-                 $this->load->helper('url');
-        $data['result'] = $this->Model->ambilDataUser();
-        $this->load->view('dashboard_admin_kelolaUser', $data);  
+                $this->load->helper('url');
+                $data['result'] = $this->Model->ambilDataUser();
+                $this->load->view('dashboard_admin_kelolaUser', $data);  
             }
             else{
                 $username = $this->session->userdata('username');
