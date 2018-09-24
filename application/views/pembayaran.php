@@ -3,6 +3,7 @@
   <head>
     <title>inseed.id - Pembayaran</title>
     <?php include_once("template/header.php"); ?>
+    <?php include_once("template/apri.php"); ?>
   </head>
   <body>
     <!-- ISI NAVBAR DISINI YA!!!! -->
@@ -38,7 +39,7 @@
                 <h5>DETAIL PROYEK</h5>
                 <img src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $row->foto ); ?>" >
                 <h6 style="font-weight: bold;"><?php echo $row->namaProyek;?></h6>
-                <h6>Ekpektasi Keuntungan: <b><?php echo $row->ekspUntung;?> %</b></h6>
+                <h6>Ekpektasi Keuntungan: <b><?php echo $row->ekspUntung;?> % - <?php getpersentase($row->lokasi, $row->ekspUntung); ?> %</b></h6>
                 <h6>Penanggung Jawab: <b><?php echo $row->penanggungJawab;?></b></h6>
                 <h6>Lokasi Proyek:<b> <?php echo $row->lokasi;?></b></h6>
                 <?php
