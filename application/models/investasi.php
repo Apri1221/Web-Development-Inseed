@@ -14,7 +14,11 @@ class Investasi extends CI_Model
         $this->db->limit($limit,$offset);
     }
     return $this->db->get('proyek');
-}
+	}
+	function update($table,$id,$data) {
+			$this->db->where('idProyek', $id);
+			$this->db->update($table, $data);
+	}	
 	function lihatDetail($where,$table){		
 	return $this->db->get_where($table,$where);
 	}

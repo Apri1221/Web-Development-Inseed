@@ -73,9 +73,9 @@ function preview_image(event)
             <div class="col-md-4 editProyekDashboard" style="text-align: center;">
               <img src="">
               
-              <form action="<?php echo base_url ('index.php/Dashboard/updateProyek'); ?>" method="POST">
+              <form action="<?php echo base_url ('index.php/Dashboard/updateProyek/') . $row->idProyek; ?>" method="POST" enctype="multipart/form-data">
                  <img id="profilePicture" 
-                  src="$result->foto" class="profilePictureDashboard">
+                  src="<?php echo base_url('asset/assets/image/petani/') . $row->foto;?>" class="profilePictureDashboard">
                 <br><br>
                 <div class="upload-btn-wrapper">
                   <button class="btn">Ganti gambar</button>
