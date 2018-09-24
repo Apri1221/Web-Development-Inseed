@@ -79,7 +79,7 @@
                 <div class="col-md-5" style="text-align: center;">
                   
                   <img id="profilePicture" 
-                  <?php if($result->foto === '0'): ?>
+                  <?php if($result->foto === null): ?>
                     src="
                     <?php 
                       $jk = $result->jk;
@@ -88,10 +88,11 @@
                       } else if($jk == 'Wanita') {
                         echo base_url ('asset/assets/image/girl.png');
                       }
-                    ?>" class="profilePictureDashboard">
+                    ?>" 
                     <?php else: ?>
-                  src="$result->foto" class="profilePictureDashboard">
+                    src="$result->foto" 
                   <?php endif; ?>
+                    class="profilePictureDashboard">
              
                   <form action="<?=base_url()?>index.php/auth/update" method="POST">
                     <input type="hidden" name="username1" value="<?php echo $this->session->userdata('username'); ?>">
