@@ -32,6 +32,26 @@ class Dashboard extends CI_Controller {
         }
     }
 
+    public function komplain() {
+        $this->load->view("dashboard_user_komplain");
+    }
+
+    public function tambahkomplainDB() {
+        $this->load->helper('url');
+        $this->load->model('artikel');
+        $username = $this->session->userdata('username');
+        $data = array(
+            'judulKomplain' => $this->input->post('judulKomplain'),
+            'isiKomplain' => $this->input->post('isiKomplain'),
+            'namaAkun' => $username,
+            'tglKomplain' => $this->input->post('tglKomplain'),
+         );
+        // ngecek apakah udah ada username yang sama
+        $this->artikel->Insert('komplain', $data);
+        redirect('/dashboard/komplain');
+    }
+
+
     public function adminDeleteUser() {
         $this->load->model('model');
         $namaAkun = $this->uri->segment(3);

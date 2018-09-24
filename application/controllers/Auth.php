@@ -170,6 +170,9 @@ class Auth extends CI_Controller {
     }
 
     public function login(){
+        if(null !== $this->session->userdata('username')){
+            redirect('/dashboard');
+        }
         $this->load->view('masuk');
     }
 
@@ -210,9 +213,9 @@ class Auth extends CI_Controller {
             $this->load->library('user_agent');
             // if (null === $this->agent->is_referral())
             // {
-            if(null !== $this->agent->referrer()){
+            if($this->agent->referrer()){
                 header("location:".$this->agent->referrer());
-            }else
+            } else
             redirect('/dashboard');
             // }
             // redirect('/dashboard');
@@ -272,6 +275,7 @@ class Auth extends CI_Controller {
     public function logout()
     {
         session_unset();
+        session_destroy();
         $this->session->sess_destroy();
 		$this->cart->destroy();
         redirect('auth/login');
