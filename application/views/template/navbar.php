@@ -15,9 +15,11 @@
             <li class="nav-item">
               <a class="nav-link" href="<?=base_url()?>index.php/invest">SEAWEED INVEST</a>
             </li>
+            <?php if($this->session->userdata('level') !== '2'):?>
             <li class="nav-item">
               <a class="nav-link" href="<?=base_url()?>index.php/mart">SEAWEED MART</a>
             </li>
+            <?php endif;?>
             <li class="nav-item">
               <a class="nav-link" href="<?=base_url()?>index.php/article">SEAWEED ARTIKEL</a>
             </li>
@@ -36,8 +38,10 @@
                 <div class="dropdown-menu dropdown-menu-right" style="background-color: #fcfffe;" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="<?=base_url()?>index.php/dashboard">Dashboard</a>
                   <div class="dropdown-divider"></div>
+                  <?php if($this->session->userdata('level') !== '2'):?>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/cart/show_cart">Cart</a>
                   <div class="dropdown-divider"></div>
+                  <?php endif; ?>
                   <a class="dropdown-item" href="<?=base_url()?>index.php/auth/logout">Keluar</a>
                 </div>
             </li>
