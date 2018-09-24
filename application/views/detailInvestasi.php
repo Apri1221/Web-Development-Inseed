@@ -37,9 +37,9 @@
             
             <h2><?php echo $row->namaProyek;?></h2>
             <h5>Mulai dari:<span > Rp 15.000</span></h5>
-            <h5>Lokasi Proyek: <span > <?php echo $row->lokasi;?></span></h5>
-            <h5>Ekspektasi Profit: <span style="font-size: 1.2rem;">  
-              <?php echo $row->ekspUntung; ?> %
+            <h5>Lokasi Proyek: <span > <br><?php echo $row->lokasi;?></span></h5>
+            <h5>Ekspektasi Profit: <br><span style="font-size: 1.3rem;">  
+              <?php echo $row->ekspUntung; ?> % - <?php getpersentase($row->lokasi, $row->ekspUntung); ?> %
             </span></h5>
             <h5>Waktu pengerjaan proyek: <br>
             <span>

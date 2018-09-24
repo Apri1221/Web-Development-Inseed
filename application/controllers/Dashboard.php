@@ -17,9 +17,9 @@ class Dashboard extends CI_Controller {
 	public function index(){
         if($this->session->userdata('level') !== null){
             if($this->session->userdata('level') === '1'){
-                 $this->load->helper('url');
-        $data['result'] = $this->Model->ambilDataUser();
-        $this->load->view('dashboard_admin_kelolaUser', $data);  
+                $this->load->helper('url');
+                $data['result'] = $this->Model->ambilDataUser();
+                $this->load->view('dashboard_admin_kelolaUser', $data);  
             }
             else{
                 $username = $this->session->userdata('username');
@@ -51,6 +51,18 @@ class Dashboard extends CI_Controller {
         redirect('/dashboard/komplain');
     }
 
+    public function adminKomplain() {
+        $this->load->helper('url');
+        $data['result'] = $this->Model->select();
+        $this->load->view("dashboard_admin_kelolaKomplain", $data);
+    }
+
+    public function adminSelesaiKomplain() {
+        $this->load->model('model');
+        $idKomplain = $this->uri->segment(3);
+        $this->model->deleteKomplain($idKomplain);
+        redirect('/dashboard/adminKomplain');
+    }
 
     public function adminDeleteUser() {
         $this->load->model('model');
@@ -134,7 +146,7 @@ class Dashboard extends CI_Controller {
 
 
     public function adminkelolaProyek(){
-       $data['result'] = $this->Model->ambilProyek()->result();
+        $data['result'] = $this->Model->ambilProyek()->result();
         $this->load->view("dashboard_admin_invest",$data);
 
     }

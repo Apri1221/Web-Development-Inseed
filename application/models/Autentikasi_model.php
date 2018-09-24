@@ -12,7 +12,7 @@ class Autentikasi_model extends CI_Model
         return $this->session->userdata('user_in');
     }
 
-    function validates($username,$table){
+    function validates($username){
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('namaAkun',$username);

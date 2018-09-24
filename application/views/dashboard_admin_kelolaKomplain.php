@@ -22,11 +22,11 @@
             <li class="list-group-item judulMenuDashboard" style="background-color: black;">ADMINISTRATOR</li>
             <!-- Admin-->
             <div id="sidebarAdmin" >
-              <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item active"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/');?>"> <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user"></i>Kelola Pengguna</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaArticle');?>""> <li class="list-group-item"><i class="fas fa-shopping-cart" ></i>Kelola Article</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/adminkelolaProyek');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Proyek</li></a>
               <a href="<?php echo base_url ('index.php/Dashboard/kelolaProduk');?>""> <li class="list-group-item"><i class="fas fa-dollar-sign" ></i>Kelola Produk</li></a>
-              <a href="<?php echo base_url ('index.php/Dashboard/adminKomplain'); ?>"> <li class="list-group-item"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
+              <a href="<?php echo base_url ('index.php/Dashboard/adminKomplain'); ?>"> <li class="list-group-item active"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
             </div>
             
           </ul>
@@ -34,8 +34,8 @@
         <div class="col-md-9">
           <div class="card">
             <div class="card-header" style="background-color: white;">
-              <h4 style="font-weight: bold;"> Kelola User Inseed.id</h4>
-              <h6> Kelola semua data pengguna terdaftar inseed.id</h6>
+              <h4 style="font-weight: bold;"> Kelola Komplain User</h4>
+              <h6> Kelola semua curhat user inseed.id</h6>
             </div>
             <div class="card-body ">
               <div class="row">
@@ -45,10 +45,10 @@
                       <thead>
                         <tr class="headerKeranjang">
                           <th scope="col">Username</th>
-                          <th scope="col" >Nama </th>
-                          <th scope="col" class="text-left">Email</th>
-                          <th scope="col" class="text-left">Nomor Telepon</th>
-                          <th scope="col" class="text-left">Hapus</th>
+                          <th scope="col" >Judul </th>
+                          <th scope="col" class="text-left">Isi</th>
+                          <th scope="col" class="text-left">Tanggal</th>
+                          <th scope="col" class="text-left">Selesai</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -56,12 +56,12 @@
                          <?php foreach ($result as $var):?>
                         <tr class="produkKeranjang">
                           <td><?php echo $var->namaAkun ?> </td>
-                          <td><?php echo $var->namaBelakang; ?></td>
+                          <td><?php echo $var->judulKomplain; ?></td>
                           
-                          <td><?php echo $var->email; ?></td>
-                          <td class="text-left"><?php echo $var->noHP;  ?></td>
+                          <td><?php echo $var->isiKomplain; ?></td>
+                          <td class="text-left"><?php echo $var->tglKomplain;  ?></td>
                           
-                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/adminDeleteUser/'.$var->namaAkun); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
+                          <td class="text-left"><a href="<?php echo base_url ('index.php/Dashboard/adminSelesaiKomplain/'.$var->idKomplain); ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
                         <?php endforeach; ?>
                    </tbody>
