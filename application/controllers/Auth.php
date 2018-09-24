@@ -59,11 +59,12 @@ class Auth extends CI_Controller {
 			$user = 'koperasi';
 			$data = array(
         'namaKoperasi' => $this->input->post('firstname') . ' ' . $this->input->post('lastname'),
-        'namaAkun' => $this->input->post('account'),
+        'idKoperasi' => $this->input->post('account'),
+		'passKoperasi' => $enc_password,
         'noHP' => $this->input->post('phone'),
         'email' => $this->input->post('email'),
         'user_level' => $this->input->post('user_level'),
-        'passKoperasi' => $enc_password
+        
          );
 		} else if ($this->input->post('user_level') == 1) {
 			$user = 'user';	

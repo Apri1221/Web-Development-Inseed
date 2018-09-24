@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
  
 class Model extends CI_Model{
+	
 	public function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
 	}
@@ -44,7 +45,7 @@ class Model extends CI_Model{
     public function cekproyek($username){
         $this->db->select('*');
         $this->db->from('proyek');
-        $this->db->where('namaAkun',$username);
+        $this->db->where('idKoperasi',$username);
         $query = $this->db->get();
         return $query->result();
     }

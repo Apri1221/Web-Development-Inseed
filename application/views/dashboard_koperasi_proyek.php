@@ -71,7 +71,7 @@ function preview_image(event)
             <div class="col-md-4 editProyekDashboard" style="text-align: center;">
              
               
-              <form action="<?php echo base_url ('index.php/Dashboard/tambahProyek'); ?>" method="POST">
+              <form action="<?php echo base_url ('index.php/Dashboard/tambahProyek'); ?>" method="POST" enctype="multipart/form-data">
                  <img id="profilePicture"  class="profilePictureDashboard">
                 <br><br>
                 <div class="upload-btn-wrapper">

@@ -38,7 +38,7 @@
           <div class="col-xl-3 col-md-5 col-sm-5 col-xs-12 produkSeaweedMart">
             <div class="card cardProduk" style=" height:900px;">
               <div class="card-body cardInvest">
-                <img class="card-img-top fotoProduk" src="<?php echo 'data:image/jpeg;base64,'.base64_encode( $a->foto ); ?>">
+                <img class="card-img-top fotoProduk" src="<?php echo base_url('asset/assets/image/petani/') . $a->foto;?>">
                 <div style="padding: 5%;">
                   <h5 class="card-title " style="font-weight: bold;"> <?php echo $a->namaProyek ?> </h5>
                   

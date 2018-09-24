@@ -251,18 +251,43 @@ class Dashboard extends CI_Controller {
     }
 
     public function tambahProyek() {
+        $this->load->library('upload');
         $this->load->helper('url');
         $this->load->model('model');
         $username = $this->session->userdata('username');
         $namaProyek = $this->input->post('namaProyek');    
         $kebutuhanDana = $this->input->post('kebutuhanDana');
         $ekspektasiKeuntungan = $this->input->post('ekspektasi');
+		
+        $config['upload_path'] = './asset/assets/image/petani/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+        $config['encrypt_name'] = TRUE; //Enkripsi nama yang terupload
+ 
+        $this->upload->initialize($config);
+        if(!empty($_FILES['profilePicture']['name'])){
+ 
+            if ($this->upload->do_upload('profilePicture')){
+                $gbr = $this->upload->data();
+                //Compress Image
+                $config['image_library']='gd2';
+                $config['source_image']='./asset/assets/image/petani/'.$gbr['file_name'];
+                $config['create_thumb']= FALSE;
+                $config['maintain_ratio']= FALSE;
+                $config['quality']= '50%';
+                $config['width']= 600;
+                $config['height']= 400;
+                $config['new_image']= './asset/assets/image/petani/'.$gbr['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+                $gambar=$gbr['file_name'];
+		}}
         $data = array(
             'namaProyek' => $this->input->post('namaProyek'),
             'lokasi' => $this->input->post('lokasiProyek'),
             'ekspUntung' => $ekspektasiKeuntungan,
             'minimalDana' => $kebutuhanDana,
-            'namaAkun' => $username,
+            'idKoperasi' => $username,
+			'foto' => $gambar,
             'startProjek' => $this->input->post('awalProyek'),
             'endProjek' => $this->input->post('akhirProyek'),
             'penanggungJawab' => $this->input->post('penanggungJawab'),
@@ -278,7 +303,7 @@ class Dashboard extends CI_Controller {
         else{
             redirect('/dashboard/tambahProyekKoperasi');
         }
-    }
+			}
 
     public function editProyek() {
         $this->load->helper('url');
