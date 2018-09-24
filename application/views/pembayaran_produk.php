@@ -112,7 +112,7 @@
               <div class="card-body descProdukDetail" style="border:0;">
                 <h5 class="card-title">Sub Total (<?php echo $this->cart->total_items(); ?> Items) :  <span>Rp <?php echo $this->cart->total(); ?></span></h5>
                 <h5 class="card-title">Biaya Pengiriman :  <span>Rp 5.000</span></h5>
-                <h5 class="card-title">Total : <span>Rp 55.000</span></h5>
+                <h5 class="card-title">Total : <span>Rp <?php echo ($this->cart->total()+5000); ?></span></h5>
               </div>
             </div>
           </div>

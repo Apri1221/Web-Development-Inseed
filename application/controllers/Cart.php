@@ -15,9 +15,7 @@ class Cart extends CI_Controller{
 		$this->load->view('seaweedMart',$data);
 	}
 	
-	public function add_to_cart($id)
-	{
-		if ($this->session->userdata('username')!== NULL){
+	public function add_to_cart($id) {
 		$this->load->library('cart');
 		$jum = $this->input->get("quant[2]");
 		$product = $this->cart_model->find($id); 
@@ -28,8 +26,9 @@ class Cart extends CI_Controller{
 			   'name'    => $product->namaProduk
 			);
 		$this->cart->insert($data);
+		if ($this->session->userdata('username')!== NULL){
 		redirect('/cart/show_cart');
-	}else {
+		}else {
             $this->load->view('masuk');
         }
 	}

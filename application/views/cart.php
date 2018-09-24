@@ -56,7 +56,7 @@
               <?php if( $i == 0): ?>
                   disabled
               <?php endif;?>
-              ><i class="fas fa-money-bill-alt"></i> Beli Sekarang</button></a>
+              ><i class="fas fa-money-bill-alt"></i> Bayar Sekarang</button></a>
           </div>
         </div>
 		

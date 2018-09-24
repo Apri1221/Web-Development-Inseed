@@ -68,9 +68,16 @@ class Mart extends CI_Controller {
 	}
 	public function thanks ($id,$rowid){
 		$this->load->model('cart_model');
-		$product = $this->cart_model->cariBayar($id); 
 		$username = $this->session->userdata('username');
-		$data = array(
+		$where = array (
+			'idTransaksi' => $rowid,
+			'namaPembeli' => $username,
+			);
+		$validate = $this->cart_model->cekTrans($where,'transaksi');
+        if(count($validate) === 0){
+			$product = $this->cart_model->cariBayar($id); 
+			$username = $this->session->userdata('username');
+			$data = array(
 			'idTransaksi' => $rowid,
 			   'namaPembeli'     => $username,
 			   'namaPenjual'   => $product->idPenjual,
@@ -79,11 +86,31 @@ class Mart extends CI_Controller {
 			   'total' => $this->cart->total(),
 			   'alamatTujuan' => $this->input->post('alamat'),
 			   'status' => 0,
-			   'tglTrans' => '2018-10-09',
+			   'tglTrans' => $this->cart_model->curdate()->result(),
 			   'catatan' => "hello"
 			);
-
 		$this->market->insert('transaksi',$data);
+		}
+		else {
+			$where = array (
+			'idTransaksi' => $rowid,
+			'namaPembeli' => $username,
+			);
+			$cek = $this->cart_model->lihatJml($where);
+			$jumBeli  = $cek[0]['jumlah'];
+			$harga = $this->cart->total();
+			$jum = $this->cart->total_items();
+			$jumBeli += $jum;
+			$cek2 = $this->cart_model->lihatTotal($where);
+			$totalBeli  = $cek2[0]['total'];
+			$totalBeli += $harga;
+			$data = array (
+			'jumlah' => $jumBeli,
+			'total' => $totalBeli,
+			'tglTrans' => $this->cart_model->curdate()->result()
+			);
+			$this->cart_model->updateTrans($where,$data);
+		}		
 		$this->cart->destroy();
 		$this->load->view('thanks_purchase');
 	}
