@@ -9,21 +9,21 @@
         
         <div class="collapse navbar-collapse " id="navbarSupportedContent" >
           <ul class="text-uppercase navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="<?php echo base_url(); ?>">HOME <span class="sr-only">(current)</span></a>
+            <li class="nav-item <?php if($this->uri->segment(1)=="" || $this->uri->segment(1)==""){echo " active";}?>">
+              <a class="nav-link" href="<?php echo base_url(); ?>">HOME</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Invest" || $this->uri->segment(1)=="invest"){echo " active";}?>">
               <a class="nav-link" href="<?=base_url()?>index.php/invest">SEAWEED INVEST</a>
             </li>
             <?php if($this->session->userdata('level') !== '2'):?>
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Mart" || $this->uri->segment(1)=="mart"){echo " active";}?>">
               <a class="nav-link" href="<?=base_url()?>index.php/mart">SEAWEED MART</a>
             </li>
             <?php endif;?>
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->uri->segment(1)=="Article" || $this->uri->segment(1)=="article"){echo " active";}?>">
               <a class="nav-link" href="<?=base_url()?>index.php/article">SEAWEED ARTIKEL</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->uri->segment(2)=="about_us" || $this->uri->segment(1)=="About_us"){echo " active";}?>">
               <a class="nav-link" href="<?=base_url()?>index.php/welcome/about_us">TENTANG KAMI</a>
             </li>
             <!-- Authentication Links -->
