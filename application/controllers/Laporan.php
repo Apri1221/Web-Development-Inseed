@@ -97,7 +97,7 @@ class Laporan extends CI_Controller {
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
-        $pdf->Cell(189,5,'Transaksi Pembayaran',0,1);
+        $pdf->Cell(189,5,'Transaksi Investasi Proyek',0,1);
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
@@ -176,7 +176,7 @@ class Laporan extends CI_Controller {
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
-        $pdf->Cell(189,5,'Transaksi Pembayaran',0,1);
+        $pdf->Cell(189,5,'Transaksi Pembelian Produk',0,1);
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
