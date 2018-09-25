@@ -92,11 +92,8 @@ class Model extends CI_Model{
     }
 
     public function transaksi($idTransaksi) {
-        $this->db->select('*');
-        $this->db->from('transaksi');
-        $this->db->where('idTransaksi', $idTransaksi);
-        $query = $this->db->get();
-        return $query->result();
+		$SQL = "SELECT A.idTransaksi, B.namaProduk, A.namaPenjual, A.alamatTujuan, A.tglTrans, A.total FROM transaksi A, produk B WHERE A.idTransaksi = '$idTransaksi' AND A.idProduk = B.idProduk";
+        return $this->db->query($SQL);
     }   
 	function jumlah_data(){
 		return $this->db->get('transaksi')->num_rows();

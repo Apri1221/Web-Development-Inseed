@@ -148,7 +148,7 @@ class Laporan extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
         $tglTarik = date("d-m-Y");  
 		$username = $this->session->userdata('username');
-		$data = $this->model->transaksi($id);
+		$data = $this->model->transaksi($idTransaksi)->result();
 		
 		$pdf = new FPDF('p','mm','A4');
 		
@@ -171,7 +171,7 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
-		$pdf->Cell(34, 5, "Mr. $username",0,1);
+		$pdf->Cell(34, 5, "Yth. $username",0,1);
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
@@ -180,6 +180,7 @@ class Laporan extends CI_Controller {
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
         $pdf->Cell(35,6,'idTransaksi',1,0);
+		$pdf->Cell(40,6,'Nama Produk',1,0);
         $pdf->Cell(40,6,'Nama Penjual',1,0);
         $pdf->Cell(40,6,'Alamat Tujuan',1,0);
         $pdf->Cell(25,6,'Tgl Trsksi',1,0);
@@ -196,11 +197,15 @@ class Laporan extends CI_Controller {
 	        $get_xxx+=35;
 	        $pdf->SetXY($get_xxx, $get_yyy);
 
-	        $pdf->MultiCell($width_cell,$height_cell,"$row->namaPenjual",'LR');
+	        $pdf->MultiCell($width_cell,$height_cell,"$row->namaProduk",'R');
+	        $get_xxx+=$width_cell;                           
+			$pdf->SetXY($get_xxx, $get_yyy);
+			
+			$pdf->MultiCell($width_cell,$height_cell,"$row->namaPenjual",'R');
 	        $get_xxx+=$width_cell;                           
 			$pdf->SetXY($get_xxx, $get_yyy);
 
-	        $pdf->MultiCell($width_cell,$height_cell,"$row->alamatTujuan",'LR');
+	        $pdf->MultiCell($width_cell,$height_cell,"$row->alamatTujuan",'R');
 	        $get_xxx+=$width_cell;                           
 			$pdf->SetXY($get_xxx, $get_yyy);
 
