@@ -16,7 +16,7 @@ function getPersentase($iniaddress, $ekspUntung){
 
 	$forecast = json_decode(get_data($api_url));
 
-	// $suhuSekarang =round(($forecast->currently->temperature-32)*.5556);
+	$suhuSekarang = round(($forecast->currently->temperature-32)*.5556);
 	$windSpeedSekarang = $forecast->currently->windSpeed;
 	$humiditySekarang = $forecast->currently->humidity;
 
@@ -27,7 +27,30 @@ function getPersentase($iniaddress, $ekspUntung){
 	}
 	$prediksiRerataSuhu = round($rataSuhu/$i);
 
-	$poin = ($prediksiRerataSuhu/100) + $humiditySekarang + ($windSpeedSekarang/100);
+	$cel = ($prediksiRerataSuhu - 32) / .5556;
+	
+
+	$a = 0;
+	$b = 0;
+	$c = 0;
+	
+	if ($humiditySekarang >= 0.42 && $humiditySekarang <= 0.79) {
+		$a = 0.1;
+	}
+
+	if ($windSpeedSekarang >= 0.1 && $windSpeedSekarang <= 0.4) {
+		$b = 0.1;
+	}
+	
+	if ($cel >= 25 && $cel <= 31) {
+		if ($suhuSekarang > $cel && $suhuSekarang < $cel){
+			$c = 0.1;
+		} else {
+			$c = 0.05;
+		}
+	}
+	
+	$poin = ($a + $b + $c);
 
 	// if ($suhuSekarang >= $prediksiRerataSuhu) {
 	// 	$a = 0.1; //bobot utk a
