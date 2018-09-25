@@ -66,11 +66,11 @@ class Mart extends CI_Controller {
             redirect('/auth/login');
         }		
 	}
-	public function thanks ($id){
+	public function thanks ($id,$idTransaksi){
 		$this->load->model('cart_model');
 		$username = $this->session->userdata('username');
 		$where = array (
-			'idTransaksi' => $id,
+			'idTransaksi' => $idTransaksi,
 			'namaPembeli' => $username,
 			);
 		$validate = $this->cart_model->cekTrans($where,'transaksi');
@@ -78,6 +78,7 @@ class Mart extends CI_Controller {
 			$product = $this->cart_model->cariBayar($id); 
 			$username = $this->session->userdata('username');
 			$data = array(
+			   'idTransaksi'     => $idTransaksi,
 			   'namaPembeli'     => $username,
 			   'namaPenjual'   => $product->idPenjual,
 			   'idProduk'    => $product->idProduk,
@@ -92,7 +93,7 @@ class Mart extends CI_Controller {
 		}
 		else {
 			$where = array (
-			'idTransaksi' => $id,
+			'idTransaksi' => $idTransaksi,
 			'namaPembeli' => $username,
 			);
 			$cek = $this->cart_model->lihatJml($where);

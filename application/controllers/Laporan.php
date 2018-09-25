@@ -142,14 +142,14 @@ class Laporan extends CI_Controller {
 		$pdf->Output();
 	}
 
-	public function produk($id) {
+	public function produk($idTransaksi) {
 		$this->load->model('model');
 		$id = $this->uri->segment(3);
 		date_default_timezone_set('Asia/Jakarta');
         $tglTarik = date("d-m-Y");  
-		
 		$username = $this->session->userdata('username');
-
+		$data = $this->model->transaksi($id);
+		
 		$pdf = new FPDF('p','mm','A4');
 		
 		$width_cell = 40;  

@@ -98,6 +98,9 @@ class Model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }   
+	function jumlah_data(){
+		return $this->db->get('transaksi')->num_rows();
+	}
 
 }
 ?>

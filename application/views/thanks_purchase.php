@@ -31,7 +31,7 @@
                 <h5> Harap membayar ke rekening 8038-8391-xxxx A/N inseed CIMB NIAGA<br>Maksimal <b> 3 hari </b>     setelah pemesanan</h5>
               </div>
               <div class="col-md-4" style="text-align: center; margin-top: 5%;">
-                <a type="submit" class="btn btn-outline-success" style="-webkit-appearance:none;" target="_blank" href="<?php echo base_url ('index.php/Laporan/produk/').$idTransaksi; ?>">Cetak Invoice Pembelian</a>
+                <a type="submit" class="btn btn-outline-success" style="-webkit-appearance:none;" target="_blank" href="<?php echo base_url ('index.php/Laporan/produk/') . $idTransaksi;?> ">Cetak Invoice Pembelian</a>
               </div>
             </div>
             
