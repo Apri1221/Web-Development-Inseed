@@ -134,7 +134,8 @@
                     <td><?php echo $var->namaPembeli ?></td>
                     <td class="text-left"><?php echo $var->jumlah ?> buah</td>
                     <td class="text-left"> <?php echo $var->tglTrans ?></td>
-                    <td class="text-left"><a href="<?=base_url()?>index.php/cart/hapusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> </a></td>
+                    
+                    <td class="text-left"><a href="<?=base_url()?>index.php/mart/hapusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> </a></td>
                   </tr>
                   <?php endif ?>
                   <?php endforeach; ?>
