@@ -55,13 +55,14 @@
             </div>
           </div>
         </div>
+
         <br>
-        
+         <?php endforeach; ?>
       </div>
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
 		
-				  <?php endforeach; ?>
+				 
           <hr class="my-4">
           <form action="<?=base_url()?>index.php/article/tambahKomentar/<?php echo $result->idArtikel ?> " method="POST" id="formArtikel">
 		  
@@ -72,19 +73,17 @@
                   $date = date("Y-m-d");  
                   echo $date; ?>">
             <h6>Berikan Komentar anda:</h6>
-            <input type="text" rows="5" cols="50" name="isiKomentar" placeholder="Bijaklah berkomentar, soalnya ga boleh dihapus loo" class="form-control" maxlength="150"></input>
+            <input type="text" rows="5" cols="50" name="isiKomentar" placeholder="Tulis komentar anda disini" class="form-control" maxlength="150"></input>
             <br>
             <div class="upload-btn-wrapper">
-              <input type="submit" class="btn btn-outline-primary">Simpan</input>
+              <input type="submit" class="btn btn-outline-primary"></input>
             </div>
             <br>
             <br>
-            
-          </form>
-        </div>
-        
+        </form>
       </div>
     </div>
+  </div>
   </section>
   
   
