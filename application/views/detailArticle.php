@@ -35,10 +35,10 @@
           <div class="card">
             <div class="card-body row">
               <div class="col-md-3">
-                <img <?php if($result->foto === null || $result->foto == '' || $result->foto == 0): ?>
+                <img <?php if($var->foto === null || $var->foto == '' || $var->foto == 0): ?>
                     src="
                     <?php 
-                      $jk = $result->jk;
+                      $jk = $var->jk;
                       if($jk == 'Pria'){
                         echo base_url ('asset/assets/image/boy.png');
                       } else if($jk == 'Wanita') {
@@ -46,22 +46,25 @@
                       }
                     ?>" 
                     <?php else: ?>
-                    src="<?php echo base_url('asset/assets/image/user/') . $result->foto;?>" 
+                    src="<?php echo base_url('asset/assets/image/user/') . $var->foto;?>" 
                   <?php endif; ?> style="max-width: 80px; height: auto;">
               </div>
               <div class="col-md-9" style="text-align: justify;">
                 <p><?php echo $var->isiKomentar ?></p>
-              <footer class="blockquote-footer"><?php echo $var->namaAkun ?> , <?php echo date("d-m-20y",strtotime($var->tglKomentar)); ?></footer>
+              <footer class="blockquote-footer"><?php echo $var->idUser ?> , <?php echo date("d-m-20y",strtotime($var->tglKomentar)); ?></footer>
             </div>
           </div>
         </div>
         <br>
-        <?php endforeach; ?>
+        
       </div>
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
+		
+				  <?php endforeach; ?>
           <hr class="my-4">
-          <form action="<?=base_url()?>index.php/article/tambahKomentar/<?php echo $var->idArtikel; ?>" method="POST" id="formArtikel">
+          <form action="<?=base_url()?>index.php/article/tambahKomentar/<?php echo $result->idArtikel ?> " method="POST" id="formArtikel">
+		  
             <input type="hidden" name="namaAkun" value="<?php echo $this->session->userdata('username'); ?>">
             <input type="hidden" name="tglKomentar" value="
               <?php 
@@ -69,11 +72,10 @@
                   $date = date("Y-m-d");  
                   echo $date; ?>">
             <h6>Berikan Komentar anda:</h6>
-            <textarea name="isiKomentar" form="formArtikel" placeholder="Bijaklah berkomentar, soalnya ga boleh dihapus loo" class="form-control"></textarea>
+            <input type="text" rows="5" cols="50" name="isiKomentar" placeholder="Bijaklah berkomentar, soalnya ga boleh dihapus loo" class="form-control" maxlength="150"></input>
             <br>
-            
             <div class="upload-btn-wrapper">
-              <button type="submit" class="btn btn-outline-primary">Simpan</button>
+              <input type="submit" class="btn btn-outline-primary">Simpan</input>
             </div>
             <br>
             <br>
