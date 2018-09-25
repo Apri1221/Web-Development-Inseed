@@ -44,10 +44,6 @@
                   <select class="form-control" id="sel1" placeholder="Kategori">
                     
                     <option>CIMB NIAGA</option>
-                    <option>Mandiri</option>
-                    <option>BCA</option>
-                    <option>BRI</option>
-                    <option>BNI</option>
                   </select>
                 </div>
               </div>
