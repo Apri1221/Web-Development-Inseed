@@ -120,9 +120,9 @@ class Dashboard extends CI_Controller {
          );
         
         // ngecek apakah udah ada username yang sama
-        $validate = $this->artikel->cekartikel($this->input->post('judulArtikel'));
+        $validate = $this->artikel->cekartikel($this->input->post('idArtikel'));
         if(count($validate) === 0){
-            $this->artikel->Update($idArtikel ,$data, 'artikel');
+            $this->artikel->Update($idArtikel, $data, 'artikel');
             redirect('/dashboard/kelolaArticle');
             // access login for admin
         }

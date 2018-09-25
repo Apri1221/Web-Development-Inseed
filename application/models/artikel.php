@@ -17,7 +17,7 @@ class Artikel extends CI_Model
     public function cekartikel($judulArtikel){
         $this->db->select('*');
         $this->db->from('artikel');
-        $this->db->where('judulArtikel',$judulArtikel);
+        $this->db->where('idArtikel',$judulArtikel);
         $query = $this->db->get();
         return $query->result();
     }
@@ -45,7 +45,7 @@ class Artikel extends CI_Model
     }
 
     public function getKomentarById($idArtikel){
-        $SQL = "SELECT a.idKomentar, a.idArtikel, a.idUser, a.isiKomentar, a.tglKomentar, b.foto, b.jk FROM komentar a, user b WHERE a.idUser = b.namaAkun";
+        $SQL = "SELECT a.idKomentar, a.idArtikel, a.idUser, a.isiKomentar, a.tglKomentar, b.foto, b.jk FROM komentar a, user b WHERE a.idUser = b.namaAkun and a.idArtikel = '$idArtikel'";
         return $this->db->query($SQL);
     }
 }
