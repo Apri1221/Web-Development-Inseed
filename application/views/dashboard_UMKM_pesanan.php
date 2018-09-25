@@ -129,10 +129,10 @@
                     <td>
                       <?php echo $i;?>
                     </td>
-                    <td><?php echo $var->idProduk ?></td>
+                    <td><?php echo $var->namaProduk ?></td>
                     
-                    <td><?php echo $var->jumlah ?> buah</td>
-                    <td class="text-left">Rp <?php echo $var->total ?></td>
+                    <td><?php echo $var->namaPembeli ?></td>
+                    <td class="text-left"><?php echo $var->jumlah ?> buah</td>
                     <td class="text-left"> <?php echo $var->tglTrans ?></td>
                     <td class="text-left"><a href="<?=base_url()?>index.php/cart/hapusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
                   </tr>
