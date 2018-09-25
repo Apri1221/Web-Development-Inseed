@@ -123,7 +123,7 @@
                     <td>
                       <?php echo $i;?>
                     </td>
-                    <td><?php echo $var->idProduk ?></td>
+                    <td><?php echo $var->namaProduk ?></td>
                     
                     <td><?php echo $var->jumlah ?> buah</td>
                     <td class="text-left">Rp <?php echo $var->total ?></td>

@@ -38,7 +38,7 @@ class Market extends CI_Model
     }
 
     public function getJualanUser($username){
-        $SQL = "SELECT a.namaPembeli, a.status, a.jumlah, a.alamatTujuan, b.namaProduk FROM transaksi a, produk b WHERE a.idProduk = b.idProduk AND a.namaPembeli = '$username'";
+        $SQL = "SELECT a.namaPembeli, a.status, a.jumlah, a.alamatTujuan, a.total, a.tglTrans, a.idTransaksi, b.namaProduk FROM transaksi a, produk b WHERE a.idProduk = b.idProduk AND a.namaPembeli = '$username'";
         $query = $this->db->query($SQL);
         return $query->result();
     }
