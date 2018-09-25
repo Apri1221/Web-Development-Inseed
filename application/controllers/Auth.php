@@ -236,7 +236,11 @@ class Auth extends CI_Controller {
             // if (null === $this->agent->is_referral())
             // {
             if($this->agent->referrer()){
-                header("location:".$this->agent->referrer());
+                if(null !== ($this->input->post("error"))){
+                    redirect('/dashboard');
+                }else{
+                    header("location:".$this->agent->referrer());
+                }
             } else
             redirect('/dashboard');
             // }
