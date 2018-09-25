@@ -191,10 +191,15 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('level')!==0){
             $this->load->model('market');
             $username = $this->session->userdata('username');
-            $data['detail'] = $this->market->getJualan($username);
-			
-			$items = $this->cart->contents();
-            $this->load->view("dashboard_UMKM_pesanan", $data, $items);
+            
+            if($this->session->userdata('level') == 3){
+    		    $data['detail'] = $this->market->getJualan($username);
+            	$items = $this->cart->contents();
+                $this->load->view("dashboard_UMKM_pesanan", $data, $items);
+            } else if($this->session->userdata('level') != 3){
+                $data['detail'] = $this->market->getJualanUser($username);
+                $this->load->view("dashboard_user_pesanan", $data);
+            }
         } else {
             $this->load->view('masuk');
         }

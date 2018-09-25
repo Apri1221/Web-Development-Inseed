@@ -120,5 +120,22 @@ class Mart extends CI_Controller {
 		$this->load->view('cart');
 	}
 
+	public function hapusTrans(){
+		$this->load->model('market');
+        $id = $this->uri->segment(3);
+        $this->market->hapusTransaksi($id);
+        redirect('/dashboard/pesanan');
+	}
+
+	public function ubahStatusTrans(){
+		$this->load->model('market');
+        $id = $this->uri->segment(3);
+        $data = array(
+            'status' => 1,
+        );
+        $this->market->ubahStatusTransaksi($id, $data);
+        redirect('/dashboard/pesanan');
+	}	
+
 }
 ?>

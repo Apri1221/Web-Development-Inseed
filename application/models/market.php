@@ -39,12 +39,30 @@ class Market extends CI_Model
         return $query->result();
     }
 
+    public function getJualanUser($username){
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('namaPembeli',$username);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 	public function getBeli($username){
         $this->db->select('*');
         $this->db->from('produk');
         $this->db->where('idPenjual',$username);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    public function hapusTransaksi($id){
+    	$this->db->where('idTransaksi', $id);
+        $this->db->delete('transaksi');
+    }
+
+    public function ubahStatusTransaksi($id, $data){
+    	$this->db->where('idTransaksi', $id);
+        $this->db->update('transaksi', $data);
     }
 }
 ?>
