@@ -129,6 +129,7 @@ class Laporan extends CI_Controller {
 	        $pdf->MultiCell(25,$height_cell,"$row->nominalInvest",'LR');
 	        $get_xxx+=25;
 	        $pdf->Ln();
+	        $pdf->Cell(189,1,'',0,1);
 	    }
 	    
         // $mahasiswa = $this->db->get('mahasiswa')->result();
@@ -211,6 +212,7 @@ class Laporan extends CI_Controller {
 	        $pdf->MultiCell(30,$height_cell,"$row->total",'LR');
 	        $get_xxx+=30;
 	        $pdf->Ln();
+	        $pdf->Cell(189,1,'',0,1);
 	    }
         // $mahasiswa = $this->db->get('mahasiswa')->result();
         // foreach ($mahasiswa as $row){
