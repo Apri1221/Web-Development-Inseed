@@ -85,6 +85,7 @@ function preview_image(event)
                   <h6>Nama Proyek:
                   <input type="text" name="namaProyek" class="form-control">
                   </h6>
+                  <br>
                   
                 </div>
                 <div class="col-md-12 col-sm-12">
@@ -93,7 +94,7 @@ function preview_image(event)
                   <input type="text" name="kebutuhanDana" class="form-control">
                   
                   </h6>
-                  
+                  <br>
                  
                 </div>
 
@@ -103,7 +104,7 @@ function preview_image(event)
                   <input type="text" name="ekspektasi" class="form-control">
                   
                   </h6>
-                  
+                  <br>
                  
                 </div>
                 <div class="col-md-12 col-sm-12">
@@ -112,6 +113,7 @@ function preview_image(event)
                   <input type="text" name="lokasiProyek" class="form-control">
                   
                   </h6>
+                  <br>
                 </div>
 
                 <div class="col-md-12 col-sm-12">
@@ -119,18 +121,21 @@ function preview_image(event)
                   <input type="text" name="penanggungJawab" class="form-control">
                   
                   </h6>
+                  <br>
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <h6>Awal Proyek
                   <input type="date" name="awalProyek" class="form-control">
                   
                   </h6>
+                  <br>
                 </div>
                   <div class="col-md-12 col-sm-12">
                     <h6>Akhir Proyek
                   <input type="date" name="akhirProyek" class="form-control">
                   
                   </h6>
+                  <br>
                   </div>
                   
                 
