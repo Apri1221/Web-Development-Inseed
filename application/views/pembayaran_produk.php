@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="icon" href="<?php echo base_url('asset/assets/image/icon/icon.png');?>">
-    <title>inseed.id - Seaweed Invest</title>
+    <title>inseed.id - Pembayaran Produk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link href="<?php echo base_url('asset/css/styleCSS.css');?>" rel="stylesheet">
@@ -28,7 +28,7 @@
             <?php
             foreach ($this->cart->contents() as $items) :
             ?>
-            <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>/<?php echo $items['rowid'];?>">
+            <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>">
               <?php endforeach ?>
               <div class="form-group">
                 <label class="control-label col-md-4" for="produk">Metode Pembayaran</label>

@@ -62,4 +62,7 @@ class Cart_model extends CI_Model{
 		$this->db->set('tglTrans', date('Y-m-d H:i:s'));
 		$this->db->update('transaksi');
 }
+function jumlah_data(){
+		return $this->db->get('transaksi')->num_rows();
+	}
 }
