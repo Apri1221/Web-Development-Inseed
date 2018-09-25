@@ -137,7 +137,7 @@
                     var pass2=document.getElementById("pw2").value;
                     var pass1=document.getElementById("pw1").value;
                     if(pass1!=pass2)
-                    document.getElementById("pw2").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+                    document.getElementById("pw2").setCustomValidity("Password Tidak Sama, Coba Lagi");
                     else
                     document.getElementById("pw2").setCustomValidity('');
                     }

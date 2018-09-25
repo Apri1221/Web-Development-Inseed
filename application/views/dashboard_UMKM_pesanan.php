@@ -87,9 +87,9 @@
                         <td>
                           <?php echo $i;?>
                         </td>
-                        <td style="width: 20%;"><?php echo $var->idProduk; ?></td>
-                        <td style="width: 20%;"><?php echo $var->namaPembeli; ?> buah</td>
-                        <td class="text-left"><?php echo $var->jumlah; ?></td>
+                        <td style="width: 20%;"><?php echo $var->namaProduk; ?></td>
+                        <td style="width: 20%;"><?php echo $var->namaPembeli; ?> </td>
+                        <td class="text-left"><?php echo $var->jumlah;?> buah</td>
                         <td style="width: 30%;" class="text-left"><?php echo $var->alamatTujuan; ?></td>
                         <td class="text-center"><a href="<?=base_url()?>index.php/mart/ubahStatusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> </a></td>
                         <td class="text-center"><a href="#" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> </a></td>

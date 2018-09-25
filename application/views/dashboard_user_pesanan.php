@@ -109,28 +109,36 @@
                       <th scope="col"> No</th>
                       <th scope="col" style="width: 25%;">Nama Produk</th>
                       <th scope="col" class="text-left">Kuantitas</th>
-                      <th scope="col" style="width: 20%;" class="text-left">Harga</th>
+                      <th scope="col" style="width: 15%;" class="text-left">Harga</th>
                       <th scope="col"  class="text-left">Tanggal Transaksi</th>
+                      <th scope="col"  class="text-left">Status Pesanan</th>
                       <th scope="col" class="text-left">Batalkan</th>
                     </tr>
                   </thead>
                   <?php $i = 0;
                   foreach ($detail as $var):
-                  if ($var->status == 0) :
+                  
                   
                   $i++; ?>
                   <tr class="produkKeranjang">
                     <td>
                       <?php echo $i;?>
                     </td>
-                    <td><?php echo $var->idProduk ?></td>
+                    <td><?php echo $var->namaProduk ?></td>
                     
                     <td><?php echo $var->jumlah ?> buah</td>
                     <td class="text-left">Rp <?php echo $var->total ?></td>
                     <td class="text-left"> <?php echo $var->tglTrans ?></td>
-                    <td class="text-left"><a href="<?=base_url()?>index.php/mart/hapusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
+                    <td class="text-left"> <?php if ($var->status == 0) {
+                      echo "Dalam Proses";
+                    }
+                    else{
+                      echo "Diterima";
+                    } 
+                     ?></td>
+                    <td class="text-left"><a href="<?=base_url()?>index.php/mart/hapusTrans/<?php echo $var->idTransaksi ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> </a></td>
                   </tr>
-                <?php endif; ?>
+                
                   <?php endforeach; ?>
                 </tbody>
               </table>

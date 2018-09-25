@@ -151,7 +151,7 @@ class Dashboard extends CI_Controller {
 
     }
 
-    public function deleteProyekAdmin() {
+    public function deleteProyekAdmin($id) {
         $this->load->model('model');
         $this->model->deleteproyek($id);
         $this->adminKelolaProyek();
@@ -447,9 +447,8 @@ class Dashboard extends CI_Controller {
 		'idProduk' => $id,
 		'namaProduk' => $this->input->post('namaProduk'),
 		'hargaProduk' => $this->input->post('hargaProduk'),
-		'stok' => $this->input->post('stok'),
-		'idProduk' => $this->input->post('idProduk'),
-		'detail' => $this->input->post('detail'),
+		'stok' => $this->input->post('stokProduk'), 
+		'detail' => $this->input->post('detailProduk'),
 		'foto' => $gambar
 		);
 		$this->load->model('produk');

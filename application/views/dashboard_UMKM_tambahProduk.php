@@ -57,7 +57,7 @@ function preview_image(event)
                     <br><br>
                     <div class="upload-btn-wrapper">
                       <button class="btn">Pilih gambar</button>
-                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)">
+                      <input type="file" name="profilePicture" accept=".jpg, .jpeg, .png" onchange="preview_image(event)" required="required">
                     </div>
                   </div>
                   
