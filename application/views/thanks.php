@@ -16,7 +16,7 @@
       <h2><b>Terima Kasih</b></h2>
     </div>
     <div class="container-fluid">
-      <div class="row kontenPembayaran">
+      <div class="row kontenPembayaran" style="margin-top: 8%;">
 	          <div class="col-xl-4 col-md-8 col-sm-12 col-xs-12">
 			  <img src="<?php echo base_url('asset/assets/image/done.png');?>" style="width: 50%; margin-left:25%"</img></div>
         <div class="col-xl-8 col-md-8 col-sm-10"  >
@@ -30,7 +30,7 @@
         </div>
       </div>
       </section>
-       <?php include_once("template/footer.php"); ?>
+  
 	  </body>
 	  </html>
 	  

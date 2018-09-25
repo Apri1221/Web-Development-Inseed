@@ -304,5 +304,10 @@ class Auth extends CI_Controller {
 		$this->cart->destroy();
         redirect('auth/login');
     }
+    public function lupaPassword(){
+        $this->load->view('forget_password');
+    }
 }
+
+
 ?>
