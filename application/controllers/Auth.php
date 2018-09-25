@@ -243,8 +243,10 @@ class Auth extends CI_Controller {
             // redirect('/dashboard');
             // access login for admin
         } else {
-			
-            $this->load->view('masuk');
+			      	$data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
+	          	<div><b><i class="fa fa-exclamation-circle"></i> </b> username atau password salah!</div></div>';
+	           	$this->load->view('masuk', $data);
+    
         }
 		}
 		}
@@ -267,8 +269,7 @@ class Auth extends CI_Controller {
             redirect('/dashboard');
 			}
 			else {
-				echo $username;
-				echo $password;
+				echo 'anda tersasar?';
 		}
 		}
         else {   
@@ -287,8 +288,9 @@ class Auth extends CI_Controller {
             redirect('/cart/add_to_cart');
             // access login for admin
         } else {
-			
-            $this->load->view('masuk');
+	      	$data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
+	          	<div class="header"><b><i class="fa fa-exclamation-circle"></i> ERROR</b> username atau password salah!</div></div>';
+	           	$this->load->view('login', $data);
         }
 		}
     }
