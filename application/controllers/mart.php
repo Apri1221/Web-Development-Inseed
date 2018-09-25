@@ -56,7 +56,7 @@ class Mart extends CI_Controller {
 		$this->load->view('detailProduk',$data);
 	}	
 
-	public function bayar (){
+	public function bayar ($jum){
 		if ($this->session->userdata('username')!== NULL){
 			$this->load->view('pembayaran_produk');
 		}
@@ -66,7 +66,7 @@ class Mart extends CI_Controller {
             redirect('/auth/login');
         }		
 	}
-	public function thanks ($id,$idTransaksi){
+	public function thanks ($id, $idTransaksi){
 		$this->load->model('cart_model');
 		$username = $this->session->userdata('username');
 		$where = array (
@@ -77,18 +77,21 @@ class Mart extends CI_Controller {
         if(count($validate) === 0){
 			$product = $this->cart_model->cariBayar($id); 
 			$username = $this->session->userdata('username');
-			$data = array(
+			$data = [];
+			foreach($this->cart->contents() as $items){
+			$data[] = array(
 			   'idTransaksi'     => $idTransaksi,
 			   'namaPembeli'     => $username,
-			   'namaPenjual'   => $product->idPenjual,
-			   'idProduk'    => $product->idProduk,
-			   'jumlah' => $this->cart->total_items(),
-			   'total' => $this->cart->total(),
+			   'namaPenjual'   => $items['namaPenjual'],
+			   'idProduk'    => $items['idProduk'],
+			   'jumlah' => $items['qty'],
+			   'total' => ($items['qty'] * $items['price']),
 			   'alamatTujuan' => $this->input->post('alamat'),
 			   'status' => 0,
 			   'catatan' => "hello"
 			);
-		$this->market->insert('transaksi',$data);
+			}
+		$this->db->insert_batch('transaksi',$data);
 		$this->cart_model->curdate($where);
 		}
 		else {

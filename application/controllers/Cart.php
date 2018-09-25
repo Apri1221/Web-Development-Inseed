@@ -23,7 +23,10 @@ class Cart extends CI_Controller{
 			   'id'      => $product->idProduk,
 			   'qty'     => $jum,
 			   'price'   => $product->hargaProduk,
-			   'name'    => $product->namaProduk
+			   'name'    => $product->namaProduk,
+			   'buyer'   => $this->session->userdata('username'),
+			   'namaPenjual'   => $product->idPenjual,
+			   'idProduk'    => $product->idProduk,
 			);
 		$this->cart->insert($data);
 		if ($this->session->userdata('username')!== NULL){

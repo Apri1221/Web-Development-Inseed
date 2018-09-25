@@ -39,7 +39,7 @@
                     <td class="text-left"><?php echo $items['qty']; ?> item</td>
                     <td class="text-center">Rp <?php echo $items['price'] ?></td>
                     <td class="text-center"><a href="<?=base_url()?>index.php/cart/update_cart/<?php echo $items['rowid'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                    <?php endforeach; ?>
+                     <?php endforeach; ?>
                     <br>
                   </tr>
                 </tbody>
@@ -52,12 +52,13 @@
             <h4>Ringkasan Pesanan</h4>
             <h6>Jumlah barang : <span class="subtotalKeranjang"><?php echo $this->cart->total_items();?> item</span></h6>
             <h4>Total: <span class="totalHargaKeranjang">Rp <?php echo $this->cart->total(); ?></span></h6>
-            <a href="<?=base_url()?>index.php/mart/bayar" ><button class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;"
+            <a href="<?=base_url()?>index.php/mart/bayar/<?php echo $i?>" ><button class="btn btn-success btn-lg btn-block text-uppercase" style="margin-top: 10%;"
               <?php if( $i == 0): ?>
                   disabled
               <?php endif;?>
               ><i class="fas fa-money-bill-alt"></i> Bayar Sekarang</button></a>
           </div>
+		 
         </div>
 		
       </div>

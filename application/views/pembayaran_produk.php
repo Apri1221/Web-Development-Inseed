@@ -28,7 +28,7 @@
             <?php
             foreach ($this->cart->contents() as $items) :
             ?>
-            <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>/<?php echo $items['id'];?><?php echo $items['rowid'];?>">
+            <form class="form-horizontal" method = "post" action="<?php echo base_url();?>index.php/mart/thanks/<?php echo $items['id'];?>/<?php echo MD5($items['id'] . $items['buyer']);?>">
               <?php endforeach ?>
               <div class="form-group">
                 <label class="control-label col-md-4" for="produk">Metode Pembayaran</label>

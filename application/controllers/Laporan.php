@@ -207,7 +207,7 @@ class Laporan extends CI_Controller {
 	        $pdf->MultiCell(25,$height_cell,"$row->tglTrans",'LR');
 	        $get_xxx+=25;                           
 			$pdf->SetXY($get_xxx, $get_yyy);
-
+			
 	        $pdf->MultiCell(30,$height_cell,"$row->total",'LR');
 	        $get_xxx+=30;
 	        $pdf->Ln();
