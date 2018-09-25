@@ -36,18 +36,18 @@
             <div class="card-body row">
               <div class="col-md-3">
                 <img <?php if($var->foto === null || $var->foto == '' || $var->foto == 0): ?>
-                    src="
-                    <?php 
-                      $jk = $var->jk;
-                      if($jk == 'Pria'){
-                        echo base_url ('asset/assets/image/boy.png');
-                      } else if($jk == 'Wanita') {
-                        echo base_url ('asset/assets/image/girl.png');
-                      }
-                    ?>" 
-                    <?php else: ?>
-                    src="<?php echo base_url('asset/assets/image/user/') . $var->foto;?>" 
-                  <?php endif; ?> style="max-width: 80px; height: auto;">
+                src="
+                <?php
+                $jk = $var->jk;
+                if($jk == 'Pria'){
+                echo base_url ('asset/assets/image/boy.png');
+                } else if($jk == 'Wanita') {
+                echo base_url ('asset/assets/image/girl.png');
+                }
+                ?>"
+                <?php else: ?>
+                src="<?php echo base_url('asset/assets/image/user/') . $var->foto;?>"
+                <?php endif; ?> style="max-width: 80px; height: auto;">
               </div>
               <div class="col-md-9" style="text-align: justify;">
                 <p><?php echo $var->isiKomentar ?></p>
@@ -55,23 +55,22 @@
             </div>
           </div>
         </div>
-
         <br>
-         <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
-		
-				 
+          
+          
           <hr class="my-4">
           <form action="<?=base_url()?>index.php/article/tambahKomentar/<?php echo $result->idArtikel ?> " method="POST" id="formArtikel">
-		  
+            
             <input type="hidden" name="namaAkun" value="<?php echo $this->session->userdata('username'); ?>">
             <input type="hidden" name="tglKomentar" value="
-              <?php 
-                  date_default_timezone_set('Asia/Jakarta');
-                  $date = date("Y-m-d");  
-                  echo $date; ?>">
+            <?php
+            date_default_timezone_set('Asia/Jakarta');
+            $date = date("Y-m-d");
+            echo $date; ?>">
             <h6>Berikan Komentar anda:</h6>
             <input type="text" rows="5" cols="50" name="isiKomentar" placeholder="Tulis komentar anda disini" class="form-control" maxlength="150"></input>
             <br>
@@ -80,10 +79,10 @@
             </div>
             <br>
             <br>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </section>
   
   
