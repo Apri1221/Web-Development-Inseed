@@ -142,10 +142,9 @@ class Laporan extends CI_Controller {
 		$pdf->Output();
 	}
 
-	public function produk() {
-		$id = $this->uri->segment(3);
+	public function produk($id) {
 		$this->load->model('model');
-		$data = $this->model->transaksi($id);
+		$id = $this->uri->segment(3);
 		date_default_timezone_set('Asia/Jakarta');
         $tglTarik = date("d-m-Y");  
 		
