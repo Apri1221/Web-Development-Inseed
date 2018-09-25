@@ -29,21 +29,23 @@ class Article extends CI_Controller {
 
 	public function tambahKomentar($id)
 	{
-		$this->load->helper('url');
-		$this->load->model('artikel');
-		$this->load->model('artikel');
-		$id = $this->uri->segment(3);
-		$this->load->library('user_agent');
-		$data = array(
-            'idUser' => $this->input->post('namaAkun'),
-            'idArtikel' => $id,
-            'isiKomentar' => $this->input->post('isiKomentar'),
-            'tglKomentar' => $this->input->post('tglKomentar'),
-         );
-        // ngecek apakah udah ada username yang sama
-        $this->artikel->Insert('komentar', $data);
-        if($this->agent->referrer()){
-           header("location:".$this->agent->referrer());
+		if ($this->session->userdata('username')!== NULL){
+			$this->load->helper('url');
+			$this->load->model('artikel');
+			$this->load->model('artikel');
+			$id = $this->uri->segment(3);
+			$this->load->library('user_agent');
+			$data = array(
+	            'idUser' => $this->input->post('namaAkun'),
+	            'idArtikel' => $id,
+	            'isiKomentar' => $this->input->post('isiKomentar'),
+	            'tglKomentar' => $this->input->post('tglKomentar'),
+	         );
+	        // ngecek apakah udah ada username yang sama
+	        $this->artikel->Insert('komentar', $data);
+    	}
+        else {
+			redirect('/auth/login');
         }
 	}
 }

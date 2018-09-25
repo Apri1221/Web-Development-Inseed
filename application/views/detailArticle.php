@@ -75,7 +75,7 @@
             <input type="text" rows="5" cols="50" name="isiKomentar" placeholder="Tulis komentar anda disini" class="form-control" maxlength="150"></input>
             <br>
             <div class="upload-btn-wrapper">
-              <input type="submit" class="btn btn-outline-primary"></input>
+              <input type="submit" class="btn btn-outline-primary" value="SUBMIT"></input>
             </div>
             <br>
             <br>
