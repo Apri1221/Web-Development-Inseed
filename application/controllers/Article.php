@@ -43,6 +43,7 @@ class Article extends CI_Controller {
 	         );
 	        // ngecek apakah udah ada username yang sama
 	        $this->artikel->Insert('komentar', $data);
+			$this->detail($id);
     	}
         else {
 			redirect('/auth/login');
