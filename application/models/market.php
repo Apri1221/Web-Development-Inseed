@@ -33,11 +33,12 @@ class Market extends CI_Model
 
 	public function getJualan($username){
         $this->db->select('*');
-        $this->db->from('produk');
-        $this->db->where('idPenjual',$username);
+        $this->db->from('transaksi');
+        $this->db->where('namaPenjual',$username);
         $query = $this->db->get();
         return $query->result();
     }
+
 	public function getBeli($username){
         $this->db->select('*');
         $this->db->from('produk');

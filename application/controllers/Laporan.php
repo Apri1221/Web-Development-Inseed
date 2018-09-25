@@ -66,10 +66,17 @@ class Laporan extends CI_Controller {
 	public function investasi($id) {
 		$username = $this->session->userdata('username');
 		$this->load->model('investasi');
+		$data = $this->investasi->getTransaksi($username)->result();
+		date_default_timezone_set('Asia/Jakarta');
+        $tglTarik = date("d-m-Y");  
+		
 		//data nya ga ngerti coy
 
 		$pdf = new FPDF('p','mm','A4');
 
+		$width_cell = 40;  
+		$height_cell = 6;  
+		
 		$pdf->AddPage();
 
 		$pdf->SetFont('Arial','B','14');
@@ -82,27 +89,48 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(130, 5, 'Jl. MT. Haryono',0,0);
 		$pdf->Cell(59, 5, '',0,1);
 
-		$pdf->Cell(113, 5, 'Malang, Indonesia, 65145',0,0);
-		
+		$pdf->Cell(130, 5, 'Malang, Indonesia, 65145',0,0);
+		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
 		$pdf->Cell(34, 5, "Mr. $username",0,1);
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
-        $pdf->Cell(189,5,'Transaksi Investasi Proyek',0,1);
+        $pdf->Cell(189,5,'Transaksi Pembayaran',0,1);
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(20,6,'idProyek',1,0);
+        $pdf->SetFont('Arial','',10);
+        $pdf->Cell(20,6,'Id Proyek',1,0);
         $pdf->Cell(55,6,'Nama Proyek',1,0);
         $pdf->Cell(37,6,'Lokasi',1,0);
-        $pdf->Cell(35,6,'Nominal Investasi',1,1);
+        $pdf->Cell(25,6,'Total Investasi',1,0);
         $pdf->SetFont('Arial','',10);
-        $pdf->Cell(20,6,"$idProyek",1,0);
-        $pdf->Cell(55,6,"$namaProyek",1,0);
-        $pdf->Cell(37,6,"$lokasi",1,0);
-        $pdf->Cell(35,6,"$nominal",1,1);
+        $pdf->Cell(189, 10, '',0,1);
+        $start_awal=$pdf->GetX(); 
+		$get_xxx = $pdf->GetX();
+		$get_yyy = $pdf->GetY();
+        foreach ($data as $row){
+        	$get_xxx=$start_awal;  
+
+	        $pdf->MultiCell(20,$height_cell,"$row->idProyek",'LR');
+	        $get_xxx+=20;
+	        $pdf->SetXY($get_xxx, $get_yyy);
+
+	        $pdf->MultiCell(55,$height_cell,"$row->namaProyek",'LR');
+	        $get_xxx+=55;                           
+			$pdf->SetXY($get_xxx, $get_yyy);
+
+	        $pdf->MultiCell(37,$height_cell,"$row->lokasi",'LR');
+	        $get_xxx+=37;                           
+			$pdf->SetXY($get_xxx, $get_yyy);
+
+	        $pdf->MultiCell(25,$height_cell,"$row->nominalInvest",'LR');
+	        $get_xxx+=25;
+	        $pdf->Ln();
+	    }
+	    
         // $mahasiswa = $this->db->get('mahasiswa')->result();
         // foreach ($mahasiswa as $row){
         //     $pdf->Cell(20,6,$row->nim,1,0);

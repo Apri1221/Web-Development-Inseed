@@ -72,12 +72,12 @@ class Invest extends CI_Controller {
 		$username = $this->session->userdata('username');
 		$validate = $this->investasi->cekInvest($id,$username,'investor');
         if(count($validate) === 0){
-		$cek = $this->investasi->lihatDana($id);
-		$danaSkrg  = $cek[0]['danaTerkumpul'];
-		$nominal = $this->input->post('nominal');
-		$danaSkrg += $nominal;
-		$where = array(
-		'idProyek' => $id
+			$cek = $this->investasi->lihatDana($id);
+			$danaSkrg  = $cek[0]['danaTerkumpul'];
+			$nominal = $this->input->post('nominal');
+			$danaSkrg += $nominal;
+			$where = array(
+			'idProyek' => $id
 		);
 		$data = array (
 		'danaTerkumpul' => $danaSkrg

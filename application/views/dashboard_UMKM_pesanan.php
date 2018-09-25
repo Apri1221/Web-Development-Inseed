@@ -43,8 +43,8 @@
                 <div id="sidebarUMKM">
                   <a href="<?php echo base_url ('index.php/Dashboard/');?>" > <li style="margin-top: 10%;" class="list-group-item"><i class="fas fa-user" ></i>Profilku</li> </a>
                   <a href="<?php echo base_url ('index.php/Dashboard/tambahProduk');?>"> <li class="list-group-item"><i class="fa fa-plus"></i>Tambah Produk</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item"><i class="fas fa-file-invoice" ></i>Kelola Produk</li></a>
-                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item active"><i class="fa fa-box-open"></i>Kelola Pesanan</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/produk');?>"> <li class="list-group-item"><i class="fa fa-box-open" ></i>Kelola Produk</li></a>
+                  <a href="<?php echo base_url ('index.php/Dashboard/pesanan');?>"> <li class="list-group-item active"><i class="fas fa-file-invoice"></i>Kelola Pesanan</li></a>
                   <a href="<?php echo base_url ('index.php/Dashboard/komplain'); ?>"> <li class="list-group-item"><i class="fa fa-exclamation-triangle"></i>Laporkan Komplain</li></a>
                 </div>
             <?php endif;?>
@@ -60,7 +60,7 @@
               <div class="row">
 
                 <?php if($this->session->userdata('level') === '3'):?>
-                <div class="col-md-12 text-center" style="text-align: center;">
+                <div class="col-md-16 text-center" style="text-align: center;">
                   <h4>Pesanan yang masuk:</h4>
                   <hr style="border-bottom: 2px solid #12a8bb; margin-bottom: 5%; width: 20%;">
                   <div class="col-md-12 col-sm-12">
@@ -69,11 +69,10 @@
                         <thead>
                           <tr class="headerKeranjang">
                             <th scope="col"> No</th>
-                            <th scope="col" style="width: 25%;">Nama Produk</th>
-                            
-                            <th scope="col" class="text-left">Nama Pembeli</th>
+                            <th scope="col" style="width: 20%;">Nama Produk</th>
+                            <th scope="col" style="width: 20%;" class="text-left">Nama Pembeli</th>
                             <th scope="col" class="text-left">Kuantitas</th>
-                             <th scope="col" style="width: 20%;" class="text-left">Alamat Pengiriman</th>
+                             <th scope="col" style="width: 30%;" class="text-left">Alamat Pengiriman</th>
                             <th scope="col" class="text-left">Konfirmasi</th>
                             <th scope="col" class="text-left">Batalkan</th>
                           </tr>
@@ -82,20 +81,23 @@
                           
                         <?php $i = 0;
           						  foreach ($detail as $var):
+                          if ($var->status == 0) :
+                            
           						  $i++; ?>
                           <tr class="produkKeranjang">
 
                             <td>  
                               <?php echo $i;?>
                             </td>
-                            <td><?php echo $var->namaProduk; ?></td>
+                            <td style="width: 20%;"><?php echo $var->idProduk; ?></td>
                             
-                            <td><?php echo $var->stok; ?> buah</td>
-                            <td class="text-left">Rp <?php echo $var->hargaProduk; ?></td>
-                            <td class="text-left">Rp <?php echo $var->hargaProduk; ?></td>
+                            <td style="width: 20%;"><?php echo $var->namaPembeli; ?> buah</td>
+                            <td class="text-left"><?php echo $var->jumlah; ?></td>
+                            <td style="width: 30%;" class="text-left"><?php echo $var->alamatTujuan; ?></td>
                             <td class="text-center"><a href="#" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> </a></td>
                             <td class="text-center"><a href="#" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> </a></td>
                           </tr>
+                        <?php endif ?>
                           <?php endforeach; ?>
                           
                         </tbody>
@@ -113,31 +115,30 @@
                       <thead>
                         <tr class="headerKeranjang">
                           <th scope="col"> No</th>
-                          <th scope="col" style="width: 25%;">Nama Produk</th>
-                          
-                          <th scope="col" class="text-left">Nama Pembeli</th>
-                          <th scope="col"  class="text-left">Kuantitas</th>
-                          <th scope="col" style="width: 20%;" class="text-left">Alamat Pengiriman</th>
+                            <th scope="col" style="width: 20%;">Nama Produk</th>
+                            <th scope="col" style="width: 20%;" class="text-left">Nama Pembeli</th>
+                            <th scope="col" class="text-left">Kuantitas</th>
+                            <th scope="col" style="width: 30%;" class="text-left">Alamat Pengiriman</th>
+                            
                           <th scope="col" class="text-left">Hapus</th>
                         </tr>
                       </thead>
-                      <?php 
-                    $i=0;
-                    foreach ($this->cart->contents() as $items) :
-                    $i++;
-                  ?>
+                      <?php $i = 0;
+                        foreach ($detail as $var):
+                          if ($var->status == 1) :
+                            
+                        $i++; ?>
                           <tr class="produkKeranjang">
-
                             <td>
                               <?php echo $i;?>
                             </td>
-                            <td><?php echo $items['name'] ?></td>
-                            
-                            <td><?php echo $items['qty'] ?> buah</td>
+                            <td style="width: 20%;"><?php echo $items['name'] ?></td>
+                            <td style="width: 20%;"><?php echo $items['qty'] ?> buah</td>
                             <td class="text-left">Rp <?php echo $items['price'] ?></td>
-                            <td class="text-left"> <?php echo $items['status'] ?></td>
+                            <td style="width: 30%;" class="text-left"> <?php echo $items['status'] ?></td>
                             <td class="text-left"><a href="<?=base_url()?>index.php/cart/update_cart/<?php echo $items['rowid'] ?>" class="btn btn-sm btn-primary"><i class="fas fa-trash"></i> </a></td>
                           </tr>
+                          <?php endif ?>
                           <?php endforeach; ?>
                         </tbody>
                     </table>

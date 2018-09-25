@@ -79,7 +79,12 @@ class Investasi extends CI_Model
         return $query->result_array();
     }	
 	public function getReport($id){
-        $SQL = "select a.idProyek, a.namaProyek,a.lokasi,b.nominalInvest from proyek a, investor b where a.idProyek = b.idProyek";
+        $SQL = "select a.idProyek, a.namaProyek, a.lokasi, b.nominalInvest from proyek a, investor b where a.idProyek = b.idProyek";
+        return $this->db->query($SQL);
+    }
+
+    public function getTransaksi($namaAkun){
+        $SQL = "select a.idProyek, a.namaProyek, a.lokasi, b.nominalInvest from proyek a, investor b where a.idProyek = b.idProyek";
         return $this->db->query($SQL);
     }
 
