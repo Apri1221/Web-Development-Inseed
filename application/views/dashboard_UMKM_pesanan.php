@@ -115,7 +115,7 @@
                       <th scope="col" style="width: 20%;">Nama Produk</th>
                       <th scope="col" style="width: 20%;" class="text-left">Nama Pembeli</th>
                       <th scope="col" class="text-left">Kuantitas</th>
-                      <th scope="col" style="width: 30%;" class="text-left">Alamat Pengiriman</th>
+                      <th scope="col" style="width: 30%;" class="text-left">Tanggal Transaksi</th>
                       
                       <th scope="col" class="text-left">Hapus</th>
                     </tr>
