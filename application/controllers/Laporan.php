@@ -64,6 +64,8 @@ class Laporan extends CI_Controller {
 	}
 
 	public function investasi($id) {
+		$username = $this->session->userdata('username');
+		$this->load->model('investasi');
 		//data nya ga ngerti coy
 
 		$pdf = new FPDF('p','mm','A4');
