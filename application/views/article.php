@@ -17,7 +17,7 @@
         </div>
         <div class="container-fluid">
         <div class="row barisArtikelAtas" >
-          <div class="col-xl-7 col-md-10 col-sm-12 col-xs-12 boxHeadline" >
+          <div class="col-xl-7 col-md-12 col-sm-12 col-xs-12 boxHeadline" >
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators" style="position: relative; margin-top: 5%;">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
