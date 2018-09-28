@@ -144,7 +144,10 @@
                     </script>
                     <br>
                     
-                    <button type="submit" class="btn btn-outline-primary" style="width: 25%; margin-left: 25%;">Simpan</button>
+                    <div class="text-center col-md-12">
+                       <button type="submit" class="btn btn-outline-primary" style="width: 50%;">Simpan</button>
+                    </div>
+                   
                </div>
              </form>
            </div>

@@ -123,16 +123,18 @@
                     }
                     </script>
                     <br>
-                  
-                  <button type="submit" class="btn btn-outline-primary" 
+                  <div class="col-md-12 text-center">
+                     <button type="submit" class="btn btn-outline-primary" 
                   <?php if((int)$result->saldo < '50000'): ?>
                   disabled 
                   <?php endif;?>
-                  style="width: 25%; margin-left: 10%;">Proses</button>
+                  style="width: 30%;">Proses</button>
                   
                   <?php if(null !== $this->session->userdata('bank')): ?>
                   <a type="submit" class="btn btn-outline-success" style="-webkit-appearance:none;" target="_blank" href="<?php echo base_url ('index.php/Laporan/');?>">Cetak Invoice</a>
                   <?php endif;?>
+                  </div>
+                 
 
                 </form>
               </div>
