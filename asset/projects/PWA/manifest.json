@@ -1,0 +1,117 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "inseed.id - Selamat Datang",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://inseed.web.id/dashboard",
+    "short_name": "inseed.id",
+    "theme_color": "transparent",
+    "description": "Seaweed Invest in Indoneia",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/asset/assets/image/icon/icon.png",
+            "type": "image/png",
+            "sizes": "500x500"
+        },
+        {
+            "src": "/images/ac8d47d9-e70b-aaaa-e9f2-f933b8f46264.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/5b838e15-e848-9fc9-a3f2-97eec034f175.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/a9f98f09-dc53-f3e9-4def-57ac15e00de3.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/f38c40d4-66e9-5d90-89a6-794c970bf23d.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/debba17b-75a9-5cfe-52b1-73a752e38136.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/82562260-1a34-c222-d58c-375ada38c464.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/995d2de2-6269-ffaa-891c-9068500791e8.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/99e2bc02-0a0f-9d16-c850-eb799640c998.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/a4bea614-3ac8-4292-0d56-3a234ffa00f8.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/b9d83de5-fe2f-21c3-3fc7-df9c33ad2838.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/79226982-761e-87db-4ffc-28e8a4f3aaf0.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/822cd978-1494-3210-3e12-8b2bc235c51c.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/21754a75-f380-3a11-462b-0e62775eb00a.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/c6629b5c-a923-9aa1-8f06-42f711244fc2.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/4725445d-4cb1-dc76-d8bb-b07f0c69c404.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/a021a3c0-e1e6-ff8c-1e88-5b34c3f7fbf1.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/b404f043-e705-7c5b-50f2-ad07cfdc7deb.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/c511de57-3c08-1b9c-3691-e3f8e5da3cfe.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/611b6989-8e76-aca4-7207-a2ab18fecdf8.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}

@@ -23,7 +23,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <img class="col-lg-12 col-md-12 col-sm-12 d-block w-100" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>">
+          <img class="col-lg-12 col-md-12 col-sm-12 d-block card-img-top" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>">
         </div>
         <br>
         <div class="row">

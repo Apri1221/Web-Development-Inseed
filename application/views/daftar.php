@@ -82,7 +82,7 @@
                   <label class="form-control-placeholder-1" for="account">Konfirmasi Password</label>
                   <input type="password" id="pw2" class="form-control" required minlength="8"
                   oninvalid="this.setCustomValidity('Data tidak boleh kosong')" oninput="setCustomValidity('')">
-                  
+
                 </div>
                 <script type="text/javascript">
                 window.onload = function () {
@@ -98,12 +98,17 @@
                 document.getElementById("pw2").setCustomValidity('');
                 }
                 </script>
+                <?php if ($user_level == '0'):?>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">No. Handphone</label>
-                  <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" required minlength="8" maxlenght="13"
+                  <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" minlength="8" maxlenght="13" 
+                  <?php if ($user_level == '0'):?>
+                    value='0'
+                    <?endif; ?>
                   oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">
                   
                 </div>
+                <?php endif;?>
                 <p style="text-align: justify;">Dengan menekan Daftar Sekarang, saya mengonfirmasi telah menyetujui <a href="#" style="color: #12a8bb;">Syarat dan Ketentuan</a>, serta <a href="#" style="color: #12a8bb;">Kebijakan Privasi</a> inseed.id</p>
                 <div class="col-xl-12 col-md-12 col-xs-12 col-sm-12" style="text-align: center;">
                   <button type="submit" class="btn btn-outline-primary" style="padding: 2% 20%; margin: 5% 0">DAFTAR SEKARANG</button>
