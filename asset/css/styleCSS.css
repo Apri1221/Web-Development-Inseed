@@ -274,19 +274,20 @@ a:hover {
 
 #cardLogin button{
   width: 50%;
-  margin-left: 35%;
+  margin-left: 25%;
   margin-bottom: 5%;
 }
 
+@media screen and (min-width: 576px){
+  #cardLogin button{
+    margin-left: 35%;
+  }
+}
 @media screen and (max-width: 1100px){
   #cardLogin h2,#cardLogin input{
   margin-bottom: 5%;
 }
 
-#cardLogin button{
-  width: 50%;
-  margin-bottom: 5%;
-}
 
 #cardLogin input{
   margin-left: 0%;
@@ -491,7 +492,11 @@ color: white; text-align: center; margin-top: 4%;
 margin: 5% 0;
 }
 
-
+@media screen and (max-width: 425px){
+  .kolomKomentar{
+    margin: 0 !important;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   .barisArtikelAtas{
@@ -995,6 +1000,26 @@ color: black;
 
 .editProfile input, .editProfile select{
   margin-top: 2%; width: 85%;
+}
+
+@media screen and (max-width: 768px){
+  .editProfile input, .editProfile select{
+    width: 100%;
+  }
+  .komplainBox {
+    margin-left: 0% !important;
+  }
+
+  .editProdukUMKM input,.editProdukUMKM textarea {
+     width: 100% !important;
+  }
+  
+}
+
+@media screen and (max-width: 576px){
+  .editProyekDashboard input{
+    width: 100% !important;
+  }
 }
 
 .table-responsive{

@@ -59,7 +59,7 @@
         <div class="card-body ">
           <div class="row">
             <?php if($this->session->userdata('level') === '3'):?>
-            <div class="col-md-16 text-center" style="text-align: center;">
+            <div class="col-md-12 text-center" style="text-align: center;">
               <h4>Pesanan yang masuk</h4>
               <hr style="border-bottom: 2px solid #12a8bb; margin-bottom: 5%; width: 20%;">
               <div class="col-md-12 col-sm-12">
@@ -107,6 +107,7 @@
             <div class="col-md-12" style="text-align: center; margin-top: 2%;">
               <h4>Pesanan yang sudah dikonfirmasi</h4>
               <hr style="border-bottom: 2px solid #12a8bb; margin-bottom: 5%; width: 20%;">
+              <div class="col-md-12 col-sm-12">
               <div class="table-responsive">
                 <table class="table table-striped">
                   <thead>
@@ -142,6 +143,7 @@
                 </tbody>
               </table>
             </div>
+          </div>
           </div>
         </div>
       </div>

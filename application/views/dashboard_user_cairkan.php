@@ -67,7 +67,7 @@
                   echo $date; ?>">
               
               <div class="row">
-                <div class="col-md-5" style="text-align: center;">
+                <div class="col-md-5" style="text-align: center; margin-bottom: 10%;">
                   <h5 style="margin-top: 20%;">Saldo Anda: <span>Rp <?php echo $result->saldo; ?>,-</span></h5>
                   <?php if($result->saldo <= 100000): ?>
                     <p>Waduh kamu butuh pemasukan, kami akan bantu!</p>
@@ -76,11 +76,11 @@
                   <?php else: ?>
                     <p>Sepertinya kamu cakap dalam berinvestasi, ayo tingkatkan lagi!</p>
                     <br>
-                    <a href="<?php echo base_url ('index.php/Invest'); ?>" class="orange-btn" >Klik Disini</a>
+                    <a  href="<?php echo base_url ('index.php/Invest'); ?>" class="orange-btn" >Klik Disini</a>
                   <?php endif; ?>
                 </div>
                 
-                <div class="col-md-7 text-left editProfile">
+                <div class="col-md-7 text-left editProfile" >
                   <h6>Jumlah Penarikan Dana (Minimal Rp 50.000)</h6>
                   <input type="number" name="nominal" class="form-control" placeholder="Nominal kurang dari <?php echo $result->saldo; ?>" max="<?php echo $result->saldo; ?>" min="50000">
                   <br>

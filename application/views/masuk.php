@@ -34,7 +34,10 @@
                   <input type="password" name="password" class="form-control" placeholder="Masukkan Password Anda">
                   <?php echo form_error('password'); ?>
                 </div>
-                <button type="submit" class="btn btn-outline-primary">Masuk</button>
+                
+                  <button type="submit" class="btn btn-outline-primary">Masuk</button>
+                
+                
               </form>
             </div>
             <div style="text-align: center;">

@@ -26,10 +26,10 @@
           <img class="col-lg-12 col-md-12 col-sm-12 d-block card-img-top" src="<?php echo base_url('asset/assets/image/petani/petani1.jpg'); ?>">
         </div>
         <br>
-        <div class="row">
+        <div class="row" style="padding: 3%;">
           <p class="col-lg-12 col-md-12 col-sm-12" style="text-align: justify;"><?php echo $result->isiArtikel ?></p>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 text-center" style="margin: 0 15% 0;">
+        <div class="col-lg-8 col-md-8 col-sm-8 text-center kolomKomentar" style="margin: 0 15% 0;">
           <hr class="my-4">
           <?php foreach ($result2 as $var):?>
           <div class="card">

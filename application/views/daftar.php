@@ -26,7 +26,7 @@
         <h1>
         <?php
         if ($user_level == '3'){
-          echo "Kamu sebagai UMKM, silahkan isi data diri disini";
+          echo "Selamat Datang UMKM, silahkan isi data diri disini";
         } else if ($user_level == '2') {
           echo "Selamat datang pengurus koperasi, silakan isi data anda di sini";
         } else {
@@ -101,10 +101,10 @@
                 <?php if ($user_level == '0'):?>
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">No. Handphone</label>
-                  <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" minlength="8" maxlenght="13" 
+                  <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" minlength="8" maxlength="13" 
                   <?php if ($user_level == '0'):?>
                     value='0'
-                    <?endif; ?>
+                    <?php endif; ?>
                   oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">
                   
                 </div>
@@ -113,11 +113,12 @@
                 <div class="col-xl-12 col-md-12 col-xs-12 col-sm-12" style="text-align: center;">
                   <button type="submit" class="btn btn-outline-primary" style="padding: 2% 20%; margin: 5% 0">DAFTAR SEKARANG</button>
                 </div>
-              </div>
+              </form>
+            </div>
             </div>
           </div>
         </div>
-      </form>
-    </section>
+      </section>
     <?php include_once("template/footer.php"); ?>
   </body>
+  </html>
