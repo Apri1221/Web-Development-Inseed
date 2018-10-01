@@ -102,7 +102,7 @@
                 <div class="form-group">
                   <label class="form-control-placeholder-1" for="account">No. Handphone</label>
                   <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]+" minlength="8" maxlength="13" 
-                  <?php if ($user_level == '0'):?>
+                  <?php if ($user_level !== '0'):?>
                     value='0'
                     <?php endif; ?>
                   oninvalid="this.setCustomValidity('Input hanya boleh angka!')" oninput="setCustomValidity('')">

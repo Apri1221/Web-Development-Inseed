@@ -36,7 +36,7 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
-		$pdf->Cell(34, 5, "Mr. $username",0,1);
+		$pdf->Cell(34, 5, "Yth. $username",0,1);
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
@@ -63,10 +63,11 @@ class Laporan extends CI_Controller {
 		$pdf->Output();
 	}
 
-	public function investasi($id) {
+	public function investasi() {
 		$username = $this->session->userdata('username');
 		$this->load->model('investasi');
-		$data = $this->investasi->getTransaksi($username)->result();
+		$id = $this->uri->segment(3);
+		$data = $this->investasi->getTransaksi($id, $username)->result();
 		date_default_timezone_set('Asia/Jakarta');
         $tglTarik = date("d-m-Y");  
 		
@@ -93,7 +94,7 @@ class Laporan extends CI_Controller {
 		$pdf->Cell(34, 5, "$tglTarik",0,1);
 
 		$pdf->Cell(130, 5, 'No. HP +62852614978xx',0,0);
-		$pdf->Cell(34, 5, "Mr. $username",0,1);
+		$pdf->Cell(34, 5, "Yth. $username",0,1);
 
 		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(189, 10, '',0,1);
